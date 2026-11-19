@@ -1,3 +1,5 @@
 .feature-grid__grid { --_min: 300px; }
 /* Four cards: one row of four on desktop, two by two on tablets, never 3 + 1. */
 .feature-grid--four .feature-grid__grid { --_min: 250px; }
+/* Three cards: one row of three from tablet width up, never 2 + 1. */
+.feature-grid--three .feature-grid__grid { --_min: 220px; }
