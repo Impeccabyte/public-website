@@ -119,3 +119,14 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Hub steps.** "We review your website ... and tell you what to fix first" and "We list the documents your industry needs." Confirm Impeccabyte does this review before every specialty application.
 - **Imagery.** The hub and all twelve vertical pages now have PG photos of people at counters, desks and offices (no products in focus, no smoke, no weapons, nothing suggestive). Ask for a swap if any vertical should stay text-only.
 - **Good-standing habits.** Each vertical now lists four habits after approval: a recognizable billing name, a clear refund and cancellation policy, answering disputes quickly with dashboard alerts, and "Tell us before you add new products or websites." Confirm the last one is how you want merchants to handle changes.
+
+## About us (`/about`)
+
+- **Founder story.** "Our story" is one placeholder: why Impeccabyte started, [Year founded], what [Founder name] did before, signed by [Founder name]. Supply the founder's own words.
+- **Founder photo.** Left as a labelled placeholder on purpose; it will not be generated. Supply a real photo.
+- **Office, phone and hours.** "Find us" and the FAQ show [Street address], Austin, TX [ZIP], [Phone number] and [Business hours]. Confirm whether visitors can stop by the office at all; if not, the "stop by" wording comes out.
+- **Service area.** The FAQ "Do you only work with Austin businesses?" is a [Confirm] placeholder.
+- **Reply time.** "A local specialist replies within one business day" appears in the FAQ and closing band, as on other pages.
+- **Application help.** "We help you through the application" and "help with the application" describe our role. Confirm this matches what you do.
+- **Who does what.** The sponsor banks card says Maverick and its sponsor banks "review and approve each application," and the Maverick card says "Your agreement is with them." Confirm both against the Merchant Agreement.
+- **Photos.** The hero (a specialist and a cafe owner at a terminal) and the street of storefronts are generated illustrations, not your team or premises.
