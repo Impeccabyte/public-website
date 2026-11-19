@@ -1,0 +1,23 @@
+uuid: 25cb0dee-fd15-452d-92b7-c2c0ad0035f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buy_price
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.field_buy_price
+field_name: field_buy_price
+entity_type: paragraph
+bundle: bundle_item
+label: 'Buy price each'
+description: 'Overrides the device buy price. Used for items that are not devices.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

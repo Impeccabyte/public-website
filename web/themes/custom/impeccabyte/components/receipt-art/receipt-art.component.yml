@@ -1,0 +1,5 @@
+name: Receipt art
+description: 'An example dual pricing receipt with a cash price and a card price. An illustration, not a price list.'
+props:
+  type: object
+  properties:

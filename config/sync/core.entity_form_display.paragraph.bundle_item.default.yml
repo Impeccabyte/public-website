@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.bundle_item.field_buy_price
     - field.field.paragraph.bundle_item.field_label
     - field.field.paragraph.bundle_item.field_monthly_price
     - field.field.paragraph.bundle_item.field_note
@@ -15,6 +16,13 @@ targetEntityType: paragraph
 bundle: bundle_item
 mode: default
 content:
+  field_buy_price:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_label:
     type: string_textfield
     weight: 0

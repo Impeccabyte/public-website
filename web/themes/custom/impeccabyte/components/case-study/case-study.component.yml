@@ -1,0 +1,16 @@
+name: Case study
+description: 'A short customer story with a photo and up to three metrics. Placeholders are labeled.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    body: { title: 'Body' }
+    media: { title: 'Image {url, alt}' }
+    items: { title: 'Metrics {value, label}' }
+    link: { title: 'Link {url, title}' }
+    placeholder: { title: 'Marks an example that is not a real customer story' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--badge

@@ -1,0 +1,19 @@
+uuid: fc6ef6c8-1e64-4c5f-a517-8dbc19bfb85e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor
+    - paragraphs.paragraphs_type.bundle
+id: paragraph.bundle.field_anchor
+field_name: field_anchor
+entity_type: paragraph
+bundle: bundle
+label: Anchor
+description: 'Lets links jump to this section, for example setup.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

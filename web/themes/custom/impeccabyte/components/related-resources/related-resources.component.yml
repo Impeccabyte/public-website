@@ -1,0 +1,8 @@
+name: Related resources
+description: 'A heading and up to three resource cards. Prints nothing when no resources are chosen.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    heading: { title: 'Heading' }
+    cards: { title: 'Rendered resource cards' }

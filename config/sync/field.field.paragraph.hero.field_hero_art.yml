@@ -1,0 +1,21 @@
+uuid: e1cb3c4d-c583-4413-8921-be78920fa118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_art
+    - paragraphs.paragraphs_type.hero
+  module:
+    - options
+id: paragraph.hero.field_hero_art
+field_name: field_hero_art
+entity_type: paragraph
+bundle: hero
+label: Illustration
+description: 'Used by the split variant when no media is chosen.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

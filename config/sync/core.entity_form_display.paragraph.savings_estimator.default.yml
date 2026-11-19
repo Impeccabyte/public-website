@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.savings_estimator.field_anchor
     - field.field.paragraph.savings_estimator.field_assumptions
     - field.field.paragraph.savings_estimator.field_avg_ticket
     - field.field.paragraph.savings_estimator.field_default_volume
@@ -20,6 +21,14 @@ targetEntityType: paragraph
 bundle: savings_estimator
 mode: default
 content:
+  field_anchor:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_assumptions:
     type: string_textarea
     weight: 3

@@ -1,9 +1,9 @@
-<section{{ attributes.addClass(['section', 'steps']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
+<section{{ attributes.addClass(['section', 'section--white', 'steps']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
   <div class="section__inner">
     {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: intro, heading_id: id ~ '-title'}, with_context = false) }}
     <ol class="steps__list grid-auto">
       {% for step in items %}
-        <li class="steps__item card card--pad-md">
+        <li class="steps__item">
           <span class="steps__number" aria-hidden="true">{{ loop.index }}</span>
           <h3 class="steps__title"><span class="visually-hidden">{{ 'Step @n:'|t({'@n': loop.index}) }} </span>{{ step.title }}</h3>
           <p class="steps__body">{{ step.body }}</p>

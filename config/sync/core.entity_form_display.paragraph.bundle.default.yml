@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bundle.field_addons
+    - field.field.paragraph.bundle.field_anchor
     - field.field.paragraph.bundle.field_eyebrow
     - field.field.paragraph.bundle.field_heading
     - field.field.paragraph.bundle.field_intro
@@ -22,6 +23,14 @@ content:
   field_addons:
     type: string_textfield
     weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_anchor:
+    type: string_textfield
+    weight: 7
     region: content
     settings:
       size: 60

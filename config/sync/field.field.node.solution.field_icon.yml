@@ -1,0 +1,19 @@
+uuid: dd43aecb-f25a-49dd-ac3d-5480478c79d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon
+    - node.type.solution
+id: node.solution.field_icon
+field_name: field_icon
+entity_type: node
+bundle: solution
+label: Icon
+description: 'A Lucide icon name, such as store or globe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bundle.field_addons
+    - field.field.paragraph.bundle.field_anchor
     - field.field.paragraph.bundle.field_eyebrow
     - field.field.paragraph.bundle.field_heading
     - field.field.paragraph.bundle.field_intro
@@ -27,6 +28,15 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_anchor:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_eyebrow:
     type: string

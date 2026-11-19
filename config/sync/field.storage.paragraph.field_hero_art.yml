@@ -1,0 +1,27 @@
+uuid: 42f3ea7a-d82a-4654-bc05-00771aaecd22
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_hero_art
+field_name: field_hero_art
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dashboard
+      label: 'Dashboard and terminal'
+    -
+      value: receipt
+      label: 'Dual pricing receipt'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

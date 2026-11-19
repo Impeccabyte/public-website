@@ -1,0 +1,42 @@
+<section{{ attributes.addClass(['section', 'section--white', 'bundle']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
+  <div class="section__inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: intro, heading_id: id ~ '-title'}, with_context = false) }}
+    <div class="bundle__cols">
+      <div class="bundle__list">
+        <ul class="bundle__items">
+          {% for item in items %}
+            <li class="bundle__item">
+              <span class="bundle__marker" aria-hidden="true">{% if item.is_solution %}{{ include('impeccabyte:icon', {name: 'circle-percent', size: 20}, with_context = false) }}{% endif %}</span>
+              <span class="bundle__text">
+                {% if item.label %}<span class="bundle__role">{{ item.label }}</span>{% endif %}
+                <span class="bundle__name">{% if item.url and not item.is_solution %}<a href="{{ item.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.quantity > 1 %} × {{ item.quantity }}{% endif %}</span>
+                {% if item.note %}<span class="bundle__note">{{ item.note }}</span>{% endif %}
+              </span>
+              {% if item.is_solution and item.url %}
+                <a class="bundle__how" href="{{ item.url }}">{{ 'How it works'|t }}<span class="visually-hidden">: {{ item.name }}</span></a>
+              {% elseif show_prices and item.line_total %}
+                <span class="bundle__price">{{ item.line_total }}/mo</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        {% if addons %}
+          <ul class="bundle__addons" aria-label="{{ 'Optional add-ons'|t }}">
+            {% for addon in addons %}<li>{{ include('impeccabyte:badge', {label: 'Add: @name'|t({'@name': addon}), variant: 'neutral'}, with_context = false) }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <aside class="bundle__estimate card card--tone-brand card--pad-md" aria-label="{{ 'Hardware estimate'|t }}">
+        <p class="bundle__estimate-label">{{ 'Hardware estimate'|t }}</p>
+        {% if show_prices and total %}
+          <p class="bundle__total">{{ total }}<span>/mo</span></p>
+          <p class="bundle__estimate-note">{% if buy_total %}{{ 'Leased month to month, or about @buy to own outright.'|t({'@buy': buy_total}) }} {% endif %}{{ note }}</p>
+        {% else %}
+          {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, size: 'lg', link: false}, with_context = false) }}
+          {% if note %}<p class="bundle__estimate-note">{{ note }}</p>{% endif %}
+        {% endif %}
+        {{ include('impeccabyte:button', {label: link.title|default('Get a quote'|t), href: link.url|default(quote_url), variant: 'primary', size: 'lg', block: true}, with_context = false) }}
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+{% set volume = default_volume|default(30000) %}
+{% set sales = volume / (avg_ticket|default(25)) %}
+{% set flat = volume * flat_percent / 100 + sales * flat_cents / 100 %}
+{% set icp = volume * ic_percent / 100 + sales * ic_cents / 100 %}
+<section{{ attributes.addClass(['section', 'estimator']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
+  <div class="section__inner estimator__inner">
+    <div class="estimator__intro">
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h2 class="section-header__heading" id="{{ id }}-title">{{ heading }}</h2>
+      {% if show_prices %}
+        {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+        <div class="estimator__control">
+          <label class="estimator__label" for="{{ id }}-volume">{{ 'Monthly card sales:'|t }} <output class="estimator__volume" for="{{ id }}-volume" data-estimator-volume>${{ volume|number_format(0, '.', ',') }}</output></label>
+          <input class="estimator__range" id="{{ id }}-volume" type="range" min="5000" max="150000" step="5000" value="{{ volume }}" data-estimator-input>
+          <div class="estimator__scale" aria-hidden="true"><span>$5,000</span><span>$150,000</span></div>
+        </div>
+        {% if assumptions %}<p class="estimator__assumptions">{{ assumptions }}</p>{% endif %}
+      {% else %}
+        <p class="lead">{{ 'Rates are not published yet. Send us a recent statement and we will work out the comparison on your real numbers.'|t }}</p>
+      {% endif %}
+    </div>
+    {% if show_prices %}
+      <div class="estimator__table table-scroll" tabindex="0" role="region" aria-labelledby="{{ id }}-title" data-estimator data-flat-percent="{{ flat_percent }}" data-flat-cents="{{ flat_cents }}" data-ic-percent="{{ ic_percent }}" data-ic-cents="{{ ic_cents }}" data-ticket="{{ avg_ticket|default(25) }}" data-fee="{{ dp_fee }}" data-input="{{ id }}-volume">
+        <table class="estimator__grid" aria-live="polite">
+          <thead><tr><th scope="col">{{ 'Pricing program'|t }}</th><th scope="col">{{ 'Est. monthly cost'|t }}</th><th scope="col">{{ 'Per year'|t }}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">{{ 'Flat rate'|t }}</th><td data-estimator-flat>${{ flat|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-flat-year>${{ (flat * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr><th scope="row">{{ 'Interchange plus'|t }}</th><td data-estimator-icp>${{ icp|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-icp-year>${{ (icp * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr class="estimator__best"><th scope="row">{{ 'Dual pricing'|t }} {{ include('impeccabyte:badge', {label: 'Lowest'|t, variant: 'brand', size: 'sm'}, with_context = false) }}</th><td>${{ dp_fee|number_format(2, '.', ',') }}</td><td class="estimator__save">{{ 'Save about'|t }} <span data-estimator-save>${{ ((flat - dp_fee) * 12)|round|number_format(0, '.', ',') }}</span>/{{ 'yr'|t }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div class="estimator__soon card card--pad-lg">
+        {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, size: 'lg', link: false}, with_context = false) }}
+        <p>{{ 'We will show the math for flat rate, interchange plus and dual pricing side by side, in writing.'|t }}</p>
+        <div class="estimator__actions">
+          {{ include('impeccabyte:button', {label: 'Get a quote'|t, href: quote_url, variant: 'primary'}, with_context = false) }}
+          {{ include('impeccabyte:button', {label: 'Upload a statement'|t, href: '/pricing#statement', variant: 'secondary'}, with_context = false) }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -13,6 +13,7 @@ props:
     link_secondary: { title: 'Secondary link {url, title}' }
     checklist: { title: 'List of short reassurances' }
     media: { title: 'Image {url, alt}' }
+    hero_art: { title: 'dashboard or receipt' }
     media_label: { title: 'Text alternative for the placeholder art' }
     breadcrumb: { title: 'List of {title, url}' }
     search: { title: 'Rendered search form' }

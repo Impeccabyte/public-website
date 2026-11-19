@@ -344,30 +344,42 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
       break;
 
     case 'bundle':
-      $total = 0.0;
-      $complete = TRUE;
+      // Hardware lines take their prices from the device unless the item
+      // sets its own. Solutions in a setup have no hardware price.
+      $prices = \Drupal::service('impeccabyte_site.prices');
+      $monthly = 0.0;
+      $buy = 0.0;
+      $buy_complete = TRUE;
       foreach ($data['items'] as &$item) {
         $node = $item['reference']['entity'] ?? NULL;
+        $item['is_solution'] = $node && $node->bundle() === 'solution';
         $item['name'] = $item['title'] ?: ($item['reference']['label'] ?? '');
         $item['url'] = $item['reference']['url'] ?? '';
         $item['quantity'] = max(1, (int) ($item['quantity'] ?: 1));
-        $each = $item['monthly_price'];
-        if ($each === NULL && $node && $node->hasField('field_lease_price') && !$node->get('field_lease_price')->isEmpty()) {
-          $each = $node->get('field_lease_price')->value;
-        }
-        $item['each'] = $each;
-        $item['line_total'] = $each !== NULL ? (float) $each * $item['quantity'] : NULL;
-        if ($item['line_total'] === NULL) {
-          $complete = FALSE;
-        }
-        else {
-          $total += $item['line_total'];
+        $item['line_total'] = '';
+        if (!$item['is_solution']) {
+          $each = $item['monthly_price'];
+          $own = $item['buy_price'];
+          if ($node && $node->bundle() === 'device') {
+            $each ??= $node->get('field_lease_price')->value;
+            $own ??= $node->get('field_buy_price')->value;
+          }
+          if ($each !== NULL) {
+            $monthly += (float) $each * $item['quantity'];
+            $item['line_total'] = $prices->format((float) $each * $item['quantity']);
+          }
+          if ($own !== NULL) {
+            $buy += (float) $own * $item['quantity'];
+          }
+          else {
+            $buy_complete = FALSE;
+          }
         }
         unset($item['reference']);
       }
       unset($item);
-      $data['total'] = $total;
-      $data['total_complete'] = $complete;
+      $data['total'] = $monthly > 0 ? $prices->format($monthly) : '';
+      $data['buy_total'] = ($buy > 0 && $buy_complete) ? $prices->format($buy) : '';
       break;
 
     case 'faq':
@@ -396,22 +408,49 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
  * The trail to the current page: Home, its section and the page itself.
  */
 function _impeccabyte_breadcrumb(): array {
-  $trail = [['title' => t('Home'), 'url' => Url::fromRoute('<front>')->toString()]];
+  $trail = [];
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node) {
-    $sections = [
-      'solution' => [t('Solutions'), NULL],
-      'industry_page' => [t('Industries'), NULL],
-      'device' => [t('Hardware'), '/hardware'],
-      'resource' => [t('Resources'), '/resources'],
-    ];
-    if (isset($sections[$node->bundle()])) {
-      [$title, $path] = $sections[$node->bundle()];
-      $trail[] = ['title' => $title, 'url' => $path ? Url::fromUserInput($path)->toString() : ''];
-    }
-    $trail[] = ['title' => $node->label(), 'url' => ''];
+  if (!$node) {
+    return $trail;
   }
+  switch ($node->bundle()) {
+    case 'solution':
+      $trail[] = ['title' => t('Solutions'), 'url' => ''];
+      if ($node->hasField('field_category') && ($category = $node->get('field_category')->entity)) {
+        $trail[] = ['title' => $category->label(), 'url' => ''];
+      }
+      break;
+
+    case 'industry_page':
+      $trail[] = ['title' => t('Industries'), 'url' => ''];
+      $industry = $node->hasField('field_industry') ? $node->get('field_industry')->entity : NULL;
+      $parents = $industry ? \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($industry->id()) : [];
+      // Pages under the specialty hub link back to it.
+      if ($parents && ($hub = ib_theme_node_by_alias('/industries/specialty')) && $hub->id() !== $node->id()) {
+        $trail[] = ['title' => reset($parents)->label(), 'url' => $hub->toUrl()->toString()];
+      }
+      break;
+
+    case 'resource':
+      $trail[] = ['title' => t('Resources'), 'url' => Url::fromUserInput('/resources')->toString()];
+      break;
+
+    default:
+      $trail[] = ['title' => t('Home'), 'url' => Url::fromRoute('<front>')->toString()];
+  }
+  $trail[] = ['title' => $node->label(), 'url' => ''];
   return $trail;
+}
+
+/**
+ * Finds the node behind a URL alias, if any.
+ */
+function ib_theme_node_by_alias(string $alias) {
+  $path = \Drupal::service('path_alias.manager')->getPathByAlias($alias);
+  if (preg_match('#^/node/(\d+)$#', $path, $match)) {
+    return \Drupal::entityTypeManager()->getStorage('node')->load($match[1]);
+  }
+  return NULL;
 }
 
 /**

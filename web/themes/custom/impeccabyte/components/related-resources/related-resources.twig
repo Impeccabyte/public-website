@@ -1,0 +1,9 @@
+{% set rendered = cards|render %}
+{% if rendered|striptags|trim %}
+<section{{ attributes.addClass(['section', 'related-resources']) }} aria-labelledby="{{ id }}-title">
+  <div class="section__inner related-resources__inner">
+    <h2 class="related-resources__title" id="{{ id }}-title">{{ heading|default('Keep reading'|t) }}</h2>
+    <div class="grid-auto related-resources__grid">{{ rendered }}</div>
+  </div>
+</section>
+{% endif %}

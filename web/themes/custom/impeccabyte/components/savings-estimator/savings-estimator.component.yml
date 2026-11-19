@@ -1,0 +1,28 @@
+name: Savings estimator
+description: 'A slider for monthly card sales and a table estimating monthly cost under each pricing program.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    anchor: { title: 'Anchor id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro: { title: 'Intro' }
+    assumptions: { title: 'Assumptions text' }
+    flat_percent: { title: 'Flat rate percent' }
+    flat_cents: { title: 'Flat rate cents per sale' }
+    ic_percent: { title: 'Interchange plus effective percent' }
+    ic_cents: { title: 'Interchange plus cents per sale' }
+    avg_ticket: { title: 'Average ticket' }
+    dp_fee: { title: 'Monthly dual pricing fee' }
+    default_volume: { title: 'Starting monthly card sales' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/components.impeccabyte--price
+    - core/components.impeccabyte--badge
+    - core/components.impeccabyte--button

@@ -1,0 +1,15 @@
+{# Example figures for a fictional shop, shown to explain how a dual pricing receipt reads. #}
+<div{{ attributes.addClass('receipt-art') }} role="img" aria-label="{{ 'Example receipt showing a cash price of $40.00 and a card price of $41.60'|t }}">
+  <div class="receipt-art__paper" aria-hidden="true">
+    <div class="receipt-art__shop">South Lamar Coffee Co.</div>
+    <div class="receipt-art__tag">{{ 'Example receipt'|t }}</div>
+    <div class="receipt-art__rule"></div>
+    <div class="receipt-art__line"><span>2 × Oat latte</span><span>$12.00</span></div>
+    <div class="receipt-art__line"><span>1 × Breakfast taco</span><span>$6.50</span></div>
+    <div class="receipt-art__line"><span>1 × Bag of beans</span><span>$21.50</span></div>
+    <div class="receipt-art__rule"></div>
+    <div class="receipt-art__line receipt-art__line--cash"><span>{{ 'Cash price'|t }}</span><span>$40.00</span></div>
+    <div class="receipt-art__line receipt-art__line--card"><span>{{ 'Card price'|t }}</span><span>$41.60</span></div>
+    <div class="receipt-art__fine">{{ 'Card price includes a 4% non-cash adjustment. Pay with cash to save $1.60.'|t }}</div>
+  </div>
+</div>
