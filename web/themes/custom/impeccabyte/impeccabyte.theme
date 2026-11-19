@@ -414,6 +414,7 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
         unset($item['reference']);
       }
       unset($item);
+      $data['has_hardware'] = (bool) array_filter($data['items'], fn(array $item) => !$item['is_solution']);
       $data['total'] = $monthly > 0 ? $prices->format($monthly) : '';
       $data['buy_total'] = ($buy > 0 && $buy_complete) ? $prices->format($buy) : '';
       break;

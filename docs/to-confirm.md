@@ -91,3 +91,12 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Dual pricing on repairs.** The page promotes dual pricing for big tickets, as the Home page's auto chip does. Confirm it fits your auto clients.
 - **Shop software.** "Many shop management systems connect to a payment gateway." Confirm which ones you would check against.
 - **Fleet accounts.** Invoices by email with card or ACH; ACH is listed as a setup add-on.
+
+## Professional services (`/industries/professional-services`)
+
+- **ACH cost.** "It can cost less on large invoices." Confirm with your ACH pricing.
+- **Legal trust accounts.** Deliberately not mentioned. Law firms with client trust accounts have their own rules; add wording only if Impeccabyte supports them.
+
+## Setup panel without hardware (all industry pages)
+
+- A setup made only of solutions (Professional services, Home services after edits, and any future one) now shows "Your quote: Every fee in writing before you sign." instead of a hardware estimate. Confirm the wording.

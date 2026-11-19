@@ -26,9 +26,13 @@
           </ul>
         {% endif %}
       </div>
-      <aside class="bundle__estimate card card--tone-brand card--pad-md" aria-label="{{ 'Hardware estimate'|t }}">
-        <p class="bundle__estimate-label">{{ 'Hardware estimate'|t }}</p>
-        {% if show_prices and total %}
+      {# A setup with no hardware has nothing to estimate: show the quote prompt. #}
+      <aside class="bundle__estimate card card--tone-brand card--pad-md" aria-label="{{ has_hardware ? 'Hardware estimate'|t : 'Your quote'|t }}">
+        <p class="bundle__estimate-label">{{ has_hardware ? 'Hardware estimate'|t : 'Your quote'|t }}</p>
+        {% if not has_hardware %}
+          <p class="bundle__estimate-lead">{{ 'Every fee in writing before you sign.'|t }}</p>
+          {% if note %}<p class="bundle__estimate-note">{{ note }}</p>{% endif %}
+        {% elseif show_prices and total %}
           <p class="bundle__total">{{ total }}<span>/mo</span></p>
           <p class="bundle__estimate-note">{% if buy_total %}{{ 'Leased month to month, or about @buy to own outright.'|t({'@buy': buy_total}) }} {% endif %}{{ note }}</p>
         {% else %}
