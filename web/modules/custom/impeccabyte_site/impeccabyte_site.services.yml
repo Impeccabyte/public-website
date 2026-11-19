@@ -7,3 +7,6 @@ services:
     arguments: ['@impeccabyte_site.prices']
     tags:
       - { name: twig.extension }
+  impeccabyte_site.intercom:
+    class: Drupal\impeccabyte_site\IntercomClient
+    arguments: ['@http_client']

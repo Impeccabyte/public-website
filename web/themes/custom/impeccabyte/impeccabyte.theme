@@ -115,8 +115,29 @@ function impeccabyte_preprocess_page(array &$variables) {
   if (str_starts_with((string) $route->getRouteName(), 'view.') || in_array($route->getRouteName(), ['impeccabyte_compare.page'], TRUE)) {
     $own_title = TRUE;
   }
-  if ($route->getRouteName() === 'entity.webform.canonical' && ($webform = $route->getParameter('webform')) && in_array($webform->id(), ['get_a_quote', 'specialty_prequal', 'statement_review'], TRUE)) {
+  if ($route->getRouteName() === 'entity.webform.canonical' && ($webform = $route->getParameter('webform')) && in_array($webform->id(), ['get_a_quote'], TRUE)) {
     $own_title = TRUE;
+  }
+  // The quote form sits in its own layout with a reassurance sidebar.
+  $variables['quote_page'] = NULL;
+  if ($route->getRouteName() === 'entity.webform.canonical' && ($webform = $route->getParameter('webform')) && $webform->id() === 'get_a_quote') {
+    $variables['quote_page'] = [
+      'eyebrow' => t('Get a quote'),
+      'heading' => t("Tell us about your business. We'll handle the rest."),
+      'accent_word' => t('handle'),
+      'intro' => t('Three short steps, about two minutes. A local specialist will follow up with a written quote.'),
+      'points' => [
+        ['icon' => 'message-circle', 'title' => t('Reply within one business day'), 'body' => t('From a real person in Austin.')],
+        ['icon' => 'file-check', 'title' => t('Every fee in writing'), 'body' => t('No surprises on your first statement.')],
+        ['icon' => 'shield-check', 'title' => t('No obligation'), 'body' => t('A quote is just a quote. We never sell your info.')],
+      ],
+      // A placeholder until a real, approved customer quote is supplied.
+      'quote' => [
+        'text' => t('They explained my statement better than my old processor ever did.'),
+        'source' => t('[Merchant name], [Business name] · North Loop'),
+        'placeholder' => TRUE,
+      ],
+    ];
   }
   $variables['fallback_title'] = NULL;
   if (!$own_title) {

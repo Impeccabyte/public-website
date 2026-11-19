@@ -28,6 +28,7 @@ module:
   image: 0
   impeccabyte_compare: 0
   impeccabyte_site: 0
+  inline_form_errors: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0

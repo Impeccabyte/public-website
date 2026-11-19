@@ -1,0 +1,38 @@
+<div{{ attributes.addClass(['section', 'quote-layout']) }}>
+  <div class="section__inner quote-layout__inner">
+    <header class="quote-layout__header">
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h1 class="quote-layout__title">
+        {%- if accent_word and accent_word in heading -%}
+          {%- set parts = heading|split(accent_word, 2) -%}
+          {{ parts[0] }}<em class="accent-word">{{ accent_word }}</em>{{ parts[1] }}
+        {%- else -%}{{ heading }}{%- endif -%}
+      </h1>
+      {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+    </header>
+    <div class="quote-layout__cols">
+      <div class="quote-layout__form form-card">{{ form }}</div>
+      <aside class="quote-layout__aside" aria-label="{{ 'What to expect'|t }}">
+        <div class="quote-layout__panel">
+          <h2 class="quote-layout__panel-title">{{ 'What to expect'|t }}</h2>
+          <ul class="quote-layout__points">
+            {% for point in points %}
+              <li><span class="quote-layout__point-icon">{{ include('impeccabyte:icon', {name: point.icon, size: 20}, with_context = false) }}</span><span><strong>{{ point.title }}</strong><span>{{ point.body }}</span></span></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if quote.text %}
+          <figure class="quote-layout__quote">
+            {% if quote.placeholder %}{{ include('impeccabyte:badge', {label: 'Example quote'|t, variant: 'warning', size: 'sm'}, with_context = false) }}{% endif %}
+            <blockquote>“{{ quote.text }}”</blockquote>
+            <figcaption>{{ quote.source }}</figcaption>
+          </figure>
+        {% endif %}
+        <div class="quote-layout__call">
+          <strong>{{ 'Rather talk it through?'|t }}</strong>
+          <span>{{ 'Call @phone, @hours.'|t({'@phone': phone, '@hours': hours}) }}</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

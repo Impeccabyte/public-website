@@ -1,7 +1,9 @@
 uuid: 8100fd8f-2599-4ab3-b69e-c95648c2d013
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - impeccabyte_site
 weight: 0
 open: null
 close: null
@@ -271,5 +273,27 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  intercom:
+    id: impeccabyte_intercom_lead
+    handler_id: intercom
+    label: 'Intercom lead'
+    notes: 'On only when a token is set in settings.local.php or the environment.'
+    status: false
+    conditions: {  }
+    weight: 0
+    settings:
+      tags:
+        - 'Website lead'
+        - 'Statement review'
+      tag_elements: {  }
+  apollo:
+    id: impeccabyte_apollo_lead
+    handler_id: apollo
+    label: 'Apollo lead (not built yet)'
+    notes: 'Placeholder. The Apollo account does not exist yet.'
+    status: false
+    conditions: {  }
+    weight: 1
+    settings: {  }
 variants: {  }
