@@ -85,3 +85,9 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Card on file.** "With the patient's written permission ... stored as a token by the gateway, not in your files or practice software."
 - **Practice software.** "Many practice management systems connect to a payment gateway." Confirm which ones you would check against.
 - **No compliance claims.** The page deliberately says nothing about HIPAA. Add wording only if Impeccabyte or Maverick can back it.
+
+## Auto repair (`/industries/auto-repair`)
+
+- **Dual pricing on repairs.** The page promotes dual pricing for big tickets, as the Home page's auto chip does. Confirm it fits your auto clients.
+- **Shop software.** "Many shop management systems connect to a payment gateway." Confirm which ones you would check against.
+- **Fleet accounts.** Invoices by email with card or ACH; ACH is listed as a setup add-on.
