@@ -1,0 +1,9 @@
+uuid: 8228e374-2b1f-441c-ba86-47755e1d4c05
+langcode: en
+status: true
+dependencies: {  }
+name: 'Resource type'
+vid: resource_type
+description: 'The format of a resource.'
+weight: 0
+new_revision: false

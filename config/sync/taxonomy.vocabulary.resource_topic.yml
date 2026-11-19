@@ -1,0 +1,9 @@
+uuid: d1da18ee-ecc2-4532-84a8-ef58dacacd19
+langcode: en
+status: true
+dependencies: {  }
+name: 'Resource topic'
+vid: resource_topic
+description: 'What a resource is about.'
+weight: 0
+new_revision: false

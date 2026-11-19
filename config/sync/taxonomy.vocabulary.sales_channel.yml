@@ -1,0 +1,9 @@
+uuid: 52c311b5-ba70-44e3-a7d5-e7155d140253
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sales channel'
+vid: sales_channel
+description: 'Where a device takes payments.'
+weight: 0
+new_revision: false

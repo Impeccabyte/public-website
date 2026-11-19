@@ -1,0 +1,11 @@
+uuid: 2b6a2f53-22f1-4f27-8788-20cff9989cca
+langcode: en
+status: true
+dependencies: {  }
+name: 'Industry page'
+type: industry_page
+description: 'A landing page for one industry.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

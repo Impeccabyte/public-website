@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get a quote</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:64px 24px 112px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.opt{position:relative;display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:14px;border:1.5px solid #9B8E7E;background:#FFFFFF;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.opt[aria-pressed="true"]{border-color:#A44E2F;background:#FBF1EC}
+@media (max-width:760px){.sec{padding:40px 20px 64px}.step-label{display:none}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" hint-size="100%,76px"></dc-import>
+
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Webform: get_a_quote · multi-step (wizard pages) + sidebar block</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px;">
+<div class="ib-eyebrow">Get a quote</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.025em; color: var(--ink-900);">Tell us about your business. We'll <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">handle</em> the rest.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Three short steps, about two minutes. A local specialist will follow up with a written quote.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+<div style="flex: 999 1 600px; min-width: 0; background: var(--white); border: 1px solid var(--ink-200); border-radius: 28px; padding: clamp(24px, 3.4vw, 44px); display: flex; flex-direction: column; gap: 28px; box-shadow: var(--shadow-md);">
+
+<ol aria-label="Progress" style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 12px;">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+<li style="display: flex; align-items: center; gap: 12px; flex: {{s.flex}};" aria-current="{{s.current}}">
+<span style="width: 34px; height: 34px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; {{s.dot}}"><sc-if value="{{s.isDone}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Done"><path d="M20 6 9 17l-5-5"></path></svg></sc-if><sc-if value="{{s.notDone}}" hint-placeholder-val="{{true}}">{{s.num}}</sc-if></span>
+<span class="step-label" style="font-size: 16px; font-weight: 600; white-space: nowrap; {{s.text}}">{{s.label}}</span>
+<sc-if value="{{s.line}}" hint-placeholder-val="{{true}}"><span style="flex: 1; height: 2px; border-radius: 2px; min-width: 16px; {{s.bar}}" aria-hidden="true"></span></sc-if>
+</li>
+</sc-for>
+</ol>
+<div style="height: 6px; border-radius: 999px; background: var(--ink-100); overflow: hidden;" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="{{stepNum}}" aria-label="Step {{stepNum}} of 3"><div style="height: 100%; width: {{pct}}%; background: var(--clay-500); border-radius: 999px;"></div></div>
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-900);">Your business</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Business name" placeholder="Reyes Barbershop" required="{{yes}}"></x-import>
+<div style="display: flex; flex-direction: column; gap: 8px;"><label for="btype" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">Type of business</label><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="btype" options="{{typeOpts}}"></x-import></div>
+<div style="display: flex; flex-direction: column; gap: 8px;"><label for="years" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">How long have you been open?</label><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="years" options="{{yearOpts}}"></x-import></div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="ZIP code" placeholder="78704" hint="Helps us match you with a local specialist"></x-import>
+<div style="display: flex; flex-direction: column; gap: 8px;"><label for="vol" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">Monthly card sales, roughly</label><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="vol" options="{{volOpts}}"></x-import></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{s2}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-900);">How you take payments</h2>
+<p style="margin: -8px 0 0; font-size: 16px; color: var(--ink-600);">Choose all that apply.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<sc-for list="{{channels}}" as="c" hint-placeholder-count="4">
+<button class="opt" type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}">
+<span style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #786B5D; background: {{c.box}}; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<span><span style="display: block; font-weight: 600; color: var(--ink-900);">{{c.label}}</span><span style="display: block; font-size: 14px; color: var(--ink-600); line-height: 1.6;">{{c.note}}</span></span>
+</button>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<div style="display: flex; flex-direction: column; gap: 8px;"><label for="prov" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">Who processes your cards today?</label><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="prov" options="{{provOpts}}"></x-import></div>
+</div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;"><legend style="font-size: 14px; font-weight: 600; color: var(--ink-900); margin-bottom: 10px;">Also interested in</legend>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Dual pricing" default-checked="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="New hardware"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Chargeback protection"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Business banking"></x-import>
+</div>
+</fieldset>
+</div>
+</sc-if>
+
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-900);">How to reach you</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="First name" placeholder="Jordan" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Last name" placeholder="Reyes" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Email" type="email" placeholder="you@yourbusiness.com" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Mobile phone" type="tel" placeholder="(512) 555-0123"></x-import>
+</div>
+<div role="group" aria-labelledby="reach-label" style="display: flex; flex-direction: column; gap: 12px;"><span id="reach-label" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">Best way to reach you</span>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Tabs" variant="pill" items="{{contactTabs}}" default-value="text"></x-import></div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="It's okay to contact me about my quote" description="We never sell your information. Message and data rates may apply for texts."></x-import>
+</div>
+</sc-if>
+
+<sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; padding: 12px 0;">
+<span style="width: 56px; height: 56px; border-radius: 999px; background: var(--sage-50); color: var(--sage-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-900);">Thanks, Jordan. We're on it.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">A local specialist will text you within one business day. Want a sharper quote? Send us a recent statement.</p>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" as="a" href="Pricing.dc.html">Upload a statement</x-import>
+</div>
+</sc-if>
+
+<sc-if value="{{showNav}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; border-top: 1px solid var(--ink-100); padding-top: 24px;">
+<sc-if value="{{canBack}}" hint-placeholder-val="{{false}}"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" size="lg" on-click="{{back}}">Back</x-import></sc-if>
+<sc-if value="{{noBack}}" hint-placeholder-val="{{true}}"><span style="font-size: 14px; color: var(--ink-500);">Step {{stepNum}} of 3</span></sc-if>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" on-click="{{next}}">{{nextLabel}}</x-import>
+</div>
+</sc-if>
+</div>
+
+<aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div style="align-self: flex-start; font: 500 11px/1 'JetBrains Mono',monospace; color: #2F4753; background: #EDF1F3; border: 1px dashed #93AEB9; border-radius: 6px; padding: 6px 8px;">Sidebar · block--reassurance</div></sc-if>
+<div style="background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 20px;">
+<div style="font-weight: 700; color: var(--ink-900); font-size: 18px;">What to expect</div>
+<div style="display: flex; gap: 12px;"><span style="color: var(--clay-600); flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span><span style="font-size: 16px; line-height: 1.6;"><strong style="color: var(--ink-900);">Reply within one business day</strong><br>From a real person in Austin.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: var(--clay-600); flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span><span style="font-size: 16px; line-height: 1.6;"><strong style="color: var(--ink-900);">Every fee in writing</strong><br>No surprises on your first statement.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: var(--clay-600); flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><span style="font-size: 16px; line-height: 1.6;"><strong style="color: var(--ink-900);">No obligation</strong><br>A quote is just a quote. We never sell your info.</span></div>
+</div>
+<div style="background: var(--clay-50); border: 1px solid var(--clay-100); border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+<p style="margin: 0; font-family: var(--font-display); font-size: 20px; line-height: 1.22; color: var(--ink-900);">“They explained my statement better than my old processor ever did.”</p>
+<span style="font-size: 14px; color: var(--ink-600);">[Merchant name], [Business name] · North Loop</span>
+</div>
+<div style="background: var(--clove-800); color: var(--text-on-dark); border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-weight: 600; color: var(--white);">Rather talk it through?</span>
+<span style="font-size: 16px;">Call (512) [XXX-XXXX], Monday to Friday, 8 to 6 Central.</span>
+</div>
+</aside>
+</div>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":2180}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 1, ch: ['store'] };
+  }
+  renderVals() {
+    const st = this.state.step;
+    const labels = ['Business info', 'How you take payments', 'Contact'];
+    const steps = labels.map((l, k) => {
+      const n = k + 1;
+      const doneS = st > n, cur = st === n;
+      return {
+        num: String(n), isDone: doneS, notDone: !doneS, label: l, current: cur ? 'step' : 'false',
+        flex: n < 3 ? '1' : '0 0 auto', line: n < 3,
+        dot: cur ? 'background: #A44E2F; color: var(--white);' : (doneS ? 'background: #5E7A4F; color: var(--white);' : 'background: #EFE8DC; color: #635648;'),
+        text: cur || doneS ? 'color: #2A211A;' : 'color: #786B5D;',
+        bar: doneS ? 'background: #5E7A4F;' : 'background: #E0D6C6;'
+      };
+    });
+    const chans = [
+      { id: 'store', label: 'In a store or counter', note: 'Customers pay in person' },
+      { id: 'online', label: 'Online', note: 'Website, links or invoices' },
+      { id: 'go', label: 'On the go', note: 'Markets, events, job sites' },
+      { id: 'recurring', label: 'Recurring billing', note: 'Memberships or retainers' }
+    ];
+    const ch = this.state.ch;
+    const done = st > 3;
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      steps: steps,
+      stepNum: Math.min(st, 3),
+      pct: done ? 100 : Math.round((st - 1) / 3 * 100 + 12),
+      s1: st === 1, s2: st === 2, s3: st === 3, done: done,
+      showNav: !done, canBack: st > 1 && !done, noBack: st === 1,
+      nextLabel: st === 3 ? 'Send my quote request' : 'Continue',
+      next: () => this.setState({ step: st + 1 }),
+      back: () => this.setState({ step: Math.max(1, st - 1) }),
+      channels: chans.map((c) => {
+        const on = ch.indexOf(c.id) >= 0;
+        return Object.assign({}, c, { pressed: on ? 'true' : 'false', box: on ? '#A44E2F' : '#FFFFFF', toggle: () => this.setState({ ch: on ? ch.filter((x) => x !== c.id) : ch.concat([c.id]) }) });
+      }),
+      typeOpts: ['Choose one', 'Restaurant or bar', 'Food truck', 'Retail shop', 'Salon or spa', 'Home or field services', 'Healthcare or dental', 'Auto repair', 'Professional services', 'Nonprofit', 'Something else'],
+      yearOpts: ['Choose one', 'Not open yet', 'Less than a year', '1 to 3 years', 'More than 3 years'],
+      volOpts: ['Choose one', 'Not taking cards yet', 'Under $10,000', '$10,000 to $50,000', '$50,000 to $150,000', 'Over $150,000'],
+      provOpts: ['Choose one', 'Square', 'Stripe', 'Clover through my bank', 'Toast', 'Another provider', 'Not taking cards yet'],
+      contactTabs: [{ value: 'text', label: 'Text' }, { value: 'call', label: 'Call' }, { value: 'email', label: 'Email' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #9B8E7E;background:#FFFFFF;font:500 14px/1 'Hanken Grotesk',sans-serif;color:#3B3128;cursor:pointer}
+.chip:hover{border-color:#A44E2F}
+.chip[aria-pressed="true"]{background:#2A211A;border-color:#2A211A;color:#FAF6EF}
+.lift{transition:transform 220ms cubic-bezier(.22,.61,.36,1),box-shadow 220ms}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+@media (max-width:760px){.sec{padding:64px 20px}.chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin:0 -20px;padding-left:20px;padding-right:20px}.chip{flex-shrink:0}.hide-sm{display:none}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+
+<dc-import name="Header" annotations="{{ann}}" hint-size="100%,76px"></dc-import>
+
+<!-- HERO -->
+<section class="sec" style="padding-top: 80px; background: radial-gradient(1200px 520px at 85% 10%, #FBF1EC 0%, rgba(250,246,239,0) 70%);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: split + media)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+<div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 24px; min-width: 0;">
+<div class="ib-eyebrow">Austin merchant services</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink-900);">Getting paid should feel <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">impeccably</em> easy.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700); max-width: 540px;">We're a local Austin team that sets up card processing, POS hardware and online payments for small businesses and first-time founders. Clear pricing, real people, and gear that just works.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Get a quote</x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" size="lg" as="a" href="Pricing.dc.html">See pricing</x-import>
+</div>
+<ul style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 14px; font-weight: 500; color: var(--ink-600);">
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Free statement review</li>
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Next-day deposits</li>
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Support from Austin</li>
+</ul>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; position: relative; min-height: 600px;" role="img" aria-label="A countertop terminal beside the Impeccabyte merchant dashboard showing today's sales">
+<div style="position: absolute; top: 0; right: 0; width: 88%; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-xl); overflow: hidden;">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--ink-100); background: var(--ink-50);"><span style="width: 9px; height: 9px; border-radius: 50%; background: var(--ink-200);"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: var(--ink-200);"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: var(--ink-200);"></span><span style="margin-left: 10px; font: 500 12px 'JetBrains Mono', monospace; color: var(--ink-500);">app.impeccabyte.com</span></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+<div><div style="font-size: 14px; color: var(--ink-500); font-weight: 500;">Today's sales</div><div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: -0.02em; color: var(--ink-900);">$3,284.50</div></div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="success" dot="{{yes}}">Deposit tomorrow</x-import>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 8px; height: 96px;" aria-hidden="true">
+<div style="flex: 1; height: 38%; background: var(--clay-100); border-radius: 6px;"></div><div style="flex: 1; height: 55%; background: var(--clay-100); border-radius: 6px;"></div><div style="flex: 1; height: 44%; background: var(--clay-100); border-radius: 6px;"></div><div style="flex: 1; height: 70%; background: var(--clay-200); border-radius: 6px;"></div><div style="flex: 1; height: 62%; background: var(--clay-200); border-radius: 6px;"></div><div style="flex: 1; height: 84%; background: var(--clay-300); border-radius: 6px;"></div><div style="flex: 1; height: 100%; background: var(--clay-500); border-radius: 6px;"></div>
+</div>
+<div style="display: flex; flex-direction: column; font-size: 14px;">
+<div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--ink-100);"><span style="color: var(--ink-700);">Tap · Visa •• 4821</span><span style="font-weight: 600; color: var(--ink-900);">$18.40</span></div>
+<div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--ink-100);"><span style="color: var(--ink-700);">Link · Amex •• 3007</span><span style="font-weight: 600; color: var(--ink-900);">$240.00</span></div>
+</div>
+</div>
+</div>
+<div style="position: absolute; left: 0; bottom: 0; width: 192px; background: var(--clove-800); border-radius: 28px; padding: 14px; box-shadow: var(--shadow-xl);">
+<div style="background: var(--paper); border-radius: 14px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;">
+<div style="font-size: 12px; color: var(--ink-500); font-weight: 600;">Total</div>
+<div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-900);">$42.18</div>
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C0623E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8.32a7.43 7.43 0 0 1 0 7.36"></path><path d="M9.46 6.21a11.76 11.76 0 0 1 0 11.58"></path><path d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8"></path><path d="M16.37 2a20.16 20.16 0 0 1 0 20"></path></svg>
+<div style="font-size: 14px; color: var(--ink-700); font-weight: 500;">Tap, insert or swipe</div>
+</div>
+<div style="height: 10px; margin: 12px 22px 2px; border-radius: 999px; background: #463424;"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LOGO STRIP -->
+<section style="position: relative; padding: 40px 24px; border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100); background: var(--white);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: 8px;">Logo strip · paragraph--logo-strip</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px 48px;">
+<span style="font-size: 14px; font-weight: 500; color: var(--ink-500);">Authorized agent of Maverick Payments. Hardware and partners we set up:</span>
+<span style="font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--ink-500);">Clover</span>
+<span style="font-weight: 800; font-size: 20px; letter-spacing: 0.06em; color: var(--ink-500);">PAX</span>
+<span style="font-weight: 700; font-size: 20px; color: var(--ink-500);">Dejavoo</span>
+<span style="font-weight: 700; font-size: 20px; color: var(--ink-500);">Valor</span>
+<span style="font-weight: 600; font-size: 20px; font-style: italic; color: var(--ink-500);">Ingenico</span>
+<span style="font-weight: 700; font-size: 20px; color: var(--ink-500);">NMI</span>
+</div>
+</section>
+
+<!-- FEATURE GRID -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Feature grid · paragraph--feature-grid (6 × card)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<div class="ib-eyebrow">Start with the job</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">What do you need to do?</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Pick what matters today. We'll put together the hardware, software and pricing that fits, and you can add more as you grow.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+<a href="Main.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v10h16V10"></path><path d="M2 10 4 4h16l2 6"></path><path d="M10 20v-5h4v5"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Accept payments in person</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Countertop terminals and full POS systems that take tap, chip and swipe.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">Explore in-person <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+<a href="Main.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Sell online</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">A payment gateway, hosted checkout and payment links that drop into your website or texts.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">Explore online <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+<a href="Main.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"></rect><path d="M12 18h.01"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Get paid on the go</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Pocket-size readers and tap to pay on your phone for markets, pop-ups and field work.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">Explore mobile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+<a href="Main.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Bill customers on a schedule</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Recurring billing and invoices that update expired cards for you, so payments don't quietly stop.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">Explore recurring billing <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+<a href="Solution-DualPricing.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--clay-50); border: 1px solid var(--clay-100); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--white); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Lower your processing costs</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Dual pricing, interchange plus or a simple flat rate. We'll show you the math on your real statement.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">Compare pricing programs <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+<a href="Main.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit;">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Get your money faster</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Next-day deposits as standard, with same-day funding available when you close out by 7 AM Central.</span>
+<span style="margin-top: auto; font-weight: 600; color: var(--clay-600); display: inline-flex; align-items: center; gap: 8px;">See funding times <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- INDUSTRY PICKER -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Industry picker · paragraph--chip-links (refs: taxonomy industry)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<div class="ib-eyebrow">Industries</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Built for the way Austin does business</h2>
+</div>
+<div class="chips" role="group" aria-label="Choose your industry">
+<sc-for list="{{industries}}" as="it" hint-placeholder-count="10">
+<button class="chip" type="button" aria-pressed="{{it.pressed}}" onClick="{{it.pick}}">{{it.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch; background: var(--paper); border: 1px solid var(--ink-200); border-radius: 28px; padding: 36px;">
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+<div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">{{ind.title}}</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">{{ind.body}}</p>
+<a href="Industry-Restaurants.dc.html" style="font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-top: 6px;">{{ind.link}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+<div style="font-size: 14px; font-weight: 600; color: var(--ink-500);">A typical setup</div>
+<sc-for list="{{ind.setup}}" as="s" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 16px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 14px; padding: 14px 16px;">
+<span style="width: 36px; height: 36px; border-radius: 10px; background: var(--amber-50); color: var(--amber-700); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<span style="flex: 1; min-width: 0;"><span style="display: block; font-weight: 600; color: var(--ink-900);">{{s.name}}</span><span style="display: block; font-size: 14px; color: var(--ink-600);">{{s.note}}</span></span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURED HARDWARE -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Card grid · paragraph--card-grid (refs: node--device, view mode: teaser)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: flex-end;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px;">
+<div class="ib-eyebrow">Hardware</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Hardware that fits your counter, cart or kitchen</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Buy it outright or lease it month to month. Every device ships programmed and ready to take its first payment.</p>
+</div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" as="a" href="Hardware.dc.html">Browse all hardware</x-import>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+<sc-for list="{{devices}}" as="d" hint-placeholder-count="4">
+<a href="Device-CloverMini.dc.html" class="lift" style="display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: var(--shadow-sm);">
+<div style="height: 200px; background: var(--ink-50); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--ink-100);" role="img" aria-label="{{d.name}} product photo placeholder">
+<div style="width: {{d.w}}px; height: {{d.h}}px; background: var(--clove-800); border-radius: 20px; padding: 8px; box-shadow: var(--shadow-xl);"><div style="width: 100%; height: 72%; background: var(--paper); border-radius: 10px;"></div></div>
+</div>
+<div style="padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+<span style="align-self: flex-start;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral" size="sm">{{d.type}}</x-import></span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">{{d.name}}</h3>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">{{d.blurb}}</span>
+<span style="margin-top: auto; padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 1px solid var(--ink-100);"><span style="font-weight: 700; color: var(--ink-900); font-size: 18px;">From ${{d.mo}}/mo</span><span style="font-size: 14px; color: var(--ink-600);">Buy from ${{d.buy}}</span></span>
+</div>
+</a>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 14px; color: var(--ink-500);">Prices before tax. Lease is month to month. Clover devices include a starter kit and 3-year protection.</p>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Stat row · paragraph--stats</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-100); border: 1px solid var(--ink-200); border-radius: 28px; overflow: hidden;">
+<div style="padding: 36px 32px; background: var(--white); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 48px; letter-spacing: -0.025em; color: var(--clay-600); line-height: 1.05;">Next day</span><span style="font-size: 16px; color: var(--ink-700); line-height: 1.6;">Standard deposits for card sales batched on time</span></div>
+<div style="padding: 36px 32px; background: var(--white); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 48px; letter-spacing: -0.025em; color: var(--clay-600); line-height: 1.05;">7 AM</span><span style="font-size: 16px; color: var(--ink-700); line-height: 1.6;">Central cutoff for same-day funding on eligible accounts</span></div>
+<div style="padding: 36px 32px; background: var(--white); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 48px; letter-spacing: -0.025em; color: var(--clay-600); line-height: 1.05;">40+</span><span style="font-size: 16px; color: var(--ink-700); line-height: 1.6;">Terminals, readers and POS systems we can set up</span></div>
+<div style="padding: 36px 32px; background: var(--white); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 48px; letter-spacing: -0.025em; color: var(--clay-600); line-height: 1.05;">$10/mo</span><span style="font-size: 16px; color: var(--ink-700); line-height: 1.6;">Starting lease for a mobile card reader</span></div>
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="sec" style="background: var(--clay-50);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Testimonial · paragraph--testimonial (placeholder quote)</div></sc-if>
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<figure style="flex: 2 1 520px; margin: 0; display: flex; flex-direction: column; gap: 28px; min-width: 0;">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C0623E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+<blockquote style="margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">“We switched to dual pricing and our monthly processing bill went from a line item I dreaded to one I barely notice. And when I had questions, someone in Austin actually picked up.”</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 16px;">
+<span style="width: 52px; height: 52px; border-radius: 50%; background: var(--clove-400); color: var(--white); display: inline-flex; align-items: center; justify-content: center; "><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+<span><span style="display: block; font-weight: 600; color: var(--ink-900);">[Merchant name], owner</span><span style="display: block; font-size: 14px; color: var(--ink-600);">[Business name] · East Austin coffee shop</span></span>
+</figcaption>
+</figure>
+<div style="flex: 1 1 280px; background: var(--white); border: 1px solid var(--clay-100); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-md);">
+<div style="font-size: 14px; font-weight: 600; color: var(--ink-500);">Their monthly fees</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="color: var(--ink-700);">Before</span><span style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--ink-500); text-decoration: line-through;">$[X,XXX]</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="color: var(--ink-700);">After</span><span style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--sage-600);">$[XXX]</span></div>
+<a href="Industry-Restaurants.dc.html" style="font-weight: 600; text-decoration: none; display: inline-flex; gap: 8px; align-items: center;">Read their story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">FAQ accordion · paragraph--faq (FAQPage schema)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px;">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+<div class="ib-eyebrow">Questions</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Good questions, straight answers</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Don't see yours? <a href="Quote.dc.html" style="font-weight: 600;">Ask a local specialist</a> and we'll reply within one business day.</p>
+</div>
+<div style="flex: 2 1 560px; min-width: 0;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Accordion" items="{{faqs}}" default-open="{{firstOpen}}"></x-import>
+</div>
+</div>
+</section>
+
+<!-- CTA BAND -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">CTA band · paragraph--cta-band (variant: clove)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; background: var(--clove-800); border-radius: 36px; padding: clamp(40px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; color: var(--white);">Send us your statement. We'll show you what you <em style="font-style: italic; font-weight: 500; color: var(--amber-400);">could</em> save.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--text-on-dark);">A free, line-by-line review from someone local. No pressure, no obligation.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Pricing.dc.html">Upload a statement</x-import>
+<a href="Quote.dc.html" style="min-height: 52px; padding: 0 26px; border-radius: 999px; border: 1.5px solid rgba(243,235,222,0.5); color: var(--white); font-weight: 600; display: inline-flex; align-items: center; text-decoration: none;">Get a quote</a>
+</div>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":6700}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { ind: 0 };
+  }
+  renderVals() {
+    const data = [
+      { label: 'Restaurants and bars', title: 'Faster tables, cleaner tips, smaller fees', body: 'Pay at the table, split checks in seconds and adjust tips before close. Dual pricing keeps card costs off your margins.', link: 'See restaurant solutions', setup: [
+        { name: 'Clover Station Duo at the counter', note: 'From $135/mo or $2,739 to own' },
+        { name: 'Clover Flex for tableside pay', note: 'From $50/mo per handheld' },
+        { name: 'Dual pricing', note: 'Card customers cover the processing cost' }] },
+      { label: 'Food trucks', title: 'Take cards anywhere you park', body: 'A cellular terminal that keeps working when the Wi-Fi does not, and deposits that land the next business day.', link: 'See food truck setups', setup: [
+        { name: 'Clover Flex with cellular data', note: 'From $50/mo, works off LTE' },
+        { name: 'Dual pricing', note: 'Keep more of every taco' },
+        { name: 'Next-day funding', note: 'Batch by 8:30 PM Central' }] },
+      { label: 'Retail shops', title: 'A counter that keeps up with Saturday', body: 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.', link: 'See retail setups', setup: [
+        { name: 'Clover Mini at checkout', note: 'From $60/mo or $1,189 to own' },
+        { name: 'Barcode scanner', note: 'From $10/mo' },
+        { name: 'Interchange plus pricing', note: 'Best for higher monthly volume' }] },
+      { label: 'Salons and spas', title: 'Book, check out and tip in one tap', body: 'Card-on-file for no-shows, easy tips for stylists and a small countertop device that fits a crowded station.', link: 'See salon setups', setup: [
+        { name: 'Clover Compact at the front desk', note: 'From $20/mo or $399 to own' },
+        { name: 'Recurring billing for memberships', note: 'Card updater included' },
+        { name: 'Flat-rate pricing', note: 'One rate, easy to budget' }] },
+      { label: 'Home services', title: 'Get paid before you leave the driveway', body: 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools.', link: 'See field service setups', setup: [
+        { name: 'Clover Go mobile reader', note: 'From $10/mo or $209 to own' },
+        { name: 'Payment links and invoices', note: 'Send by text or email' },
+        { name: 'Integrations', note: 'Connect your accounting software' }] },
+      { label: 'Healthcare and dental', title: 'Payments that respect the front desk', body: 'Card-on-file, payment plans and text-to-pay for balances, with secure storage handled by the gateway.', link: 'See healthcare setups', setup: [
+        { name: 'Countertop terminal', note: 'Dejavoo Z8 from $20/mo' },
+        { name: 'Text-to-pay', note: 'Collect balances after the visit' },
+        { name: 'Recurring payment plans', note: 'Automatic monthly charges' }] },
+      { label: 'Auto repair', title: 'Close out big tickets with confidence', body: 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.', link: 'See auto setups', setup: [
+        { name: 'Valor VP550 countertop', note: 'From $30/mo or $599 to own' },
+        { name: 'Dual pricing', note: 'Offset fees on large repairs' },
+        { name: 'Chargeback protection', note: 'Alerts before disputes escalate' }] },
+      { label: 'Professional services', title: 'Invoices that pay themselves', body: 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.', link: 'See professional services', setup: [
+        { name: 'Online gateway', note: 'Virtual terminal and invoicing' },
+        { name: 'ACH payments', note: 'Lower cost for large invoices' },
+        { name: 'Recurring billing', note: 'Retainers on a schedule' }] },
+      { label: 'Nonprofits', title: 'More of every gift goes to the mission', body: 'Online donation pages, event-day card readers and recurring giving for monthly supporters.', link: 'See nonprofit setups', setup: [
+        { name: 'Hosted donation page', note: 'Drops into your website' },
+        { name: 'Clover Go for events', note: 'From $10/mo' },
+        { name: 'Recurring giving', note: 'Monthly donors on autopay' }] },
+      { label: 'Pop-ups and markets', title: 'Set up in five minutes, sell all weekend', body: 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new.', link: 'See pop-up setups', setup: [
+        { name: 'SwipeSimple B350 reader', note: 'From $10/mo or $199 to own' },
+        { name: 'Tap to pay on your phone', note: 'No extra hardware needed' },
+        { name: 'Flat-rate pricing', note: 'Simple while you are starting out' }] }
+    ];
+    const i = this.state.ind;
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      ind: data[i],
+      industries: data.map((d, k) => ({ label: d.label, pressed: k === i ? 'true' : 'false', pick: () => this.setState({ ind: k }) })),
+      devices: [
+        { name: 'Clover Mini', type: 'POS system', blurb: 'An 8-inch all-in-one counter station that runs your whole front of house.', mo: '60', buy: '1,189', w: 150, h: 120 },
+        { name: 'Clover Flex', type: 'Handheld', blurb: 'Take payment at the table, curb or market stall, with a built-in printer.', mo: '50', buy: '1,029', w: 84, h: 150 },
+        { name: 'Dejavoo Z8', type: 'Countertop terminal', blurb: 'A reliable, budget-friendly terminal that is built for dual pricing.', mo: '20', buy: '399', w: 96, h: 130 },
+        { name: 'Clover Go', type: 'Mobile reader', blurb: 'A pocket reader that pairs with your phone for tap, chip and swipe.', mo: '10', buy: '209', w: 80, h: 80 }
+      ],
+      firstOpen: [0],
+      faqs: [
+        { question: 'Is Impeccabyte a payment processor?', answer: 'We are an authorized sales agent of Maverick Payments. Maverick processes your transactions; we set you up, choose the right gear and stay your local point of contact.' },
+        { question: 'How fast will I get my money?', answer: 'Most merchants get next-day deposits. Close your batch by 8:30 PM Central (7 PM if you take tips on Clover) and funds land the next business day. Same-day funding is available on eligible accounts.' },
+        { question: 'What is dual pricing, and can I use it in Texas?', answer: 'Dual pricing shows a cash price and a card price. Customers who pay by card cover the cost of processing. It is widely used in Texas, and we set up the signage and receipts that card-brand rules require.' },
+        { question: 'Do I have to buy hardware?', answer: 'No. You can buy a device outright or lease it month to month. If you already own compatible equipment, we can often reprogram it for you.' },
+        { question: 'I am just starting out. Can I still apply?', answer: 'Yes. New businesses and first-time founders are welcome. Have your EIN or SSN, a business bank account and a photo ID ready, and we will walk you through the rest.' },
+        { question: 'How does business banking work?', answer: 'Checking accounts and related products come from our partner banks, not from Impeccabyte. We will introduce you and help connect your deposits to your merchant account.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

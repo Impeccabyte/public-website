@@ -1,0 +1,9 @@
+uuid: 8130d6b9-9162-4bb9-937e-44e680afb10f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Device type'
+vid: device_type
+description: 'What kind of hardware a device is.'
+weight: 0
+new_revision: false

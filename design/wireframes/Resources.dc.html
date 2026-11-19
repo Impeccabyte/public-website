@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resource library</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #9B8E7E;background:#FFFFFF;font:500 14px/1 'Hanken Grotesk',sans-serif;color:#3B3128;cursor:pointer}
+.chip:hover{border-color:#A44E2F}
+.chip[aria-pressed="true"]{background:#2A211A;border-color:#2A211A;color:#FAF6EF}
+.lift{transition:transform 220ms cubic-bezier(.22,.61,.36,1),box-shadow 220ms}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+@media (max-width:760px){.sec{padding:64px 20px}.chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px 6px}.chip{flex-shrink:0}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="resources" hint-size="100%,76px"></dc-import>
+
+<section class="sec" style="padding-top: 64px; padding-bottom: 40px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: compact + search)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between;">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+<div class="ib-eyebrow">Resources</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.025em; color: var(--ink-900);">Guides for running a business that <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">gets paid</em>.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700); max-width: 600px;">Plain-English answers about fees, hardware, chargebacks and getting started, written by our team in Austin.</p>
+</div>
+<form role="search" style="flex: 1 1 360px; max-width: 440px; position: relative;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Search resources" type="search" placeholder="Try “chargeback” or “dual pricing”"></x-import>
+</form>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0; padding-bottom: 40px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">View: resource_library · exposed filters (type, topic) as chips</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;"><span style="font-size: 14px; font-weight: 600; color: var(--ink-500); width: 56px;">Type</span>
+<div class="chips" role="group" aria-label="Filter by type" style="flex: 1; min-width: 0;"><sc-for list="{{types}}" as="c" hint-placeholder-count="6"><button class="chip" type="button" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}">{{c.label}}</button></sc-for></div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;"><span style="font-size: 14px; font-weight: 600; color: var(--ink-500); width: 56px;">Topic</span>
+<div class="chips" role="group" aria-label="Filter by topic" style="flex: 1; min-width: 0;"><sc-for list="{{topics}}" as="c" hint-placeholder-count="8"><button class="chip" type="button" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}">{{c.label}}</button></sc-for></div></div>
+</div>
+</section>
+
+<!-- FEATURED -->
+<section class="sec" style="padding-top: 24px; padding-bottom: 48px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -8px;">Featured resource · block (node--resource, view mode: featured)</div></sc-if>
+<a href="Resources.dc.html" class="lift" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; background: var(--white); border: 1px solid var(--ink-200); border-radius: 28px; overflow: hidden; text-decoration: none; color: inherit;">
+<div style="flex: 1 1 480px; min-height: 340px; background: var(--clove-700); display: flex; align-items: center; justify-content: center; color: var(--clove-100); font-size: 14px;" role="img" aria-label="Illustration placeholder for the founder guide">Illustration: first merchant account</div>
+<div style="flex: 1 1 440px; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 16px; justify-content: center; min-width: 0;">
+<span style="display: flex; gap: 8px; flex-wrap: wrap;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="brand">Guide</x-import><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral">Getting started</x-import></span>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Your first merchant account: a plain-English guide for new founders</h2>
+<span style="font-size: 18px; line-height: 1.6; color: var(--ink-700);">What a merchant account is, what you need to apply, how long approval takes and the questions to ask before you sign anything.</span>
+<span style="font-size: 14px; color: var(--ink-600);">12 min read · Updated November 2026</span>
+</div>
+</a>
+</section>
+
+<!-- GRID -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Card grid · view rows (node--resource, view mode: card) + pager</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;"><span style="font-size: 16px; color: var(--ink-700);"><strong style="color: var(--ink-900);">{{count}} resources</strong> {{filterLabel}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+<sc-for list="{{items}}" as="r" hint-placeholder-count="9">
+<a href="Resources.dc.html" class="lift" style="display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit;">
+<div style="height: 160px; background: {{r.bg}};" role="img" aria-label="Thumbnail placeholder"></div>
+<div style="padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+<span style="display: flex; gap: 8px; align-items: center; font-size: 14px; font-weight: 600; color: var(--clay-700);">{{r.type}}<span aria-hidden="true" style="color: var(--ink-500);">·</span><span style="color: var(--ink-500); font-weight: 500;">{{r.topic}}</span></span>
+<h2 style="margin: 0; font-family: var(--font-sans); letter-spacing: 0; line-height: 1.22; font-size: 18px; font-weight: 600; color: var(--ink-900);">{{r.title}}</h2>
+<span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">{{r.blurb}}</span>
+<span style="margin-top: auto; font-size: 14px; color: var(--ink-600);">{{r.meta}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: center;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary">Load more resources</x-import></div>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":3290}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { type: 'All', topic: 'All topics' };
+  }
+  renderVals() {
+    const types = ['All', 'Guides', 'Checklists', 'Videos', 'Customer stories', 'Glossary'];
+    const topics = ['All topics', 'Getting started', 'Pricing and fees', 'Hardware', 'Online payments', 'Chargebacks', 'Funding', 'Banking'];
+    const bgs = ['#F5DDD0', '#F8E4C0', '#E6DACE', '#DCE6D0', '#EFE8DC', '#EBBBA1'];
+    const all = [
+      { type: 'Guides', topic: 'Pricing and fees', title: 'How to read a processing statement in 10 minutes', blurb: 'Find your effective rate, spot junk fees and know which lines to question.', meta: '8 min read' },
+      { type: 'Checklists', topic: 'Getting started', title: 'What you need to apply for a merchant account', blurb: 'EIN or SSN, bank details, ID and a few answers about your business.', meta: 'PDF checklist' },
+      { type: 'Guides', topic: 'Chargebacks', title: 'What to do when a customer disputes a charge', blurb: 'Deadlines, the evidence that wins and how to stop the next one.', meta: '7 min read' },
+      { type: 'Videos', topic: 'Hardware', title: 'Clover Flex: taking your first tableside payment', blurb: 'A two-minute walkthrough for new servers.', meta: '2 min video' },
+      { type: 'Customer stories', topic: 'Pricing and fees', title: 'A South Congress boutique on switching to dual pricing', blurb: 'How they told regulars, and what happened to their fees.', meta: '4 min read' },
+      { type: 'Guides', topic: 'Funding', title: 'When will my money land? Funding times explained', blurb: 'Batch cutoffs, next-day vs same-day, and why weekends wait.', meta: '5 min read' },
+      { type: 'Glossary', topic: 'Pricing and fees', title: 'Interchange, assessments and markup, defined', blurb: 'The three parts of every card fee in one page.', meta: 'Glossary' },
+      { type: 'Guides', topic: 'Online payments', title: 'Payment links vs a full online store', blurb: 'Which one you need, and when to upgrade.', meta: '6 min read' },
+      { type: 'Guides', topic: 'Banking', title: 'Why your business needs its own bank account', blurb: 'Cleaner books, faster approvals and fewer tax-time headaches.', meta: '5 min read' }
+    ];
+    const t = this.state.type, tp = this.state.topic;
+    const filtered = all.filter((r) => (t === 'All' || r.type === t) && (tp === 'All topics' || r.topic === tp));
+    const items = filtered.map((r, k) => Object.assign({}, r, { bg: bgs[k % bgs.length] }));
+    return {
+      ann: this.props.annotations !== false,
+      types: types.map((x) => ({ label: x, pressed: x === t ? 'true' : 'false', pick: () => this.setState({ type: x }) })),
+      topics: topics.map((x) => ({ label: x, pressed: x === tp ? 'true' : 'false', pick: () => this.setState({ topic: x }) })),
+      items: items,
+      count: items.length,
+      filterLabel: (t === 'All' && tp === 'All topics') ? '' : ('· ' + [t !== 'All' ? t : null, tp !== 'All topics' ? tp : null].filter(Boolean).join(', '))
+    };
+  }
+}
+</script>
+</body>
+</html>

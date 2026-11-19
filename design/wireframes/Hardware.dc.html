@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hardware catalog</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.rail{display:flex}
+.filter-btn{display:none}
+.cmp-btn{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #9B8E7E;background:#FFFFFF;font:600 14px/1 'Hanken Grotesk',sans-serif;color:#3B3128;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.cmp-btn[aria-pressed="true"]{background:#FBF1EC;border-color:#A44E2F;color:#833D26}
+.cmp-btn:disabled{opacity:.5;cursor:not-allowed}
+.lift{transition:transform 220ms cubic-bezier(.22,.61,.36,1),box-shadow 220ms}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+@media (max-width:900px){.rail{display:none}.filter-btn{display:inline-flex}}
+@media (max-width:760px){.sec{padding:64px 20px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="hardware" hint-size="100%,76px"></dc-import>
+
+<section class="sec" style="padding-top: 64px; padding-bottom: 40px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: compact)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+<div class="ib-eyebrow">Hardware</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.025em; color: var(--ink-900); max-width: 820px;">Find the right device for your counter, cart or <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">kitchen</em>.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700); max-width: 640px;">Buy outright or lease month to month. Every device arrives programmed for your account and ready for its first sale.</p>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 24px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -8px;">View: hardware_catalog · Search API + facets (exposed sort) · compare tray block</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+
+<aside class="rail" aria-label="Filters" style="flex: 1 1 250px; max-width: 280px; flex-direction: column; gap: 28px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; padding: 24px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-weight: 700; color: var(--ink-900); font-size: 18px;">Filters</span><button type="button" style="background: none; border: 0; color: var(--clay-600); font-weight: 600; font-size: 14px; cursor: pointer; padding: 8px 0;">Clear all</button></div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;"><legend style="font-size: 14px; font-weight: 600; color: var(--ink-500); margin-bottom: 10px;">Device type</legend>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Countertop terminal (4)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Handheld (2)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Mobile reader (2)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="POS system (3)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Self-order kiosk (1)"></x-import>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;"><legend style="font-size: 14px; font-weight: 600; color: var(--ink-500); margin-bottom: 10px;">Sales channel</legend>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="In store"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Tableside"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="On the go"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Online and in person"></x-import>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;"><legend style="font-size: 14px; font-weight: 600; color: var(--ink-500); margin-bottom: 10px;">Industry</legend>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Restaurants and bars"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Retail"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Salons and services"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Food trucks"></x-import>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;"><legend style="font-size: 14px; font-weight: 600; color: var(--ink-500); margin-bottom: 10px;">Manufacturer</legend>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Clover (7)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Dejavoo (2)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="PAX (1)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="Valor (1)"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="SwipeSimple (1)"></x-import>
+</fieldset>
+</aside>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+<div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+<button class="filter-btn" type="button" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--ink-400); background: var(--white); font-weight: 600; color: var(--ink-900); align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"></path><path d="M7 12h10"></path><path d="M10 18h4"></path></svg>Filters</button>
+<span style="font-size: 16px; color: var(--ink-700);"><strong style="color: var(--ink-900);">12 devices</strong> · All types</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<label for="sort" style="font-size: 14px; font-weight: 500; color: var(--ink-600);">Sort by</label>
+<div style="width: 220px;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="sort" options="{{sortOpts}}"></x-import></div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+<sc-for list="{{devices}}" as="d" hint-placeholder-count="12">
+<article class="lift" style="display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; overflow: hidden;">
+<a href="Device-CloverMini.dc.html" style="height: 170px; background: var(--ink-50); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--ink-100);" aria-hidden="true" tabindex="-1"><span style="display: block; width: {{d.w}}px; height: {{d.h}}px; background: var(--clove-800); border-radius: 14px; padding: 7px; box-shadow: var(--shadow-xl);"><span style="display: block; height: 66%; background: var(--paper); border-radius: 10px;"></span></span></a>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+<span style="font-size: 14px; color: var(--ink-500); font-weight: 500;">{{d.make}} · {{d.type}}</span>
+<h2 style="margin: 0; font-family: var(--font-sans); letter-spacing: 0; line-height: 1.22; font-size: 18px; font-weight: 600;"><a href="Device-CloverMini.dc.html" style="color: var(--ink-900); text-decoration: none;">{{d.name}}</a></h2>
+<span style="font-size: 14px; line-height: 1.6; color: var(--ink-700);">{{d.blurb}}</span>
+<div style="margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; gap: 2px;"><span style="font-weight: 700; font-size: 18px; color: var(--ink-900);">From ${{d.mo}}/mo</span><span style="font-size: 14px; color: var(--ink-600);">Buy from ${{d.buy}}</span></div>
+<div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+<button class="cmp-btn" type="button" aria-pressed="{{d.pressed}}" disabled="{{d.disabled}}" onClick="{{d.toggle}}">{{d.cmpLabel}}</button>
+<a href="Device-CloverMini.dc.html" aria-label="{{d.name}} details" style="margin-left: auto; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px;">Details</a>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: center; padding-top: 8px;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary">Show more devices</x-import></div>
+
+<div style="position: sticky; bottom: 16px; z-index: 10; background: var(--ink-900); color: var(--text-on-dark); border-radius: 20px; padding: 16px 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; box-shadow: var(--shadow-xl);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -30px; left: 0;">Compare tray · block--compare (max 3, session storage)</div></sc-if>
+<span style="font-weight: 600; margin-right: 6px;">Compare ({{count}}/3)</span>
+<sc-for list="{{slots}}" as="s" hint-placeholder-count="3">
+<sc-if value="{{s.filled}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 8px 0 14px; border-radius: 999px; background: rgba(243,235,222,0.12); font-size: 14px;">{{s.name}}<button type="button" aria-label="Remove {{s.name}}" onClick="{{s.remove}}" style="width: 32px; height: 32px; border-radius: 999px; border: 0; background: transparent; color: var(--text-on-dark); cursor: pointer; display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></span></sc-if>
+<sc-if value="{{s.empty}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px dashed rgba(243,235,222,0.4); font-size: 14px; color: var(--clove-100);">Add a device</span></sc-if>
+</sc-for>
+<span style="margin-left: auto;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" disabled="{{cantCompare}}">Compare devices</x-import></span>
+</div>
+</div>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":3540}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { compare: ['mini', 'z8'] };
+  }
+  renderVals() {
+    const all = [
+      { id: 'mini', name: 'Clover Mini', make: 'Clover', type: 'POS system', blurb: '8-inch all-in-one counter station with 500+ apps.', mo: '60', buy: '1,189', w: 130, h: 110 },
+      { id: 'flex', name: 'Clover Flex', make: 'Clover', type: 'Handheld', blurb: 'Tableside and curbside pay with a built-in printer.', mo: '50', buy: '1,029', w: 76, h: 140 },
+      { id: 'duo', name: 'Clover Station Duo', make: 'Clover', type: 'POS system', blurb: 'Dual-screen flagship POS for busy counters.', mo: '135', buy: '2,739', w: 150, h: 110 },
+      { id: 'solo', name: 'Clover Station Solo', make: 'Clover', type: 'POS system', blurb: 'Big-screen POS with printer for full service.', mo: '125', buy: '2,469', w: 150, h: 104 },
+      { id: 'compact', name: 'Clover Compact', make: 'Clover', type: 'Countertop terminal', blurb: 'A small, simple terminal for tight counters.', mo: '20', buy: '399', w: 86, h: 116 },
+      { id: 'go', name: 'Clover Go', make: 'Clover', type: 'Mobile reader', blurb: 'Pocket reader that pairs with your phone.', mo: '10', buy: '209', w: 76, h: 76 },
+      { id: 'kiosk', name: 'Clover Kiosk', make: 'Clover', type: 'Self-order kiosk', blurb: '24-inch self-order screen to shorten the line.', mo: '215', buy: '4,259', w: 90, h: 140 },
+      { id: 'z8', name: 'Dejavoo Z8', make: 'Dejavoo', type: 'Countertop terminal', blurb: 'Budget-friendly Wi-Fi terminal, dual pricing ready.', mo: '20', buy: '399', w: 90, h: 124 },
+      { id: 'qd4', name: 'Dejavoo QD4', make: 'Dejavoo', type: 'Countertop terminal', blurb: 'Android smart terminal with a large touchscreen.', mo: '25', buy: '499', w: 92, h: 128 },
+      { id: 'a920', name: 'PAX A920 Pro', make: 'PAX', type: 'Handheld', blurb: 'Flexible handheld for tableside and delivery.', mo: '35', buy: '749', w: 76, h: 136 },
+      { id: 'vp550', name: 'Valor VP550', make: 'Valor', type: 'Countertop terminal', blurb: 'Value Android countertop built for dual pricing.', mo: '30', buy: '599', w: 92, h: 124 },
+      { id: 'b350', name: 'SwipeSimple B350', make: 'SwipeSimple', type: 'Mobile reader', blurb: 'The lowest-cost reader for phones and tablets.', mo: '10', buy: '199', w: 72, h: 72 }
+    ];
+    const cmp = this.state.compare;
+    const full = cmp.length >= 3;
+    const toggle = (id) => () => {
+      const on = cmp.indexOf(id) >= 0;
+      if (on) this.setState({ compare: cmp.filter((x) => x !== id) });
+      else if (!full) this.setState({ compare: cmp.concat([id]) });
+    };
+    const devices = all.map((d) => {
+      const on = cmp.indexOf(d.id) >= 0;
+      return Object.assign({}, d, { pressed: on ? 'true' : 'false', cmpLabel: on ? 'Added to compare' : 'Compare', disabled: !on && full, toggle: toggle(d.id) });
+    });
+    const slots = [0, 1, 2].map((k) => {
+      const id = cmp[k];
+      const d = all.find((x) => x.id === id);
+      return { filled: !!d, empty: !d, name: d ? d.name : '', remove: d ? toggle(d.id) : null };
+    });
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      devices: devices,
+      slots: slots,
+      count: cmp.length,
+      cantCompare: cmp.length < 2,
+      sortOpts: [{ value: 'rec', label: 'Recommended' }, { value: 'mo', label: 'Monthly: low to high' }, { value: 'buy', label: 'Price: low to high' }, { value: 'new', label: 'Newest' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

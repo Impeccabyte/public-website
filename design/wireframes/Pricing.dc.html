@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pricing</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.cmp th,.cmp td{padding:18px 22px;border-bottom:1px solid #EFE8DC;text-align:left;vertical-align:top;font-size:15px;line-height:1.55}
+.cmp thead th{font-size:17px;font-weight:700;color:#2A211A;background:#F7F2E9;border-bottom:1px solid #E0D6C6}
+.cmp tbody th{font-weight:600;color:#2A211A;width:22%}
+.cmp td{color:#3B3128}
+.cmp .hl{background:#FBF1EC}
+.drop{border:2px dashed #A44E2F;border-radius:20px;background:#FBF1EC;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+@media (max-width:760px){.sec{padding:64px 20px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="pricing" hint-size="100%,76px"></dc-import>
+
+<!-- HERO -->
+<section class="sec" style="padding-top: 80px; padding-bottom: 48px; text-align: center;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: centered)</div></sc-if>
+<div style="max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+<div class="ib-eyebrow">Pricing</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink-900);">Pricing in <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">plain</em> English.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Three ways to pay for card processing. We'll tell you which one saves you the most, using your real statement, and put every fee in writing.</p>
+</div>
+</section>
+
+<!-- STARTING-AT CARDS -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Card grid · paragraph--pricing-cards (3 × card)</div></sc-if>
+<h2 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0;">Pricing programs</h2>
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: stretch;">
+<div style="display: flex; flex-direction: column; gap: 16px; padding: 32px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm);">
+<span style="font-size: 20px; font-weight: 600; color: var(--ink-900); min-height: 32px; display: flex; align-items: center;">Flat rate</span>
+<span style="font-size: 16px; color: var(--ink-700); line-height: 1.6; min-height: 77px;">One rate on every card. Easy to budget while you're getting started.</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; color: var(--ink-500); font-weight: 600;">Starting at</span><span style="font-family: var(--font-display); font-weight: 600; font-size: 38px; letter-spacing: -0.02em; color: var(--ink-900);">[X.X]% + [XX]¢</span><span style="font-size: 14px; color: var(--ink-600);">per card sale</span></span>
+<ul style="list-style: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--ink-100); display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Best for new and lower-volume businesses</li>
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Same cost for every card type</li>
+</ul>
+<span style="margin-top: auto;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" block="{{yes}}" as="a" href="Quote.dc.html">Get a flat-rate quote</x-import></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; padding: 32px; background: var(--white); border: 2px solid var(--clay-300); border-radius: 20px; box-shadow: var(--shadow-lg);">
+<span style="display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 32px;"><h3 style="margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Dual pricing</h3><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="brand" solid="{{yes}}">Lowest fees per sale</x-import></span>
+<span style="font-size: 16px; color: var(--ink-700); line-height: 1.6; min-height: 77px;">Show a cash price and a card price. Card customers cover the processing cost.</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; color: var(--ink-500); font-weight: 600;">Starting at</span><span style="font-family: var(--font-display); font-weight: 600; font-size: 38px; letter-spacing: -0.02em; color: var(--ink-900);">$19.95/mo</span><span style="font-size: 14px; color: var(--ink-600);">dual pricing software, plus gateway fees</span></span>
+<ul style="list-style: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--ink-100); display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Best for restaurants, retail and services</li>
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Signage and receipt setup included</li>
+</ul>
+<span style="margin-top: auto;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" block="{{yes}}" as="a" href="Solution-DualPricing.dc.html">See how dual pricing works</x-import></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; padding: 32px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm);">
+<span style="font-size: 20px; font-weight: 600; color: var(--ink-900); min-height: 32px; display: flex; align-items: center;">Interchange plus</span>
+<span style="font-size: 16px; color: var(--ink-700); line-height: 1.6; min-height: 77px;">You pay the card network's actual cost, plus one small markup we show in writing.</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; color: var(--ink-500); font-weight: 600;">Starting at</span><span style="font-family: var(--font-display); font-weight: 600; font-size: 38px; letter-spacing: -0.02em; color: var(--ink-900);">Cost + [0.XX]%</span><span style="font-size: 14px; color: var(--ink-600);">+ [XX]¢ per card sale</span></span>
+<ul style="list-style: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--ink-100); display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Best for steady, higher monthly volume</li>
+<li style="display: flex; gap: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"></path></svg>Most transparent statement</li>
+</ul>
+<span style="margin-top: auto;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" block="{{yes}}" as="a" href="Quote.dc.html">Get an interchange plus quote</x-import></span>
+</div>
+</div>
+<p style="max-width: 1240px; margin: 20px auto 0; font-size: 14px; color: var(--ink-500);">Hardware from $10/mo leased or $199 to own. Gateway fees depend on your setup and are listed on every quote.</p>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Comparison table · paragraph--comparison-table (3 columns)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<div class="ib-eyebrow">Side by side</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">How the three programs compare</h2>
+</div>
+<div style="overflow-x: auto; border: 1px solid var(--ink-200); border-radius: 20px;">
+<table class="cmp" style="width: 100%; min-width: 760px; border-collapse: collapse;">
+<thead><tr><th scope="col"><span style="position: absolute; left: -9999px;">Question</span></th><th scope="col">Flat rate</th><th scope="col" class="hl">Dual pricing</th><th scope="col">Interchange plus</th></tr></thead>
+<tbody>
+<tr><th scope="row">How it works</th><td>One percentage plus a few cents on every card sale.</td><td class="hl">Two prices at checkout. The card price covers the processing cost.</td><td>The network's real cost per card, plus one fixed markup.</td></tr>
+<tr><th scope="row">Who pays the fee</th><td>You</td><td class="hl">Customers who pay by card</td><td>You</td></tr>
+<tr><th scope="row">Monthly predictability</th><td>High. Same rate every time.</td><td class="hl">High. A fixed software fee.</td><td>Medium. Varies with card mix.</td></tr>
+<tr><th scope="row">Usually cheapest when</th><td>You process under about $[X],000 a month</td><td class="hl">Your customers are comfortable seeing two prices</td><td>You process steady, higher volume</td></tr>
+<tr><th scope="row">Setup needed</th><td>None</td><td class="hl">Signage and receipt setup, which we handle</td><td>None</td></tr>
+<tr><th scope="row" style="border-bottom: 0;">Statement clarity</th><td style="border-bottom: 0;">Simple</td><td class="hl" style="border-bottom: 0;">Simple</td><td style="border-bottom: 0;">Detailed, line by line</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- STATEMENT UPLOAD -->
+<section class="sec" id="statement">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Form · webform--statement_review (embedded via paragraph--webform)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<div class="ib-eyebrow">Free statement review</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Send us your statement. We'll do the math.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Upload one recent processing statement and a local specialist will show you, line by line, what you pay now and what you'd pay with us.</p>
+<ol style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+<li style="display: flex; gap: 16px;"><span style="width: 32px; height: 32px; border-radius: 999px; background: var(--clay-50); color: var(--clay-700); font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">1</span><span><strong style="color: var(--ink-900);">Upload a statement</strong><br><span style="font-size: 16px; color: var(--ink-600);">PDF or photo, any processor</span></span></li>
+<li style="display: flex; gap: 16px;"><span style="width: 32px; height: 32px; border-radius: 999px; background: var(--clay-50); color: var(--clay-700); font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">2</span><span><strong style="color: var(--ink-900);">We review it</strong><br><span style="font-size: 16px; color: var(--ink-600);">Usually within one business day</span></span></li>
+<li style="display: flex; gap: 16px;"><span style="width: 32px; height: 32px; border-radius: 999px; background: var(--clay-50); color: var(--clay-700); font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">3</span><span><strong style="color: var(--ink-900);">You get a written comparison</strong><br><span style="font-size: 16px; color: var(--ink-600);">No obligation to switch</span></span></li>
+</ol>
+<div style="display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--ink-600); margin-top: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Encrypted upload. We never share your statement.</div>
+</div>
+<form style="flex: 1.4 1 520px; min-width: 0; background: var(--white); border: 1px solid var(--ink-200); border-radius: 28px; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px; box-shadow: var(--shadow-md);" aria-label="Statement review request">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Your name" placeholder="Jordan Reyes" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Business name" placeholder="Reyes Barbershop" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Email" type="email" placeholder="you@yourbusiness.com" required="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Input" label="Phone" type="tel" placeholder="(512) 555-0123" hint="Optional"></x-import>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<label for="takepay" style="font-size: 14px; font-weight: 600; color: var(--ink-900);">How do you take payments today?</label>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Select" id="takepay" options="{{payOpts}}"></x-import>
+</div>
+<div class="drop">
+<span style="width: 52px; height: 52px; border-radius: 999px; background: var(--white); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m17 8-5-5-5 5"></path><path d="M12 3v12"></path></svg></span>
+<span style="font-weight: 600; color: var(--ink-900);">Drag your statement here</span>
+<span style="font-size: 14px; color: var(--ink-600);">PDF, JPG or PNG, up to 10 MB</span>
+<label style="margin-top: 6px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--ink-400); background: var(--white); font-weight: 600; color: var(--ink-900); display: inline-flex; align-items: center; cursor: pointer;">Choose a file<input type="file" accept=".pdf,.jpg,.png" style="position: absolute; width: 1px; height: 1px; opacity: 0;"></label>
+</div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Checkbox" label="It's okay to contact me about this review" description="We'll only use your details to send your comparison." default-checked="{{yes}}"></x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" block="{{yes}}" type="submit">Send my statement</x-import>
+</form>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">FAQ accordion · paragraph--faq</div></sc-if>
+<div style="max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900); text-align: center;">Pricing questions</h2>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Accordion" items="{{faqs}}" default-open="{{firstOpen}}"></x-import>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":4400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      firstOpen: [0],
+      payOpts: ['Countertop terminal', 'Full POS system', 'Mobile reader or phone', 'Online only', 'A mix of these', 'I am not taking cards yet'],
+      faqs: [
+        { question: 'Are there monthly fees?', answer: 'Some setups have them, for example dual pricing software, a gateway or Clover platform fees. Every one is listed on your quote before you sign.' },
+        { question: 'Is there a contract or cancellation fee?', answer: 'Your agreement terms are spelled out on your quote. Ask us anything before you sign, and we will answer in plain English. [Confirm current term and cancellation policy.]' },
+        { question: 'Why do you need my statement?', answer: 'Your statement shows your real card mix and volume, which is the only honest way to compare programs. Without it, any savings number is a guess.' },
+        { question: 'Can I change programs later?', answer: 'Yes. If your business changes, we will review your numbers and move you to the program that fits.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

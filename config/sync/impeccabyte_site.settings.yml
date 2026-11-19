@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: PcGUii-EJfxJp3R9gkmdDsGQp_sed3blxMVUEBO-ZbI
+show_prices: false
+price_placeholder: 'Pricing coming soon'
+quote_path: /get-a-quote

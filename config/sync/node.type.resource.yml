@@ -1,0 +1,11 @@
+uuid: 84adaef2-8a9c-49d4-9355-61d2397f9939
+langcode: en
+status: true
+dependencies: {  }
+name: Resource
+type: resource
+description: 'A guide, checklist, video, customer story or glossary entry.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

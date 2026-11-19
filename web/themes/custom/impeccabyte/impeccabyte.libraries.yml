@@ -1,0 +1,18 @@
+global:
+  version: 1.x
+  css:
+    base:
+      css/tokens.css: {}
+      css/base.css: {}
+    component:
+      css/a11y.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+# Swap this for self-hosted woff2 files before launch.
+fonts:
+  version: 1.x
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap': { type: external }

@@ -1,0 +1,9 @@
+uuid: 9dced397-17b7-4aef-a6f0-d086bf798293
+langcode: en
+status: true
+dependencies: {  }
+name: 'Solution category'
+vid: solution_category
+description: 'Groups solutions in the menu.'
+weight: 0
+new_revision: false

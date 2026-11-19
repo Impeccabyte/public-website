@@ -1,0 +1,23 @@
+uuid: 6aa29c68-1bfd-4ad5-a066-000e90524683
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.industry_page
+  module:
+    - node
+id: industry_page
+label: 'Industry pages'
+type: 'canonical_entities:node'
+pattern: '/industries/[node:title]'
+selection_criteria:
+  0f9494fb-c366-4809-adc0-3120cbace132:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      industry_page: industry_page
+selection_logic: and
+weight: 0
+relationships: {  }

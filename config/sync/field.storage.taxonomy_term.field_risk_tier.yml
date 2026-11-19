@@ -1,0 +1,27 @@
+uuid: a8c03e09-fdaa-4e82-bfc3-ff18f5b043d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_risk_tier
+field_name: field_risk_tier
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: standard
+      label: Standard
+    -
+      value: specialty
+      label: Specialty
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

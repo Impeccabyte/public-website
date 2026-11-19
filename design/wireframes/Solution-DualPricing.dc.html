@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dual pricing</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.lift{transition:transform 220ms cubic-bezier(.22,.61,.36,1),box-shadow 220ms}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.range{width:100%;accent-color:#C0623E;height:44px}
+@media (max-width:760px){.sec{padding:64px 20px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="solutions" hint-size="100%,76px"></dc-import>
+
+<!-- HERO -->
+<section class="sec" style="padding-top: 48px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: split + media) · breadcrumb block</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: var(--ink-600); display: flex; gap: 8px; flex-wrap: wrap;"><a href="Main.dc.html" style="text-decoration: none; display: inline-block; padding: 2px 0;">Solutions</a><span aria-hidden="true">/</span><a href="Pricing.dc.html" style="text-decoration: none; display: inline-block; padding: 2px 0;">Lower your costs</a><span aria-hidden="true">/</span><span aria-current="page">Dual pricing</span></nav>
+<div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+<div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 24px; min-width: 0;">
+<div class="ib-eyebrow">Dual pricing</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink-900);">Keep the <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">whole</em> sale, not most of it.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700); max-width: 560px;">Dual pricing shows customers a cash price and a card price at checkout. Card customers cover the cost of processing, so the fee on most sales comes off your bill.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Get a dual pricing quote</x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" size="lg" as="a" href="#savings">Estimate my savings</x-import>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center;">
+<div role="img" aria-label="Example receipt showing a cash price of $40.00 and a card price of $41.60" style="width: 100%; max-width: 360px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; padding: 28px; box-shadow: var(--shadow-xl); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-800); display: flex; flex-direction: column; gap: 12px;">
+<div style="text-align: center; font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--ink-900);">South Lamar Coffee Co.</div>
+<div style="text-align: center; color: var(--ink-500); font-size: 12px;">Example receipt</div>
+<div style="border-top: 1px dashed var(--ink-300); margin: 6px 0;"></div>
+<div style="display: flex; justify-content: space-between;"><span>2 × Oat latte</span><span>$12.00</span></div>
+<div style="display: flex; justify-content: space-between;"><span>1 × Breakfast taco</span><span>$6.50</span></div>
+<div style="display: flex; justify-content: space-between;"><span>1 × Bag of beans</span><span>$21.50</span></div>
+<div style="border-top: 1px dashed var(--ink-300); margin: 6px 0;"></div>
+<div style="display: flex; justify-content: space-between; color: var(--ink-600);"><span>Cash price</span><span>$40.00</span></div>
+<div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--ink-900); background: var(--clay-50); margin: 0 -10px; padding: 8px 10px; border-radius: 10px;"><span>Card price</span><span>$41.60</span></div>
+<div style="font-size: 11px; color: var(--ink-500); line-height: 1.6; margin-top: 4px;">Card price includes a 4% non-cash adjustment. Pay with cash to save $1.60.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STEPS -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Steps · paragraph--steps (4 × step)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<div class="ib-eyebrow">How it works</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Four steps, and we handle most of them</h2>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+<li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 999px; background: var(--clay-500); color: var(--white); font-weight: 700; font-size: 20px; display: inline-flex; align-items: center; justify-content: center;">1</span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">We set up both prices</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">We program your terminal to show a cash price and a card price on every sale. No repricing your menu by hand.</span></li>
+<li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 999px; background: var(--clay-500); color: var(--white); font-weight: 700; font-size: 20px; display: inline-flex; align-items: center; justify-content: center;">2</span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Customers see it up front</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Signage at the door and register, plus a clear receipt, show both prices before anyone pays.</span></li>
+<li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 999px; background: var(--clay-500); color: var(--white); font-weight: 700; font-size: 20px; display: inline-flex; align-items: center; justify-content: center;">3</span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">The card price covers processing</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">The small difference offsets what the card networks charge, so it stops coming out of your margin.</span></li>
+<li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 999px; background: var(--clay-500); color: var(--white); font-weight: 700; font-size: 20px; display: inline-flex; align-items: center; justify-content: center;">4</span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">We review your first month</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">After your first statement we sit down together and check the savings, line by line.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- SAVINGS COMPARISON -->
+<section class="sec" id="savings">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Comparison table · paragraph--comparison-table (variant: savings estimator)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 20px; min-width: 0;">
+<div class="ib-eyebrow">Savings comparison</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">See what a month could look like</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">Move the slider to your typical monthly card sales. The estimate updates for each pricing program.</p>
+<label for="vol" style="font-weight: 600; color: var(--ink-900); margin-top: 8px;">Monthly card sales: <span style="color: var(--clay-600);">${{volLabel}}</span></label>
+<input id="vol" class="range" type="range" min="5000" max="150000" step="5000" value="{{vol}}" onChange="{{setVol}}" onInput="{{setVol}}">
+<div style="display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-500);"><span>$5,000</span><span>$150,000</span></div>
+<p style="margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: var(--ink-500);">Example only. Assumes a 2.9% + 30¢ flat rate, a 2.3% + 10¢ blended interchange plus cost, a $25 average ticket and a $19.95 monthly dual pricing software fee. Your real numbers come from your statement.</p>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; overflow-x: auto; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; box-shadow: var(--shadow-sm);">
+<table style="width: 100%; min-width: 520px; border-collapse: collapse; font-size: 16px;">
+<thead><tr style="text-align: left;"><th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 600; color: var(--ink-500); border-bottom: 1px solid var(--ink-200);">Pricing program</th><th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 600; color: var(--ink-500); border-bottom: 1px solid var(--ink-200);">Est. monthly cost</th><th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 600; color: var(--ink-500); border-bottom: 1px solid var(--ink-200);">Per year</th></tr></thead>
+<tbody>
+<tr><th scope="row" style="text-align: left; padding: 20px 24px; font-weight: 600; color: var(--ink-900); border-bottom: 1px solid var(--ink-100);">Flat rate</th><td style="padding: 20px 24px; border-bottom: 1px solid var(--ink-100);">${{flat}}</td><td style="padding: 20px 24px; border-bottom: 1px solid var(--ink-100); color: var(--ink-600);">${{flatY}}</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 20px 24px; font-weight: 600; color: var(--ink-900); border-bottom: 1px solid var(--ink-100);">Interchange plus</th><td style="padding: 20px 24px; border-bottom: 1px solid var(--ink-100);">${{icp}}</td><td style="padding: 20px 24px; border-bottom: 1px solid var(--ink-100); color: var(--ink-600);">${{icpY}}</td></tr>
+<tr style="background: var(--clay-50);"><th scope="row" style="text-align: left; padding: 20px 24px; font-weight: 700; color: var(--ink-900);">Dual pricing <x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="brand" size="sm">Lowest</x-import></th><td style="padding: 20px 24px; font-weight: 700; color: var(--ink-900);">$19.95</td><td style="padding: 20px 24px; font-weight: 600; color: var(--sage-600);">Save about ${{save}}/yr</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- COMPATIBLE DEVICES -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Card grid · paragraph--card-grid (refs: node--device filtered by "dual pricing ready")</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Devices that are dual pricing ready</h2>
+<a href="Hardware.dc.html" style="font-weight: 600; text-decoration: none;">See all hardware</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+<sc-for list="{{devices}}" as="d" hint-placeholder-count="4">
+<a href="Device-CloverMini.dc.html" class="lift" style="display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit;">
+<div style="height: 160px; background: var(--ink-50); display: flex; align-items: center; justify-content: center;" role="img" aria-label="{{d.name}} photo placeholder"><div style="width: 86px; height: 120px; background: var(--clove-800); border-radius: 14px; padding: 7px;"><div style="height: 62%; background: var(--paper); border-radius: 10px;"></div></div></div>
+<div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 14px; color: var(--ink-500); font-weight: 500;">{{d.type}}</span>
+<h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">{{d.name}}</h3>
+<span style="display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 16px;"><span style="font-weight: 700; color: var(--ink-900);">From ${{d.mo}}/mo</span><span style="color: var(--ink-600);">Buy from ${{d.buy}}</span></span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- COMPLIANCE CALLOUT -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Callout · paragraph--callout (variant: warning)</div></sc-if>
+<div style="max-width: 1080px; margin: 0 auto;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Callout" variant="warning" title="Staying compliant is part of the setup">We provide door and register signage, set up receipts that show both prices, and keep an eye on card-brand rule changes for you. Dual pricing is not the same as surcharging, which has separate rules and caps. If you are unsure which fits your business, we'll walk you through it before anything changes at your counter.</x-import>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">FAQ accordion · paragraph--faq</div></sc-if>
+<div style="max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900); text-align: center;">Dual pricing questions</h2>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Accordion" items="{{faqs}}" default-open="{{firstOpen}}"></x-import>
+</div>
+</section>
+
+<!-- RELATED RESOURCES -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Resource list · paragraph--related-resources (refs: node--resource)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Keep reading</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+<a href="Resources.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="align-self: flex-start;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="brand">Guide</x-import></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Dual pricing vs surcharging: what's the difference?</h3><span style="font-size: 16px; color: var(--ink-600);">6 min read</span></a>
+<a href="Resources.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="align-self: flex-start;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="accent">Checklist</x-import></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">Signage and receipt checklist for dual pricing</h3><span style="font-size: 16px; color: var(--ink-600);">PDF download</span></a>
+<a href="Resources.dc.html" class="lift" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="align-self: flex-start;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="success">Customer story</x-import></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">How a South Congress boutique talked to regulars about the switch</h3><span style="font-size: 16px; color: var(--ink-600);">4 min read</span></a>
+</div>
+</div>
+</section>
+
+<!-- CTA BAND -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">CTA band · paragraph--cta-band (variant: clove)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; background: var(--clove-800); border-radius: 36px; padding: clamp(40px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;">
+<h2 style="flex: 1 1 520px; margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; color: var(--white);">Ready to stop paying to get paid?</h2>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Get a dual pricing quote</x-import>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":5220}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { vol: 30000 };
+  }
+  renderVals() {
+    const v = this.state.vol;
+    const fmt = (n) => Math.round(n).toLocaleString('en-US');
+    const txns = v / 25;
+    const flat = v * 0.029 + txns * 0.30;
+    const icp = v * 0.023 + txns * 0.10;
+    const dual = 19.95;
+    return {
+      ann: this.props.annotations !== false,
+      vol: v,
+      volLabel: fmt(v),
+      setVol: (e) => this.setState({ vol: Number(e.target.value) }),
+      flat: fmt(flat), flatY: fmt(flat * 12),
+      icp: fmt(icp), icpY: fmt(icp * 12),
+      save: fmt((flat - dual) * 12),
+      firstOpen: [0],
+      devices: [
+        { name: 'Dejavoo Z8', type: 'Countertop terminal', mo: '20', buy: '399' },
+        { name: 'Dejavoo QD4', type: 'Smart terminal', mo: '25', buy: '499' },
+        { name: 'Valor VP550', type: 'Countertop terminal', mo: '30', buy: '599' },
+        { name: 'PAX A920 Pro', type: 'Handheld', mo: '35', buy: '749' }
+      ],
+      faqs: [
+        { question: 'Will my customers be upset?', answer: 'Most customers already see cash and card prices at gas stations, so it rarely surprises anyone. Clear signage does the explaining, and cash stays an option for anyone who wants the lower price.' },
+        { question: 'Does it apply to debit cards too?', answer: 'Yes. Under dual pricing the card price applies to every card, credit or debit. That keeps it simple at the register and consistent with card-brand rules.' },
+        { question: 'What does it cost me each month?', answer: 'Dual pricing software is $19.95 a month, plus any gateway or hardware fees for your setup. Your quote lists every line so there are no surprises.' },
+        { question: 'Can I switch back later?', answer: 'Yes. If dual pricing is not right for your business, we can move you to interchange plus or a flat rate. We will review the numbers with you first.' },
+        { question: 'Do I need new hardware?', answer: 'Not always. Many Dejavoo, PAX and Valor terminals can be reprogrammed. If yours cannot, we will recommend a device that fits your counter and budget.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

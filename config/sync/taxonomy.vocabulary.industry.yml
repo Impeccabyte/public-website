@@ -1,0 +1,9 @@
+uuid: 8f4b874e-e516-4f3b-8115-e0c9f08ebc19
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+vid: industry
+description: 'The kinds of business the site speaks to. Two levels at most.'
+weight: 0
+new_revision: false

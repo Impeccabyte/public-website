@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clover Mini</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.thumb{width:84px;height:84px;border-radius:14px;border:1.5px solid #9B8E7E;background:#F7F2E9;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.thumb[aria-pressed="true"]{border-color:#A44E2F;box-shadow:0 0 0 3px #F5DDD0}
+.pay{text-align:left;padding:20px;border-radius:20px;border:1.5px solid #9B8E7E;background:#FFFFFF;cursor:pointer;display:flex;flex-direction:column;gap:8px;font:inherit;color:inherit;min-width:0}
+.pay:hover{border-color:#A44E2F}
+.pay[aria-selected="true"]{border-color:#A44E2F;background:#FBF1EC;box-shadow:0 0 0 3px #F5DDD0}
+.lift{transition:transform 220ms cubic-bezier(.22,.61,.36,1),box-shadow 220ms}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.spec th,.spec td{padding:16px 20px;border-bottom:1px solid #EFE8DC;text-align:left;vertical-align:top;font-size:15px}
+.spec th{width:34%;font-weight:600;color:#2A211A}
+.spec td{color:#3B3128}
+@media (max-width:760px){.sec{padding:64px 20px}.thumb{width:64px;height:64px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="hardware" hint-size="100%,76px"></dc-import>
+
+<!-- PRODUCT TOP -->
+<section class="sec" style="padding-top: 48px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">node--device (full) · field_gallery + field_pricing (buy/lease tabs)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: var(--ink-600); display: flex; gap: 8px; flex-wrap: wrap;"><a href="Hardware.dc.html" style="text-decoration: none; display: inline-block; padding: 2px 0;">Hardware</a><span aria-hidden="true">/</span><a href="Hardware.dc.html" style="text-decoration: none; display: inline-block; padding: 2px 0;">POS systems</a><span aria-hidden="true">/</span><span aria-current="page">Clover Mini</span></nav>
+<div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start;">
+
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<div style="aspect-ratio: 1 / 0.86; background: var(--white); border: 1px solid var(--ink-200); border-radius: 28px; display: flex; align-items: center; justify-content: center; position: relative;" role="img" aria-label="{{viewLabel}}">
+<sc-if value="{{v0}}" hint-placeholder-val="{{true}}"><div style="width: 300px; height: 250px; background: var(--clove-800); border-radius: 28px; padding: 16px; box-shadow: var(--shadow-xl);"><div style="height: 100%; background: var(--paper); border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;"><span style="font-size: 14px; color: var(--ink-500); font-weight: 600;">Total</span><span style="font-family: var(--font-display); font-size: 38px; font-weight: 600; color: var(--ink-900);">$18.75</span><span style="font-size: 14px; color: var(--ink-600);">Tap, insert or swipe</span></div></div></sc-if>
+<sc-if value="{{v1}}" hint-placeholder-val="{{false}}"><div style="width: 120px; height: 250px; background: var(--clove-800); border-radius: 28px; box-shadow: var(--shadow-xl);"></div></sc-if>
+<sc-if value="{{v2}}" hint-placeholder-val="{{false}}"><div style="width: 320px; height: 200px; background: var(--clove-700); border-radius: 28px 28px 20px 20px; box-shadow: var(--shadow-xl);"></div></sc-if>
+<sc-if value="{{v3}}" hint-placeholder-val="{{false}}"><div style="display: flex; gap: 20px; align-items: flex-end;"><div style="width: 220px; height: 180px; background: var(--clove-800); border-radius: 20px;"></div><div style="width: 90px; height: 60px; background: var(--ink-200); border-radius: 14px;"></div><div style="width: 60px; height: 90px; background: var(--ink-300); border-radius: 14px;"></div></div></sc-if>
+<span style="position: absolute; bottom: 16px; left: 16px; font-size: 12px; font-weight: 600; color: var(--ink-600); background: var(--ink-50); border-radius: 999px; padding: 6px 12px;">Product photo · {{viewName}}</span>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap;" role="group" aria-label="Gallery views">
+<sc-for list="{{views}}" as="g" hint-placeholder-count="4">
+<button class="thumb" type="button" aria-pressed="{{g.pressed}}" aria-label="Show {{g.name}}" onClick="{{g.pick}}"><span style="display: block; width: 34px; height: 30px; background: var(--clove-700); border-radius: 6px;"></span></button>
+</sc-for>
+</div>
+</div>
+
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; gap: 8px; flex-wrap: wrap;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral">Clover</x-import><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="brand">POS system</x-import><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="success" dot="{{yes}}">In stock</x-import></div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.025em; color: var(--ink-900);">Clover Mini</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">A full point of sale on a small footprint. Take every way to pay, track inventory and sales, and add the apps you need, all from an 8-inch screen.</p>
+<div role="tablist" aria-label="Lease or buy" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+<sc-for list="{{payOpts}}" as="o" hint-placeholder-count="2">
+<button class="pay" type="button" role="tab" id="{{o.tabId}}" aria-selected="{{o.sel}}" aria-controls="pay-panel" onClick="{{o.pick}}">
+<span style="display: flex; justify-content: space-between; align-items: center; gap: 8px;"><span style="font-size: 14px; font-weight: 600; color: var(--ink-700);">{{o.name}}</span>
+<sc-if value="{{o.on}}" hint-placeholder-val="{{true}}"><span style="width: 24px; height: 24px; border-radius: 999px; background: var(--clay-600); color: var(--white); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+<sc-if value="{{o.off}}" hint-placeholder-val="{{false}}"><span style="width: 24px; height: 24px; border-radius: 999px; border: 1.5px solid var(--ink-500); background: var(--white);" aria-hidden="true"></span></sc-if>
+</span>
+<span style="font-family: var(--font-display); font-weight: 600; font-size: 38px; letter-spacing: -0.02em; line-height: 1.08; color: var(--ink-900);">{{o.price}}<span style="font-family: var(--font-sans); font-size: 16px; font-weight: 500; letter-spacing: 0; color: var(--ink-600);"> {{o.unit}}</span></span>
+<span style="font-size: 14px; color: var(--ink-700);">{{o.note}}</span>
+</button>
+</sc-for>
+</div>
+<div id="pay-panel" role="tabpanel" aria-labelledby="{{activeTabId}}" style="background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+<sc-if value="{{isLease}}" hint-placeholder-val="{{true}}"><p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-800);"><strong style="color: var(--ink-900);">Leasing:</strong> month to month, with the starter kit and 3-year protection included.</p></sc-if>
+<sc-if value="{{isBuy}}" hint-placeholder-val="{{false}}"><p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-800);"><strong style="color: var(--ink-900);">Buying:</strong> one payment and the device is yours, with the starter kit and 3-year protection included.</p></sc-if>
+<div style="font-size: 14px; font-weight: 600; color: var(--ink-600); margin-bottom: -8px;">Monthly software fees, either way</div>
+<div style="border-top: 1px solid var(--ink-100); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink-700);">
+<div style="display: flex; justify-content: space-between;"><span>Clover platform fee</span><span style="font-weight: 600; color: var(--ink-900);">$9.95/mo</span></div>
+<div style="display: flex; justify-content: space-between;"><span>Security and encryption (TransArmor)</span><span style="font-weight: 600; color: var(--ink-900);">$9.95/mo</span></div>
+<div style="display: flex; justify-content: space-between;"><span>Cellular data, optional</span><span style="font-weight: 600; color: var(--ink-900);">$44.95/mo</span></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Get a quote for this device</x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" size="lg" as="a" href="Hardware.dc.html">Add to compare</x-import>
+</div>
+<ul style="list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 20px; font-size: 16px; color: var(--ink-800);">
+<li style="display: flex; gap: 12px; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Tap, chip, swipe and EBT</li>
+<li style="display: flex; gap: 12px; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Apple Pay and Google Pay</li>
+<li style="display: flex; gap: 12px; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>500+ apps in the Clover App Market</li>
+<li style="display: flex; gap: 12px; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E7A4F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Ships programmed for your account</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SPECS + GATEWAYS -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Spec table · field_specs (key/value) · Compatible gateways · field_gateways</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+<div style="flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Specs</h2>
+<div style="overflow-x: auto; border: 1px solid var(--ink-200); border-radius: 20px;">
+<table class="spec" style="width: 100%; min-width: 480px; border-collapse: collapse;">
+<tbody>
+<tr><th scope="row">Screen</th><td>8-inch touchscreen</td></tr>
+<tr><th scope="row">Payments accepted</th><td>Contactless (Apple Pay, Google Pay), EMV chip with PIN or signature, magstripe, EBT</td></tr>
+<tr><th scope="row">Size</th><td>4.2 × 8.3 × 6.7 in.</td></tr>
+<tr><th scope="row">Connectivity</th><td>Wi-Fi, Ethernet and LTE (cellular data plan optional)</td></tr>
+<tr><th scope="row">Receipt printer</th><td>[Confirm with current Clover spec sheet]</td></tr>
+<tr><th scope="row">Software</th><td>Register, orders, rewards, customers, reporting and time clock built in</td></tr>
+<tr><th scope="row">In the box</th><td>Clover Mini, starter kit</td></tr>
+<tr style="border-bottom: 0;"><th scope="row" style="border-bottom: 0;">Protection</th><td style="border-bottom: 0;">3-year protection included</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Compatible gateways</h2>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid var(--ink-200); background: var(--paper);"><span style="width: 40px; height: 40px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg></span><span><span style="display: block; font-weight: 600; color: var(--ink-900);">Clover (native)</span><span style="display: block; font-size: 14px; color: var(--ink-600); line-height: 1.6;">Runs on Clover's own gateway with the Clover web dashboard.</span></span></div>
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid var(--ink-200); background: var(--paper);"><span style="width: 40px; height: 40px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span><span><span style="display: block; font-weight: 600; color: var(--ink-900);">Clover virtual terminal</span><span style="display: block; font-size: 14px; color: var(--ink-600); line-height: 1.6;">Key in phone orders and send invoices from any browser.</span></span></div>
+</div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Callout" variant="info">Need NMI, Authorize.net or another third-party gateway? Clover devices do not support them. Look at Dejavoo or PAX instead.</x-import>
+</div>
+</div>
+</section>
+
+<!-- DOWNLOADS -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Downloads · field_documents (media--document)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">Guides and spec sheets</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+<a href="Resources.dc.html" class="lift" style="display: flex; gap: 16px; align-items: center; padding: 20px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="width: 48px; height: 56px; border-radius: 10px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span><span style="flex: 1;"><span style="display: block; font-weight: 600; color: var(--ink-900);">Clover Mini spec sheet</span><span style="display: block; font-size: 14px; color: var(--ink-600);">PDF · 2 pages</span></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A44E2F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+<a href="Resources.dc.html" class="lift" style="display: flex; gap: 16px; align-items: center; padding: 20px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="width: 48px; height: 56px; border-radius: 10px; background: var(--amber-50); color: var(--amber-700); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span><span style="flex: 1;"><span style="display: block; font-weight: 600; color: var(--ink-900);">Quick reference guide: retail</span><span style="display: block; font-size: 14px; color: var(--ink-600);">PDF · sales, refunds, closing out</span></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A44E2F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+<a href="Resources.dc.html" class="lift" style="display: flex; gap: 16px; align-items: center; padding: 20px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; text-decoration: none; color: inherit;"><span style="width: 48px; height: 56px; border-radius: 10px; background: var(--amber-50); color: var(--amber-700); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span><span style="flex: 1;"><span style="display: block; font-weight: 600; color: var(--ink-900);">Quick reference guide: restaurant</span><span style="display: block; font-size: 14px; color: var(--ink-600);">PDF · tips, tabs, split checks</span></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A44E2F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- RELATED -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">Card grid · field_related_devices (view mode: teaser)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 30px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">You might also consider</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<sc-for list="{{related}}" as="d" hint-placeholder-count="4">
+<a href="Device-CloverMini.dc.html" class="lift" style="display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit;">
+<div style="height: 150px; background: var(--ink-50); display: flex; align-items: center; justify-content: center;" role="img" aria-label="{{d.name}} photo placeholder"><div style="width: 90px; height: 110px; background: var(--clove-800); border-radius: 14px; padding: 7px;"><div style="height: 62%; background: var(--paper); border-radius: 10px;"></div></div></div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 14px; color: var(--ink-500);">{{d.type}}</span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">{{d.name}}</h3><span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-top: 8px; font-size: 16px;"><span style="font-weight: 700; color: var(--ink-900);">From ${{d.mo}}/mo</span><span style="color: var(--ink-600);">Buy from ${{d.buy}}</span></span></div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":3670}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { view: 0, tab: 'lease' };
+  }
+  renderVals() {
+    const names = ['Front view', 'Side view', 'Back view', 'What is in the box'];
+    const v = this.state.view;
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      v0: v === 0, v1: v === 1, v2: v === 2, v3: v === 3,
+      viewName: names[v],
+      viewLabel: 'Clover Mini, ' + names[v].toLowerCase(),
+      views: names.map((n, k) => ({ name: n, pressed: k === v ? 'true' : 'false', pick: () => this.setState({ view: k }) })),
+      tab: this.state.tab,
+      isLease: this.state.tab === 'lease',
+      isBuy: this.state.tab === 'buy',
+      activeTabId: 'pay-tab-' + this.state.tab,
+      payOpts: [
+        { id: 'lease', name: 'Lease', price: '$60', unit: 'a month', note: 'Month to month' },
+        { id: 'buy', name: 'Buy', price: '$1,189', unit: 'one time', note: 'Yours to keep' }
+      ].map((o) => { const on = this.state.tab === o.id; return Object.assign({}, o, { tabId: 'pay-tab-' + o.id, on: on, off: !on, sel: on ? 'true' : 'false', pick: () => this.setState({ tab: o.id }) }); }),
+      related: [
+        { name: 'Clover Flex', type: 'Handheld', mo: '50', buy: '1,029' },
+        { name: 'Clover Station Solo', type: 'POS system', mo: '125', buy: '2,469' },
+        { name: 'Clover Compact', type: 'Countertop terminal', mo: '20', buy: '399' },
+        { name: 'Dejavoo QD4', type: 'Countertop terminal', mo: '25', buy: '499' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

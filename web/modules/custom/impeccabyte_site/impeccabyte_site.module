@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Site-wide behavior for the Impeccabyte marketing site.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_build_defaults_alter().
+ *
+ * Anything that can show a price is rebuilt when "Show prices" changes.
+ */
+function impeccabyte_site_entity_build_defaults_alter(array &$build, EntityInterface $entity, $view_mode) {
+  if (in_array($entity->getEntityTypeId(), ['node', 'paragraph'], TRUE)) {
+    $build['#cache']['tags'][] = 'config:impeccabyte_site.settings';
+  }
+}

@@ -1,0 +1,12 @@
+name: Impeccabyte
+type: theme
+description: 'Impeccabyte marketing site theme. Warm clay, amber and clove on cream paper.'
+core_version_requirement: ^11
+base theme: false
+libraries:
+  - impeccabyte/global
+regions:
+  header: Header
+  highlighted: Highlighted
+  content: Content
+  footer: Footer

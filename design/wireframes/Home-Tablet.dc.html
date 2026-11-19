@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home, tablet</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>body{margin:0;background:#FAF6EF}</style>
+</helmet>
+<div style="background: var(--paper);">
+<dc-import name="Main" annotations="{{ann}}" hint-size="100%,6700px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":834,"height":9140}}'>
+class Component extends DCLogic {
+  renderVals() { return { ann: this.props.annotations !== false }; }
+}
+</script>
+</body>
+</html>

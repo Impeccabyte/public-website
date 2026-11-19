@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Restaurants and bars</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#FAF6EF}
+a{color:#A44E2F}a:hover{color:#833D26}
+.sec{position:relative;padding:112px 24px}
+.dp-tag{position:absolute;top:16px;left:16px;z-index:5;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+@media (max-width:760px){.sec{padding:64px 20px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<div style="background: var(--paper); color: var(--ink-800); font-family: var(--font-sans); min-height: 100vh;">
+<dc-import name="Header" annotations="{{ann}}" active="industries" hint-size="100%,76px"></dc-import>
+
+<!-- HERO -->
+<section class="sec" style="padding-top: 80px;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Hero · paragraph--hero (variant: image right) · taxonomy term: industry</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+<div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 24px; min-width: 0;">
+<div class="ib-eyebrow">Restaurants and bars</div>
+<h1 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink-900);">Faster tables, cleaner tips, <em style="font-style: italic; font-weight: 500; color: var(--clay-500);">smaller</em> fees.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700); max-width: 560px;">From taco trucks to sit-down dining rooms, we set up payments that keep the line moving and the margins intact. One local team for your hardware, pricing and support.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Get a restaurant quote</x-import>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="secondary" size="lg" as="a" href="#setup">See a sample setup</x-import>
+</div>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; height: 440px; border-radius: 36px; background: var(--clove-700); position: relative; overflow: hidden;" role="img" aria-label="Photo placeholder: a server taking payment tableside with a handheld terminal">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--clove-100); font-size: 14px; font-weight: 500;">Photo: tableside payment at an Austin restaurant</div>
+<div style="position: absolute; left: 24px; bottom: 24px; background: var(--white); border-radius: 20px; padding: 16px 18px; display: flex; gap: 12px; align-items: center; box-shadow: var(--shadow-xl);">
+<span style="width: 40px; height: 40px; border-radius: 14px; background: var(--sage-50); color: var(--sage-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<span><span style="display: block; font-weight: 600; color: var(--ink-900);">Table 12 paid · $86.40</span><span style="display: block; font-size: 14px; color: var(--ink-600);">Split 3 ways, 20% tip</span></span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="sec" style="background: var(--white); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Feature grid · paragraph--feature-grid (variant: problem → fix)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<div class="ib-eyebrow">Sound familiar?</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">The four things restaurant owners tell us first</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">“Fees eat my margin.”</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Dual pricing moves the processing cost to card customers, with clear signage that keeps it friendly.</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">“The line backs up at the register.”</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Handhelds take payment at the table and a self-order kiosk handles the lunch rush.</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">“Tips take forever at close.”</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">Adjust tips on the device and close out by 7 PM Central for next-day deposits.</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 20px; background: var(--paper); border: 1px solid var(--ink-200);"><span style="width: 44px; height: 44px; border-radius: 14px; background: var(--clay-50); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg></span><h3 style="margin: 0; font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.22; color: var(--ink-900);">“Paper tickets get lost.”</h3><span style="font-size: 16px; line-height: 1.6; color: var(--ink-700);">A kitchen display sends orders straight to the line, in order, with timers.</span></div>
+</div>
+</div>
+</section>
+
+<!-- RECOMMENDED SETUP -->
+<section class="sec" id="setup">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Recommended setup · paragraph--bundle (refs: node--device + node--solution)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px;">
+<div class="ib-eyebrow">Recommended setup</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">A setup for a 60-seat dining room</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">A starting point we tune to your floor plan, menu and volume. Swap any piece for something that fits better.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 20px 22px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px;"><span style="width: 64px; height: 52px; border-radius: 14px; background: var(--clove-800); flex-shrink: 0;" aria-hidden="true"></span><span style="flex: 1 1 220px;"><span style="display: block; font-size: 14px; font-weight: 600; color: var(--ink-500);">Front counter</span><span style="display: block; font-size: 18px; font-weight: 600; color: var(--ink-900);">Clover Station Duo</span><span style="display: block; font-size: 14px; color: var(--ink-600);">Dual screens so guests can see their order and tip</span></span><span style="font-weight: 700; color: var(--ink-900);">$135/mo</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 20px 22px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px;"><span style="width: 64px; height: 52px; border-radius: 14px; background: var(--clove-800); flex-shrink: 0;" aria-hidden="true"></span><span style="flex: 1 1 220px;"><span style="display: block; font-size: 14px; font-weight: 600; color: var(--ink-500);">Tableside</span><span style="display: block; font-size: 18px; font-weight: 600; color: var(--ink-900);">Clover Flex × 2</span><span style="display: block; font-size: 14px; color: var(--ink-600);">Pay at the table, split checks, print receipts</span></span><span style="font-weight: 700; color: var(--ink-900);">$100/mo</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 20px 22px; background: var(--white); border: 1px solid var(--ink-200); border-radius: 20px;"><span style="width: 64px; height: 52px; border-radius: 14px; background: var(--clove-800); flex-shrink: 0;" aria-hidden="true"></span><span style="flex: 1 1 220px;"><span style="display: block; font-size: 14px; font-weight: 600; color: var(--ink-500);">Kitchen</span><span style="display: block; font-size: 18px; font-weight: 600; color: var(--ink-900);">Clover KDS 14-inch</span><span style="display: block; font-size: 14px; color: var(--ink-600);">Orders fire to the line with timers</span></span><span style="font-weight: 700; color: var(--ink-900);">$40/mo</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 20px 22px; background: var(--clay-50); border: 1px solid var(--clay-100); border-radius: 20px;"><span style="width: 64px; height: 52px; border-radius: 14px; background: var(--white); color: var(--clay-600); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg></span><span style="flex: 1 1 220px;"><span style="display: block; font-size: 14px; font-weight: 600; color: var(--clay-700);">Pricing</span><span style="display: block; font-size: 18px; font-weight: 600; color: var(--ink-900);">Dual pricing</span><span style="display: block; font-size: 14px; color: var(--ink-700);">Card customers cover processing on each check</span></span><a href="Solution-DualPricing.dc.html" style="font-weight: 600; text-decoration: none;">How it works</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px;"><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral">Add: chargeback protection</x-import><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral">Add: self-order kiosk</x-import><x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Badge" variant="neutral">Add: business banking</x-import></div>
+</div>
+<aside style="flex: 1 1 300px; min-width: 0; background: var(--clove-800); color: var(--text-on-dark); border-radius: 28px; padding: 30px; display: flex; flex-direction: column; gap: 16px;">
+<div style="font-size: 14px; font-weight: 600; color: var(--amber-200);">Hardware estimate</div>
+<div style="font-family: var(--font-display); font-weight: 600; font-size: 48px; line-height: 1; letter-spacing: -0.02em; color: var(--white);">$275<span style="font-family: var(--font-sans); font-size: 18px; font-weight: 500; color: var(--clove-100);">/mo</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6;">Leased month to month, or about $5,636 to own outright. Processing, Clover software and gateway fees are quoted separately.</p>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" block="{{yes}}" as="a" href="Quote.dc.html">Quote this setup</x-import>
+</aside>
+</div>
+</div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="sec" style="background: var(--clay-50);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">Case study · paragraph--case-study (refs: node--story) · placeholder data</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div style="flex: 1 1 420px; min-width: 0; height: 380px; border-radius: 28px; background: var(--clove-600); display: flex; align-items: center; justify-content: center; color: var(--clove-100); font-size: 14px;" role="img" aria-label="Photo placeholder of the restaurant owner">Photo: owner at the pass</div>
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<div class="ib-eyebrow">Customer story</div>
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900);">How [Restaurant name] cut close-out time and kept more of every check</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-700);">A [XX]-seat [cuisine] spot on East Sixth moved from a legacy register to Clover with dual pricing. Servers now settle at the table and tips are adjusted before the batch closes.</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+<div style="background: var(--white); border-radius: 14px; padding: 18px; border: 1px solid var(--clay-100);"><div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--clay-600);">[X]%</div><div style="font-size: 14px; color: var(--ink-700);">Lower monthly fees</div></div>
+<div style="background: var(--white); border-radius: 14px; padding: 18px; border: 1px solid var(--clay-100);"><div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--clay-600);">[X] min</div><div style="font-size: 14px; color: var(--ink-700);">Faster close-out</div></div>
+<div style="background: var(--white); border-radius: 14px; padding: 18px; border: 1px solid var(--clay-100);"><div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; color: var(--clay-600);">Next day</div><div style="font-size: 14px; color: var(--ink-700);">Deposits, tips included</div></div>
+</div>
+<a href="Resources.dc.html" style="font-weight: 600; text-decoration: none;">Read the full story</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag">FAQ accordion · paragraph--faq</div></sc-if>
+<div style="max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+<h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.4vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--ink-900); text-align: center;">Restaurant questions</h2>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Accordion" items="{{faqs}}" default-open="{{firstOpen}}"></x-import>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top: 0;">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: -28px;">CTA band · paragraph--cta-band (variant: clove)</div></sc-if>
+<div style="max-width: 1240px; margin: 0 auto; background: var(--clove-800); border-radius: 36px; padding: clamp(40px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;">
+<h2 style="flex: 1 1 520px; margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; color: var(--white);">Let's walk your floor and build the right setup.</h2>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="primary" size="lg" as="a" href="Quote.dc.html">Book a visit</x-import>
+</div>
+</section>
+
+<dc-import name="Footer" annotations="{{ann}}" hint-size="100%,860px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":4940}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      yes: true,
+      ann: this.props.annotations !== false,
+      firstOpen: [0],
+      faqs: [
+        { question: 'When do tips get paid out?', answer: 'Tips are part of the batch. Adjust them on the device and close out by 7 PM Central, and the full amount, tips included, lands the next business day.' },
+        { question: 'Can guests split a check at the table?', answer: 'Yes. Clover Flex lets servers split by item, by seat or evenly, and take a different card for each share.' },
+        { question: 'What happens if the internet goes down?', answer: 'Clover devices can keep taking payments offline for a period and send them once you reconnect. A cellular backup plan is also available.' },
+        { question: 'Can I keep my current POS software?', answer: 'Sometimes. If your POS supports a semi-integrated terminal, we can connect one instead of replacing everything. Tell us what you run and we will check.' },
+        { question: 'Do you install and train staff?', answer: 'Yes. For Austin restaurants we can set up on site and walk your team through a dinner-service dry run before you go live.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

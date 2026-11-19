@@ -1,0 +1,9 @@
+services:
+  impeccabyte_site.prices:
+    class: Drupal\impeccabyte_site\Prices
+    arguments: ['@config.factory']
+  impeccabyte_site.twig:
+    class: Drupal\impeccabyte_site\Twig\SiteExtension
+    arguments: ['@impeccabyte_site.prices']
+    tags:
+      - { name: twig.extension }

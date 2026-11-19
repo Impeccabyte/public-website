@@ -1,0 +1,23 @@
+uuid: dbebf6f0-22b4-4cde-b09e-828fe7741fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.landing_page
+  module:
+    - node
+id: landing_page
+label: 'Landing pages'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  881d3fb5-25dd-4a6d-bbd3-b5a5ed92302b:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      landing_page: landing_page
+selection_logic: and
+weight: 0
+relationships: {  }

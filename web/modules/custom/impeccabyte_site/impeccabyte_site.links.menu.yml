@@ -1,0 +1,5 @@
+impeccabyte_site.settings:
+  title: 'Impeccabyte settings'
+  description: 'Choose whether prices are shown across the site.'
+  parent: system.admin_config_system
+  route_name: impeccabyte_site.settings

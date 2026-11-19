@@ -1,0 +1,9 @@
+{#
+  Starter page shell. Claude Code replaces the header and footer regions with the
+  real components in phase 2 of docs/BUILD_BRIEF.md.
+#}
+<a href="#main-content" class="visually-hidden focusable">{{ 'Skip to main content'|t }}</a>
+<header role="banner">{{ page.header }}</header>
+{{ page.highlighted }}
+<main id="main-content" role="main">{{ page.content }}</main>
+<footer role="contentinfo">{{ page.footer }}</footer>

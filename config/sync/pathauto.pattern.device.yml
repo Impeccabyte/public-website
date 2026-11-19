@@ -1,0 +1,23 @@
+uuid: 7723a466-07c0-4c97-a63b-28dc68b77c20
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.device
+  module:
+    - node
+id: device
+label: Devices
+type: 'canonical_entities:node'
+pattern: '/hardware/[node:title]'
+selection_criteria:
+  fa0ff42a-477a-4111-949c-90e7a3abc10b:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      device: device
+selection_logic: and
+weight: 0
+relationships: {  }

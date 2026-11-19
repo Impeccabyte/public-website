@@ -1,0 +1,23 @@
+uuid: cd95af98-77b5-4cca-8175-83eef33a9ef0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_risk_tier
+    - taxonomy.vocabulary.industry
+  module:
+    - options
+id: taxonomy_term.industry.field_risk_tier
+field_name: field_risk_tier
+entity_type: taxonomy_term
+bundle: industry
+label: 'Risk tier'
+description: 'Specialty industries go through extra underwriting and get their own pages under the specialty hub.'
+required: true
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

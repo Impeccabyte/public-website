@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Run drush inside the Drupal container: ./scripts/drush cr
+set -euo pipefail
+cd "$(dirname "$0")/.."
+TTY=""; [ -t 0 ] || TTY="-T"
+exec docker compose exec $TTY drupal /opt/drupal/vendor/bin/drush "$@"

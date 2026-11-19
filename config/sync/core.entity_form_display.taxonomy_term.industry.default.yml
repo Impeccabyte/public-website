@@ -1,0 +1,65 @@
+uuid: 121ee7b5-c84a-4285-a31e-1e400e11738c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.industry.field_maverick_addendum
+    - field.field.taxonomy_term.industry.field_risk_tier
+    - taxonomy.vocabulary.industry
+  module:
+    - path
+    - text
+id: taxonomy_term.industry.default
+targetEntityType: taxonomy_term
+bundle: industry
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_maverick_addendum:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_risk_tier:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

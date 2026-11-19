@@ -1,0 +1,24 @@
+/* Accessibility rules agreed during the wireframe review. Keep these; see docs/BUILD_BRIEF.md, "Accessibility rules". */
+
+/* A button that is a link keeps the button's text colour on hover, not the link hover colour. */
+a.button, a.button:hover, a.button:active { color: var(--_fg); }
+
+/* Primary button: clay-600 so the white label is 5.7:1 (clay-500 is 4.15:1). */
+.button--primary { --_bg: var(--clay-600); --_bgh: var(--clay-700); --_bga: var(--clay-800); --_fg: var(--white); }
+
+/* Focus ring that shows on cream, white and clove grounds. */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--clay-600);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--white);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,7 @@
+impeccabyte_site.settings:
+  path: '/admin/config/system/impeccabyte'
+  defaults:
+    _form: '\Drupal\impeccabyte_site\Form\SettingsForm'
+    _title: 'Impeccabyte settings'
+  requirements:
+    _permission: 'administer site configuration'

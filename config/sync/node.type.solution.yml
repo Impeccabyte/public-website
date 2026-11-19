@@ -1,0 +1,11 @@
+uuid: a4ed9eb5-539e-47a7-bfb4-a427a857d81f
+langcode: en
+status: true
+dependencies: {  }
+name: Solution
+type: solution
+description: 'One thing Impeccabyte helps a business do, such as dual pricing.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

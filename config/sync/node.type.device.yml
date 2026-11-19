@@ -1,0 +1,11 @@
+uuid: 281b4343-c5ac-4312-b18f-b6b5378fbdee
+langcode: en
+status: true
+dependencies: {  }
+name: Device
+type: device
+description: 'One piece of payment hardware in the catalog.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

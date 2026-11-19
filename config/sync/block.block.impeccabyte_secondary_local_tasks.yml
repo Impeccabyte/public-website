@@ -1,0 +1,22 @@
+uuid: 8022221a-3db4-4445-81c9-a64e9804e0f2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - impeccabyte
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: impeccabyte_secondary_local_tasks
+theme: impeccabyte
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

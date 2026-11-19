@@ -1,0 +1,19 @@
+uuid: f180d48a-60a1-404e-8283-c82f9a50bd3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_maverick_addendum
+    - taxonomy.vocabulary.industry
+id: taxonomy_term.industry.field_maverick_addendum
+field_name: field_maverick_addendum
+entity_type: taxonomy_term
+bundle: industry
+label: 'Maverick addendum'
+description: 'The name of the Maverick addendum a business in this industry signs, if any.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

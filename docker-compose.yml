@@ -1,0 +1,42 @@
+services:
+  drupal:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Lead handlers read their tokens from the environment, never from config.
+      INTERCOM_ACCESS_TOKEN: ${INTERCOM_ACCESS_TOKEN:-}
+    volumes:
+      - ./web/themes/custom:/opt/drupal/web/themes/custom
+      - ./web/modules/custom:/opt/drupal/web/modules/custom
+      - ./config/sync:/opt/drupal/config/sync
+      - ./design:/opt/drupal/design:ro
+      - ./scripts:/opt/drupal/scripts:ro
+      - ./private:/opt/drupal/private
+      - drupal_sites:/opt/drupal/web/sites
+    restart: unless-stopped
+
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+volumes:
+  drupal_sites:
+  db_data:

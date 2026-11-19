@@ -1,0 +1,11 @@
+uuid: dd23aee7-d299-4816-b193-4a8505bc7845
+langcode: en
+status: true
+dependencies: {  }
+name: 'Landing page'
+type: landing_page
+description: 'A page built from sections. Used for Home and Pricing.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Global footer</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/tokens.css">
+<link rel="stylesheet" href="ds/impeccabytedesignsystem_14a6d0/components/bundle.css">
+<script src="ds/impeccabytedesignsystem_14a6d0/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+.ft a{color:#E6DACE;text-decoration:none;display:inline-block;padding:2px 0}.ft a:hover{color:#FFFFFF}
+.dp-tag{position:absolute;z-index:30;font:500 11px/1 'JetBrains Mono',monospace;color:#2F4753;background:#EDF1F3;border:1px dashed #93AEB9;border-radius:6px;padding:6px 8px;pointer-events:none;max-width:calc(100% - 32px);line-height:1.4}
+.ft-pad{padding:80px 24px 32px}
+@media (max-width:760px){.ft-pad{padding:56px 20px 28px}}
+a.ib-btn,a.ib-btn:hover,a.ib-btn:active{color:var(--_fg)}
+.ib-btn.ib-btn--primary{--_bg:var(--clay-600);--_bgh:var(--clay-700);--_bga:var(--clay-800)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a.ib-btn:focus-visible,button.ib-btn:focus-visible{outline:2px solid #A44E2F;outline-offset:2px;box-shadow:0 0 0 5px #FFFFFF}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.lift:hover,.ib-btn:hover{transform:none!important}}
+</style>
+</helmet>
+<footer class="ft" style="position: relative; background: var(--clove-800); color: var(--text-on-dark); font-family: var(--font-sans);">
+<sc-if value="{{ann}}" hint-placeholder-val="{{true}}"><div class="dp-tag" style="top: 16px; left: 16px;">Region: Footer · menu--footer ×4 + block--newsletter + block--disclosure</div></sc-if>
+<div class="ft-pad" style="max-width: 1240px; margin: 0 auto;">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-end; padding-bottom: 48px; border-bottom: 1px solid rgba(243,235,222,0.16);">
+<div style="flex: 1 1 380px; max-width: 520px; display: flex; flex-direction: column; gap: 16px;">
+<a href="Main.dc.html" aria-label="Impeccabyte home" style="display: inline-flex; align-items: center; gap: 12px;">
+<svg width="34" height="34" viewBox="14 20 72 72" aria-hidden="true"><rect x="16" y="60" width="68" height="30" rx="7" fill="#FFFFFF"></rect><rect x="25" y="68" width="13" height="9" rx="2.5" fill="#302419" opacity="0.25"></rect><g fill="#FFFFFF"><rect x="28" y="46" width="11" height="11" rx="3.4"></rect><rect x="43" y="34" width="11" height="11" rx="3.4"></rect><rect x="58" y="22" width="11" height="11" rx="3.4"></rect></g></svg>
+<span style="font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.02em; color: var(--white);">Impeccabyte</span>
+</a>
+<div style="font-family: var(--font-display); font-weight: 600; font-size: 30px; line-height: 1.22; letter-spacing: -0.02em; color: var(--white);">Payments tips for Austin business owners, once a month.</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--clove-100);">Fee changes, new hardware and small-business news. No spam, unsubscribe any time.</p>
+</div>
+<form style="flex: 1 1 380px; max-width: 480px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;" aria-label="Newsletter signup">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 8px;"><label for="nl-email" style="font-size: 14px; font-weight: 600; color: var(--text-on-dark);">Email address</label><input id="nl-email" type="email" autocomplete="email" placeholder="you@yourbusiness.com" style="height: 52px; width: 100%; border-radius: 14px; border: 1.5px solid var(--ink-300); background: var(--white); padding: 0 16px; font-family: var(--font-sans); font-size: 16px; color: var(--ink-900);"></div>
+<x-import component-from-global-scope="ImpeccabyteDesignSystem_14a6d0.Button" variant="accent" size="lg" type="submit">Subscribe</x-import>
+</form>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 32px; padding: 48px 0;">
+<nav aria-label="Solutions" style="display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<div style="font-weight: 600; color: var(--white); margin-bottom: 4px;">Solutions</div>
+<a href="Main.dc.html">In-person payments</a><a href="Main.dc.html">Online payments</a><a href="Main.dc.html">Mobile payments</a><a href="Solution-DualPricing.dc.html">Dual pricing</a><a href="Main.dc.html">Chargeback protection</a><a href="Main.dc.html">Business banking</a>
+</nav>
+<nav aria-label="Hardware" style="display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<div style="font-weight: 600; color: var(--white); margin-bottom: 4px;">Hardware</div>
+<a href="Hardware.dc.html">All devices</a><a href="Hardware.dc.html">Countertop terminals</a><a href="Hardware.dc.html">Handheld terminals</a><a href="Hardware.dc.html">POS systems</a><a href="Hardware.dc.html">Mobile readers</a>
+</nav>
+<nav aria-label="Industries" style="display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<div style="font-weight: 600; color: var(--white); margin-bottom: 4px;">Industries</div>
+<a href="Industry-Restaurants.dc.html">Restaurants and bars</a><a href="Main.dc.html">Retail shops</a><a href="Main.dc.html">Salons and spas</a><a href="Main.dc.html">Home services</a><a href="Main.dc.html">Food trucks</a>
+</nav>
+<nav aria-label="Company" style="display: flex; flex-direction: column; gap: 12px; font-size: 16px;">
+<div style="font-weight: 600; color: var(--white); margin-bottom: 4px;">Company</div>
+<a href="Main.dc.html">About us</a><a href="Pricing.dc.html">Pricing</a><a href="Resources.dc.html">Resources</a><a href="Quote.dc.html">Contact</a><a href="https://app.impeccabyte.com">Merchant log in</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6;">
+<div style="font-weight: 600; color: var(--white); margin-bottom: 4px;">Visit or call</div>
+<span>Impeccabyte<br>[Street address], Suite [XXX]<br>Austin, TX 787[XX]</span>
+<a href="Quote.dc.html">(512) [XXX-XXXX]</a>
+<a href="Quote.dc.html">hello@impeccabyte.com</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(243,235,222,0.16); padding-top: 24px; display: flex; flex-direction: column; gap: 16px; font-size: 14px; line-height: 1.6; color: var(--clove-100);">
+<p style="margin: 0; max-width: 980px;">Impeccabyte is an authorized sales agent of Maverick Payments. Payment processing is provided by Maverick Payments and its sponsor bank. Business banking products are provided by partner financial institutions; Impeccabyte is not a bank.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center;">
+<span>© 2026 Impeccabyte. <em style="font-family: var(--font-display); font-size: 16px; color: var(--amber-200);">Impeccably convenient.</em> Made in Austin, Texas.</span>
+<a href="Main.dc.html">Privacy</a><a href="Main.dc.html">Terms</a><a href="Main.dc.html">Accessibility</a><a href="Main.dc.html">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"annotations":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { ann: this.props.annotations !== false };
+  }
+}
+</script>
+</body>
+</html>

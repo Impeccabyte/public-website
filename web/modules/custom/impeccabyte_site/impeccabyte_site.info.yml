@@ -1,0 +1,6 @@
+name: Impeccabyte site
+type: module
+description: 'Site-wide settings for the Impeccabyte marketing site, including whether prices are shown.'
+package: Impeccabyte
+core_version_requirement: ^11
+configure: impeccabyte_site.settings

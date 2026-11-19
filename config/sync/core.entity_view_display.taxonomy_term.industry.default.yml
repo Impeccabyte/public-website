@@ -1,0 +1,41 @@
+uuid: a96ef83a-88c3-4b44-9422-9db9cb3cbcbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.industry.field_maverick_addendum
+    - field.field.taxonomy_term.industry.field_risk_tier
+    - taxonomy.vocabulary.industry
+  module:
+    - options
+    - text
+id: taxonomy_term.industry.default
+targetEntityType: taxonomy_term
+bundle: industry
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_maverick_addendum:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_risk_tier:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

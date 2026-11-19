@@ -1,0 +1,9 @@
+uuid: 4b27d057-bdfc-4e4a-bffc-c6ab21febe41
+langcode: en
+status: true
+dependencies: {  }
+name: Manufacturer
+vid: manufacturer
+description: 'Who makes a device.'
+weight: 0
+new_revision: false
