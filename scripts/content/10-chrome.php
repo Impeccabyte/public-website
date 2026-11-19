@@ -142,11 +142,16 @@ if (!\Drupal::service('entity.repository')->loadEntityByUuid('block_content', $u
     'uuid' => $uuid,
     'type' => 'featured_card',
     'info' => 'Mega menu: founder guide',
-    'field_badge' => 'Founder guide',
+    'field_badge' => "Founder's guide",
     'field_heading' => 'New to taking cards?',
     'field_body' => 'Our starter guide walks you through your first merchant account in plain English, from paperwork to your first sale.',
     'field_link' => ['uri' => 'internal:/resources', 'title' => 'Read the guide'],
   ])->save();
+}
+// Renamed from "Founder guide" on 2026-11-19.
+$card = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+if ($card && $card->get('field_badge')->value === 'Founder guide') {
+  $card->set('field_badge', "Founder's guide")->save();
 }
 
 print "Chrome content is in place.\n";
