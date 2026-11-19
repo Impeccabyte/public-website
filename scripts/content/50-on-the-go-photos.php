@@ -23,9 +23,9 @@ require_once dirname(__DIR__) . '/setup/_helpers.php';
 // Key => [file, width, height, alt text].
 $photos = [
   'hero' => ['hero.jpg', 1168, 880, 'A vendor at an outdoor farmers market holds out a small card reader as a customer taps a card.'],
-  'tap' => ['tap.jpg', 1344, 752, 'A customer taps a card on the back of a stallholder\'s phone, which shows the amount to pay.'],
-  'reader' => ['reader.jpg', 1344, 752, 'A customer inserts a chip card into a small reader beside a phone on a market table of handmade mugs.'],
-  'handheld' => ['handheld.jpg', 1344, 752, 'A shop worker holds a handheld terminal printing a receipt at curbside pickup.'],
+  'tap' => ['tap.jpg', 1344, 752, 'A customer holds a card to the back of a stallholder\'s phone to pay at a market stall.'],
+  'reader' => ['reader.jpg', 1344, 752, 'A customer dips a card into a small reader beside a phone on a market table of handmade mugs.'],
+  'handheld' => ['handheld.jpg', 1344, 752, 'A shop worker holds a handheld terminal as it prints a receipt at curbside pickup.'],
   'field' => ['field.jpg', 1024, 688, 'A cook hands a card terminal out of a food truck window to a smiling customer.'],
 ];
 

@@ -1,6 +1,6 @@
 # On the go page photos
 
-Five photos for `/solutions/on-the-go`, generated on 2026-11-19 with Higgsfield (model `gpt_image_2_6`) and converted to JPEG. They are illustrations, not photographs of real customers, staff or businesses: the people in them do not exist. The devices are generic and nothing carries a brand. The $24.00 on the phone in `tap.jpg` is an illustration, not a price.
+Five photos for `/solutions/on-the-go`, generated on 2026-11-19 with Higgsfield (model `gpt_image_2_6`) and converted to JPEG. They are illustrations, not photographs of real customers, staff or businesses: the people in them do not exist. The devices are generic and nothing carries a brand.
 
 Each was prompted for the site's palette (clay, amber, cream, warm wood) in warm light, so no filter is applied on the page.
 
