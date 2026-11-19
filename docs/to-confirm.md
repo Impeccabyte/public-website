@@ -117,4 +117,5 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 - **Five verticals still placeholders.** Firearms, Dating, Collections, Credit repair and Lending say "[Requirements to be supplied from the Maverick addendum.]" until their addenda are reviewed.
 - **Hub steps.** "We review your website ... and tell you what to fix first" and "We list the documents your industry needs." Confirm Impeccabyte does this review before every specialty application.
-- **Imagery.** Only the hub has a photo (people and paperwork). The vertical pages are text-only on purpose.
+- **Imagery.** The hub and all twelve vertical pages now have PG photos of people at counters, desks and offices (no products in focus, no smoke, no weapons, nothing suggestive). Ask for a swap if any vertical should stay text-only.
+- **Good-standing habits.** Each vertical now lists four habits after approval: a recognizable billing name, a clear refund and cancellation policy, answering disputes quickly with dashboard alerts, and "Tell us before you add new products or websites." Confirm the last one is how you want merchants to handle changes.
