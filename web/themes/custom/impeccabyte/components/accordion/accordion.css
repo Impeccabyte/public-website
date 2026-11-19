@@ -11,5 +11,15 @@
 .accordion__trigger:hover { color: var(--clay-700); }
 .accordion__trigger .icon { flex-shrink: 0; color: var(--clay-600); transition: transform var(--dur-base) var(--ease-out); }
 .accordion__trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
+/* Panels open by height. Once the script runs, a closed panel stays in the
+   page at zero height and is hidden from keyboards and screen readers by
+   visibility, which switches after the close finishes. Without the script the
+   hidden attribute keeps closed panels out as before. */
+.accordion__panel { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-base); }
+.accordion__panel[hidden] { display: none; }
+.accordion__panel.is-open { grid-template-rows: 1fr; visibility: visible; transition-delay: 0s; }
+.accordion__clip { overflow: hidden; min-height: 0; }
+.accordion__body { opacity: 0; transform: translateY(-4px); transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+.accordion__panel.is-open .accordion__body { opacity: 1; transform: none; }
 .accordion__body { padding: 0 4px var(--space-6); max-width: 720px; color: var(--ink-700); line-height: var(--lh-body); }
 .accordion__body p + p { margin-top: var(--space-3); }

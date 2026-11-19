@@ -10,7 +10,7 @@
         </button>
       </{{ h }}>
       <div class="accordion__panel" id="{{ id }}-a-{{ loop.index }}" role="region" aria-labelledby="{{ id }}-q-{{ loop.index }}"{{ open ? '' : ' hidden' }}>
-        <div class="accordion__body">{{ item.answer }}</div>
+        <div class="accordion__clip"><div class="accordion__body">{{ item.answer }}</div></div>
       </div>
     </div>
   {% endfor %}
