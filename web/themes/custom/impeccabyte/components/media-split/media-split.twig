@@ -1,4 +1,4 @@
-<section{{ attributes.addClass(['section', 'media-split', reverse ? 'media-split--reverse']) }} aria-labelledby="{{ id }}-title">
+<section{{ attributes.addClass(['section', 'media-split', reverse ? 'media-split--reverse']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
   <div class="section__inner media-split__inner">
     <div class="media-split__media">{{ include('impeccabyte:photo', {image: media, label: media_label}, with_context = false) }}</div>
     <div class="media-split__text">

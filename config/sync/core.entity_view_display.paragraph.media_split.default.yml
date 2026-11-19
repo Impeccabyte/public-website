@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.media_split.field_anchor
     - field.field.paragraph.media_split.field_body
     - field.field.paragraph.media_split.field_checklist
     - field.field.paragraph.media_split.field_eyebrow
@@ -19,6 +20,15 @@ targetEntityType: paragraph
 bundle: media_split
 mode: default
 content:
+  field_anchor:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 20
+    region: content
   field_body:
     type: basic_string
     label: hidden

@@ -10,3 +10,4 @@ description: 'A photo beside a heading, a paragraph, a checklist and one link.'
 #   media: Image {url, alt}
 #   media_label: What the photo should show
 #   reverse: Put the image on the right
+#   anchor: Section id for jump links, optional

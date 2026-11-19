@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.media_split.field_anchor
     - field.field.paragraph.media_split.field_body
     - field.field.paragraph.media_split.field_checklist
     - field.field.paragraph.media_split.field_eyebrow
@@ -20,6 +21,14 @@ targetEntityType: paragraph
 bundle: media_split
 mode: default
 content:
+  field_anchor:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_body:
     type: string_textarea
     weight: 2

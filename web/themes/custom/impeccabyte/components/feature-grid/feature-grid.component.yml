@@ -8,3 +8,4 @@ description: 'A section header and a grid of feature cards.'
 #   heading: Heading
 #   intro: Intro
 #   items: Cards {icon, title, body, link, highlight}
+#   anchor: Section id for jump links, optional

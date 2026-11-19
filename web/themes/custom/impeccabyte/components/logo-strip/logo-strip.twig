@@ -7,7 +7,8 @@
   <span class="logo-strip__logo" role="img" aria-label="{{ logo.alt|default(logo.label) }}" style="--_logo: url('{{ logo.url }}'); --_ratio: {{ ratio|round(3) }}; --_height: {{ ((area / ratio) ** 0.5)|round }}px;"></span>
 {% endmacro %}
 {% if tiles %}
-<section{{ attributes.addClass(['section', 'logo-strip', 'logo-strip--tiles']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
+{% set tile_count = (logos ? logos|length : names|length) + ((title or note) ? 1 : 0) %}
+<section{{ attributes.addClass(['section', 'logo-strip', 'logo-strip--tiles', 'logo-strip--tiles-' ~ tile_count]) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
   <div class="section__inner logo-strip__tiles-inner">
     {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: body, heading_id: id ~ '-title'}, with_context = false) }}
     <ul class="logo-strip__tiles">

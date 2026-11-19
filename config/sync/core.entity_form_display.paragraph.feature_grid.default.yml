@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.feature_grid.field_anchor
     - field.field.paragraph.feature_grid.field_eyebrow
     - field.field.paragraph.feature_grid.field_heading
     - field.field.paragraph.feature_grid.field_intro
@@ -15,6 +16,14 @@ targetEntityType: paragraph
 bundle: feature_grid
 mode: default
 content:
+  field_anchor:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_eyebrow:
     type: string_textfield
     weight: 0
