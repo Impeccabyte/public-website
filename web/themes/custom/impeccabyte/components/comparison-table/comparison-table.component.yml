@@ -6,6 +6,8 @@ description: 'A table that scrolls inside its own box on small screens.'
 #   id: Section id
 #   eyebrow: Eyebrow
 #   heading: Heading
+#   intro: Intro under the heading
+#   footnote: Small print under the table
 #   columns: Column headers
 #   highlight_column: Number of the highlighted column, from 1
 #   items: Rows {label, cells, is_price}

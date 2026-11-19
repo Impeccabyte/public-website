@@ -1,6 +1,6 @@
 <section{{ attributes.addClass(['section', 'section--white', 'comparison-table']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
   <div class="section__inner comparison-table__inner">
-    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, heading_id: id ~ '-title'}, with_context = false) }}
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: intro, heading_id: id ~ '-title'}, with_context = false) }}
     <div class="table-scroll" tabindex="0" role="region" aria-label="{{ heading|default('Comparison'|t) }}">
       <table class="cmp">
         <thead>
@@ -26,5 +26,6 @@
         </tbody>
       </table>
     </div>
+    {% if footnote %}<p class="comparison-table__footnote">{{ footnote }}</p>{% endif %}
   </div>
 </section>

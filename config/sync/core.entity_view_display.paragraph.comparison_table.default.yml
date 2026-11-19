@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.comparison_table.field_columns
     - field.field.paragraph.comparison_table.field_eyebrow
+    - field.field.paragraph.comparison_table.field_footnote
     - field.field.paragraph.comparison_table.field_heading
     - field.field.paragraph.comparison_table.field_highlight_column
+    - field.field.paragraph.comparison_table.field_intro
     - field.field.paragraph.comparison_table.field_items
     - paragraphs.paragraphs_type.comparison_table
   module:
@@ -34,6 +36,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_footnote:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_heading:
     type: string
     label: hidden
@@ -51,6 +62,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_items:
     type: entity_reference_revisions_entity_view
