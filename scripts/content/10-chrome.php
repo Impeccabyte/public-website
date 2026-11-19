@@ -81,7 +81,9 @@ $resource_types = [
 ];
 $weight = 1;
 foreach ($resource_types as $title => [$icon, $description]) {
-  ib_menu_link('main', $title, $term_filter('/resources', 'type', 'resource_type', $title), ['parent' => $resources, 'weight' => $weight++, 'icon' => $icon, 'description' => $description]);
+  // The resource library's type filter is a single choice: type=id.
+  $tid = ib_term_id('resource_type', $title);
+  ib_menu_link('main', $title, 'internal:/resources' . ($tid ? '?type=' . $tid : ''), ['parent' => $resources, 'weight' => $weight++, 'icon' => $icon, 'description' => $description]);
 }
 
 $company = ib_menu_link('main', 'Company', 'route:<nolink>', ['weight' => 5]);

@@ -25,8 +25,11 @@ require_once __DIR__ . '/_helpers.php';
 if (!EntityViewMode::load('node.card')) {
   EntityViewMode::create(['id' => 'node.card', 'targetEntityType' => 'node', 'label' => 'Catalog card'])->save();
 }
+if (!EntityViewMode::load('node.featured')) {
+  EntityViewMode::create(['id' => 'node.featured', 'targetEntityType' => 'node', 'label' => 'Featured'])->save();
+}
 $displays = \Drupal::service('entity_display.repository');
-foreach (['device' => ['card', 'teaser'], 'resource' => ['card', 'teaser']] as $bundle => $modes) {
+foreach (['device' => ['card', 'teaser'], 'resource' => ['card', 'teaser', 'featured']] as $bundle => $modes) {
   foreach ($modes as $mode) {
     $display = $displays->getViewDisplay('node', $bundle, $mode);
     if ($display->isNew()) {

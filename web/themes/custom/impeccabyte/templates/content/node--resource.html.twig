@@ -1,0 +1,2 @@
+{# Resource cards: "card" in the library grid, "featured" above it, "teaser" in related rows. #}
+{{ include('impeccabyte:resource-card', resource|merge({variant: view_mode == 'card' ? 'card' : (view_mode == 'featured' ? 'featured' : 'compact')}), with_context = false) }}

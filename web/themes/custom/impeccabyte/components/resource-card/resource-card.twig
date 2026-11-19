@@ -1,0 +1,20 @@
+{% set v = variant|default('card') %}
+{% set h = 'h' ~ heading_level|default(v == 'compact' ? 3 : 2) %}
+{% set badge_variants = {'Guides': 'brand', 'Checklists': 'accent', 'Customer stories': 'success', 'Videos': 'info', 'Glossary': 'neutral'} %}
+<article{{ attributes.addClass(['resource-card', 'resource-card--' ~ v, 'card', 'card--interactive']) }}>
+  {% if v != 'compact' %}
+    <div class="resource-card__media resource-card__media--tint-{{ tint|default(1) }}"{% if not image.url %} aria-hidden="true"{% endif %}>
+      {% if image.url %}<img src="{{ image.url }}" alt="{{ image.alt }}" loading="lazy">{% elseif v == 'featured' %}<span>{{ 'Illustration to come'|t }}</span>{% endif %}
+    </div>
+  {% endif %}
+  <div class="resource-card__body">
+    {% if v == 'card' %}
+      <p class="resource-card__kicker"><span class="resource-card__type">{{ type }}</span><span aria-hidden="true"> · </span><span>{{ topic }}</span></p>
+    {% else %}
+      <p class="resource-card__badges">{{ include('impeccabyte:badge', {label: type, variant: badge_variants[type] ?? 'brand'}, with_context = false) }}{% if v == 'featured' and topic %}{{ include('impeccabyte:badge', {label: topic, variant: 'neutral'}, with_context = false) }}{% endif %}</p>
+    {% endif %}
+    <{{ h }} class="resource-card__title"><a class="resource-card__link" href="{{ url }}">{{ title }}</a></{{ h }}>
+    {% if summary and v != 'compact' %}<p class="resource-card__summary">{{ summary }}</p>{% endif %}
+    <p class="resource-card__meta">{{ meta }}{% if v == 'featured' and updated %}{{ meta ? ' · ' }}{{ 'Updated @date'|t({'@date': updated}) }}{% endif %}{% if placeholder %}{{ meta ? ' · ' }}{{ 'Example story'|t }}{% endif %}</p>
+  </div>
+</article>

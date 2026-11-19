@@ -37,3 +37,17 @@
   .catalog-form .form-item-sort-by .form-select { width: 100%; }
   .catalog-form .form-item-sort-by { justify-content: space-between; }
 }
+
+/* Resource library. */
+.library { padding-top: var(--space-12); }
+.library__inner { gap: var(--space-8); }
+.library__filters { display: flex; flex-direction: column; gap: var(--space-5); }
+.library__filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); }
+.library__filter-label { min-width: 48px; font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--ink-600); }
+.library__filter .chips { list-style: none; margin-block: 0; padding-left: 0; gap: var(--space-2); flex: 1; min-width: 0; }
+.library__grid { --_min: 300px; }
+.hero__search form { display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3); }
+.hero__search .form-item { flex: 1 1 260px; }
+.hero__search .form-text { min-height: 52px; }
+.hero__search .form-actions .button { min-height: 52px; }
+@media (max-width: 760px) { .library__filter { flex-direction: column; flex-wrap: nowrap; align-items: stretch; } .library__filter .chips { flex: none; } }

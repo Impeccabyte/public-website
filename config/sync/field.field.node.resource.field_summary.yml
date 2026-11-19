@@ -1,0 +1,19 @@
+uuid: 6c36aa2b-adaa-4b86-95ae-e424fda1eb28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.resource
+id: node.resource.field_summary
+field_name: field_summary
+entity_type: node
+bundle: resource
+label: Summary
+description: 'One or two sentences for cards and the top of the page.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

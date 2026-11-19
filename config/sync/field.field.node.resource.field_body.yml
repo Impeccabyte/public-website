@@ -1,0 +1,26 @@
+uuid: 6ac9834c-339f-4013-9c66-a3cdd82911f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.resource
+  module:
+    - text
+id: node.resource.field_body
+field_name: field_body
+entity_type: node
+bundle: resource
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

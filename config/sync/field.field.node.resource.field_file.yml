@@ -1,0 +1,24 @@
+uuid: 24ada8aa-71b1-48d7-8cf0-79eb0a437795
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file
+    - media.type.document
+    - node.type.resource
+id: node.resource.field_file
+field_name: field_file
+entity_type: node
+bundle: resource
+label: File
+description: 'A download, such as a PDF checklist.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+field_type: entity_reference

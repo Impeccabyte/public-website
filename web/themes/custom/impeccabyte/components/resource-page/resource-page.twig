@@ -1,0 +1,20 @@
+<article{{ attributes.addClass('resource-page') }}>
+  <header class="section resource-page__header">
+    <div class="section__inner resource-page__inner">
+      {{ include('impeccabyte:breadcrumb', {items: breadcrumb}, with_context = false) }}
+      <p class="resource-page__badges">{{ include('impeccabyte:badge', {label: type, variant: 'brand'}, with_context = false) }}{% if topic %}{{ include('impeccabyte:badge', {label: topic, variant: 'neutral'}, with_context = false) }}{% endif %}{% if placeholder %}{{ include('impeccabyte:badge', {label: 'Example story. A real customer story goes here.'|t, variant: 'warning'}, with_context = false) }}{% endif %}</p>
+      <h1 class="resource-page__title">{{ title }}</h1>
+      {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
+      <p class="resource-page__meta">{{ meta }}{% if updated %}{{ meta ? ' · ' }}{{ 'Updated @date'|t({'@date': updated}) }}{% endif %}</p>
+    </div>
+  </header>
+  <div class="section section--white resource-page__content">
+    <div class="section__inner resource-page__inner">
+      <div class="rich-text">{{ body }}</div>
+      {% if file.url %}
+        <p>{{ include('impeccabyte:button', {label: 'Download @name'|t({'@name': file.label}), href: file.url, variant: 'secondary', icon: 'download', icon_position: 'left'}, with_context = false) }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {{ include('impeccabyte:cta-band', {id: 'resource-cta', heading: 'Questions about your own setup?'|t, body: 'A local specialist will reply within one business day.'|t, link: {url: quote_url, title: 'Get a quote'|t}, attributes: create_attribute({class: ['resource-page__cta']})}, with_context = false) }}
+</article>

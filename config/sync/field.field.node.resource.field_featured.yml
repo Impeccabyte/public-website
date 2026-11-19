@@ -1,0 +1,21 @@
+uuid: 7fef4eb1-4589-403b-96d7-2e16fd4d34d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.resource
+id: node.resource.field_featured
+field_name: field_featured
+entity_type: node
+bundle: resource
+label: Featured
+description: 'The featured resource shows above the library grid. Feature one at a time.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

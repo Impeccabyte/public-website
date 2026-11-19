@@ -462,6 +462,42 @@ function impeccabyte_preprocess_node(array &$variables) {
   if ($node->bundle() === 'device') {
     $variables['device'] = _impeccabyte_device_data($node, $variables['view_mode'] === 'full');
   }
+  if ($node->bundle() === 'resource') {
+    $variables['resource'] = _impeccabyte_resource_data($node, $variables['view_mode'] === 'full');
+  }
+}
+
+/**
+ * Everything the resource card and resource page components need.
+ */
+function _impeccabyte_resource_data($node, bool $full): array {
+  $type = $node->get('field_resource_type')->entity;
+  $topic = $node->get('field_resource_topic')->entity;
+  $thumbnail = $node->get('field_thumbnail')->entity;
+  $data = [
+    'title' => $node->label(),
+    'url' => $node->toUrl()->toString(),
+    'type' => $type ? $type->label() : '',
+    'topic' => $topic ? $topic->label() : '',
+    'summary' => $node->get('field_summary')->value,
+    'meta' => $node->get('field_meta')->value,
+    'updated' => \Drupal::service('date.formatter')->format($node->getChangedTime(), 'custom', 'F Y'),
+    'image' => $thumbnail ? _impeccabyte_reference_data($thumbnail) : NULL,
+    // Placeholder tints cycle so a grid of cards without art is not flat.
+    'tint' => ((int) $node->id() % 6) + 1,
+    'placeholder' => (bool) $node->get('field_placeholder')->value,
+  ];
+  if ($full) {
+    $file = $node->get('field_file')->entity;
+    $body = $node->get('field_body')->first();
+    $data += [
+      'breadcrumb' => _impeccabyte_breadcrumb(),
+      'body' => $body ? ['#type' => 'processed_text', '#text' => $body->value, '#format' => $body->format ?: 'basic_html'] : [],
+      'file' => $file ? _impeccabyte_reference_data($file) : NULL,
+      'quote_url' => _impeccabyte_price_context()['quote_url'],
+    ];
+  }
+  return $data;
 }
 
 /**
@@ -533,6 +569,26 @@ function _impeccabyte_device_data($node, bool $full): array {
  * in its head. The sort select stays outside so it can sit above the results.
  */
 function impeccabyte_form_views_exposed_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  if (($form['#id'] ?? '') === 'views-exposed-form-resource-library-page-1') {
+    // Type and topic are picked with the chips under the hero. The search
+    // form carries the current picks along as hidden values.
+    $input = $form_state->getUserInput();
+    foreach (['type', 'topic'] as $key) {
+      if (isset($form[$key])) {
+        $value = isset($input[$key]) && is_numeric($input[$key]) ? $input[$key] : 'All';
+        $form[$key] = ['#type' => 'hidden', '#value' => $value];
+      }
+    }
+    $form['#attributes']['role'] = 'search';
+    if (isset($form['search'])) {
+      $form['search']['#type'] = 'search';
+      $form['search']['#attributes']['placeholder'] = t('Try “chargeback” or “dual pricing”');
+    }
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#attributes']['class'][] = 'button--secondary';
+    }
+    return;
+  }
   if (($form['#id'] ?? '') !== 'views-exposed-form-hardware-catalog-page-1') {
     return;
   }
@@ -586,5 +642,57 @@ function impeccabyte_preprocess_views_view(array &$variables) {
     }
     $variables['active_count'] = $active;
     $variables['summary'] = $labels ? implode(', ', $labels) : ($active ? t('Filtered') : t('All types'));
+  }
+
+  if ($view->id() === 'resource_library') {
+    $input = $view->getExposedInput();
+    $current = [
+      'type' => isset($input['type']) && is_numeric($input['type']) ? (int) $input['type'] : 0,
+      'topic' => isset($input['topic']) && is_numeric($input['topic']) ? (int) $input['topic'] : 0,
+    ];
+    $search = trim((string) ($input['search'] ?? ''));
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $groups = [
+      'type' => [t('Type'), 'resource_type', t('All')],
+      'topic' => [t('Topic'), 'resource_topic', t('All topics')],
+    ];
+    $picked = [];
+    $variables['chip_groups'] = [];
+    foreach ($groups as $key => [$label, $vid, $all]) {
+      // Each chip keeps the other filter and the search words.
+      $query = array_filter(['type' => $current['type'], 'topic' => $current['topic'], 'search' => $search]);
+      unset($query[$key]);
+      $chips = [['label' => $all, 'url' => Url::fromUserInput('/resources', ['query' => $query])->toString(), 'pressed' => !$current[$key]]];
+      foreach ($terms->loadTree($vid, 0, NULL, TRUE) as $term) {
+        $on = $current[$key] === (int) $term->id();
+        if ($on) {
+          $picked[] = $term->label();
+        }
+        $chips[] = ['label' => $term->label(), 'url' => Url::fromUserInput('/resources', ['query' => $query + [$key => $term->id()]])->toString(), 'pressed' => $on];
+      }
+      $variables['chip_groups'][] = ['label' => $label, 'chips' => $chips];
+    }
+    $variables['total'] = count($view->result);
+    if ($search !== '') {
+      $picked[] = t('“@words”', ['@words' => $search]);
+    }
+    $variables['summary'] = implode(', ', $picked);
+
+    // The featured resource shows above the grid whenever it fits the
+    // current filters and there is no keyword search.
+    $variables['featured'] = NULL;
+    if ($search === '') {
+      $query = \Drupal::entityQuery('node')->accessCheck(TRUE)->condition('type', 'resource')->condition('status', 1)->condition('field_featured', 1)->sort('changed', 'DESC')->range(0, 1);
+      if ($current['type']) {
+        $query->condition('field_resource_type', $current['type']);
+      }
+      if ($current['topic']) {
+        $query->condition('field_resource_topic', $current['topic']);
+      }
+      if ($ids = $query->execute()) {
+        $node = \Drupal::entityTypeManager()->getStorage('node')->load(reset($ids));
+        $variables['featured'] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'featured');
+      }
+    }
   }
 }

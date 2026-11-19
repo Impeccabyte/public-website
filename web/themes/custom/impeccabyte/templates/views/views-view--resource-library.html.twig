@@ -1,0 +1,36 @@
+{#
+  The resource library: compact hero with search, type and topic chips, the
+  featured resource, the grid and "load more". Chips, counts and the featured
+  resource come from impeccabyte_preprocess_views_view().
+#}
+{{ include('impeccabyte:hero', {
+  id: 'resources-hero',
+  hero_variant: 'compact_search',
+  eyebrow: 'Resources'|t,
+  heading: 'Guides for running a business that gets paid.'|t,
+  accent_word: 'gets paid'|t,
+  intro: 'Plain-English answers about fees, hardware, chargebacks and getting started, written by our team in Austin.'|t,
+  search: exposed,
+}, with_context = false) }}
+<section class="section library" aria-label="{{ 'Resources'|t }}">
+  <div class="section__inner library__inner">
+    <div class="library__filters">
+      {% for group in chip_groups %}
+        <div class="library__filter">
+          <p class="library__filter-label" id="library-filter-{{ loop.index }}">{{ group.label }}</p>
+          <ul class="chips" aria-labelledby="library-filter-{{ loop.index }}">
+            {% for chip in group.chips %}<li>{{ include('impeccabyte:chip', {label: chip.label, href: chip.url, pressed: chip.pressed}, with_context = false) }}</li>{% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+    {% if featured %}<div class="library__featured">{{ featured }}</div>{% endif %}
+    <p class="catalog__count" role="status"><strong>{% trans %}1 resource{% plural total %}{{ count }} resources{% endtrans %}</strong>{% if summary %} · {{ summary }}{% endif %}</p>
+    {% if rows|render|trim %}
+      <div class="grid-auto library__grid" data-show-more="9">{{ rows }}</div>
+      <div class="catalog__more" hidden data-show-more-control><button class="button button--secondary" type="button">{{ 'Load more resources'|t }}</button></div>
+    {% else %}
+      <div class="catalog__empty">{{ empty }}</div>
+    {% endif %}
+  </div>
+</section>
