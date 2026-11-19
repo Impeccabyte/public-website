@@ -1,15 +1,15 @@
 name: Site header
 description: 'The global header: logo, main navigation with mega menus, log in link, quote button and the mobile drawer.'
-props:
-  type: object
-  properties:
-    featured: { title: 'Rendered featured card, shown in each mega menu' }
-    home_url: { title: 'Front page URL' }
-    items: { title: 'The main menu tree' }
-    quote_url: { title: 'Quote form path' }
-    login_url: { title: 'Merchant app address' }
-    phone: { title: 'Phone number' }
-    hours: { title: 'Phone hours' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   featured: Rendered featured card, shown in each mega menu
+#   home_url: Front page URL
+#   items: The main menu tree
+#   quote_url: Quote form path
+#   login_url: Merchant app address
+#   phone: Phone number
+#   hours: Phone hours
 libraryOverrides:
   dependencies:
     - core/drupal

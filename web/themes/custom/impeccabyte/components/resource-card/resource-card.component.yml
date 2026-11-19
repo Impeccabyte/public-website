@@ -1,20 +1,20 @@
 name: Resource card
 description: 'A resource in a grid, or the wide featured card above the library.'
-props:
-  type: object
-  properties:
-    title: { title: 'Title' }
-    url: { title: 'Resource page' }
-    type: { title: 'Resource type name' }
-    topic: { title: 'Topic name' }
-    summary: { title: 'Summary' }
-    meta: { title: 'Read time or format' }
-    updated: { title: 'Updated date, featured variant only' }
-    image: { title: 'Thumbnail {url, alt}' }
-    tint: { title: 'Placeholder tint number, 1 to 6' }
-    variant: { title: 'card, compact or featured' }
-    heading_level: { title: 'Heading level of the title' }
-    placeholder: { title: 'Marks a story that is not real yet' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   title: Title
+#   url: Resource page
+#   type: Resource type name
+#   topic: Topic name
+#   summary: Summary
+#   meta: Read time or format
+#   updated: Updated date, featured variant only
+#   image: Thumbnail {url, alt}
+#   tint: Placeholder tint number, 1 to 6
+#   variant: card, compact or featured
+#   heading_level: Heading level of the title
+#   placeholder: Marks a story that is not real yet
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

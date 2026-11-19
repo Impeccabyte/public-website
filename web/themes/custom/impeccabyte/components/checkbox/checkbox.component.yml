@@ -1,12 +1,12 @@
 name: Checkbox
 description: 'A labelled checkbox with a 24px box and a 44px row.'
-props:
-  type: object
-  properties:
-    id: { title: 'Element id' }
-    name: { title: 'Field name' }
-    label: { title: 'Visible label' }
-    value: { title: 'Value' }
-    checked: { title: 'Checked' }
-    count: { title: 'Count shown after the label' }
-    href: { title: 'When set, the row is a link that toggles a filter' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Element id
+#   name: Field name
+#   label: Visible label
+#   value: Value
+#   checked: Checked
+#   count: Count shown after the label
+#   href: When set, the row is a link that toggles a filter

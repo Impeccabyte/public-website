@@ -1,13 +1,13 @@
 name: Steps
 description: 'Numbered steps.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    intro: { title: 'Intro' }
-    items: { title: 'Steps {title, body}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   intro: Intro
+#   items: Steps {title, body}
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

@@ -1,17 +1,17 @@
 name: Testimonial
 description: 'A customer quote with before and after figures. Placeholders are labeled.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    quote: { title: 'Quote' }
-    name: { title: 'Name' }
-    role: { title: 'Role and business' }
-    label: { title: 'Figures label' }
-    before: { title: 'Before figure' }
-    after: { title: 'After figure' }
-    link: { title: 'Link {url, title}' }
-    placeholder: { title: 'Marks an example that is not a real customer quote' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   quote: Quote
+#   name: Name
+#   role: Role and business
+#   label: Figures label
+#   before: Before figure
+#   after: After figure
+#   link: Link {url, title}
+#   placeholder: Marks an example that is not a real customer quote
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

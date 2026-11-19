@@ -1,10 +1,10 @@
 name: Feature grid
 description: 'A section header and a grid of feature cards.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    intro: { title: 'Intro' }
-    items: { title: 'Cards {icon, title, body, link, highlight}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   intro: Intro
+#   items: Cards {icon, title, body, link, highlight}

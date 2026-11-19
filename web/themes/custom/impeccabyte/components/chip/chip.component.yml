@@ -1,9 +1,9 @@
 name: Chip
 description: 'A toggle chip. As a button it carries aria-pressed; as a link it marks the current filter.'
-props:
-  type: object
-  properties:
-    label: { title: 'Label' }
-    pressed: { title: 'Selected' }
-    href: { title: 'Renders a link, for filters that reload the page' }
-    controls: { title: 'Id of the element this chip shows' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   label: Label
+#   pressed: Selected
+#   href: Renders a link, for filters that reload the page
+#   controls: Id of the element this chip shows

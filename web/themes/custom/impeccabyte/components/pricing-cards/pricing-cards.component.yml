@@ -1,13 +1,13 @@
 name: Pricing cards
 description: 'The pricing programs side by side.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    heading: { title: 'Heading for screen readers' }
-    items: { title: 'Cards' }
-    footnote: { title: 'Footnote' }
-    price_note: { title: 'Footnote shown only with prices' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   heading: Heading for screen readers
+#   items: Cards
+#   footnote: Footnote
+#   price_note: Footnote shown only with prices
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
+#   quote_url: Quote form path

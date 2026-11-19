@@ -1,12 +1,12 @@
 name: Tabs
 description: 'Pill or underline tabs with arrow-key support.'
-props:
-  type: object
-  properties:
-    id: { title: 'Unique id prefix' }
-    label: { title: 'Accessible name of the tab list' }
-    variant: { title: 'pill or underline' }
-    tabs: { title: 'List of {label, content}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Unique id prefix
+#   label: Accessible name of the tab list
+#   variant: pill or underline
+#   tabs: List of {label, content}
 libraryOverrides:
   dependencies:
     - core/drupal

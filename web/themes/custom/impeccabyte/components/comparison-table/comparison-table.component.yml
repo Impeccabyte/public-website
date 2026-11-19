@@ -1,14 +1,14 @@
 name: Comparison table
 description: 'A table that scrolls inside its own box on small screens.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    columns: { title: 'Column headers' }
-    highlight_column: { title: 'Number of the highlighted column, from 1' }
-    items: { title: 'Rows {label, cells, is_price}' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   columns: Column headers
+#   highlight_column: Number of the highlighted column, from 1
+#   items: Rows {label, cells, is_price}
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
+#   quote_url: Quote form path

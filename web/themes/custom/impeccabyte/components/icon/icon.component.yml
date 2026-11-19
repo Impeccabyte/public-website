@@ -1,7 +1,7 @@
 name: Icon
 description: 'A Lucide outline icon at 1.75 stroke. Decorative: hidden from assistive technology.'
-props:
-  type: object
-  properties:
-    name: { title: 'Lucide icon name' }
-    size: { title: 'Width and height in pixels' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   name: Lucide icon name
+#   size: Width and height in pixels

@@ -1,17 +1,17 @@
 name: Button
 description: 'A full pill button. Renders as a link when it has an href, otherwise as a button.'
-props:
-  type: object
-  properties:
-    label: { title: 'Label, starting with a verb' }
-    href: { title: 'Link target. Leave empty for a button element.' }
-    variant: { title: 'primary, secondary, ghost, accent, danger or on-dark' }
-    size: { title: 'sm (36px), md (44px) or lg (52px)' }
-    block: { title: 'Fill the width of the container' }
-    disabled: { title: 'Disabled' }
-    type: { title: 'button, submit or reset' }
-    icon: { title: 'Lucide icon name' }
-    icon_position: { title: 'left or right' }
-    sr_suffix: { title: 'Extra words for screen readers, naming the target' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   label: Label, starting with a verb
+#   href: Link target. Leave empty for a button element.
+#   variant: primary, secondary, ghost, accent, danger or on-dark
+#   size: sm (36px), md (44px) or lg (52px)
+#   block: Fill the width of the container
+#   disabled: Disabled
+#   type: button, submit or reset
+#   icon: Lucide icon name
+#   icon_position: left or right
+#   sr_suffix: Extra words for screen readers, naming the target
 slots:
   content: { title: 'Label markup, used in place of the label prop' }

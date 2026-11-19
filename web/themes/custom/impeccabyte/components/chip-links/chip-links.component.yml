@@ -1,14 +1,14 @@
 name: Industry picker
 description: 'Chips that switch between industries; each shows its pitch and a typical setup.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    items: { title: 'Industries {industry, title, body, link, items: setup lines}' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   items: Industries {industry, title, body, link, items: setup lines}
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
 libraryOverrides:
   dependencies:
     - core/drupal

@@ -1,8 +1,8 @@
 name: Stat row
 description: 'Up to four values with labels. Price values are left out while prices are off.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    items: { title: 'Stats {value, label, is_price}' }
-    show_prices: { title: 'Whether prices are shown' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   items: Stats {value, label, is_price}
+#   show_prices: Whether prices are shown

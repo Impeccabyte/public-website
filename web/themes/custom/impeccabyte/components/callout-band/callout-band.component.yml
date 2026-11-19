@@ -1,9 +1,9 @@
 name: Callout section
 description: 'A callout placed as a page section.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    callout_variant: { title: 'info, success, warning, danger or brand' }
-    title: { title: 'Title' }
-    text: { title: 'Body' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   callout_variant: info, success, warning, danger or brand
+#   title: Title
+#   text: Body

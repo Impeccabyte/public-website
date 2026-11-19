@@ -1,6 +1,6 @@
 name: Breadcrumb
 description: 'The trail to the current page.'
-props:
-  type: object
-  properties:
-    items: { title: 'List of {title, url}; the last item is the current page' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   items: List of {title, url}; the last item is the current page

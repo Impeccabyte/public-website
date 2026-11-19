@@ -1,16 +1,16 @@
 name: Site footer
 description: 'The global footer: newsletter signup, four link columns, contact details, the disclosure line and legal links.'
-props:
-  type: object
-  properties:
-    newsletter: { title: 'Rendered newsletter form' }
-    home_url: { title: 'Front page URL' }
-    menus: { title: 'List of {title, items} for the four link columns' }
-    legal: { title: 'Legal links' }
-    phone: { title: 'Phone number' }
-    email: { title: 'Contact email' }
-    address_line1: { title: 'Street address' }
-    address_line2: { title: 'City, state and ZIP' }
-    contact_url: { title: 'Where the phone and contact links lead' }
-    disclosure: { title: 'Disclosure line. Required on every page.' }
-    year: { title: 'Copyright year' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   newsletter: Rendered newsletter form
+#   home_url: Front page URL
+#   menus: List of {title, items} for the four link columns
+#   legal: Legal links
+#   phone: Phone number
+#   email: Contact email
+#   address_line1: Street address
+#   address_line2: City, state and ZIP
+#   contact_url: Where the phone and contact links lead
+#   disclosure: Disclosure line. Required on every page.
+#   year: Copyright year

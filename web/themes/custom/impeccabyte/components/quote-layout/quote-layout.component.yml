@@ -1,17 +1,17 @@
 name: Quote layout
 description: 'The quote page: heading, the form in a card and the reassurance sidebar.'
-props:
-  type: object
-  properties:
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Headline' }
-    accent_word: { title: 'Word set in italic clay' }
-    intro: { title: 'Lead' }
-    form: { title: 'Rendered form' }
-    phone: { title: 'Phone number' }
-    hours: { title: 'Phone hours' }
-    points: { title: 'Reassurance points {icon, title, body}' }
-    quote: { title: 'Sidebar quote {text, source, placeholder}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   eyebrow: Eyebrow
+#   heading: Headline
+#   accent_word: Word set in italic clay
+#   intro: Lead
+#   form: Rendered form
+#   phone: Phone number
+#   hours: Phone hours
+#   points: Reassurance points {icon, title, body}
+#   quote: Sidebar quote {text, source, placeholder}
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--webform-embed

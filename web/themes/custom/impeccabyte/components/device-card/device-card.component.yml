@@ -1,23 +1,23 @@
 name: Device card
 description: 'A device in a grid. The catalog variant adds the compare toggle and a details link.'
-props:
-  type: object
-  properties:
-    nid: { title: 'Node id' }
-    title: { title: 'Device name' }
-    url: { title: 'Device page' }
-    manufacturer: { title: 'Manufacturer name' }
-    type: { title: 'Device type name' }
-    summary: { title: 'One-line description' }
-    lease: { title: 'Formatted lease price' }
-    buy: { title: 'Formatted buy price' }
-    image: { title: 'Photo {url, alt}' }
-    shape: { title: 'Placeholder shape' }
-    variant: { title: 'simple or catalog' }
-    heading_level: { title: 'Heading level of the name' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   nid: Node id
+#   title: Device name
+#   url: Device page
+#   manufacturer: Manufacturer name
+#   type: Device type name
+#   summary: One-line description
+#   lease: Formatted lease price
+#   buy: Formatted buy price
+#   image: Photo {url, alt}
+#   shape: Placeholder shape
+#   variant: simple or catalog
+#   heading_level: Heading level of the name
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
+#   quote_url: Quote form path
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

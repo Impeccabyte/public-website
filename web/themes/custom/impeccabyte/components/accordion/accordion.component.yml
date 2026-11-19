@@ -1,13 +1,13 @@
 name: Accordion
 description: 'Questions that open one at a time by default.'
-props:
-  type: object
-  properties:
-    id: { title: 'Unique id prefix' }
-    items: { title: 'List of {question, answer}' }
-    multiple: { title: 'Allow several items open at once' }
-    open_first: { title: 'Open the first item on load' }
-    heading_level: { title: 'Heading level of each question, 3 by default' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Unique id prefix
+#   items: List of {question, answer}
+#   multiple: Allow several items open at once
+#   open_first: Open the first item on load
+#   heading_level: Heading level of each question, 3 by default
 libraryOverrides:
   dependencies:
     - core/drupal

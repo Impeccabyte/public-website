@@ -1,6 +1,6 @@
 name: Hero art
 description: 'The illustration beside the home hero: a dashboard card and a countertop terminal. Decorative figures only.'
-props:
-  type: object
-  properties:
-    label: { title: 'Text alternative' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   label: Text alternative

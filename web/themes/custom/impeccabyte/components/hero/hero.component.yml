@@ -1,20 +1,20 @@
 name: Hero
 description: 'The top of a page: headline with one italic clay word, lead, calls to action.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    hero_variant: { title: 'split, centered, compact, compact_search or image_right' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Headline' }
-    accent_word: { title: 'Word set in italic clay' }
-    intro: { title: 'Lead' }
-    link: { title: 'Primary link {url, title}' }
-    link_secondary: { title: 'Secondary link {url, title}' }
-    checklist: { title: 'List of short reassurances' }
-    media: { title: 'Image {url, alt}' }
-    hero_art: { title: 'dashboard or receipt' }
-    media_label: { title: 'Text alternative for the placeholder art' }
-    breadcrumb: { title: 'List of {title, url}' }
-    search: { title: 'Rendered search form' }
-    badges: { title: 'List of badge labels' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   hero_variant: split, centered, compact, compact_search or image_right
+#   eyebrow: Eyebrow
+#   heading: Headline
+#   accent_word: Word set in italic clay
+#   intro: Lead
+#   link: Primary link {url, title}
+#   link_secondary: Secondary link {url, title}
+#   checklist: List of short reassurances
+#   media: Image {url, alt}
+#   hero_art: dashboard or receipt
+#   media_label: Text alternative for the placeholder art
+#   breadcrumb: List of {title, url}
+#   search: Rendered search form
+#   badges: List of badge labels

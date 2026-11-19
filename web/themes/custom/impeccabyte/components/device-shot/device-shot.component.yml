@@ -1,10 +1,10 @@
 name: Device photo
 description: 'A product photo, or a drawn placeholder until photography is supplied.'
-props:
-  type: object
-  properties:
-    image: { title: 'Image {url, alt}' }
-    name: { title: 'Device name' }
-    shape: { title: 'tall, wide, square or reader' }
-    decorative: { title: 'Hide from assistive technology' }
-    size: { title: 'sm, md or lg' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   image: Image {url, alt}
+#   name: Device name
+#   shape: tall, wide, square or reader
+#   decorative: Hide from assistive technology
+#   size: sm, md or lg

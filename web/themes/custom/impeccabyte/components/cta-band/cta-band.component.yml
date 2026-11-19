@@ -1,11 +1,11 @@
 name: CTA band
 description: 'A clove band with a headline, one italic amber word and up to two buttons.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    heading: { title: 'Headline' }
-    accent_word: { title: 'Word set in italic amber' }
-    body: { title: 'Body' }
-    link: { title: 'Primary link {url, title}' }
-    link_secondary: { title: 'Secondary link {url, title}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   heading: Headline
+#   accent_word: Word set in italic amber
+#   body: Body
+#   link: Primary link {url, title}
+#   link_secondary: Secondary link {url, title}

@@ -1,12 +1,12 @@
 name: Mega menu
 description: 'The panel under one main menu item: its child links in columns, the featured card and a help bar.'
-props:
-  type: object
-  properties:
-    featured: { title: 'Rendered featured card' }
-    id: { title: 'Panel id' }
-    label: { title: 'Name of the menu item this panel belongs to' }
-    items: { title: 'Child links. Items with children of their own become headed columns.' }
-    quote_url: { title: 'Quote form path' }
-    phone: { title: 'Phone number' }
-    hours: { title: 'Phone hours' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   featured: Rendered featured card
+#   id: Panel id
+#   label: Name of the menu item this panel belongs to
+#   items: Child links. Items with children of their own become headed columns.
+#   quote_url: Quote form path
+#   phone: Phone number
+#   hours: Phone hours

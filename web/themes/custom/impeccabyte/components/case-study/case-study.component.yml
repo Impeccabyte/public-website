@@ -1,16 +1,16 @@
 name: Case study
 description: 'A short customer story with a photo and up to three metrics. Placeholders are labeled.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    body: { title: 'Body' }
-    media: { title: 'Image {url, alt}' }
-    items: { title: 'Metrics {value, label}' }
-    link: { title: 'Link {url, title}' }
-    placeholder: { title: 'Marks an example that is not a real customer story' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   body: Body
+#   media: Image {url, alt}
+#   items: Metrics {value, label}
+#   link: Link {url, title}
+#   placeholder: Marks an example that is not a real customer story
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--badge

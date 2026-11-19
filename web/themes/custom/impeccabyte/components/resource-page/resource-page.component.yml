@@ -1,19 +1,19 @@
 name: Resource page
 description: 'A single resource: breadcrumb, title, summary, body and an optional download.'
-props:
-  type: object
-  properties:
-    title: { title: 'Title' }
-    breadcrumb: { title: 'Breadcrumb items' }
-    type: { title: 'Resource type name' }
-    topic: { title: 'Topic name' }
-    summary: { title: 'Summary' }
-    meta: { title: 'Read time or format' }
-    updated: { title: 'Updated date' }
-    body: { title: 'Rendered body' }
-    file: { title: 'Download {url, label, size, mime}' }
-    placeholder: { title: 'Marks a story that is not real yet' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   title: Title
+#   breadcrumb: Breadcrumb items
+#   type: Resource type name
+#   topic: Topic name
+#   summary: Summary
+#   meta: Read time or format
+#   updated: Updated date
+#   body: Rendered body
+#   file: Download {url, label, size, mime}
+#   placeholder: Marks a story that is not real yet
+#   quote_url: Quote form path
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--badge

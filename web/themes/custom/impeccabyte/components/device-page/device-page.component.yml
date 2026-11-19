@@ -1,32 +1,32 @@
 name: Device page
 description: 'The full device page: gallery, lease or buy choice, features, specs, gateways, documents and related devices.'
-props:
-  type: object
-  properties:
-    nid: { title: 'Node id' }
-    title: { title: 'Device name' }
-    breadcrumb: { title: 'Breadcrumb items' }
-    manufacturer: { title: 'Manufacturer {label}' }
-    device_type: { title: 'Device type {label}' }
-    in_stock: { title: 'In stock' }
-    dual_pricing_ready: { title: 'Dual pricing ready' }
-    summary: { title: 'Summary' }
-    gallery: { title: 'Images {url, alt}' }
-    shape: { title: 'Placeholder shape' }
-    lease: { title: 'Formatted lease price' }
-    buy: { title: 'Formatted buy price' }
-    lease_terms: { title: 'Lease terms' }
-    buy_terms: { title: 'Buy terms' }
-    fees: { title: 'Monthly fees {label, amount}' }
-    key_features: { title: 'Feature list' }
-    specs: { title: 'Spec rows {label, spec_value}' }
-    gateways: { title: 'Gateways {icon, title, body}' }
-    gateway_note: { title: 'Gateway note' }
-    documents: { title: 'Documents {label, url, mime, size}' }
-    related: { title: 'Rendered related device cards' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   nid: Node id
+#   title: Device name
+#   breadcrumb: Breadcrumb items
+#   manufacturer: Manufacturer {label}
+#   device_type: Device type {label}
+#   in_stock: In stock
+#   dual_pricing_ready: Dual pricing ready
+#   summary: Summary
+#   gallery: Images {url, alt}
+#   shape: Placeholder shape
+#   lease: Formatted lease price
+#   buy: Formatted buy price
+#   lease_terms: Lease terms
+#   buy_terms: Buy terms
+#   fees: Monthly fees {label, amount}
+#   key_features: Feature list
+#   specs: Spec rows {label, spec_value}
+#   gateways: Gateways {icon, title, body}
+#   gateway_note: Gateway note
+#   documents: Documents {label, url, mime, size}
+#   related: Rendered related device cards
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
+#   quote_url: Quote form path
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

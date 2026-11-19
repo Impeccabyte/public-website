@@ -1,13 +1,13 @@
 name: Choice cards
 description: 'Two or more option cards that act as tabs. The selected card shows an outline, a fill and a check.'
-props:
-  type: object
-  properties:
-    id: { title: 'Unique id prefix' }
-    label: { title: 'Accessible name of the group' }
-    options: { title: 'List of {key, name, price, unit, note, panel}' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Unique id prefix
+#   label: Accessible name of the group
+#   options: List of {key, name, price, unit, note, panel}
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
 libraryOverrides:
   dependencies:
     - core/drupal

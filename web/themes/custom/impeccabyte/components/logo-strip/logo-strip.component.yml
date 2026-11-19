@@ -1,9 +1,9 @@
 name: Logo strip
 description: 'A row of partner names or logos.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    intro: { title: 'Intro text' }
-    names: { title: 'Names shown as text' }
-    logos: { title: 'Images {url, alt}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   intro: Intro text
+#   names: Names shown as text
+#   logos: Images {url, alt}

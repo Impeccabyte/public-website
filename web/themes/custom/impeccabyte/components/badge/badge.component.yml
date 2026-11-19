@@ -1,10 +1,10 @@
 name: Badge
 description: 'A small pill label.'
-props:
-  type: object
-  properties:
-    label: { title: 'Label' }
-    variant: { title: 'neutral, brand, accent, success, danger, warning or info' }
-    solid: { title: 'Solid fill' }
-    dot: { title: 'Leading dot' }
-    size: { title: 'sm or md' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   label: Label
+#   variant: neutral, brand, accent, success, danger, warning or info
+#   solid: Solid fill
+#   dot: Leading dot
+#   size: sm or md

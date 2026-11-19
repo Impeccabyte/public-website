@@ -1,12 +1,12 @@
 name: Gallery
 description: 'A main product image with thumbnail buttons that switch it.'
-props:
-  type: object
-  properties:
-    id: { title: 'Unique id prefix' }
-    name: { title: 'Device name' }
-    images: { title: 'List of {url, alt, label}' }
-    shape: { title: 'Placeholder shape when there are no images' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Unique id prefix
+#   name: Device name
+#   images: List of {url, alt, label}
+#   shape: Placeholder shape when there are no images
 libraryOverrides:
   dependencies:
     - core/drupal

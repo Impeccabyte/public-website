@@ -1,14 +1,14 @@
 name: Select
 description: 'A labelled select.'
-props:
-  type: object
-  properties:
-    id: { title: 'Element id' }
-    name: { title: 'Field name' }
-    label: { title: 'Visible label' }
-    options: { title: 'List of {value, label, selected}' }
-    hint: { title: 'Hint' }
-    error: { title: 'Error message' }
-    required: { title: 'Required' }
-    hide_label: { title: 'Hide the label visually' }
-    inline: { title: 'Label beside the control' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Element id
+#   name: Field name
+#   label: Visible label
+#   options: List of {value, label, selected}
+#   hint: Hint
+#   error: Error message
+#   required: Required
+#   hide_label: Hide the label visually
+#   inline: Label beside the control

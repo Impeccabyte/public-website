@@ -1,19 +1,19 @@
 name: Pricing card
 description: 'One pricing program: name, badge, description, starting-at value, bullets and a link.'
-props:
-  type: object
-  properties:
-    title: { title: 'Name' }
-    badge: { title: 'Badge' }
-    body: { title: 'Description' }
-    value: { title: 'Starting-at value' }
-    unit: { title: 'Unit line' }
-    bullets: { title: 'Bullets' }
-    link: { title: 'Link {url, title}' }
-    featured: { title: 'Featured card' }
-    show_prices: { title: 'Whether prices are shown' }
-    price_placeholder: { title: 'Placeholder text' }
-    quote_url: { title: 'Quote form path' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   title: Name
+#   badge: Badge
+#   body: Description
+#   value: Starting-at value
+#   unit: Unit line
+#   bullets: Bullets
+#   link: Link {url, title}
+#   featured: Featured card
+#   show_prices: Whether prices are shown
+#   price_placeholder: Placeholder text
+#   quote_url: Quote form path
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card

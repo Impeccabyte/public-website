@@ -1,11 +1,11 @@
 name: FAQ accordion
 description: 'A heading and questions that open one at a time.'
-props:
-  type: object
-  properties:
-    id: { title: 'Section id' }
-    eyebrow: { title: 'Eyebrow' }
-    heading: { title: 'Heading' }
-    intro_html: { title: 'Intro markup' }
-    layout: { title: 'split or centered' }
-    items: { title: 'Questions {question, answer}' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   intro_html: Intro markup
+#   layout: split or centered
+#   items: Questions {question, answer}

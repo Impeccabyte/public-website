@@ -1,10 +1,10 @@
 name: Mobile drawer
 description: 'The main menu below 1180px. Opens by height under the header bar.'
-props:
-  type: object
-  properties:
-    id: { title: 'Drawer id' }
-    items: { title: 'The main menu tree' }
-    quote_url: { title: 'Quote form path' }
-    login_url: { title: 'Merchant app address' }
-    phone: { title: 'Phone number' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   id: Drawer id
+#   items: The main menu tree
+#   quote_url: Quote form path
+#   login_url: Merchant app address
+#   phone: Phone number

@@ -1,10 +1,10 @@
 name: Featured card
 description: 'The clove card in the mega menu: badge, title, body and one link.'
-props:
-  type: object
-  properties:
-    badge: { title: 'Badge label' }
-    title: { title: 'Title' }
-    body: { title: 'Body' }
-    link_label: { title: 'Link label' }
-    link_url: { title: 'Link target' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   badge: Badge label
+#   title: Title
+#   body: Body
+#   link_label: Link label
+#   link_url: Link target

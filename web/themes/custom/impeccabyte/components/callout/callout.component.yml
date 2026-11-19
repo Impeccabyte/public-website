@@ -1,11 +1,11 @@
 name: Callout
 description: 'A boxed note. The icon and title carry the meaning along with the color.'
-props:
-  type: object
-  properties:
-    variant: { title: 'info, success, warning, danger or brand' }
-    title: { title: 'Optional title' }
-    body: { title: 'Body text or markup' }
-    heading_level: { title: 'Heading level of the title, 3 by default' }
+# Props, all optional unless the template needs them. They are documented
+# here instead of in a schema because most take values of more than one type
+# (a string or nothing, a list or a rendered element).
+#   variant: info, success, warning, danger or brand
+#   title: Optional title
+#   body: Body text or markup
+#   heading_level: Heading level of the title, 3 by default
 slots:
   content: { title: 'Body, used in place of the body prop' }
