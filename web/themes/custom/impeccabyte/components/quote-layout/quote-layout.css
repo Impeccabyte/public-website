@@ -52,3 +52,6 @@
 .pill-radios .form-radio:checked + label { background: var(--ink-900); border-color: var(--ink-900); color: var(--paper); }
 .pill-radios .form-radio:checked + label::before { content: ""; width: 14px; height: 14px; background: currentColor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; }
 .pill-radios .form-radio:focus-visible + label { outline: 2px solid var(--clay-600); outline-offset: 2px; box-shadow: 0 0 0 5px var(--white); }
+/* Webform's own tracker colors are neutral grays; these are the ink tones. */
+.webform-progress .progress-step .progress-text, .webform-progress .progress-step .progress-title { color: var(--ink-600); }
+.webform-progress .progress-step.is-active .progress-text, .webform-progress .progress-step.is-active .progress-title, .webform-progress .progress-step.is-complete .progress-text, .webform-progress .progress-step.is-complete .progress-title { color: var(--ink-900); }

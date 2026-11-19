@@ -14,6 +14,16 @@ use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
  */
 function impeccabyte_page_attachments_alter(array &$attachments) {
   $attachments['#attached']['library'][] = 'impeccabyte/fonts';
+  // Touch icon for phones; the favicon itself is set in the theme settings.
+  $path = \Drupal::service('extension.list.theme')->getPath('impeccabyte');
+  $attachments['#attached']['html_head'][] = [[
+    '#tag' => 'link',
+    '#attributes' => ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => \Drupal::service('file_url_generator')->generateString($path . '/apple-touch-icon.png')],
+  ], 'impeccabyte_touch_icon'];
+  $attachments['#attached']['html_head'][] = [[
+    '#tag' => 'meta',
+    '#attributes' => ['name' => 'theme-color', 'content' => '#faf6ef'],
+  ], 'impeccabyte_theme_color'];
 }
 
 /**

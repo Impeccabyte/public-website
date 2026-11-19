@@ -5,3 +5,15 @@ links:
     path: /
     priority: '1.0'
     changefreq: daily
+  -
+    path: /hardware
+    priority: '0.9'
+    changefreq: weekly
+  -
+    path: /resources
+    priority: '0.8'
+    changefreq: weekly
+  -
+    path: /get-a-quote
+    priority: '0.9'
+    changefreq: weekly

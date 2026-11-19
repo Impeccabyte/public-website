@@ -125,7 +125,7 @@ $footer = [
     'Privacy' => 'internal:/privacy',
     'Terms' => 'internal:/terms',
     'Accessibility' => 'internal:/accessibility',
-    'Sitemap' => 'internal:/sitemap',
+    'Sitemap' => 'internal:/sitemap.xml',
   ],
 ];
 foreach ($footer as $menu => $links) {

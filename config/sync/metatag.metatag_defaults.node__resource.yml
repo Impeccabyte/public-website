@@ -1,0 +1,10 @@
+uuid: 91a754e5-e090-4129-9e2f-3806a136b8c7
+langcode: en
+status: true
+dependencies: {  }
+id: node__resource
+label: 'Content: Resource'
+tags:
+  description: '[node:field_summary]'
+  og_description: '[node:field_summary]'
+  og_type: article

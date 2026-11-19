@@ -1,4 +1,6 @@
 logo:
   use_default: false
 favicon:
-  use_default: true
+  use_default: false
+  path: themes/custom/impeccabyte/favicon.svg
+  mimetype: image/svg+xml

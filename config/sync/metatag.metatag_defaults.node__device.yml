@@ -1,0 +1,10 @@
+uuid: 5865b1c3-b9a1-460d-b29e-fdb73c12a03a
+langcode: en
+status: true
+dependencies: {  }
+id: node__device
+label: 'Content: Device'
+tags:
+  description: '[node:field_card_summary]'
+  og_description: '[node:field_card_summary]'
+  og_type: product

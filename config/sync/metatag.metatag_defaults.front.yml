@@ -7,5 +7,9 @@ _core:
 id: front
 label: 'Front page'
 tags:
+  title: '[site:name] | Austin merchant services'
+  description: '[node:field_meta_description]'
   canonical_url: '[site:url]'
-  shortlink: '[site:url]'
+  og_title: '[site:name] | Austin merchant services'
+  og_description: '[node:field_meta_description]'
+  og_url: '[site:url]'

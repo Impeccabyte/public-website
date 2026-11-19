@@ -16,7 +16,8 @@ Drupal 11 marketing site for Impeccabyte, an Austin, Texas merchant services age
 - Build in the phases listed in `docs/BUILD_BRIEF.md`. Finish and check one phase before starting the next.
 - Prefer configuration (content types, paragraphs, views, webforms) over custom PHP. Write a custom module only where the brief names one.
 - Build UI as single directory components in `web/themes/custom/impeccabyte/components/`, one per design system component or paragraph type.
-- Check your work in the running site: load the page with `curl -s localhost:8080/<path>` and look at `./scripts/drush watchdog:show` for errors. Do not report a phase done if the page errors.
+- Every structure change goes through the re-runnable scripts in `scripts/setup`, and every piece of first content through `scripts/content`. Then export config.
+- Check your work in the running site: load the page with `curl -s localhost:${WEB_PORT}/<path>` (the port is `WEB_PORT` in `.env`, 8080 unless it is taken) and look at `./scripts/drush watchdog:show` for errors. Do not report a phase done if the page errors.
 - Commit at the end of each phase with a plain message. Never add co-author, generated-by or assistant attribution lines to commits or files.
 - Never commit `.env`. Never print passwords from it.
 - Ask before: deleting the database or volumes, changing the content model after content exists, adding a paid or external service.
@@ -44,5 +45,7 @@ Follow the "Accessibility rules" section of the build brief. The short version: 
 
 - Keep every `[bracketed]` placeholder as a placeholder. Do not invent phone numbers, addresses, rates, names or statistics.
 - Testimonials and case studies are placeholders until real, approved ones are supplied. Never present invented quotes as real.
-- The footer disclosure must appear on every page: Impeccabyte is an authorized sales agent of Maverick Payments; banking products come from partner financial institutions; Impeccabyte is not a bank.
+- The footer disclosure must appear on every page, with this exact text: "Merchant accounts are provided by Maverick Payments and its sponsor banks. Impeccabyte is an authorized sales agent of Maverick Payments." It is the Footer disclosure setting at /admin/config/system/impeccabyte.
+- Merchant services only: no business banking in copy, menus or forms. No copy may promise approval, no reserves, or funding times beyond "cutoffs vary by processor".
+- Pricing is not public yet. Prices stay in number fields and every one renders as "Pricing coming soon" with a Get a quote link while the "Show prices" setting is off. Never put a price in free text, and never import the internal Lite, Reg. or Prem. pricing sheets.
 - Hardware prices and funding cutoff times in the wireframes come from Impeccabyte's internal pricing and funding references. Treat them as seed content the client can edit, not constants in code.

@@ -1,0 +1,19 @@
+uuid: 297bb723-387c-4715-bdac-0341f482e3c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_description
+    - node.type.solution
+id: node.solution.field_meta_description
+field_name: field_meta_description
+entity_type: node
+bundle: solution
+label: 'Search description'
+description: 'One or two sentences for search results and link previews, about 155 characters.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
