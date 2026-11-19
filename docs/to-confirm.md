@@ -112,3 +112,9 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Tap to pay on your phone.** Offered as a backup and a setup add-on; same open question as On the go.
 - **New businesses.** "Many vendors start with us before their first market." Confirm you take brand-new businesses.
 - **Flat-rate pricing** named as the starting program, as on the Home page's pop-up chip.
+
+## Specialty industries (`/industries/specialty` and its twelve pages)
+
+- **Five verticals still placeholders.** Firearms, Dating, Collections, Credit repair and Lending say "[Requirements to be supplied from the Maverick addendum.]" until their addenda are reviewed.
+- **Hub steps.** "We review your website ... and tell you what to fix first" and "We list the documents your industry needs." Confirm Impeccabyte does this review before every specialty application.
+- **Imagery.** Only the hub has a photo (people and paperwork). The vertical pages are text-only on purpose.
