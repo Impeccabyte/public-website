@@ -1,7 +1,11 @@
 {% set el = link.url ? 'a' : 'div' %}
-<{{ el }}{{ attributes.addClass(['feature-card', 'card', 'card--pad-md', highlight ? 'card--tone-brand', link.url ? 'card--interactive']) }}{% if link.url %} href="{{ link.url }}"{% endif %}>
-  {% if icon %}<span class="feature-card__icon">{{ include('impeccabyte:icon', {name: icon, size: 24}, with_context = false) }}</span>{% endif %}
+{% set has_media = media.url or media_label %}
+<{{ el }}{{ attributes.addClass(['feature-card', 'card', has_media ? 'feature-card--media' : 'card--pad-md', highlight ? 'card--tone-brand', link.url ? 'card--interactive']) }}{% if link.url %} href="{{ link.url }}"{% endif %}>
+  {% if has_media %}<div class="feature-card__media">{{ include('impeccabyte:photo', {image: media, label: media_label}, with_context = false) }}</div><div class="feature-card__content">{% endif %}
+  {% if icon and not has_media %}<span class="feature-card__icon">{{ include('impeccabyte:icon', {name: icon, size: 24}, with_context = false) }}</span>{% endif %}
   <{{ 'h' ~ heading_level|default(3) }} class="feature-card__title">{{ title }}</{{ 'h' ~ heading_level|default(3) }}>
   {% if body %}<span class="feature-card__body">{{ body }}</span>{% endif %}
+  {% if note %}<span class="feature-card__note">{{ note }}</span>{% endif %}
   {% if link.url and link.title %}<span class="feature-card__link">{{ link.title }} {{ include('impeccabyte:icon', {name: 'arrow-right', size: 16}, with_context = false) }}</span>{% endif %}
+  {% if has_media %}</div>{% endif %}
 </{{ el }}>

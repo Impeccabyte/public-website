@@ -101,8 +101,8 @@ $dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
 ]);
 
 // The other solutions: a short page each, from the menu's own descriptions.
+// In person has its full page in scripts/content/45-in-person.php.
 $solutions = [
-  ['In person', 'in-person', 'Accept payments', 'store', 'Countertop terminals and full POS systems', 'Take tap, chip and swipe at the counter.', 'counter', 'Countertop terminals and full POS systems that take tap, chip and swipe.'],
   ['Online', 'online', 'Accept payments', 'globe', 'Gateways, hosted checkout and payment links', 'Sell online without rebuilding your site.', 'online', 'A payment gateway, hosted checkout and payment links that drop into your website or texts.'],
   ['On the go', 'on-the-go', 'Accept payments', 'smartphone', 'Mobile readers and tap to pay on your phone', 'Get paid wherever the work is.', 'wherever', 'Pocket-size readers and tap to pay on your phone for markets, pop-ups and field work.'],
   ['Recurring billing', 'recurring-billing', 'Accept payments', 'repeat', 'Subscriptions, invoices and card updater', 'Bill customers on a schedule.', 'schedule', "Recurring billing and invoices that update expired cards for you, so payments don't quietly stop."],

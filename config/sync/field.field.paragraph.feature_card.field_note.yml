@@ -1,0 +1,19 @@
+uuid: fd54182e-caad-48ed-b815-9a9fb70080d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_note
+    - paragraphs.paragraphs_type.feature_card
+id: paragraph.feature_card.field_note
+field_name: field_note
+entity_type: paragraph
+bundle: feature_card
+label: 'Small print'
+description: 'A short line under the body, such as the devices that fit.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -36,7 +36,7 @@
         {% elseif v == 'split' %}
           {{ include('impeccabyte:hero-art', {label: media_label}, with_context = false) }}
         {% else %}
-          <div class="hero__placeholder" role="img" aria-label="{{ media_label|default('Photo placeholder'|t) }}"><span>{{ 'Photo to come'|t }}</span></div>
+          <div class="hero__placeholder">{{ include('impeccabyte:photo', {label: media_label}, with_context = false) }}</div>
         {% endif %}
       </div>
     {% endif %}

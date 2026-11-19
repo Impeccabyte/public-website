@@ -1,0 +1,5 @@
+name: Photo
+description: 'A photo, or a labeled placeholder that says what the photo should show.'
+# Props, all optional unless the template needs them.
+#   image: Image {url, alt, width, height}
+#   label: What the photo should show; drawn on the placeholder and read by screen readers

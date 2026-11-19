@@ -1,0 +1,4 @@
+.photo { display: block; width: 100%; }
+.photo--image { height: 100%; object-fit: cover; }
+/* A placeholder is plainly a placeholder: dashed edge and a note of the shot. */
+.photo--placeholder { display: flex; align-items: flex-end; min-height: inherit; height: 100%; padding: var(--space-5); background: var(--ink-50); border: 1.5px dashed var(--ink-400); color: var(--ink-600); font-size: var(--text-sm); font-weight: var(--fw-medium); line-height: 1.5; }

@@ -1,0 +1,21 @@
+uuid: 3b195890-4ffc-4234-bd7a-63dcc861fac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reverse
+    - paragraphs.paragraphs_type.media_split
+id: paragraph.media_split.field_reverse
+field_name: field_reverse
+entity_type: paragraph
+bundle: media_split
+label: 'Put the image on the right'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

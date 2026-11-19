@@ -9,7 +9,8 @@
 .hero__checks li { display: flex; align-items: center; gap: var(--space-2); }
 .hero__checks .icon { color: var(--sage-500); }
 .hero__image { display: block; width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--ink-200); box-shadow: var(--shadow-lg); }
-.hero__placeholder { min-height: 420px; display: flex; align-items: flex-end; padding: var(--space-6); border-radius: var(--radius-xl); border: 1px solid var(--clay-100); background: linear-gradient(140deg, var(--clay-50), var(--amber-50)); color: var(--ink-600); font-size: var(--text-sm); font-weight: var(--fw-medium); }
+.hero__placeholder { min-height: 420px; display: flex; border-radius: var(--radius-xl); overflow: hidden; }
+.hero__placeholder .photo--placeholder { border-radius: var(--radius-xl); }
 .hero--split { background: radial-gradient(1200px 520px at 85% 10%, var(--clay-50) 0%, transparent 70%); }
 .hero--centered { padding-bottom: var(--space-12); text-align: center; }
 .hero--centered .hero__inner { max-width: var(--container-md); }

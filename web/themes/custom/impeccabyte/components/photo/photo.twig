@@ -1,0 +1,5 @@
+{% if image.url %}
+<img{{ attributes.addClass(['photo', 'photo--image']) }} src="{{ image.url }}" alt="{{ image.alt }}"{% if image.width %} width="{{ image.width }}" height="{{ image.height }}"{% endif %} loading="lazy">
+{% else %}
+<div{{ attributes.addClass(['photo', 'photo--placeholder']) }} role="img" aria-label="{{ 'Photo placeholder: @label'|t({'@label': label|default('photo to come'|t)}) }}"><span>{{ 'Photo: @label'|t({'@label': label|default('to come'|t)}) }}</span></div>
+{% endif %}

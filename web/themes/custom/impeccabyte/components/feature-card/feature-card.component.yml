@@ -7,8 +7,12 @@ description: 'A card with an icon tile, title, body and a link label. The whole 
 #   title: Title
 #   body: Body
 #   link: Link {url, title}
+#   media: Image {url, alt}; with media_label alone a placeholder is drawn
+#   media_label: What the photo should show
+#   note: Small print under the body
 #   highlight: Brand-tinted card
 #   heading_level: Heading level, 3 by default
 libraryOverrides:
   dependencies:
     - core/components.impeccabyte--card
+    - core/components.impeccabyte--photo

@@ -1,0 +1,12 @@
+name: Image and text
+description: 'A photo beside a heading, a paragraph, a checklist and one link.'
+# Props, all optional unless the template needs them.
+#   id: Section id
+#   eyebrow: Eyebrow
+#   heading: Heading
+#   body: Body
+#   checklist: List of short lines
+#   link: Link {url, title}
+#   media: Image {url, alt}
+#   media_label: What the photo should show
+#   reverse: Put the image on the right

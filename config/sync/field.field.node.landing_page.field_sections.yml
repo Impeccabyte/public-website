@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.feature_grid
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.logo_strip
+    - paragraphs.paragraphs_type.media_split
     - paragraphs.paragraphs_type.pricing_cards
     - paragraphs.paragraphs_type.related_resources
     - paragraphs.paragraphs_type.savings_estimator
@@ -57,5 +58,6 @@ settings:
       related_resources: related_resources
       cta_band: cta_band
       webform_embed: webform_embed
+      media_split: media_split
     negate: 0
 field_type: entity_reference_revisions

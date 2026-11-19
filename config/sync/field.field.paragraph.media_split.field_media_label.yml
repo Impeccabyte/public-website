@@ -1,0 +1,19 @@
+uuid: c4fbd405-6fb2-452a-8db1-5bb920c0b044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_label
+    - paragraphs.paragraphs_type.media_split
+id: paragraph.media_split.field_media_label
+field_name: field_media_label
+entity_type: paragraph
+bundle: media_split
+label: 'Photo description'
+description: 'What the photo should show. Until an image is chosen, a labeled placeholder is drawn from this.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

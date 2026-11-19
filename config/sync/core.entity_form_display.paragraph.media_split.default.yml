@@ -1,0 +1,87 @@
+uuid: d23baf4e-3ca1-4ea7-8daa-b1cf7e5ae300
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_split.field_body
+    - field.field.paragraph.media_split.field_checklist
+    - field.field.paragraph.media_split.field_eyebrow
+    - field.field.paragraph.media_split.field_heading
+    - field.field.paragraph.media_split.field_link
+    - field.field.paragraph.media_split.field_media
+    - field.field.paragraph.media_split.field_media_label
+    - field.field.paragraph.media_split.field_reverse
+    - paragraphs.paragraphs_type.media_split
+  module:
+    - link
+    - media_library
+id: paragraph.media_split.default
+targetEntityType: paragraph
+bundle: media_split
+mode: default
+content:
+  field_body:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_checklist:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_eyebrow:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_media_label:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_reverse:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

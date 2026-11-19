@@ -7,10 +7,14 @@ dependencies:
     - field.field.paragraph.feature_card.field_highlight
     - field.field.paragraph.feature_card.field_icon
     - field.field.paragraph.feature_card.field_link
+    - field.field.paragraph.feature_card.field_media
+    - field.field.paragraph.feature_card.field_media_label
+    - field.field.paragraph.feature_card.field_note
     - field.field.paragraph.feature_card.field_title
     - paragraphs.paragraphs_type.feature_card
   module:
     - link
+    - media_library
 id: paragraph.feature_card.default
 targetEntityType: paragraph
 bundle: feature_card
@@ -46,6 +50,29 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_media_label:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_note:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_title:
     type: string_textfield

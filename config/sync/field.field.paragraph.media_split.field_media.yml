@@ -1,0 +1,24 @@
+uuid: 736b8a9e-f4e4-4b9c-826e-7ea9864f7d0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.image
+    - paragraphs.paragraphs_type.media_split
+id: paragraph.media_split.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: media_split
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference
