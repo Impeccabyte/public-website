@@ -1,0 +1,27 @@
+uuid: 12a2e80b-4856-4d7e-827b-70f55a66aed6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.stat
+    - paragraphs.paragraphs_type.stats
+  module:
+    - entity_reference_revisions
+id: paragraph.stats.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: stats
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stat: stat
+    negate: 0
+field_type: entity_reference_revisions

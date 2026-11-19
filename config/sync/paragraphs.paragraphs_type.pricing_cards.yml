@@ -1,0 +1,10 @@
+uuid: 9f74c706-50c7-429c-921b-d2b74f8d061b
+langcode: en
+status: true
+dependencies: {  }
+id: pricing_cards
+label: 'Pricing cards'
+icon_uuid: null
+icon_default: null
+description: 'The pricing programs side by side.'
+behavior_plugins: {  }

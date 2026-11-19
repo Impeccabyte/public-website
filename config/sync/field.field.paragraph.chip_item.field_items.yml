@@ -1,0 +1,27 @@
+uuid: ee50c904-6783-411e-828a-3fc84f544ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.chip_item
+    - paragraphs.paragraphs_type.setup_line
+  module:
+    - entity_reference_revisions
+id: paragraph.chip_item.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: chip_item
+label: 'Typical setup'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      setup_line: setup_line
+    negate: 0
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+uuid: 7832b76f-ed65-4ddf-ae8f-291dcdfe5a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_note
+    - paragraphs.paragraphs_type.setup_line
+id: paragraph.setup_line.field_note
+field_name: field_note
+entity_type: paragraph
+bundle: setup_line
+label: Note
+description: 'Shown under the name. Keep prices out of this field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

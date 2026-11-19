@@ -1,0 +1,19 @@
+uuid: 3a39b9dc-94c3-4004-aaf6-6b64a7249e46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.chip_links
+id: paragraph.chip_links.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: chip_links
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

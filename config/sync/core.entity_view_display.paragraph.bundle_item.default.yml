@@ -1,0 +1,74 @@
+uuid: dda8e048-79bd-4bab-915c-a2d9e75f318e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bundle_item.field_label
+    - field.field.paragraph.bundle_item.field_monthly_price
+    - field.field.paragraph.bundle_item.field_note
+    - field.field.paragraph.bundle_item.field_quantity
+    - field.field.paragraph.bundle_item.field_reference
+    - field.field.paragraph.bundle_item.field_title
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.default
+targetEntityType: paragraph
+bundle: bundle_item
+mode: default
+content:
+  field_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_monthly_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_quantity:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_reference:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

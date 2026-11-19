@@ -1,0 +1,10 @@
+uuid: 2f8502b4-9be8-4375-9268-c48d9e8a6108
+langcode: en
+status: true
+dependencies: {  }
+id: testimonial
+label: Testimonial
+icon_uuid: null
+icon_default: null
+description: 'A customer quote with before and after figures.'
+behavior_plugins: {  }

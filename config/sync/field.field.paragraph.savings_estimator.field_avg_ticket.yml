@@ -1,0 +1,23 @@
+uuid: 3bf3a6db-bdcd-4819-ac9d-4150e49340ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_avg_ticket
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_avg_ticket
+field_name: field_avg_ticket
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Average ticket'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

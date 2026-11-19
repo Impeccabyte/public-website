@@ -1,0 +1,23 @@
+uuid: 29808d70-0fca-4313-be38-d5a73cf68850
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_monthly_price
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.field_monthly_price
+field_name: field_monthly_price
+entity_type: paragraph
+bundle: bundle_item
+label: 'Monthly price each'
+description: 'Overrides the device lease price. Used for items that are not devices.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,106 @@
+uuid: 69a906b2-c31e-4913-afae-08fd29e69319
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.savings_estimator.field_assumptions
+    - field.field.paragraph.savings_estimator.field_avg_ticket
+    - field.field.paragraph.savings_estimator.field_default_volume
+    - field.field.paragraph.savings_estimator.field_dp_fee
+    - field.field.paragraph.savings_estimator.field_eyebrow
+    - field.field.paragraph.savings_estimator.field_flat_cents
+    - field.field.paragraph.savings_estimator.field_flat_percent
+    - field.field.paragraph.savings_estimator.field_heading
+    - field.field.paragraph.savings_estimator.field_ic_cents
+    - field.field.paragraph.savings_estimator.field_ic_percent
+    - field.field.paragraph.savings_estimator.field_intro
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.default
+targetEntityType: paragraph
+bundle: savings_estimator
+mode: default
+content:
+  field_assumptions:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_avg_ticket:
+    type: number
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_default_volume:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_dp_fee:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_eyebrow:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_flat_cents:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_flat_percent:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ic_cents:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ic_percent:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_intro:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

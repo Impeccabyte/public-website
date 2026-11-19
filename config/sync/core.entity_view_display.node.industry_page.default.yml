@@ -1,0 +1,31 @@
+uuid: 2f1e3604-f7c4-49ec-bae8-fc151c57d6a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.industry_page.field_sections
+    - node.type.industry_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.industry_page.default
+targetEntityType: node
+bundle: industry_page
+mode: default
+content:
+  field_sections:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

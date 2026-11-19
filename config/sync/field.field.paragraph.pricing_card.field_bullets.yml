@@ -1,0 +1,19 @@
+uuid: 278beba5-6b4d-4eee-9451-880b4f57c57e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bullets
+    - paragraphs.paragraphs_type.pricing_card
+id: paragraph.pricing_card.field_bullets
+field_name: field_bullets
+entity_type: paragraph
+bundle: pricing_card
+label: Bullets
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

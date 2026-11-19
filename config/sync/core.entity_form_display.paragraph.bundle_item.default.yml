@@ -1,0 +1,68 @@
+uuid: 1d9f73e7-9406-42b5-b1b9-ddddcf355544
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bundle_item.field_label
+    - field.field.paragraph.bundle_item.field_monthly_price
+    - field.field.paragraph.bundle_item.field_note
+    - field.field.paragraph.bundle_item.field_quantity
+    - field.field.paragraph.bundle_item.field_reference
+    - field.field.paragraph.bundle_item.field_title
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.default
+targetEntityType: paragraph
+bundle: bundle_item
+mode: default
+content:
+  field_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_monthly_price:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_note:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_quantity:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

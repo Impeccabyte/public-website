@@ -1,0 +1,23 @@
+uuid: e5c0fa0a-d35b-4e6f-b4f1-1b5e5e102db6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flat_cents
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_flat_cents
+field_name: field_flat_cents
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Flat rate cents per sale'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ¢
+field_type: decimal

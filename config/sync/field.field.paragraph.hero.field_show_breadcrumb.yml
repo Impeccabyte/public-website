@@ -1,0 +1,21 @@
+uuid: 66cf71ab-9f8f-4a2f-836c-8288d38d2ef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_breadcrumb
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_show_breadcrumb
+field_name: field_show_breadcrumb
+entity_type: paragraph
+bundle: hero
+label: 'Show breadcrumb'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

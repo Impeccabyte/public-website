@@ -1,0 +1,10 @@
+uuid: da6f4900-81f2-4bf8-aed3-9653ce2835e7
+langcode: en
+status: true
+dependencies: {  }
+id: bundle
+label: 'Recommended setup'
+icon_uuid: null
+icon_default: null
+description: 'Devices and solutions that work together, with a monthly estimate.'
+behavior_plugins: {  }

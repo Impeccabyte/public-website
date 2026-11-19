@@ -1,0 +1,70 @@
+uuid: ec47cdfa-b2aa-431c-ae3e-5b2911bc8ab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faq.field_eyebrow
+    - field.field.paragraph.faq.field_heading
+    - field.field.paragraph.faq.field_intro_html
+    - field.field.paragraph.faq.field_items
+    - field.field.paragraph.faq.field_layout
+    - paragraphs.paragraphs_type.faq
+  module:
+    - paragraphs
+    - text
+id: paragraph.faq.default
+targetEntityType: paragraph
+bundle: faq
+mode: default
+content:
+  field_eyebrow:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_intro_html:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_items:
+    type: paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_layout:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

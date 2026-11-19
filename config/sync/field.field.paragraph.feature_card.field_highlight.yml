@@ -1,0 +1,21 @@
+uuid: 58f2139a-d1e8-44bc-89cf-12f25c6045d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_highlight
+    - paragraphs.paragraphs_type.feature_card
+id: paragraph.feature_card.field_highlight
+field_name: field_highlight
+entity_type: paragraph
+bundle: feature_card
+label: 'Highlight this card'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

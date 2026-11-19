@@ -1,0 +1,10 @@
+uuid: 1d2c2e8a-ee7a-42c2-b49b-2882eabee7f9
+langcode: en
+status: true
+dependencies: {  }
+id: feature_grid
+label: 'Feature grid'
+icon_uuid: null
+icon_default: null
+description: 'A heading and a grid of cards.'
+behavior_plugins: {  }

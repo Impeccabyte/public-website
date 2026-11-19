@@ -1,0 +1,55 @@
+uuid: 44e0b05f-5592-43a3-b87e-c5c9d1374683
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pricing_cards.field_footnote
+    - field.field.paragraph.pricing_cards.field_heading
+    - field.field.paragraph.pricing_cards.field_items
+    - field.field.paragraph.pricing_cards.field_price_note
+    - paragraphs.paragraphs_type.pricing_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.pricing_cards.default
+targetEntityType: paragraph
+bundle: pricing_cards
+mode: default
+content:
+  field_footnote:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_price_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

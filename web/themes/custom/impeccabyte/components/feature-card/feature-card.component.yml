@@ -1,0 +1,14 @@
+name: Feature card
+description: 'A card with an icon tile, title, body and a link label. The whole card is the link.'
+props:
+  type: object
+  properties:
+    icon: { title: 'Lucide icon name' }
+    title: { title: 'Title' }
+    body: { title: 'Body' }
+    link: { title: 'Link {url, title}' }
+    highlight: { title: 'Brand-tinted card' }
+    heading_level: { title: 'Heading level, 3 by default' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--card

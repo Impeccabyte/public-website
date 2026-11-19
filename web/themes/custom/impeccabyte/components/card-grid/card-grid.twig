@@ -1,0 +1,11 @@
+{% set rendered = cards|render %}
+{% if rendered|striptags|trim %}
+<section{{ attributes.addClass(['section', 'card-grid']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
+  <div class="section__inner card-grid__inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: intro, link_label: link.title, link_url: link.url, heading_id: id ~ '-title'}, with_context = false) }}
+    <div class="grid-auto card-grid__grid">{{ rendered }}</div>
+    {% set note = (show_prices and price_note) ? price_note : footnote %}
+    {% if note %}<p class="card-grid__note">{{ note }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}

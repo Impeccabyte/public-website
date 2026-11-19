@@ -57,7 +57,7 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
 .grid-auto { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_min, 300px)), 1fr)); }
 img, svg, video { max-width: 100%; }
 img { height: auto; }
-.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ink-200); border-radius: var(--radius-lg); background: var(--white); }
+.table-scroll { position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ink-200); border-radius: var(--radius-lg); background: var(--white); }
 .table-scroll:focus-visible { outline: 2px solid var(--clay-600); outline-offset: 2px; }
 .rich-text > * + * { margin-top: var(--space-4); }
 .rich-text ul, .rich-text ol { padding-left: var(--space-6); }

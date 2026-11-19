@@ -1,0 +1,97 @@
+uuid: ee29e449-d7d7-478c-8af5-075691b2b997
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pricing_card.field_badge
+    - field.field.paragraph.pricing_card.field_body
+    - field.field.paragraph.pricing_card.field_bullets
+    - field.field.paragraph.pricing_card.field_featured
+    - field.field.paragraph.pricing_card.field_link
+    - field.field.paragraph.pricing_card.field_title
+    - field.field.paragraph.pricing_card.field_unit
+    - field.field.paragraph.pricing_card.field_value
+    - paragraphs.paragraphs_type.pricing_card
+  module:
+    - link
+id: paragraph.pricing_card.default
+targetEntityType: paragraph
+bundle: pricing_card
+mode: default
+content:
+  field_badge:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_bullets:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_featured:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_unit:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_value:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

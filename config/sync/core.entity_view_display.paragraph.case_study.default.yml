@@ -1,0 +1,87 @@
+uuid: 9cada106-69b5-4338-bea4-8d1f5b7f21d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.case_study.field_body
+    - field.field.paragraph.case_study.field_eyebrow
+    - field.field.paragraph.case_study.field_heading
+    - field.field.paragraph.case_study.field_items
+    - field.field.paragraph.case_study.field_link
+    - field.field.paragraph.case_study.field_media
+    - field.field.paragraph.case_study.field_placeholder
+    - paragraphs.paragraphs_type.case_study
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.case_study.default
+targetEntityType: paragraph
+bundle: case_study
+mode: default
+content:
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_placeholder:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  search_api_excerpt: true

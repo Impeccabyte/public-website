@@ -1,0 +1,7 @@
+<section{{ attributes.addClass(['section', 'section--flush-top', 'callout-band']) }}{% if title %} aria-labelledby="{{ id }}-title"{% endif %}>
+  <div class="section__inner callout-band__inner">
+    {% embed 'impeccabyte:callout' with {variant: callout_variant, title: title, heading_level: 2, text: text, attributes: create_attribute(title ? {'aria-labelledby': id ~ '-title'} : {})} only %}
+      {% block content %}{{ text }}{% endblock %}
+    {% endembed %}
+  </div>
+</section>

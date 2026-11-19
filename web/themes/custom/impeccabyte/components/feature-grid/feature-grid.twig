@@ -1,0 +1,8 @@
+<section{{ attributes.addClass(['section', 'feature-grid']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
+  <div class="section__inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: intro, heading_id: id ~ '-title'}, with_context = false) }}
+    <div class="grid-auto feature-grid__grid">
+      {% for card in items %}{{ include('impeccabyte:feature-card', card, with_context = false) }}{% endfor %}
+    </div>
+  </div>
+</section>

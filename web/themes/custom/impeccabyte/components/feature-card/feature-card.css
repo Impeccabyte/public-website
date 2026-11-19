@@ -1,0 +1,7 @@
+.feature-card { gap: var(--space-4); }
+.feature-card__icon { width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-md); background: var(--clay-50); color: var(--clay-600); }
+.card--tone-brand .feature-card__icon { background: var(--white); }
+.feature-card__title { font: var(--fw-semibold) var(--text-lg)/var(--lh-heading) var(--font-sans); letter-spacing: 0; color: var(--ink-900); }
+.feature-card__body { line-height: var(--lh-body); color: var(--ink-700); }
+.feature-card__link { margin-top: auto; display: inline-flex; align-items: center; gap: var(--space-2); font-weight: var(--fw-semibold); color: var(--clay-600); }
+a.feature-card:hover .feature-card__link { color: var(--clay-700); }

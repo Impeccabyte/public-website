@@ -1,0 +1,69 @@
+uuid: dbf9e00f-605f-4504-bad7-46143cd4d33e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta_band.field_accent_word
+    - field.field.paragraph.cta_band.field_body
+    - field.field.paragraph.cta_band.field_heading
+    - field.field.paragraph.cta_band.field_link
+    - field.field.paragraph.cta_band.field_link_secondary
+    - paragraphs.paragraphs_type.cta_band
+  module:
+    - link
+id: paragraph.cta_band.default
+targetEntityType: paragraph
+bundle: cta_band
+mode: default
+content:
+  field_accent_word:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link_secondary:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

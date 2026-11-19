@@ -1,0 +1,28 @@
+<section{{ attributes.addClass(['section', 'section--white', 'chip-links']) }} aria-labelledby="{{ id }}-title" data-chip-links>
+  <div class="section__inner chip-links__inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, heading_id: id ~ '-title'}, with_context = false) }}
+    <div class="chips" role="group" aria-label="{{ 'Choose your industry'|t }}">
+      {% for item in items %}
+        {{ include('impeccabyte:chip', {label: item.industry.label, pressed: loop.first, controls: id ~ '-panel-' ~ loop.index}, with_context = false) }}
+      {% endfor %}
+    </div>
+    {% for item in items %}
+      <div class="chip-links__panel" id="{{ id }}-panel-{{ loop.index }}"{{ loop.first ? '' : ' hidden' }}>
+        <div class="chip-links__pitch">
+          <h3 class="chip-links__title">{{ item.title }}</h3>
+          <p class="lead">{{ item.body }}</p>
+          {% if item.link.url %}<a class="text-link" href="{{ item.link.url }}">{{ item.link.title }} {{ include('impeccabyte:icon', {name: 'arrow-right', size: 16}, with_context = false) }}</a>{% endif %}
+        </div>
+        <div class="chip-links__setup">
+          <p class="chip-links__setup-label">{{ 'A typical setup'|t }}</p>
+          <ul>
+            {% for line in item.items %}
+              {% set note = (show_prices and line.price_note) ? line.price_note : (line.note ?: (line.price_note ? price_placeholder : '')) %}
+              <li><span class="chip-links__check">{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}</span><span><span class="chip-links__name">{{ line.title }}</span>{% if note %}<span class="chip-links__note">{{ note }}</span>{% endif %}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

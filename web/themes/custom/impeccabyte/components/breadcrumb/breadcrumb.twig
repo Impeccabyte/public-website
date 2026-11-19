@@ -1,0 +1,9 @@
+{% if items %}
+<nav{{ attributes.addClass('breadcrumb') }} aria-label="{{ 'Breadcrumb'|t }}">
+  <ol>
+    {% for item in items %}
+      <li>{% if loop.last %}<span aria-current="page">{{ item.title }}</span>{% elseif item.url %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}<span>{{ item.title }}</span>{% endif %}{% if not loop.last %}{{ include('impeccabyte:icon', {name: 'chevron-right', size: 14}, with_context = false) }}{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

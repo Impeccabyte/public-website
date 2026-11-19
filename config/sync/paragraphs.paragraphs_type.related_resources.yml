@@ -1,0 +1,10 @@
+uuid: 5e9b550f-7a94-4e70-96ad-05aa7b023f2e
+langcode: en
+status: true
+dependencies: {  }
+id: related_resources
+label: 'Related resources'
+icon_uuid: null
+icon_default: null
+description: 'Up to three resources.'
+behavior_plugins: {  }

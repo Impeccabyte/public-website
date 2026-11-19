@@ -1,0 +1,27 @@
+uuid: e1912529-4dcb-4ed8-a26d-add5b066150f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.chip_item
+    - paragraphs.paragraphs_type.chip_links
+  module:
+    - entity_reference_revisions
+id: paragraph.chip_links.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: chip_links
+label: Industries
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      chip_item: chip_item
+    negate: 0
+field_type: entity_reference_revisions

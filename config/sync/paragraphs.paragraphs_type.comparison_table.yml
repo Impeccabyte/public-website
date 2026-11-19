@@ -1,0 +1,10 @@
+uuid: 9ea5538e-fb75-4130-a77e-4ec2b3ba219e
+langcode: en
+status: true
+dependencies: {  }
+id: comparison_table
+label: 'Comparison table'
+icon_uuid: null
+icon_default: null
+description: 'A table comparing a few options row by row.'
+behavior_plugins: {  }

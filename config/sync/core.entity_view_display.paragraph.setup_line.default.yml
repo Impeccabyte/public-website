@@ -1,0 +1,43 @@
+uuid: 3e80fccc-9372-41a5-a692-ba55319587d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.setup_line.field_note
+    - field.field.paragraph.setup_line.field_price_note
+    - field.field.paragraph.setup_line.field_title
+    - paragraphs.paragraphs_type.setup_line
+id: paragraph.setup_line.default
+targetEntityType: paragraph
+bundle: setup_line
+mode: default
+content:
+  field_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_price_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

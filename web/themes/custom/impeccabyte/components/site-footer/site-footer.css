@@ -7,7 +7,7 @@
 .site-footer__heading { font-size: var(--text-2xl); line-height: var(--lh-heading); letter-spacing: -0.02em; color: var(--white); }
 .site-footer__sub { line-height: var(--lh-body); color: var(--clove-100); }
 .site-footer__newsletter { flex: 1 1 380px; max-width: 480px; }
-.site-footer__newsletter form { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: flex-end; }
+.site-footer__newsletter form { display: flex; flex-direction: row; flex-wrap: wrap; gap: var(--space-3); align-items: flex-end; }
 .site-footer__newsletter .form-item { flex: 1 1 240px; }
 .site-footer__newsletter .form-item > label { color: var(--text-on-dark); }
 .site-footer__newsletter .form-email { min-height: 52px; border-color: var(--ink-300); }

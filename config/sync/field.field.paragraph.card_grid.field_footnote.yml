@@ -1,0 +1,19 @@
+uuid: aba49a56-7571-44e5-b847-1e859496cc1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_footnote
+    - paragraphs.paragraphs_type.card_grid
+id: paragraph.card_grid.field_footnote
+field_name: field_footnote
+entity_type: paragraph
+bundle: card_grid
+label: Footnote
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

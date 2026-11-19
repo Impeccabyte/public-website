@@ -1,0 +1,10 @@
+uuid: 1deb553f-337c-4c49-8b9d-df9e7ec60e96
+langcode: en
+status: true
+dependencies: {  }
+id: callout
+label: Callout
+icon_uuid: null
+icon_default: null
+description: 'A boxed note.'
+behavior_plugins: {  }

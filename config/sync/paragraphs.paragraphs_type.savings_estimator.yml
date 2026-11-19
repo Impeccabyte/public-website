@@ -1,0 +1,10 @@
+uuid: d943407b-b9c0-433e-a27a-7135f5ce065b
+langcode: en
+status: true
+dependencies: {  }
+id: savings_estimator
+label: 'Savings estimator'
+icon_uuid: null
+icon_default: null
+description: 'Compares monthly processing cost across the three pricing programs.'
+behavior_plugins: {  }

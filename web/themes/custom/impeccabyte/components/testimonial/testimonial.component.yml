@@ -1,0 +1,17 @@
+name: Testimonial
+description: 'A customer quote with before and after figures. Placeholders are labeled.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    quote: { title: 'Quote' }
+    name: { title: 'Name' }
+    role: { title: 'Role and business' }
+    label: { title: 'Figures label' }
+    before: { title: 'Before figure' }
+    after: { title: 'After figure' }
+    link: { title: 'Link {url, title}' }
+    placeholder: { title: 'Marks an example that is not a real customer quote' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--card

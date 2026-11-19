@@ -1,0 +1,23 @@
+uuid: 36b49095-5ea8-4747-889a-4f9dd0196add
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_dp_fee
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_dp_fee
+field_name: field_dp_fee
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Monthly dual pricing fee'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

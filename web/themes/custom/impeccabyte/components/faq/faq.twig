@@ -1,0 +1,12 @@
+<section{{ attributes.addClass(['section', 'faq', 'faq--' ~ layout|default('split'), layout == 'centered' ? 'section--white']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
+  <div class="section__inner faq__inner">
+    <div class="faq__header">
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      {% if heading %}<h2 class="section-header__heading" id="{{ id }}-title">{{ heading }}</h2>{% endif %}
+      {% if intro_html %}<div class="lead">{{ intro_html }}</div>{% endif %}
+    </div>
+    <div class="faq__items">
+      {{ include('impeccabyte:accordion', {id: id, items: items, open_first: true}, with_context = false) }}
+    </div>
+  </div>
+</section>

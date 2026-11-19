@@ -1,0 +1,19 @@
+uuid: d113ae1c-914a-4726-9021-19c2ec7fa620
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro
+    - paragraphs.paragraphs_type.card_grid
+id: paragraph.card_grid.field_intro
+field_name: field_intro
+entity_type: paragraph
+bundle: card_grid
+label: Intro
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+.comparison-table__inner { gap: var(--space-8); }
+.cmp { width: 100%; min-width: 760px; border-collapse: collapse; text-align: left; }
+.cmp th, .cmp td { padding: var(--space-5) var(--space-6); border-bottom: 1px solid var(--ink-100); vertical-align: top; line-height: var(--lh-body); }
+.cmp tbody tr:last-child th, .cmp tbody tr:last-child td { border-bottom: 0; }
+.cmp thead th { font-weight: var(--fw-semibold); font-size: var(--text-md); color: var(--ink-900); background: var(--ink-50); }
+.cmp tbody th { width: 22%; font-weight: var(--fw-semibold); color: var(--ink-900); }
+.cmp td { color: var(--ink-700); }
+/* The highlighted column is tinted and edged, and named for screen readers. */
+.cmp .is-highlight { background: var(--clay-50); box-shadow: inset 2px 0 0 var(--clay-300), inset -2px 0 0 var(--clay-300); color: var(--ink-900); }
+.cmp thead .is-highlight { color: var(--clay-700); }

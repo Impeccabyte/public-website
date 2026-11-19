@@ -164,3 +164,252 @@ function impeccabyte_preprocess_input(array &$variables) {
     $variables['attributes']['class'] = array_values($classes);
   }
 }
+
+/**
+ * Turns an entity's fields into a plain array for components.
+ *
+ * Keys are field names without "field_". Single-value fields give one value,
+ * multi-value fields a list. Paragraph references are followed.
+ */
+function _impeccabyte_entity_data($entity): array {
+  $data = [];
+  foreach ($entity->getFieldDefinitions() as $name => $definition) {
+    if (!str_starts_with($name, 'field_')) {
+      continue;
+    }
+    $values = [];
+    $items = $entity->get($name);
+    switch ($definition->getType()) {
+      case 'text_long':
+      case 'text_with_summary':
+        foreach ($items as $item) {
+          $values[] = ['#type' => 'processed_text', '#text' => $item->value, '#format' => $item->format ?: 'basic_html'];
+        }
+        break;
+
+      case 'boolean':
+        foreach ($items as $item) {
+          $values[] = (bool) $item->value;
+        }
+        break;
+
+      case 'link':
+        foreach ($items as $item) {
+          try {
+            $values[] = ['url' => $item->getUrl()->toString(), 'title' => (string) $item->title];
+          }
+          catch (\Exception $e) {
+            // A link that no longer resolves is left out.
+          }
+        }
+        break;
+
+      case 'entity_reference_revisions':
+        foreach ($items->referencedEntities() as $child) {
+          $values[] = ['bundle' => $child->bundle(), 'entity_id' => $child->id()] + _impeccabyte_entity_data($child);
+        }
+        break;
+
+      case 'entity_reference':
+        foreach ($items->referencedEntities() as $target) {
+          $values[] = _impeccabyte_reference_data($target);
+        }
+        $values = array_values(array_filter($values));
+        break;
+
+      case 'webform':
+        foreach ($items as $item) {
+          $values[] = $item->target_id;
+        }
+        break;
+
+      default:
+        foreach ($items as $item) {
+          $values[] = $item->value;
+        }
+    }
+    $key = substr($name, 6);
+    $data[$key] = $definition->getFieldStorageDefinition()->getCardinality() === 1 ? ($values[0] ?? NULL) : $values;
+  }
+  return $data;
+}
+
+/**
+ * Describes a referenced term, node or media item for a component.
+ */
+function _impeccabyte_reference_data($target): ?array {
+  switch ($target->getEntityTypeId()) {
+    case 'taxonomy_term':
+      return ['id' => (int) $target->id(), 'label' => $target->label()];
+
+    case 'node':
+      if (!$target->access('view')) {
+        return NULL;
+      }
+      return ['id' => (int) $target->id(), 'label' => $target->label(), 'bundle' => $target->bundle(), 'url' => $target->toUrl()->toString(), 'entity' => $target];
+
+    case 'media':
+      if (!$target->access('view')) {
+        return NULL;
+      }
+      $source = $target->getSource();
+      $file_id = $source->getSourceFieldValue($target);
+      $file = $file_id ? \Drupal::entityTypeManager()->getStorage('file')->load($file_id) : NULL;
+      if (!$file) {
+        return NULL;
+      }
+      $field = $source->getConfiguration()['source_field'];
+      $item = $target->get($field)->first();
+      return [
+        'id' => (int) $target->id(),
+        'label' => $target->label(),
+        'bundle' => $target->bundle(),
+        'url' => \Drupal::service('file_url_generator')->generateString($file->getFileUri()),
+        'alt' => $item && isset($item->alt) ? (string) $item->alt : '',
+        'width' => $item->width ?? NULL,
+        'height' => $item->height ?? NULL,
+        'size' => $file->getSize(),
+        'mime' => $file->getMimeType(),
+      ];
+  }
+  return NULL;
+}
+
+/**
+ * What every price-aware component needs to know.
+ */
+function _impeccabyte_price_context(): array {
+  $prices = \Drupal::service('impeccabyte_site.prices');
+  return [
+    'show_prices' => $prices->shown(),
+    'price_placeholder' => $prices->placeholder(),
+    'quote_url' => Url::fromUserInput($prices->quotePath())->toString(),
+  ];
+}
+
+/**
+ * Renders device or resource cards for a list of nodes.
+ */
+function _impeccabyte_teasers(array $nodes): array {
+  $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+  $build = [];
+  foreach ($nodes as $node) {
+    if ($node->access('view')) {
+      $build[] = $builder->view($node, 'teaser');
+    }
+  }
+  return $build;
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ *
+ * Each section paragraph is handed to the component named after its type.
+ */
+function impeccabyte_preprocess_paragraph(array &$variables) {
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
+  $data = _impeccabyte_entity_data($paragraph) + _impeccabyte_price_context();
+  $data['id'] = 'section-' . $paragraph->id();
+  $components = ['callout' => 'callout-band'];
+  $variables['component'] = 'impeccabyte:' . ($components[$bundle] ?? str_replace('_', '-', $bundle));
+
+  switch ($bundle) {
+    case 'hero':
+      $data['breadcrumb'] = [];
+      if (!empty($data['show_breadcrumb'])) {
+        $data['breadcrumb'] = _impeccabyte_breadcrumb();
+      }
+      break;
+
+    case 'card_grid':
+      $data['cards'] = [];
+      if ($data['source'] === 'manual') {
+        $data['cards'] = _impeccabyte_teasers(array_column($data['devices'], 'entity'));
+      }
+      elseif (\Drupal::entityTypeManager()->getStorage('view')->load('devices_by_filter')) {
+        $data['cards'] = ['#type' => 'view', '#name' => 'devices_by_filter', '#display_id' => $data['source']];
+      }
+      unset($data['devices']);
+      break;
+
+    case 'related_resources':
+      $data['cards'] = _impeccabyte_teasers(array_column($data['resources'], 'entity'));
+      unset($data['resources']);
+      break;
+
+    case 'webform_embed':
+      $data['form'] = $data['webform'] ? ['#type' => 'webform', '#webform' => $data['webform']] : NULL;
+      break;
+
+    case 'bundle':
+      $total = 0.0;
+      $complete = TRUE;
+      foreach ($data['items'] as &$item) {
+        $node = $item['reference']['entity'] ?? NULL;
+        $item['name'] = $item['title'] ?: ($item['reference']['label'] ?? '');
+        $item['url'] = $item['reference']['url'] ?? '';
+        $item['quantity'] = max(1, (int) ($item['quantity'] ?: 1));
+        $each = $item['monthly_price'];
+        if ($each === NULL && $node && $node->hasField('field_lease_price') && !$node->get('field_lease_price')->isEmpty()) {
+          $each = $node->get('field_lease_price')->value;
+        }
+        $item['each'] = $each;
+        $item['line_total'] = $each !== NULL ? (float) $each * $item['quantity'] : NULL;
+        if ($item['line_total'] === NULL) {
+          $complete = FALSE;
+        }
+        else {
+          $total += $item['line_total'];
+        }
+        unset($item['reference']);
+      }
+      unset($item);
+      $data['total'] = $total;
+      $data['total_complete'] = $complete;
+      break;
+
+    case 'faq':
+      // FAQPage structured data, built from the same questions.
+      $entities = [];
+      foreach ($paragraph->get('field_items')->referencedEntities() as $item) {
+        $entities[] = [
+          '@type' => 'Question',
+          'name' => $item->get('field_question')->value,
+          'acceptedAnswer' => ['@type' => 'Answer', 'text' => trim(strip_tags((string) $item->get('field_answer')->value, '<a><p><br><ul><ol><li><strong><em>'))],
+        ];
+      }
+      if ($entities) {
+        $variables['#attached']['html_head'][] = [[
+          '#tag' => 'script',
+          '#attributes' => ['type' => 'application/ld+json'],
+          '#value' => json_encode(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $entities], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+        ], 'impeccabyte_faq_' . $paragraph->id()];
+      }
+      break;
+  }
+  $variables['data'] = $data;
+}
+
+/**
+ * The trail to the current page: Home, its section and the page itself.
+ */
+function _impeccabyte_breadcrumb(): array {
+  $trail = [['title' => t('Home'), 'url' => Url::fromRoute('<front>')->toString()]];
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $sections = [
+      'solution' => [t('Solutions'), NULL],
+      'industry_page' => [t('Industries'), NULL],
+      'device' => [t('Hardware'), '/hardware'],
+      'resource' => [t('Resources'), '/resources'],
+    ];
+    if (isset($sections[$node->bundle()])) {
+      [$title, $path] = $sections[$node->bundle()];
+      $trail[] = ['title' => $title, 'url' => $path ? Url::fromUserInput($path)->toString() : ''];
+    }
+    $trail[] = ['title' => $node->label(), 'url' => ''];
+  }
+  return $trail;
+}

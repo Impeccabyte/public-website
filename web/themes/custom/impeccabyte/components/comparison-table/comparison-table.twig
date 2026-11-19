@@ -1,0 +1,30 @@
+<section{{ attributes.addClass(['section', 'section--white', 'comparison-table']) }}{% if heading %} aria-labelledby="{{ id }}-title"{% endif %}>
+  <div class="section__inner comparison-table__inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, heading_id: id ~ '-title'}, with_context = false) }}
+    <div class="table-scroll" tabindex="0" role="region" aria-label="{{ heading|default('Comparison'|t) }}">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th scope="col"><span class="visually-hidden">{{ 'Question'|t }}</span></th>
+            {% for column in columns %}<th scope="col"{{ loop.index == highlight_column ? ' class="is-highlight"' }}>{{ column }}{% if loop.index == highlight_column %}<span class="visually-hidden"> ({{ 'highlighted'|t }})</span>{% endif %}</th>{% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in items %}
+            <tr>
+              <th scope="row">{{ row.label }}</th>
+              {% for column in columns %}
+                {% set cell = row.cells[loop.index0] %}
+                <td{{ loop.index == highlight_column ? ' class="is-highlight"' }}>
+                  {%- if row.is_price and not show_prices -%}
+                    {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, quote_url: quote_url, size: 'sm', context: 'for ' ~ column}, with_context = false) }}
+                  {%- else -%}{{ cell }}{%- endif -%}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

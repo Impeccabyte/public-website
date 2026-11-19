@@ -1,0 +1,19 @@
+uuid: 07950a04-5b97-4f57-814c-84bb019a135a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_names
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_names
+field_name: field_names
+entity_type: paragraph
+bundle: logo_strip
+label: Names
+description: 'Shown as text until logos are supplied with permission.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

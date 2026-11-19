@@ -1,0 +1,19 @@
+name: Pricing card
+description: 'One pricing program: name, badge, description, starting-at value, bullets and a link.'
+props:
+  type: object
+  properties:
+    title: { title: 'Name' }
+    badge: { title: 'Badge' }
+    body: { title: 'Description' }
+    value: { title: 'Starting-at value' }
+    unit: { title: 'Unit line' }
+    bullets: { title: 'Bullets' }
+    link: { title: 'Link {url, title}' }
+    featured: { title: 'Featured card' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--card

@@ -1,0 +1,12 @@
+{% set shown = items|filter(i => show_prices or not i.is_price) %}
+{% if shown %}
+<section{{ attributes.addClass(['section', 'section--flush-top', 'stats']) }} aria-label="{{ 'At a glance'|t }}">
+  <div class="section__inner">
+    <dl class="stats__grid">
+      {% for stat in shown %}
+        <div class="stats__item"><dt class="stats__label">{{ stat.label }}</dt><dd class="stats__value">{{ stat.value }}</dd></div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
+{% endif %}

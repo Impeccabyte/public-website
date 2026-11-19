@@ -1,0 +1,10 @@
+uuid: 4054d7fe-c0d6-44db-bdec-5932e9370fc8
+langcode: en
+status: true
+dependencies: {  }
+id: faq_item
+label: Question
+icon_uuid: null
+icon_default: null
+description: 'One question and its answer.'
+behavior_plugins: {  }

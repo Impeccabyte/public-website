@@ -1,0 +1,23 @@
+uuid: 2439d744-bf7e-4c34-8b2c-7e4a2eb09e8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_volume
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_default_volume
+field_name: field_default_volume
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Starting monthly card sales'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

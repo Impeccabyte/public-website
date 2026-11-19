@@ -1,0 +1,10 @@
+uuid: 1b76daaf-8a0c-443e-a876-393fba9c100e
+langcode: en
+status: true
+dependencies: {  }
+id: card_grid
+label: 'Device card grid'
+icon_uuid: null
+icon_default: null
+description: 'A grid of device cards, picked by hand or by a filter.'
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: be615f99-b835-4334-bf92-4c5ae1452fab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_highlight_column
+    - paragraphs.paragraphs_type.comparison_table
+id: paragraph.comparison_table.field_highlight_column
+field_name: field_highlight_column
+entity_type: paragraph
+bundle: comparison_table
+label: 'Highlighted column'
+description: 'The number of the column to highlight, counting from 1.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

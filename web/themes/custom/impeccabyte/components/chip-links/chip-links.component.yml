@@ -1,0 +1,15 @@
+name: Industry picker
+description: 'Chips that switch between industries; each shows its pitch and a typical setup.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    items: { title: 'Industries {industry, title, body, link, items: setup lines}' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

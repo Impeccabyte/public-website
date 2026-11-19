@@ -1,0 +1,19 @@
+uuid: 928791f8-0f3e-4128-b2e7-e6f593128222
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro
+    - paragraphs.paragraphs_type.steps
+id: paragraph.steps.field_intro
+field_name: field_intro
+entity_type: paragraph
+bundle: steps
+label: Intro
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,6 @@
+name: Hero art
+description: 'The illustration beside the home hero: a dashboard card and a countertop terminal. Decorative figures only.'
+props:
+  type: object
+  properties:
+    label: { title: 'Text alternative' }

@@ -1,0 +1,13 @@
+name: Steps
+description: 'Numbered steps.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro: { title: 'Intro' }
+    items: { title: 'Steps {title, body}' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--card

@@ -1,0 +1,41 @@
+uuid: 49455031-274a-4921-952c-6efa598f9f1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.setup_line.field_note
+    - field.field.paragraph.setup_line.field_price_note
+    - field.field.paragraph.setup_line.field_title
+    - paragraphs.paragraphs_type.setup_line
+id: paragraph.setup_line.default
+targetEntityType: paragraph
+bundle: setup_line
+mode: default
+content:
+  field_note:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_price_note:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

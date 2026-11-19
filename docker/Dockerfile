@@ -29,4 +29,6 @@ RUN composer require --no-interaction --no-progress \
       drupal/simple_sitemap \
       drupal/redirect
 
+COPY docker/php.ini /usr/local/etc/php/conf.d/zz-impeccabyte.ini
+
 ENV PATH="${PATH}:/opt/drupal/vendor/bin"

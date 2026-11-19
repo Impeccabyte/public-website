@@ -1,0 +1,19 @@
+uuid: 592b2822-ead0-4116-ba60-11e15ccf9152
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.card_grid
+id: paragraph.card_grid.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: card_grid
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

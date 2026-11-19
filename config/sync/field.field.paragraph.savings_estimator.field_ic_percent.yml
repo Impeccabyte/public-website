@@ -1,0 +1,23 @@
+uuid: a25be72e-37c3-4e57-abb1-06aebee7e50c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ic_percent
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_ic_percent
+field_name: field_ic_percent
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Interchange plus effective percent'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: decimal

@@ -1,0 +1,10 @@
+uuid: 47253a13-6fb6-48cb-b418-fd86daedf743
+langcode: en
+status: true
+dependencies: {  }
+id: stats
+label: 'Stat row'
+icon_uuid: null
+icon_default: null
+description: 'Up to four values with labels.'
+behavior_plugins: {  }

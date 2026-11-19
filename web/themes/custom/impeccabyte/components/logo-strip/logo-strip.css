@@ -1,0 +1,6 @@
+.logo-strip { padding: var(--space-10) var(--gutter); border-block: 1px solid var(--ink-100); background: var(--white); }
+.logo-strip__inner { max-width: var(--container-xl); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-5) var(--space-12); }
+.logo-strip__intro { font-size: var(--text-sm); font-weight: var(--fw-medium); color: var(--ink-600); }
+.logo-strip__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-4) var(--space-12); }
+.logo-strip__name { font-weight: var(--fw-bold); font-size: var(--text-lg); color: var(--ink-600); }
+.logo-strip img { display: block; height: 28px; width: auto; }

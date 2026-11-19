@@ -1,0 +1,36 @@
+uuid: 6ff9a979-37db-45fe-beec-99ad68e3c2f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_callout_variant
+field_name: field_callout_variant
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: info
+      label: Info
+    -
+      value: success
+      label: Success
+    -
+      value: warning
+      label: Warning
+    -
+      value: danger
+      label: Danger
+    -
+      value: brand
+      label: Brand
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

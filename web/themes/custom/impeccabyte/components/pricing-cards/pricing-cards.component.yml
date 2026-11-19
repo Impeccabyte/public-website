@@ -1,0 +1,13 @@
+name: Pricing cards
+description: 'The pricing programs side by side.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    heading: { title: 'Heading for screen readers' }
+    items: { title: 'Cards' }
+    footnote: { title: 'Footnote' }
+    price_note: { title: 'Footnote shown only with prices' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }

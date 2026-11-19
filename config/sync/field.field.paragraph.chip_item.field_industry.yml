@@ -1,0 +1,25 @@
+uuid: c561641a-6980-4504-897a-3bb54a6c2033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_industry
+    - paragraphs.paragraphs_type.chip_item
+    - taxonomy.vocabulary.industry
+id: paragraph.chip_item.field_industry
+field_name: field_industry
+entity_type: paragraph
+bundle: chip_item
+label: Industry
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      industry: industry
+    auto_create: false
+field_type: entity_reference

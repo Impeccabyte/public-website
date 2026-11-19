@@ -1,0 +1,19 @@
+uuid: a51a2f77-4bf9-4b26-ba26-438e05b717d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.webform_embed
+id: paragraph.webform_embed.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: webform_embed
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

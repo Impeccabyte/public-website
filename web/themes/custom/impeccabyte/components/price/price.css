@@ -1,0 +1,7 @@
+.price { font-weight: var(--fw-bold); color: var(--ink-900); font-size: var(--text-md); }
+.price--sm { font-size: var(--text-sm); font-weight: var(--fw-semibold); }
+.price--lg { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-3xl); letter-spacing: -0.02em; line-height: var(--lh-snug); }
+.price--placeholder { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--space-3); }
+.price__soon { color: var(--ink-700); font-weight: var(--fw-semibold); }
+.price--lg .price__soon { font-size: var(--text-2xl); color: var(--ink-900); }
+.price__quote { display: inline-flex; align-items: center; min-height: 24px; font-family: var(--font-sans); font-size: var(--text-sm); font-weight: var(--fw-semibold); letter-spacing: 0; position: relative; z-index: 2; }

@@ -1,0 +1,21 @@
+uuid: b1f5bd64-4c73-414f-be75-e898567d3da2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_is_price
+    - paragraphs.paragraphs_type.stat
+id: paragraph.stat.field_is_price
+field_name: field_is_price
+entity_type: paragraph
+bundle: stat
+label: 'The value is a price'
+description: 'Hidden while "Show prices" is off.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

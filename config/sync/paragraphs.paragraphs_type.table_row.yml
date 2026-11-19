@@ -1,0 +1,10 @@
+uuid: b43a9a3a-c1b8-4639-bb19-42a41e2a67a1
+langcode: en
+status: true
+dependencies: {  }
+id: table_row
+label: 'Table row'
+icon_uuid: null
+icon_default: null
+description: 'One row of a comparison table.'
+behavior_plugins: {  }

@@ -1,0 +1,16 @@
+<section{{ attributes.addClass(['section', 'webform-embed']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
+  <div class="section__inner webform-embed__inner">
+    <div class="webform-embed__intro">
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h2 class="section-header__heading" id="{{ id }}-title">{{ heading }}</h2>
+      {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+      {% if items %}
+        <ol class="webform-embed__steps">
+          {% for step in items %}<li><span class="webform-embed__num" aria-hidden="true">{{ loop.index }}</span><span><strong>{{ step.title }}</strong>{% if step.body %}<span class="webform-embed__step-body">{{ step.body }}</span>{% endif %}</span></li>{% endfor %}
+        </ol>
+      {% endif %}
+      {% if note %}<p class="webform-embed__note">{{ include('impeccabyte:icon', {name: 'lock', size: 18}, with_context = false) }}{{ note }}</p>{% endif %}
+    </div>
+    <div class="webform-embed__form form-card">{{ form }}</div>
+  </div>
+</section>

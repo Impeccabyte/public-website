@@ -1,0 +1,10 @@
+uuid: 8b4c79d3-61db-4a81-8c09-785fe6a3de63
+langcode: en
+status: true
+dependencies: {  }
+id: pricing_card
+label: 'Pricing card'
+icon_uuid: null
+icon_default: null
+description: 'One pricing program.'
+behavior_plugins: {  }

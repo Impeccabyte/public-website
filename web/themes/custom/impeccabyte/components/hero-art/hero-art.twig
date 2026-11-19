@@ -1,0 +1,26 @@
+{# Sample figures in an illustration, not real merchant data. #}
+<div{{ attributes.addClass('hero-art') }} role="img" aria-label="{{ label|default('A countertop terminal beside the Impeccabyte merchant dashboard showing today\'s sales'|t) }}">
+  <div class="hero-art__dash" aria-hidden="true">
+    <div class="hero-art__chrome"><span></span><span></span><span></span><span class="hero-art__url">app.impeccabyte.com</span></div>
+    <div class="hero-art__body">
+      <div class="hero-art__row">
+        <div><div class="hero-art__label">{{ "Today's sales"|t }}</div><div class="hero-art__figure">$3,284.50</div></div>
+        {{ include('impeccabyte:badge', {label: 'Batch closed'|t, variant: 'success', dot: true}, with_context = false) }}
+      </div>
+      <div class="hero-art__bars"><span style="--h: 38%"></span><span style="--h: 55%"></span><span style="--h: 44%"></span><span style="--h: 70%" class="is-2"></span><span style="--h: 62%" class="is-2"></span><span style="--h: 84%" class="is-3"></span><span style="--h: 100%" class="is-4"></span></div>
+      <div class="hero-art__lines">
+        <div><span>Tap · Visa •• 4821</span><strong>$18.40</strong></div>
+        <div><span>Link · Amex •• 3007</span><strong>$240.00</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-art__terminal" aria-hidden="true">
+    <div class="hero-art__screen">
+      <div class="hero-art__total">{{ 'Total'|t }}</div>
+      <div class="hero-art__amount">$42.18</div>
+      {{ include('impeccabyte:icon', {name: 'nfc', size: 36}, with_context = false) }}
+      <div class="hero-art__prompt">{{ 'Tap, insert or swipe'|t }}</div>
+    </div>
+    <div class="hero-art__slot"></div>
+  </div>
+</div>

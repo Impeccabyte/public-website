@@ -1,0 +1,19 @@
+uuid: 6c43475c-c325-42bd-b7e7-8cedeb8eac47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_note
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.field_note
+field_name: field_note
+entity_type: paragraph
+bundle: bundle_item
+label: Note
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

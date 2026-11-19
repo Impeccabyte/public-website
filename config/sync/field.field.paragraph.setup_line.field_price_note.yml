@@ -1,0 +1,19 @@
+uuid: 6ce7af9a-800b-4e54-bab8-9e86e914a24a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_price_note
+    - paragraphs.paragraphs_type.setup_line
+id: paragraph.setup_line.field_price_note
+field_name: field_price_note
+entity_type: paragraph
+bundle: setup_line
+label: 'Note with price'
+description: 'Shown in place of the note while "Show prices" is on.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

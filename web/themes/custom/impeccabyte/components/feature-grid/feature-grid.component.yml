@@ -1,0 +1,10 @@
+name: Feature grid
+description: 'A section header and a grid of feature cards.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro: { title: 'Intro' }
+    items: { title: 'Cards {icon, title, body, link, highlight}' }

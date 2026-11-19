@@ -1,0 +1,10 @@
+uuid: 2d22066a-c8b0-4541-a4aa-989fd389ba30
+langcode: en
+status: true
+dependencies: {  }
+id: chip_links
+label: 'Industry picker'
+icon_uuid: null
+icon_default: null
+description: 'Chips that switch between industries and their typical setups.'
+behavior_plugins: {  }

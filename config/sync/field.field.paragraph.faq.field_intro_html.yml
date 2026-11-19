@@ -1,0 +1,24 @@
+uuid: 3ac43714-5a2a-49a1-951d-dff167ec76c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_html
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.faq
+  module:
+    - text
+id: paragraph.faq.field_intro_html
+field_name: field_intro_html
+entity_type: paragraph
+bundle: faq
+label: Intro
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

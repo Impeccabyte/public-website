@@ -1,0 +1,19 @@
+uuid: 7df51e7d-9d09-46b6-9f71-e86cfe7414da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns
+    - paragraphs.paragraphs_type.comparison_table
+id: paragraph.comparison_table.field_columns
+field_name: field_columns
+entity_type: paragraph
+bundle: comparison_table
+label: 'Column headers'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

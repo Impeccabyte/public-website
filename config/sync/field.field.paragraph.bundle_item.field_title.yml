@@ -1,0 +1,19 @@
+uuid: 930f9971-9048-4c20-b5a6-99b716586332
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.bundle_item
+id: paragraph.bundle_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: bundle_item
+label: Name
+description: 'Used when no device or solution is chosen, or to override its title.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

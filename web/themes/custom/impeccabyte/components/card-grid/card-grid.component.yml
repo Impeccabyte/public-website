@@ -1,0 +1,14 @@
+name: Device card grid
+description: 'A section header and a grid of device cards.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro: { title: 'Intro' }
+    link: { title: 'Link {url, title}' }
+    cards: { title: 'Rendered device cards' }
+    footnote: { title: 'Footnote' }
+    price_note: { title: 'Footnote shown only with prices' }
+    show_prices: { title: 'Whether prices are shown' }

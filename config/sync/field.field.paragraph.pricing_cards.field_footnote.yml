@@ -1,0 +1,19 @@
+uuid: 0fd0df0e-54bb-4e90-8540-0235a12a97ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_footnote
+    - paragraphs.paragraphs_type.pricing_cards
+id: paragraph.pricing_cards.field_footnote
+field_name: field_footnote
+entity_type: paragraph
+bundle: pricing_cards
+label: Footnote
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

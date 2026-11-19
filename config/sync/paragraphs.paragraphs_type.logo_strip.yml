@@ -1,0 +1,10 @@
+uuid: 19ce6cca-d38c-45f6-b396-dfab3b78b756
+langcode: en
+status: true
+dependencies: {  }
+id: logo_strip
+label: 'Logo strip'
+icon_uuid: null
+icon_default: null
+description: 'A row of partner names or logos.'
+behavior_plugins: {  }

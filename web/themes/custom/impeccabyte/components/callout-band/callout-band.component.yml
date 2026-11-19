@@ -1,0 +1,9 @@
+name: Callout section
+description: 'A callout placed as a page section.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    callout_variant: { title: 'info, success, warning, danger or brand' }
+    title: { title: 'Title' }
+    text: { title: 'Body' }

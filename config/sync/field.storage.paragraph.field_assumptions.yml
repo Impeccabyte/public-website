@@ -1,0 +1,19 @@
+uuid: 02dc76ab-a1be-4726-a891-1fb75b9cf9aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_assumptions
+field_name: field_assumptions
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

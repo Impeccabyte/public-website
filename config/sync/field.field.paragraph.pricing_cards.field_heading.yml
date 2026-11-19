@@ -1,0 +1,19 @@
+uuid: c372257a-7e94-452b-a085-5ffca54eaca6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.pricing_cards
+id: paragraph.pricing_cards.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: pricing_cards
+label: Heading
+description: 'Read by screen readers; not shown.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,42 @@
+uuid: 8842571f-ccad-4682-9559-5d38cb0d65df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.table_row.field_cells
+    - field.field.paragraph.table_row.field_is_price
+    - field.field.paragraph.table_row.field_label
+    - paragraphs.paragraphs_type.table_row
+id: paragraph.table_row.default
+targetEntityType: paragraph
+bundle: table_row
+mode: default
+content:
+  field_cells:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_is_price:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

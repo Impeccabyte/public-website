@@ -1,0 +1,10 @@
+uuid: bec23c18-6366-4777-8471-1f73d2cf50de
+langcode: en
+status: true
+dependencies: {  }
+id: webform_embed
+label: 'Embedded form'
+icon_uuid: null
+icon_default: null
+description: 'A form with a heading and steps beside it.'
+behavior_plugins: {  }

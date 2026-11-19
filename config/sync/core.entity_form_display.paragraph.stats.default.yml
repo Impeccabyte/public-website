@@ -1,0 +1,35 @@
+uuid: 4fd35bd3-c7a7-4a92-82fe-fc8c35c8d22c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stats.field_items
+    - paragraphs.paragraphs_type.stats
+  module:
+    - paragraphs
+id: paragraph.stats.default
+targetEntityType: paragraph
+bundle: stats
+mode: default
+content:
+  field_items:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: 15c98019-e4f7-4148-8044-6c8403f9181a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.cta_band
+id: paragraph.cta_band.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: cta_band
+label: Headline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+name: Logo strip
+description: 'A row of partner names or logos.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    intro: { title: 'Intro text' }
+    names: { title: 'Names shown as text' }
+    logos: { title: 'Images {url, alt}' }

@@ -1,0 +1,14 @@
+name: Comparison table
+description: 'A table that scrolls inside its own box on small screens.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    columns: { title: 'Column headers' }
+    highlight_column: { title: 'Number of the highlighted column, from 1' }
+    items: { title: 'Rows {label, cells, is_price}' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }

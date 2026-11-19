@@ -1,0 +1,23 @@
+uuid: c73cb60b-628a-4c1e-842c-01022477fbd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_placeholder
+    - paragraphs.paragraphs_type.testimonial
+id: paragraph.testimonial.field_placeholder
+field_name: field_placeholder
+entity_type: paragraph
+bundle: testimonial
+label: 'This is a placeholder'
+description: 'Leave on until a real, approved quote is supplied. Placeholders are labeled on the page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

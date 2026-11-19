@@ -1,0 +1,10 @@
+uuid: 45de274b-ad85-457b-9104-b72b33122be6
+langcode: en
+status: true
+dependencies: {  }
+id: feature_card
+label: 'Feature card'
+icon_uuid: null
+icon_default: null
+description: 'One card in a feature grid.'
+behavior_plugins: {  }

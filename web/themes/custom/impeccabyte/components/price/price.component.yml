@@ -1,0 +1,12 @@
+name: Price
+description: 'A price, or the pricing placeholder with a quote link while prices are off.'
+props:
+  type: object
+  properties:
+    value: { title: 'Formatted price text' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }
+    size: { title: 'sm, md or lg' }
+    link: { title: 'Show the quote link with the placeholder' }
+    context: { title: 'Words for screen readers naming what the quote is for' }

@@ -1,0 +1,8 @@
+name: Stat row
+description: 'Up to four values with labels. Price values are left out while prices are off.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    items: { title: 'Stats {value, label, is_price}' }
+    show_prices: { title: 'Whether prices are shown' }

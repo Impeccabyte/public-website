@@ -1,0 +1,5 @@
+.breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--ink-600); }
+.breadcrumb li { display: inline-flex; align-items: center; gap: var(--space-2); }
+.breadcrumb a { display: inline-flex; align-items: center; min-height: 24px; font-weight: var(--fw-medium); }
+.breadcrumb [aria-current] { color: var(--ink-800); font-weight: var(--fw-medium); }
+.breadcrumb .icon { color: var(--ink-400); }

@@ -1,0 +1,53 @@
+uuid: 4ee4fd1c-8934-41a6-9aa1-83f99422e342
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.steps.field_eyebrow
+    - field.field.paragraph.steps.field_heading
+    - field.field.paragraph.steps.field_intro
+    - field.field.paragraph.steps.field_items
+    - paragraphs.paragraphs_type.steps
+  module:
+    - entity_reference_revisions
+id: paragraph.steps.default
+targetEntityType: paragraph
+bundle: steps
+mode: default
+content:
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: 98245d51-d443-4fb5-abe9-2d4c3e5eea45
+langcode: en
+status: true
+dependencies: {  }
+id: bundle_item
+label: 'Setup item'
+icon_uuid: null
+icon_default: null
+description: 'One device or solution in a recommended setup.'
+behavior_plugins: {  }

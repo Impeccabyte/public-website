@@ -1,0 +1,5 @@
+{% if show_prices and value %}
+<span{{ attributes.addClass(['price', 'price--' ~ size|default('md')]) }}>{{ value }}</span>
+{% else %}
+<span{{ attributes.addClass(['price', 'price--placeholder', 'price--' ~ size|default('md')]) }}><span class="price__soon">{{ price_placeholder }}</span>{% if link is not same as(false) and quote_url %} <a class="price__quote" href="{{ quote_url }}">{{ 'Get a quote'|t }}{% if context %}<span class="visually-hidden"> {{ context }}</span>{% endif %}</a>{% endif %}</span>
+{% endif %}

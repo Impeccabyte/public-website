@@ -1,0 +1,10 @@
+uuid: d1535139-62ef-4897-97d2-734aa70c026f
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+icon_uuid: null
+icon_default: null
+description: 'The top of a page: headline with one italic accent word, lead and calls to action.'
+behavior_plugins: {  }

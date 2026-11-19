@@ -1,0 +1,19 @@
+uuid: 6547ee52-0a7c-4e20-8be4-8a9880e062cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accent_word
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_accent_word
+field_name: field_accent_word
+entity_type: paragraph
+bundle: hero
+label: 'Accent word'
+description: 'One word from the headline to set in italic clay.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

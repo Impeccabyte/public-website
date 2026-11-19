@@ -9,4 +9,5 @@ props:
     link_label: { title: 'Link label' }
     link_url: { title: 'Link target' }
     heading_level: { title: 'Heading level, 2 by default' }
+    heading_id: { title: 'Id for the heading, so a section can be labelled by it' }
     align: { title: 'left or center' }

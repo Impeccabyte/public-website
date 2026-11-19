@@ -1,0 +1,6 @@
+.faq__inner { flex-direction: row; flex-wrap: wrap; }
+.faq__header { flex: 1 1 320px; display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.faq__items { flex: 2 1 560px; min-width: 0; }
+.faq--centered .faq__inner { max-width: var(--container-md); flex-direction: column; gap: var(--space-8); }
+.faq--centered .faq__header { flex: none; text-align: center; align-items: center; }
+.faq--centered .faq__items { flex: none; }

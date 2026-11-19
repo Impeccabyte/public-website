@@ -1,0 +1,23 @@
+uuid: 9eeb9c6a-7885-4f47-8169-026aca95015b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_placeholder
+    - paragraphs.paragraphs_type.case_study
+id: paragraph.case_study.field_placeholder
+field_name: field_placeholder
+entity_type: paragraph
+bundle: case_study
+label: 'This is a placeholder'
+description: 'Leave on until a real, approved story is supplied. Placeholders are labeled on the page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

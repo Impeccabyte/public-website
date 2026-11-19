@@ -1,0 +1,30 @@
+uuid: b57f42ab-0a12-4d59-9fab-535f804d204c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_source
+field_name: field_source
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: manual
+      label: 'Devices picked below'
+    -
+      value: featured
+      label: 'Featured devices'
+    -
+      value: dual_pricing
+      label: 'Dual pricing ready devices'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

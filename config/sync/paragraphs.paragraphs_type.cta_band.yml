@@ -1,0 +1,10 @@
+uuid: 9c37b58c-1d20-47de-8a2c-d63c7ac32bf2
+langcode: en
+status: true
+dependencies: {  }
+id: cta_band
+label: 'CTA band'
+icon_uuid: null
+icon_default: null
+description: 'A clove band with a headline and up to two links.'
+behavior_plugins: {  }

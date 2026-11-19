@@ -227,3 +227,78 @@ if (!function_exists('ib_menu')) {
   }
 
 }
+
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+
+if (!function_exists('ib_paragraph')) {
+
+  /**
+   * Creates a paragraph from a short spec and returns its field value.
+   *
+   * Keys are field names without "field_". A list of arrays that each carry
+   * "_type" becomes child paragraphs. Example:
+   *   ib_paragraph('steps', ['heading' => 'How it works', 'items' => [
+   *     ['_type' => 'step', 'title' => 'Apply', 'body' => '...'],
+   *   ]]);
+   */
+  function ib_paragraph(string $type, array $spec): array {
+    $values = ['type' => $type];
+    foreach ($spec as $key => $value) {
+      if (is_array($value) && $value && is_array(reset($value)) && isset(reset($value)['_type'])) {
+        $children = [];
+        foreach ($value as $child) {
+          $child_type = $child['_type'];
+          unset($child['_type']);
+          $children[] = ib_paragraph($child_type, $child);
+        }
+        $value = $children;
+      }
+      $values['field_' . $key] = $value;
+    }
+    $paragraph = Paragraph::create($values);
+    $paragraph->save();
+    return ['target_id' => $paragraph->id(), 'target_revision_id' => $paragraph->getRevisionId()];
+  }
+
+  /**
+   * Finds the node that owns a URL alias.
+   */
+  function ib_node_by_alias(string $alias): ?Node {
+    $aliases = \Drupal::entityTypeManager()->getStorage('path_alias')->loadByProperties(['alias' => $alias]);
+    foreach ($aliases as $entity) {
+      if (preg_match('#^/node/(\d+)$#', $entity->getPath(), $match) && ($node = Node::load($match[1]))) {
+        return $node;
+      }
+    }
+    return NULL;
+  }
+
+  /**
+   * Creates a published page at an alias unless one is already there.
+   *
+   * $sections is a list of [type, spec] pairs for ib_paragraph(). $fields
+   * holds any other field values, keyed by full field name.
+   */
+  function ib_page(string $bundle, string $title, string $alias, array $sections = [], array $fields = []): Node {
+    if ($node = ib_node_by_alias($alias)) {
+      return $node;
+    }
+    $values = ['type' => $bundle, 'title' => $title, 'status' => 1, 'uid' => 1, 'path' => ['alias' => $alias, 'pathauto' => 0]] + $fields;
+    if ($sections) {
+      $values['field_sections'] = array_map(fn(array $section) => ib_paragraph($section[0], $section[1]), $sections);
+    }
+    $node = Node::create($values);
+    $node->save();
+    return $node;
+  }
+
+  function ib_link(string $path, string $title): array {
+    return ['uri' => str_contains($path, '://') ? $path : 'internal:' . $path, 'title' => $title];
+  }
+
+  function ib_html(string $html): array {
+    return ['value' => $html, 'format' => 'basic_html'];
+  }
+
+}

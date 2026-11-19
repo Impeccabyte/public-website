@@ -1,0 +1,9 @@
+<section{{ attributes.addClass('logo-strip') }} aria-label="{{ 'Hardware and partners'|t }}">
+  <div class="logo-strip__inner">
+    {% if intro %}<p class="logo-strip__intro">{{ intro }}</p>{% endif %}
+    <ul class="logo-strip__list">
+      {% for logo in logos %}<li><img src="{{ logo.url }}" alt="{{ logo.alt }}" height="28" loading="lazy"></li>{% endfor %}
+      {% if not logos %}{% for name in names %}<li class="logo-strip__name">{{ name }}</li>{% endfor %}{% endif %}
+    </ul>
+  </div>
+</section>

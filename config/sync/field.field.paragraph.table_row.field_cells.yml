@@ -1,0 +1,19 @@
+uuid: ff276c1a-5dc5-4e1e-967c-97c19dd6d376
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cells
+    - paragraphs.paragraphs_type.table_row
+id: paragraph.table_row.field_cells
+field_name: field_cells
+entity_type: paragraph
+bundle: table_row
+label: Cells
+description: 'One cell per column, in column order.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,94 @@
+uuid: 74fa140e-8ed1-4a7c-9ba4-b8624dcc7a8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_grid.field_devices
+    - field.field.paragraph.card_grid.field_eyebrow
+    - field.field.paragraph.card_grid.field_footnote
+    - field.field.paragraph.card_grid.field_heading
+    - field.field.paragraph.card_grid.field_intro
+    - field.field.paragraph.card_grid.field_link
+    - field.field.paragraph.card_grid.field_price_note
+    - field.field.paragraph.card_grid.field_source
+    - paragraphs.paragraphs_type.card_grid
+  module:
+    - link
+    - options
+id: paragraph.card_grid.default
+targetEntityType: paragraph
+bundle: card_grid
+mode: default
+content:
+  field_devices:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_footnote:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_price_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_source:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

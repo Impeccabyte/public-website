@@ -1,0 +1,10 @@
+uuid: cf61b7cc-5dcb-4720-93ba-f8424893cca9
+langcode: en
+status: true
+dependencies: {  }
+id: chip_item
+label: 'Industry chip'
+icon_uuid: null
+icon_default: null
+description: 'One industry in the industry picker, with its typical setup.'
+behavior_plugins: {  }

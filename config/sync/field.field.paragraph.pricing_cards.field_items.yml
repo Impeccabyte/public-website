@@ -1,0 +1,27 @@
+uuid: 7e9419f8-3275-4818-adcc-963fa2f9d2ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.pricing_card
+    - paragraphs.paragraphs_type.pricing_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.pricing_cards.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: pricing_cards
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pricing_card: pricing_card
+    negate: 0
+field_type: entity_reference_revisions

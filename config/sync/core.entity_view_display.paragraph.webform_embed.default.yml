@@ -1,0 +1,84 @@
+uuid: 9a74299f-d0b5-45bb-bae6-c31dfb580258
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.webform_embed.field_anchor
+    - field.field.paragraph.webform_embed.field_eyebrow
+    - field.field.paragraph.webform_embed.field_heading
+    - field.field.paragraph.webform_embed.field_intro
+    - field.field.paragraph.webform_embed.field_items
+    - field.field.paragraph.webform_embed.field_note
+    - field.field.paragraph.webform_embed.field_webform
+    - paragraphs.paragraphs_type.webform_embed
+  module:
+    - entity_reference_revisions
+    - webform
+id: paragraph.webform_embed.default
+targetEntityType: paragraph
+bundle: webform_embed
+mode: default
+content:
+  field_anchor:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_webform:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

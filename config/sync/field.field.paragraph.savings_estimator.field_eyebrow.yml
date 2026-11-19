@@ -1,0 +1,19 @@
+uuid: e78be6ae-f024-4021-81bf-bca0d956dbf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eyebrow
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_eyebrow
+field_name: field_eyebrow
+entity_type: paragraph
+bundle: savings_estimator
+label: Eyebrow
+description: 'Short label above the heading.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,3 @@
+.card-grid__inner { gap: var(--space-10); }
+.card-grid__grid { --_min: 260px; }
+.card-grid__note { font-size: var(--text-sm); color: var(--ink-600); }

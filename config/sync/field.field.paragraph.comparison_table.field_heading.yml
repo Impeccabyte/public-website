@@ -1,0 +1,19 @@
+uuid: 96e68cf3-b67c-4d10-95de-e7ceeb280303
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.comparison_table
+id: paragraph.comparison_table.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: comparison_table
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

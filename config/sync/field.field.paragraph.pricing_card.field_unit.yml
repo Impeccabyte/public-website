@@ -1,0 +1,19 @@
+uuid: dd248962-2afd-403f-a5ac-aa0bbcb3a26f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_unit
+    - paragraphs.paragraphs_type.pricing_card
+id: paragraph.pricing_card.field_unit
+field_name: field_unit
+entity_type: paragraph
+bundle: pricing_card
+label: Unit
+description: 'The line under the value, such as per card sale.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

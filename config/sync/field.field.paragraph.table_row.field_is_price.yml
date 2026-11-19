@@ -1,0 +1,21 @@
+uuid: 9c8223ca-54fb-4900-9ed1-004afb4fb03c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_is_price
+    - paragraphs.paragraphs_type.table_row
+id: paragraph.table_row.field_is_price
+field_name: field_is_price
+entity_type: paragraph
+bundle: table_row
+label: 'This row holds prices'
+description: 'Cells show the pricing placeholder while "Show prices" is off.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

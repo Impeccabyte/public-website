@@ -1,0 +1,19 @@
+uuid: 9dceae19-0843-473d-9ef0-f39eeac72bb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eyebrow
+    - paragraphs.paragraphs_type.bundle
+id: paragraph.bundle.field_eyebrow
+field_name: field_eyebrow
+entity_type: paragraph
+bundle: bundle
+label: Eyebrow
+description: 'Short label above the heading.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

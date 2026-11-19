@@ -1,0 +1,19 @@
+uuid: d833fae0-ea64-46ed-be37-89f87ba33d5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_price_note
+    - paragraphs.paragraphs_type.pricing_cards
+id: paragraph.pricing_cards.field_price_note
+field_name: field_price_note
+entity_type: paragraph
+bundle: pricing_cards
+label: 'Price footnote'
+description: 'Shown only while "Show prices" is on.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

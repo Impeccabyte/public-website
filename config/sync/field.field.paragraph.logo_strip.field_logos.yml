@@ -1,0 +1,24 @@
+uuid: 17a14e11-251b-4989-a23e-fc802b4086b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_logos
+    - media.type.image
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_logos
+field_name: field_logos
+entity_type: paragraph
+bundle: logo_strip
+label: Logos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

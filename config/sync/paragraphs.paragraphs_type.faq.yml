@@ -1,0 +1,10 @@
+uuid: 7f1f6af9-b7dc-4866-8e4c-9af27eb24101
+langcode: en
+status: true
+dependencies: {  }
+id: faq
+label: 'FAQ accordion'
+icon_uuid: null
+icon_default: null
+description: 'Questions and answers. Outputs FAQPage structured data.'
+behavior_plugins: {  }

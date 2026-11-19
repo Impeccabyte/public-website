@@ -1,0 +1,10 @@
+uuid: 71d73b8d-0f92-4c9d-8764-95db6c5e2abb
+langcode: en
+status: true
+dependencies: {  }
+id: case_study
+label: 'Case study'
+icon_uuid: null
+icon_default: null
+description: 'A short customer story with up to three metrics.'
+behavior_plugins: {  }

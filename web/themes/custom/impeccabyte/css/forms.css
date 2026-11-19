@@ -95,3 +95,21 @@ fieldset > legend { margin-bottom: var(--space-2); }
 .messages--warning { background: var(--amber-50); border-color: var(--amber-100); color: var(--amber-800); }
 .messages--error { background: var(--brick-50); border-color: var(--brick-100); color: var(--brick-700); }
 .messages ul { margin: 0; padding-left: var(--space-5); }
+
+/* Two-column field groups inside forms. */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--space-4); width: 100%; }
+.webform-submission-form > .form-grid, .webform-submission-form > .form-actions, .webform-submission-form > div { width: 100%; }
+.button--block.form-submit { width: 100%; }
+
+/* File upload: a dashed drop area with a button-styled chooser. */
+.form-managed-file { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); padding: var(--space-8) var(--space-5); border: 1.5px dashed var(--ink-500); border-radius: var(--radius-lg); background: var(--ink-50); text-align: center; }
+.form-managed-file .form-file { max-width: 100%; font: inherit; }
+.form-managed-file .webform-file-button, .form-file::file-selector-button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; margin-right: var(--space-3); border: 1px solid var(--ink-400); border-radius: var(--radius-pill); background: var(--white); color: var(--ink-900); font: var(--fw-semibold) var(--text-base)/1 var(--font-sans); cursor: pointer; }
+.form-managed-file .form-file:focus-visible + .webform-file-button, .form-file:focus-visible { outline: 2px solid var(--clay-600); outline-offset: 2px; }
+.form-managed-file .file { font-weight: var(--fw-semibold); }
+.webform-confirmation { padding: var(--space-6); border-radius: var(--radius-lg); background: var(--sage-50); border: 1px solid var(--sage-300); color: var(--ink-800); }
+.webform-confirmation p + p { margin-top: var(--space-2); }
+
+/* A checkbox keeps its label beside the box and its description under the label. */
+.form-type-checkbox, .js-form-type-checkbox, .form-type-radio, .js-form-type-radio { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: var(--space-3); row-gap: 2px; align-items: center; }
+.form-type-checkbox .description, .js-form-type-checkbox .description, .form-type-radio .description, .form-type-checkbox .form-item--error-message { grid-column: 2; }

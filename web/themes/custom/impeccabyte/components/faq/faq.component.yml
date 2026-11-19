@@ -1,0 +1,11 @@
+name: FAQ accordion
+description: 'A heading and questions that open one at a time.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro_html: { title: 'Intro markup' }
+    layout: { title: 'split or centered' }
+    items: { title: 'Questions {question, answer}' }

@@ -1,0 +1,21 @@
+uuid: 4f6529ef-5fd9-4c55-bb95-4eba4846bb1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured
+    - paragraphs.paragraphs_type.pricing_card
+id: paragraph.pricing_card.field_featured
+field_name: field_featured
+entity_type: paragraph
+bundle: pricing_card
+label: 'Feature this card'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

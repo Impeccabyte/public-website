@@ -1,0 +1,23 @@
+uuid: da1ea0cd-5514-4cc7-8285-bbe8eb4251ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flat_percent
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_flat_percent
+field_name: field_flat_percent
+entity_type: paragraph
+bundle: savings_estimator
+label: 'Flat rate percent'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: decimal

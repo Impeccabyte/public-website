@@ -1,0 +1,10 @@
+uuid: 749e63f1-28a4-4b3f-ac76-b099bc819e76
+langcode: en
+status: true
+dependencies: {  }
+id: setup_line
+label: 'Setup line'
+icon_uuid: null
+icon_default: null
+description: 'One line of a typical setup.'
+behavior_plugins: {  }

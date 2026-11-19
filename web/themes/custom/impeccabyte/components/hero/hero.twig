@@ -1,0 +1,42 @@
+{% set v = hero_variant|default('split') %}
+{% set has_media = v in ['split', 'image_right'] %}
+<section{{ attributes.addClass(['section', 'hero', 'hero--' ~ v|replace({'_': '-'})]) }} aria-labelledby="{{ id }}-title">
+  <div class="section__inner hero__inner">
+    <div class="hero__text">
+      {% if breadcrumb %}{{ include('impeccabyte:breadcrumb', {items: breadcrumb}, with_context = false) }}{% endif %}
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h1 class="hero__title" id="{{ id }}-title">
+        {%- if accent_word and accent_word in heading -%}
+          {%- set parts = heading|split(accent_word, 2) -%}
+          {{ parts[0] }}<em class="accent-word">{{ accent_word }}</em>{{ parts[1] }}
+        {%- else -%}
+          {{ heading }}
+        {%- endif -%}
+      </h1>
+      {% if intro %}<p class="lead hero__lead">{{ intro }}</p>{% endif %}
+      {% if search %}<div class="hero__search">{{ search }}</div>{% endif %}
+      {% if link.url or link_secondary.url %}
+        <div class="hero__actions">
+          {% if link.url %}{{ include('impeccabyte:button', {label: link.title, href: link.url, variant: 'primary', size: 'lg'}, with_context = false) }}{% endif %}
+          {% if link_secondary.url %}{{ include('impeccabyte:button', {label: link_secondary.title, href: link_secondary.url, variant: 'secondary', size: 'lg'}, with_context = false) }}{% endif %}
+        </div>
+      {% endif %}
+      {% if checklist %}
+        <ul class="hero__checks">
+          {% for line in checklist %}<li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}{{ line }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    {% if has_media %}
+      <div class="hero__media">
+        {% if media.url %}
+          <img class="hero__image" src="{{ media.url }}" alt="{{ media.alt }}"{% if media.width %} width="{{ media.width }}" height="{{ media.height }}"{% endif %}>
+        {% elseif v == 'split' %}
+          {{ include('impeccabyte:hero-art', {label: media_label}, with_context = false) }}
+        {% else %}
+          <div class="hero__placeholder" role="img" aria-label="{{ media_label|default('Photo placeholder'|t) }}"><span>{{ 'Photo to come'|t }}</span></div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<div{{ attributes.addClass(['pricing-card', 'card', featured ? 'pricing-card--featured']) }}>
+  <div class="pricing-card__head">
+    <h3 class="pricing-card__title">{{ title }}</h3>
+    {% if badge %}{{ include('impeccabyte:badge', {label: badge, variant: 'brand', solid: true}, with_context = false) }}{% endif %}
+  </div>
+  <p class="pricing-card__body">{{ body }}</p>
+  <div class="pricing-card__price">
+    {% if show_prices and value %}
+      <span class="pricing-card__label">{{ 'Starting at'|t }}</span>
+      <span class="pricing-card__value">{{ value }}</span>
+      {% if unit %}<span class="pricing-card__unit">{{ unit }}</span>{% endif %}
+    {% else %}
+      {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, quote_url: quote_url, size: 'lg', context: 'for ' ~ title}, with_context = false) }}
+    {% endif %}
+  </div>
+  {% if bullets %}
+    <ul class="pricing-card__bullets">
+      {% for bullet in bullets %}<li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}<span>{{ bullet }}</span></li>{% endfor %}
+    </ul>
+  {% endif %}
+  {% if link.url %}<div class="pricing-card__action">{{ include('impeccabyte:button', {label: link.title, href: link.url, variant: featured ? 'primary' : 'secondary', block: true}, with_context = false) }}</div>{% endif %}
+</div>

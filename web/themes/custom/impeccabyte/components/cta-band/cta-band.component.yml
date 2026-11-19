@@ -1,0 +1,11 @@
+name: CTA band
+description: 'A clove band with a headline, one italic amber word and up to two buttons.'
+props:
+  type: object
+  properties:
+    id: { title: 'Section id' }
+    heading: { title: 'Headline' }
+    accent_word: { title: 'Word set in italic amber' }
+    body: { title: 'Body' }
+    link: { title: 'Primary link {url, title}' }
+    link_secondary: { title: 'Secondary link {url, title}' }

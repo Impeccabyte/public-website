@@ -1,0 +1,19 @@
+uuid: 6239fc18-305d-4088-8d6e-fab2521d364d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.savings_estimator
+id: paragraph.savings_estimator.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: savings_estimator
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
