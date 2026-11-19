@@ -99,4 +99,16 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## Setup panel without hardware (all industry pages)
 
-- A setup made only of solutions (Professional services, Home services after edits, and any future one) now shows "Your quote: Every fee in writing before you sign." instead of a hardware estimate. Confirm the wording.
+- A setup made only of solutions (Professional services today, and any future one) now shows "Your quote: Every fee in writing before you sign." instead of a hardware estimate. Confirm the wording.
+
+## Nonprofits (`/industries/nonprofits`)
+
+- **Nonprofit pricing.** The FAQ answers "Do you offer special pricing for nonprofits?" by saying you compare programs on their statement. If Maverick has a nonprofit rate or program, name it there.
+- **Donor receipts.** "Your own acknowledgment letters for tax purposes still come from your organization." Payment receipts only; no tax-receipt claims.
+- **Text-to-give links** and ACH gifts listed as setup add-ons.
+
+## Pop-ups and markets (`/industries/pop-ups-and-markets`)
+
+- **Tap to pay on your phone.** Offered as a backup and a setup add-on; same open question as On the go.
+- **New businesses.** "Many vendors start with us before their first market." Confirm you take brand-new businesses.
+- **Flat-rate pricing** named as the starting program, as on the Home page's pop-up chip.
