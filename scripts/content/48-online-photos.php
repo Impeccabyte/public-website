@@ -23,10 +23,10 @@ require_once dirname(__DIR__) . '/setup/_helpers.php';
 // Key => [file, width, height, alt text].
 $photos = [
   'hero' => ['hero.jpg', 1024, 688, 'A business owner packs a handmade mug into a shipping box beside an open laptop.'],
-  'links' => ['links.jpg', 1344, 752, 'A florist sends a payment link from a phone in her workshop.'],
+  'links' => ['links.jpg', 1344, 752, 'A florist opens an invoice for wedding centerpieces on her phone, ready to pay.'],
   'checkout' => ['checkout.jpg', 1344, 752, 'A laptop on a shop counter shows an online store checkout page.'],
   'developer' => ['developer.jpg', 1344, 752, 'A developer works on a website at a desk with two monitors.'],
-  'security' => ['security.jpg', 1024, 688, 'A customer at home pays on a phone, a card resting on her knee.'],
+  'security' => ['security.jpg', 1024, 688, 'A customer at home taps Pay on a secure checkout screen, a card resting on her knee.'],
 ];
 
 $file_system = \Drupal::service('file_system');
