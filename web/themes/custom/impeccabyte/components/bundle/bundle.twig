@@ -6,7 +6,7 @@
         <ul class="bundle__items">
           {% for item in items %}
             <li class="bundle__item">
-              <span class="bundle__marker" aria-hidden="true">{% if item.is_solution %}{{ include('impeccabyte:icon', {name: 'circle-percent', size: 20}, with_context = false) }}{% endif %}</span>
+              <span class="bundle__marker" aria-hidden="true">{{ include('impeccabyte:icon', {name: item.icon|default(item.is_solution ? 'circle-percent' : 'credit-card'), size: 20}, with_context = false) }}</span>
               <span class="bundle__text">
                 {% if item.label %}<span class="bundle__role">{{ item.label }}</span>{% endif %}
                 <span class="bundle__name">{% if item.url and not item.is_solution %}<a href="{{ item.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.quantity > 1 %} × {{ item.quantity }}{% endif %}</span>

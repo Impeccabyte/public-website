@@ -389,6 +389,7 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
       foreach ($data['items'] as &$item) {
         $node = $item['reference']['entity'] ?? NULL;
         $item['is_solution'] = $node && $node->bundle() === 'solution';
+        $item['icon'] = _impeccabyte_bundle_item_icon($node, (string) ($item['title'] ?? ''));
         $item['name'] = $item['title'] ?: ($item['reference']['label'] ?? '');
         $item['url'] = $item['reference']['url'] ?? '';
         $item['quantity'] = max(1, (int) ($item['quantity'] ?: 1));
@@ -732,4 +733,34 @@ function impeccabyte_preprocess_views_view(array &$variables) {
       }
     }
   }
+}
+
+/**
+ * Picks the icon for a line in a recommended setup.
+ *
+ * A solution uses its own menu icon, a device the icon for its type, and a
+ * line typed in by hand (a kitchen display, a scanner) one that matches its
+ * name, so no marker is ever left empty.
+ */
+function _impeccabyte_bundle_item_icon($node, string $title): string {
+  if ($node && $node->bundle() === 'solution' && $node->hasField('field_icon') && $node->get('field_icon')->value) {
+    return $node->get('field_icon')->value;
+  }
+  if ($node && $node->bundle() === 'device' && $node->hasField('field_device_type') && ($type = $node->get('field_device_type')->entity)) {
+    $by_type = [
+      'Countertop terminal' => 'credit-card',
+      'Handheld' => 'smartphone',
+      'Mobile reader' => 'nfc',
+      'POS system' => 'monitor',
+      'Self-order kiosk' => 'store',
+    ];
+    return $by_type[$type->label()] ?? 'credit-card';
+  }
+  $by_word = ['scanner' => 'search', 'display' => 'monitor', 'kds' => 'monitor', 'printer' => 'printer', 'drawer' => 'store'];
+  foreach ($by_word as $word => $icon) {
+    if (str_contains(strtolower($title), $word)) {
+      return $icon;
+    }
+  }
+  return 'credit-card';
 }
