@@ -1,16 +1,31 @@
+{% set tiles = layout == 'tiles' %}
+{% macro mark(logo, area) %}
+  {# Each logo is a mask filled with one ink tone, so every brand sits in the
+     site's palette whatever colors its file uses. The height follows the
+     logo's proportions so wide and tall marks carry the same visual weight. #}
+  {% set ratio = (logo.width and logo.height) ? logo.width / logo.height : 3 %}
+  <span class="logo-strip__logo" role="img" aria-label="{{ logo.alt|default(logo.label) }}" style="--_logo: url('{{ logo.url }}'); --_ratio: {{ ratio|round(3) }}; --_height: {{ ((area / ratio) ** 0.5)|round }}px;"></span>
+{% endmacro %}
+{% if tiles %}
+<section{{ attributes.addClass(['section', 'logo-strip', 'logo-strip--tiles']) }} id="{{ anchor|default(id) }}" aria-labelledby="{{ id }}-title">
+  <div class="section__inner logo-strip__tiles-inner">
+    {{ include('impeccabyte:section-header', {eyebrow: eyebrow, heading: heading, intro: body, heading_id: id ~ '-title'}, with_context = false) }}
+    <ul class="logo-strip__tiles">
+      {% for logo in logos %}<li class="logo-strip__tile">{{ _self.mark(logo, 6000) }}</li>{% endfor %}
+      {% if not logos %}{% for name in names %}<li class="logo-strip__tile logo-strip__name">{{ name }}</li>{% endfor %}{% endif %}
+      {% if title or note %}<li class="logo-strip__tile logo-strip__tile--text">{% if title %}<span class="logo-strip__tile-title">{{ title }}</span>{% endif %}{% if note %}<span class="logo-strip__tile-note">{{ note }}</span>{% endif %}</li>{% endif %}
+    </ul>
+    {% if footnote %}<p class="logo-strip__footnote">{{ footnote }}</p>{% endif %}
+  </div>
+</section>
+{% else %}
 <section{{ attributes.addClass('logo-strip') }} aria-label="{{ 'Hardware and partners'|t }}">
   <div class="logo-strip__inner">
     {% if intro %}<p class="logo-strip__intro">{{ intro }}</p>{% endif %}
     <ul class="logo-strip__list">
-      {% for logo in logos %}
-        {# Each logo is a mask filled with one ink tone, so every brand sits in
-           the site's palette whatever colors its file uses. The height is set
-           from the logo's proportions so wide and tall marks carry the same
-           visual weight. #}
-        {% set ratio = (logo.width and logo.height) ? logo.width / logo.height : 3 %}
-        <li><span class="logo-strip__logo" role="img" aria-label="{{ logo.alt|default(logo.label) }}" style="--_logo: url('{{ logo.url }}'); --_ratio: {{ ratio|round(3) }}; --_height: {{ ((3400 / ratio) ** 0.5)|round }}px;"></span></li>
-      {% endfor %}
+      {% for logo in logos %}<li>{{ _self.mark(logo, 3400) }}</li>{% endfor %}
       {% if not logos %}{% for name in names %}<li class="logo-strip__name">{{ name }}</li>{% endfor %}{% endif %}
     </ul>
   </div>
 </section>
+{% endif %}

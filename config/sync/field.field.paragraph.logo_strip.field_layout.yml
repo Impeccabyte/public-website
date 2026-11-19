@@ -1,0 +1,23 @@
+uuid: 10ffd68d-a2de-43c1-8cb8-10ba5b97ad9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.logo_strip
+  module:
+    - options
+id: paragraph.logo_strip.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: logo_strip
+label: Layout
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: strip
+default_value_callback: ''
+settings: {  }
+field_type: list_string

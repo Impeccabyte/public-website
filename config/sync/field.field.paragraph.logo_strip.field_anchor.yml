@@ -1,0 +1,19 @@
+uuid: d1df658c-e65f-4c41-81d5-2e3d422c1e98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_anchor
+field_name: field_anchor
+entity_type: paragraph
+bundle: logo_strip
+label: Anchor
+description: 'Lets links jump to this section, for example gateways.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

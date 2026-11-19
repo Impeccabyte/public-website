@@ -7,3 +7,11 @@ description: 'A row of partner names or logos.'
 #   intro: Intro text
 #   names: Names shown as text
 #   logos: Images {url, alt, width, height}, each drawn as a mask in one ink tone
+#   layout: strip or tiles
+#   anchor: Anchor id, tiles layout
+#   eyebrow, heading, body: Section header, tiles layout
+#   title, note: Text tile after the logos, tiles layout
+#   footnote: Small print under the tiles
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--section-header

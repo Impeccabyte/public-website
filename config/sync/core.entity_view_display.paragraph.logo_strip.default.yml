@@ -3,21 +3,81 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.logo_strip.field_anchor
+    - field.field.paragraph.logo_strip.field_body
+    - field.field.paragraph.logo_strip.field_eyebrow
+    - field.field.paragraph.logo_strip.field_footnote
+    - field.field.paragraph.logo_strip.field_heading
     - field.field.paragraph.logo_strip.field_intro
+    - field.field.paragraph.logo_strip.field_layout
     - field.field.paragraph.logo_strip.field_logos
     - field.field.paragraph.logo_strip.field_names
+    - field.field.paragraph.logo_strip.field_note
+    - field.field.paragraph.logo_strip.field_title
     - paragraphs.paragraphs_type.logo_strip
+  module:
+    - options
 id: paragraph.logo_strip.default
 targetEntityType: paragraph
 bundle: logo_strip
 mode: default
 content:
+  field_anchor:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_footnote:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_intro:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_layout:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: -1
     region: content
   field_logos:
     type: entity_reference_label
@@ -35,6 +95,24 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_note:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   search_api_excerpt: true

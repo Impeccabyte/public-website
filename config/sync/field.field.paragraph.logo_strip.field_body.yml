@@ -1,0 +1,19 @@
+uuid: e2b906a1-1143-46bf-9a73-c8885e05a672
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: logo_strip
+label: Body
+description: 'Tiles layout only. Shown under the heading.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

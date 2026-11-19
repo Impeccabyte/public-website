@@ -1,0 +1,19 @@
+uuid: 290d23bd-2236-438f-8b38-eb027e56084b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: logo_strip
+label: 'Last tile title'
+description: 'Tiles layout only. A text tile after the logos, such as "Using something else?"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

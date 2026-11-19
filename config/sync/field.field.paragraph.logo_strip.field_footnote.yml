@@ -1,0 +1,19 @@
+uuid: dd19d211-09a6-4716-aa93-60904a35bcc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_footnote
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_footnote
+field_name: field_footnote
+entity_type: paragraph
+bundle: logo_strip
+label: Footnote
+description: 'Tiles layout only. Small print under the tiles.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

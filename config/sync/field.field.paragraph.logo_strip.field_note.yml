@@ -1,0 +1,19 @@
+uuid: 19a045fd-fb54-4878-9623-c300c7f40b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_note
+    - paragraphs.paragraphs_type.logo_strip
+id: paragraph.logo_strip.field_note
+field_name: field_note
+entity_type: paragraph
+bundle: logo_strip
+label: 'Last tile text'
+description: 'Tiles layout only.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

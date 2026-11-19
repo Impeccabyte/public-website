@@ -6,4 +6,18 @@
 .logo-strip__logo { display: block; height: var(--_height, 32px); aspect-ratio: var(--_ratio, 3); background-color: var(--ink-600); -webkit-mask: var(--_logo) center / contain no-repeat; mask: var(--_logo) center / contain no-repeat; }
 /* High contrast modes repaint backgrounds; keep the logos visible there. */
 @media (forced-colors: active) { .logo-strip__logo { forced-color-adjust: none; background-color: CanvasText; } }
-@media (max-width: 760px) { .logo-strip__list { gap: var(--space-5) var(--space-8); } .logo-strip__logo { height: calc(var(--_height, 32px) * 0.85); } }
+@media (max-width: 760px) { .logo-strip__list { gap: var(--space-5) var(--space-8); } .logo-strip__list .logo-strip__logo { height: calc(var(--_height, 32px) * 0.85); } }
+
+/* Tiles: a heading, then one white tile per logo and an optional text tile. */
+.logo-strip--tiles { padding-block: var(--section-y); border: 0; background: none; }
+.logo-strip__tiles-inner { gap: var(--space-10); }
+.logo-strip__tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-4); }
+.logo-strip__tile { min-height: 120px; display: flex; align-items: center; justify-content: center; padding: var(--space-6); background: var(--white); border: 1px solid var(--ink-200); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.logo-strip__tile--text { flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; background: var(--clay-50); border-color: var(--clay-100); box-shadow: none; }
+.logo-strip__tile-title { font-weight: var(--fw-semibold); color: var(--ink-900); }
+.logo-strip__tile-note { font-size: var(--text-sm); line-height: var(--lh-body); color: var(--ink-700); }
+.logo-strip__footnote { font-size: var(--text-sm); color: var(--ink-600); }
+@media (max-width: 760px) { .logo-strip--tiles { padding-block: var(--space-16); } }
+/* Four tiles split two by two on tablets instead of three and one. */
+@media (min-width: 561px) and (max-width: 1100px) { .logo-strip__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.logo-strip__tile .logo-strip__logo { max-width: 100%; }
