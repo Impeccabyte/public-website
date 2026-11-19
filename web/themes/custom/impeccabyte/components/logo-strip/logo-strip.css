@@ -3,4 +3,7 @@
 .logo-strip__intro { font-size: var(--text-sm); font-weight: var(--fw-medium); color: var(--ink-600); }
 .logo-strip__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-4) var(--space-12); }
 .logo-strip__name { font-weight: var(--fw-bold); font-size: var(--text-lg); color: var(--ink-600); }
-.logo-strip img { display: block; height: 28px; width: auto; }
+.logo-strip__logo { display: block; height: var(--_height, 32px); aspect-ratio: var(--_ratio, 3); background-color: var(--ink-600); -webkit-mask: var(--_logo) center / contain no-repeat; mask: var(--_logo) center / contain no-repeat; }
+/* High contrast modes repaint backgrounds; keep the logos visible there. */
+@media (forced-colors: active) { .logo-strip__logo { forced-color-adjust: none; background-color: CanvasText; } }
+@media (max-width: 760px) { .logo-strip__list { gap: var(--space-5) var(--space-8); } .logo-strip__logo { height: calc(var(--_height, 32px) * 0.85); } }

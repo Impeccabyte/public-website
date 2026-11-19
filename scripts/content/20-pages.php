@@ -34,7 +34,10 @@ $home = ib_page('landing_page', 'Home', '/home', [
     'checklist' => ['Free statement review', 'Every fee in writing', 'Support from Austin'],
   ]],
   ['logo_strip', [
-    'intro' => 'Authorized agent of Maverick Payments. Hardware and partners we set up:',
+    // The Maverick line is kept for the footer disclosure. The logos are
+    // attached by scripts/content/25-partner-logos.php; the names are the
+    // fallback when a strip has no logos.
+    'intro' => 'Hardware and partners we set up:',
     'names' => ['Clover', 'PAX', 'Dejavoo', 'Valor', 'Ingenico', 'NMI'],
   ]],
   ['feature_grid', [

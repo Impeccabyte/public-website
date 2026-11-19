@@ -6,4 +6,4 @@ description: 'A row of partner names or logos.'
 #   id: Section id
 #   intro: Intro text
 #   names: Names shown as text
-#   logos: Images {url, alt}
+#   logos: Images {url, alt, width, height}, each drawn as a mask in one ink tone

@@ -2,7 +2,14 @@
   <div class="logo-strip__inner">
     {% if intro %}<p class="logo-strip__intro">{{ intro }}</p>{% endif %}
     <ul class="logo-strip__list">
-      {% for logo in logos %}<li><img src="{{ logo.url }}" alt="{{ logo.alt }}" height="28" loading="lazy"></li>{% endfor %}
+      {% for logo in logos %}
+        {# Each logo is a mask filled with one ink tone, so every brand sits in
+           the site's palette whatever colors its file uses. The height is set
+           from the logo's proportions so wide and tall marks carry the same
+           visual weight. #}
+        {% set ratio = (logo.width and logo.height) ? logo.width / logo.height : 3 %}
+        <li><span class="logo-strip__logo" role="img" aria-label="{{ logo.alt|default(logo.label) }}" style="--_logo: url('{{ logo.url }}'); --_ratio: {{ ratio|round(3) }}; --_height: {{ ((3400 / ratio) ** 0.5)|round }}px;"></span></li>
+      {% endfor %}
       {% if not logos %}{% for name in names %}<li class="logo-strip__name">{{ name }}</li>{% endfor %}{% endif %}
     </ul>
   </div>
