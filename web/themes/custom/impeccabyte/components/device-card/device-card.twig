@@ -1,0 +1,28 @@
+{% set catalog = variant == 'catalog' %}
+{% set h = 'h' ~ heading_level|default(catalog ? 2 : 3) %}
+<article{{ attributes.addClass(['device-card', 'card', 'card--interactive', catalog ? 'device-card--catalog']) }}>
+  <div class="device-card__media">{{ include('impeccabyte:device-shot', {image: image, name: title, shape: shape, decorative: true}, with_context = false) }}</div>
+  <div class="device-card__body">
+    {% if catalog %}
+      <p class="device-card__meta">{{ manufacturer }} · {{ type }}</p>
+    {% else %}
+      {{ include('impeccabyte:badge', {label: type, variant: 'neutral', size: 'sm'}, with_context = false) }}
+    {% endif %}
+    <{{ h }} class="device-card__title"><a class="device-card__link" href="{{ url }}">{{ title }}</a></{{ h }}>
+    {% if summary %}<p class="device-card__summary">{{ summary }}</p>{% endif %}
+    <div class="device-card__prices">
+      {% if show_prices and lease %}
+        <span class="device-card__lease">{{ 'From @price/mo'|t({'@price': lease}) }}</span>
+        {% if buy %}<span class="device-card__buy">{{ 'Buy from @price'|t({'@price': buy}) }}</span>{% endif %}
+      {% else %}
+        {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, quote_url: quote_url, size: 'md', context: 'for ' ~ title}, with_context = false) }}
+      {% endif %}
+    </div>
+    {% if catalog %}
+      <div class="device-card__actions">
+        <button class="compare-toggle" type="button" aria-pressed="false" data-compare-toggle data-compare-id="{{ nid }}" data-compare-name="{{ title }}"><span data-compare-label data-label-off="{{ 'Compare'|t }}" data-label-on="{{ 'Added to compare'|t }}">{{ 'Compare'|t }}</span><span class="visually-hidden"> {{ title }}</span></button>
+        <span class="device-card__details" aria-hidden="true">{{ 'Details'|t }}</span>
+      </div>
+    {% endif %}
+  </div>
+</article>

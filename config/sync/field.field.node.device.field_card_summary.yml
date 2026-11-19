@@ -1,0 +1,19 @@
+uuid: 58635c1a-9a6a-46fd-9773-74cf8be415da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_card_summary
+    - node.type.device
+id: node.device.field_card_summary
+field_name: field_card_summary
+entity_type: node
+bundle: device
+label: 'Short description'
+description: 'One line for device cards.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Device comparison: a toggle on device cards, a tray and a comparison page.
+ *
+ * The picked devices live in the browser's sessionStorage, so nothing is
+ * stored on the server and pages stay cacheable.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function impeccabyte_compare_theme() {
+  return [
+    'impeccabyte_compare_tray' => [
+      'variables' => ['max' => 3, 'compare_url' => ''],
+    ],
+    'impeccabyte_compare_table' => [
+      'variables' => ['devices' => [], 'rows' => [], 'catalog_url' => '', 'show_prices' => FALSE, 'price_placeholder' => '', 'quote_url' => ''],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Compare toggles can appear on any public page that lists devices.
+ */
+function impeccabyte_compare_page_attachments(array &$attachments) {
+  if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'impeccabyte_compare/compare';
+  }
+}

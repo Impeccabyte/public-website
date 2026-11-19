@@ -1,0 +1,8 @@
+name: Impeccabyte compare
+type: module
+description: 'Lets visitors pick up to three devices and compare them side by side.'
+package: Impeccabyte
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - impeccabyte_site:impeccabyte_site

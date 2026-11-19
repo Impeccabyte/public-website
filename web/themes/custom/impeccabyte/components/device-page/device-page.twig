@@ -1,0 +1,114 @@
+{% set fee_list %}
+  {% if fees %}
+    <p class="device-page__fees-label">{{ 'Monthly software fees, either way'|t }}</p>
+    <dl class="device-page__fees">
+      {% for fee in fees %}
+        <div><dt>{{ fee.label }}</dt><dd>{% if show_prices and fee.amount %}{{ fee.amount }}/mo{% else %}{{ price_placeholder }}{% endif %}</dd></div>
+      {% endfor %}
+    </dl>
+  {% endif %}
+{% endset %}
+<article{{ attributes.addClass('device-page') }}>
+  <section class="section device-page__top" aria-labelledby="device-title">
+    <div class="section__inner device-page__top-inner">
+      {{ include('impeccabyte:breadcrumb', {items: breadcrumb}, with_context = false) }}
+      <div class="device-page__cols">
+        <div class="device-page__gallery">
+          {{ include('impeccabyte:gallery', {id: 'gallery', name: title, images: gallery, shape: shape}, with_context = false) }}
+        </div>
+        <div class="device-page__info">
+          <div class="device-page__badges">
+            {{ include('impeccabyte:badge', {label: manufacturer.label, variant: 'neutral'}, with_context = false) }}
+            {{ include('impeccabyte:badge', {label: device_type.label, variant: 'brand'}, with_context = false) }}
+            {% if in_stock %}{{ include('impeccabyte:badge', {label: 'In stock'|t, variant: 'success', dot: true}, with_context = false) }}{% endif %}
+            {% if dual_pricing_ready %}{{ include('impeccabyte:badge', {label: 'Dual pricing ready'|t, variant: 'accent'}, with_context = false) }}{% endif %}
+          </div>
+          <h1 class="device-page__title" id="device-title">{{ title }}</h1>
+          {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
+          {% set lease_panel %}
+            {% if lease_terms %}<p><strong>{{ 'Leasing:'|t }}</strong> {{ lease_terms }}</p>{% endif %}
+            {{ fee_list }}
+          {% endset %}
+          {% set buy_panel %}
+            {% if buy_terms %}<p><strong>{{ 'Buying:'|t }}</strong> {{ buy_terms }}</p>{% endif %}
+            {{ fee_list }}
+          {% endset %}
+          {{ include('impeccabyte:choice-card', {
+            id: 'pay',
+            label: 'Lease or buy'|t,
+            show_prices: show_prices,
+            price_placeholder: price_placeholder,
+            options: [
+              {key: 'lease', name: 'Lease'|t, price: lease, unit: 'a month'|t, note: 'Month to month'|t, panel: lease_panel},
+              {key: 'buy', name: 'Buy'|t, price: buy, unit: 'one time'|t, note: 'Yours to keep'|t, panel: buy_panel},
+            ],
+          }, with_context = false) }}
+          <div class="device-page__actions">
+            {{ include('impeccabyte:button', {label: 'Get a quote for this device'|t, href: quote_url ~ '?device=' ~ title|url_encode, variant: 'primary', size: 'lg'}, with_context = false) }}
+            <button class="button button--secondary button--lg" type="button" aria-pressed="false" data-compare-toggle data-compare-id="{{ nid }}" data-compare-name="{{ title }}"><span data-compare-label data-label-off="{{ 'Add to compare'|t }}" data-label-on="{{ 'Added to compare'|t }}">{{ 'Add to compare'|t }}</span></button>
+          </div>
+          {% if key_features %}
+            <ul class="device-page__features">
+              {% for feature in key_features %}<li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}{{ feature }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if specs or gateways %}
+    <section class="section section--white device-page__details">
+      <div class="section__inner device-page__details-inner">
+        {% if specs %}
+          <div class="device-page__specs">
+            <h2 class="device-page__h2" id="device-specs">{{ 'Specs'|t }}</h2>
+            <div class="table-scroll" tabindex="0" role="region" aria-labelledby="device-specs">
+              <table class="spec-table">
+                <tbody>
+                  {% for row in specs %}<tr><th scope="row">{{ row.label }}</th><td>{{ row.spec_value }}</td></tr>{% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        {% endif %}
+        {% if gateways or gateway_note %}
+          <div class="device-page__gateways">
+            <h2 class="device-page__h2">{{ 'Compatible gateways'|t }}</h2>
+            {% if gateways %}
+              <ul class="device-page__gateway-list">
+                {% for gateway in gateways %}
+                  <li><span class="device-page__gateway-icon">{{ include('impeccabyte:icon', {name: gateway.icon|default('credit-card'), size: 20}, with_context = false) }}</span><span><span class="device-page__gateway-name">{{ gateway.title }}</span><span class="device-page__gateway-body">{{ gateway.body }}</span></span></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if gateway_note %}{{ include('impeccabyte:callout', {variant: 'info', body: gateway_note}, with_context = false) }}{% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if documents %}
+    <section class="section device-page__docs" aria-labelledby="device-docs">
+      <div class="section__inner device-page__docs-inner">
+        <h2 class="device-page__h2" id="device-docs">{{ 'Guides and spec sheets'|t }}</h2>
+        <ul class="device-page__doc-list grid-auto">
+          {% for doc in documents %}
+            <li><a class="device-page__doc card card--pad-sm card--interactive" href="{{ doc.url }}"><span class="device-page__doc-icon">{{ include('impeccabyte:icon', {name: 'file-text', size: 22}, with_context = false) }}</span><span class="device-page__doc-text"><span class="device-page__doc-name">{{ doc.label }}</span><span class="device-page__doc-meta">{{ doc.mime == 'application/pdf' ? 'PDF' : 'File'|t }} · {{ (doc.size / 1048576)|number_format(1) }} MB</span></span>{{ include('impeccabyte:icon', {name: 'download', size: 20}, with_context = false) }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  {% endif %}
+
+  {% set related_markup = related|render %}
+  {% if related_markup|striptags|trim %}
+    <section class="section{{ documents ? ' section--flush-top' }} device-page__related" aria-labelledby="device-related">
+      <div class="section__inner device-page__docs-inner">
+        <h2 class="device-page__h2" id="device-related">{{ 'You might also consider'|t }}</h2>
+        <div class="grid-auto device-page__related-grid">{{ related_markup }}</div>
+      </div>
+    </section>
+  {% endif %}
+</article>

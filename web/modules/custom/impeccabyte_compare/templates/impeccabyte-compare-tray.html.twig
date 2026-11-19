@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * The compare tray. compare.js fills the slots from sessionStorage.
+ *
+ * Available variables:
+ * - max: how many devices can be compared.
+ * - compare_url: the comparison page.
+ */
+#}
+<section class="compare-tray" aria-label="{{ 'Devices to compare'|t }}" data-compare-tray data-compare-max="{{ max }}" data-compare-url="{{ compare_url }}">
+  <p class="compare-tray__count" aria-live="polite"><span data-compare-count data-template="{{ 'Compare (@count/@max)'|t }}">{{ 'Compare (@count/@max)'|t({'@count': 0, '@max': max}) }}</span></p>
+  <ul class="compare-tray__slots" data-compare-slots data-empty-label="{{ 'Add a device'|t }}" data-remove-label="{{ 'Remove @name'|t }}">
+    {% for i in 1..max %}<li class="compare-tray__slot compare-tray__slot--empty">{{ 'Add a device'|t }}</li>{% endfor %}
+  </ul>
+  <button class="button button--primary compare-tray__go" type="button" data-compare-go disabled>{{ 'Compare devices'|t }}</button>
+</section>

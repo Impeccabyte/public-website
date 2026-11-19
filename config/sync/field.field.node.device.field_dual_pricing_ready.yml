@@ -1,0 +1,21 @@
+uuid: 89bfbd6e-2e10-4f24-a6aa-7e7c8384554d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dual_pricing_ready
+    - node.type.device
+id: node.device.field_dual_pricing_ready
+field_name: field_dual_pricing_ready
+entity_type: node
+bundle: device
+label: 'Dual pricing ready'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

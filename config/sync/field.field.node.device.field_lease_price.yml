@@ -1,0 +1,23 @@
+uuid: cbed8347-4d99-4b6f-8e7d-677f37894551
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lease_price
+    - node.type.device
+id: node.device.field_lease_price
+field_name: field_lease_price
+entity_type: node
+bundle: device
+label: 'Lease price per month'
+description: 'Shown as "From $X/mo" once "Show prices" is on.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0.0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

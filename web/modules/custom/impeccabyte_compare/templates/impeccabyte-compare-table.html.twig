@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * The device comparison page.
+ *
+ * Available variables:
+ * - devices: list of {title, url}.
+ * - rows: list of {label, cells, is_price}. A cell is a string or a list.
+ * - catalog_url: the hardware catalog.
+ * - show_prices, price_placeholder, quote_url: price display settings.
+ */
+#}
+<div class="section compare-page">
+  <div class="section__inner compare-page__inner">
+    <div class="compare-page__header">
+      <p class="eyebrow">{{ 'Hardware'|t }}</p>
+      <h1 class="compare-page__title">{{ 'Compare devices'|t }}</h1>
+      <a class="text-link" href="{{ catalog_url }}">{{ 'Back to all hardware'|t }}</a>
+    </div>
+    {% if devices|length < 2 %}
+      <p class="lead">{{ 'Pick two or three devices in the hardware catalog, then choose Compare devices.'|t }}</p>
+    {% else %}
+      <div class="table-scroll" tabindex="0" role="region" aria-label="{{ 'Device comparison'|t }}">
+        <table class="cmp compare-page__table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">{{ 'Detail'|t }}</span></th>
+              {% for device in devices %}<th scope="col"><a href="{{ device.url }}">{{ device.title }}</a></th>{% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+              <tr>
+                <th scope="row">{{ row.label }}</th>
+                {% for cell in row.cells %}
+                  <td>
+                    {%- if row.is_price and not show_prices -%}
+                      <span class="price price--placeholder price--sm"><span class="price__soon">{{ price_placeholder }}</span> <a class="price__quote" href="{{ quote_url }}">{{ 'Get a quote'|t }}<span class="visually-hidden"> {{ 'for @name'|t({'@name': devices[loop.index0].title}) }}</span></a></span>
+                    {%- elseif cell is iterable -%}
+                      {% if cell %}<ul>{% for line in cell %}<li>{{ line }}</li>{% endfor %}</ul>{% else %}<span aria-hidden="true">·</span><span class="visually-hidden">{{ 'None listed'|t }}</span>{% endif %}
+                    {%- else -%}
+                      {{ cell }}
+                    {%- endif -%}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+</div>

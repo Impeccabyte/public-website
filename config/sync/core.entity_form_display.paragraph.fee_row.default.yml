@@ -1,0 +1,31 @@
+uuid: 1ad29780-7aee-4c58-8163-5ed43d02a08b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fee_row.field_amount
+    - field.field.paragraph.fee_row.field_label
+    - paragraphs.paragraphs_type.fee_row
+id: paragraph.fee_row.default
+targetEntityType: paragraph
+bundle: fee_row
+mode: default
+content:
+  field_amount:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

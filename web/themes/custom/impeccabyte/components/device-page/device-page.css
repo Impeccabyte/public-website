@@ -1,0 +1,40 @@
+.device-page__top { padding-top: var(--space-12); }
+.device-page__top-inner { gap: var(--space-8); }
+.device-page__cols { display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; }
+.device-page__gallery { flex: 1 1 480px; min-width: 0; }
+.device-page__info { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-5); }
+.device-page__badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.device-page__title { font-size: clamp(var(--text-3xl), 4.4vw, var(--text-4xl)); line-height: var(--lh-display); letter-spacing: -0.025em; }
+.device-page__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.device-page__actions [data-compare-toggle][aria-pressed="true"] { background: var(--clay-50); border-color: var(--clay-600); color: var(--clay-700); }
+.device-page__features { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3) var(--space-5); }
+.device-page__features li { display: flex; gap: var(--space-3); align-items: center; }
+.device-page__features .icon { flex-shrink: 0; color: var(--sage-500); }
+.choice__panel { display: flex; flex-direction: column; gap: var(--space-4); }
+.choice__panel strong { color: var(--ink-900); }
+.device-page__fees-label { font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--ink-600); margin-bottom: calc(var(--space-2) * -1); }
+.device-page__fees { margin: 0; padding-top: 14px; border-top: 1px solid var(--ink-100); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm); color: var(--ink-700); }
+.device-page__fees div { display: flex; justify-content: space-between; gap: var(--space-4); }
+.device-page__fees dd { margin: 0; font-weight: var(--fw-semibold); color: var(--ink-900); text-align: right; }
+.device-page__h2 { font-size: clamp(var(--text-xl), 3vw, var(--text-2xl)); line-height: var(--lh-heading); letter-spacing: -0.02em; }
+.device-page__details-inner { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+.device-page__specs { flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-6); }
+.device-page__gateways { flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-5); }
+.spec-table { width: 100%; min-width: 480px; border-collapse: collapse; text-align: left; }
+.spec-table th, .spec-table td { padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--ink-100); vertical-align: top; }
+.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: 0; }
+.spec-table th { width: 34%; font-weight: var(--fw-semibold); color: var(--ink-900); }
+.device-page__gateway-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.device-page__gateway-list li { display: flex; gap: var(--space-4); align-items: flex-start; padding: 18px; border: 1px solid var(--ink-200); border-radius: var(--radius-md); background: var(--paper); }
+.device-page__gateway-icon { flex-shrink: 0; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-md); background: var(--clay-50); color: var(--clay-600); }
+.device-page__gateway-name { display: block; font-weight: var(--fw-semibold); color: var(--ink-900); }
+.device-page__gateway-body { display: block; font-size: var(--text-sm); line-height: var(--lh-body); color: var(--ink-600); }
+.device-page__docs-inner { gap: var(--space-6); }
+.device-page__doc-list { --_min: 280px; list-style: none; margin: 0; padding: 0; gap: var(--space-4); }
+.device-page__doc { flex-direction: row; align-items: center; gap: var(--space-4); color: var(--clay-600); }
+.device-page__doc-icon { flex-shrink: 0; width: 48px; height: 56px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); background: var(--clay-50); color: var(--clay-600); }
+.device-page__doc-text { flex: 1; min-width: 0; }
+.device-page__doc-name { display: block; font-weight: var(--fw-semibold); color: var(--ink-900); }
+.device-page__doc-meta { display: block; font-size: var(--text-sm); color: var(--ink-600); }
+.device-page__related-grid { --_min: 240px; gap: var(--space-5); }
+@media (max-width: 760px) { .device-page__cols { gap: var(--space-8); } }

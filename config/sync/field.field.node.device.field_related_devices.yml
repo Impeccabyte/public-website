@@ -1,0 +1,23 @@
+uuid: 353d5532-eb59-4b8a-9647-4d1c0d55792a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_devices
+    - node.type.device
+id: node.device.field_related_devices
+field_name: field_related_devices
+entity_type: node
+bundle: device
+label: 'Related devices'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      device: device
+field_type: entity_reference

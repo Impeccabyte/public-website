@@ -7,9 +7,18 @@ global:
     component:
       css/forms.css: {}
       css/a11y.css: {}
+      css/compare.css: {}
+      css/catalog.css: {}
+  js:
+    js/catalog.js: {}
   dependencies:
     - core/drupal
     - core/once
+    # The compare page's table and price placeholders come from a module
+    # template, so their component styles load everywhere.
+    - core/components.impeccabyte--comparison-table
+    - core/components.impeccabyte--price
+    - core/components.impeccabyte--button
 
 # Swap this for self-hosted woff2 files before launch.
 fonts:

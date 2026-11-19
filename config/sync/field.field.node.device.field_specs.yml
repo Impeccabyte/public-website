@@ -1,0 +1,27 @@
+uuid: ed65ca35-59f9-40e2-ac4e-b4a8940fcaac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specs
+    - node.type.device
+    - paragraphs.paragraphs_type.spec_row
+  module:
+    - entity_reference_revisions
+id: node.device.field_specs
+field_name: field_specs
+entity_type: node
+bundle: device
+label: Specs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      spec_row: spec_row
+    negate: 0
+field_type: entity_reference_revisions

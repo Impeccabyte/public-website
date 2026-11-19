@@ -1,0 +1,14 @@
+name: Choice cards
+description: 'Two or more option cards that act as tabs. The selected card shows an outline, a fill and a check.'
+props:
+  type: object
+  properties:
+    id: { title: 'Unique id prefix' }
+    label: { title: 'Accessible name of the group' }
+    options: { title: 'List of {key, name, price, unit, note, panel}' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

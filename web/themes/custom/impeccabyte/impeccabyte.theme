@@ -413,3 +413,139 @@ function _impeccabyte_breadcrumb(): array {
   }
   return $trail;
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function impeccabyte_preprocess_node(array &$variables) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+  if ($node->bundle() === 'device') {
+    $variables['device'] = _impeccabyte_device_data($node, $variables['view_mode'] === 'full');
+  }
+}
+
+/**
+ * Everything the device card and device page components need.
+ */
+function _impeccabyte_device_data($node, bool $full): array {
+  $prices = \Drupal::service('impeccabyte_site.prices');
+  $type = $node->get('field_device_type')->entity;
+  $make = $node->get('field_manufacturer')->entity;
+  $shapes = ['Handheld' => 'tall', 'Mobile reader' => 'reader', 'Countertop terminal' => 'square', 'Self-order kiosk' => 'tall'];
+  $gallery = [];
+  foreach ($node->get('field_gallery')->referencedEntities() as $media) {
+    if ($image = _impeccabyte_reference_data($media)) {
+      $gallery[] = $image;
+    }
+  }
+  $data = [
+    'nid' => (int) $node->id(),
+    'title' => $node->label(),
+    'url' => $node->toUrl()->toString(),
+    'manufacturer' => $make ? $make->label() : '',
+    'type' => $type ? $type->label() : '',
+    'summary' => $node->get('field_card_summary')->value,
+    'lease' => $prices->format($node->get('field_lease_price')->value),
+    'buy' => $prices->format($node->get('field_buy_price')->value),
+    'image' => $gallery[0] ?? NULL,
+    'shape' => $shapes[$type ? $type->label() : ''] ?? 'wide',
+  ] + _impeccabyte_price_context();
+  if (!$full) {
+    return $data;
+  }
+
+  $fields = _impeccabyte_entity_data($node);
+  foreach ($fields['fees'] as &$fee) {
+    $fee['amount'] = $prices->format($fee['amount']);
+  }
+  unset($fee);
+  $catalog = Url::fromUserInput('/hardware');
+  $breadcrumb = [['title' => t('Hardware'), 'url' => $catalog->toString()]];
+  if ($type) {
+    $breadcrumb[] = ['title' => $type->label(), 'url' => Url::fromUserInput('/hardware', ['query' => ['type' => [$type->id() => $type->id()]]])->toString()];
+  }
+  $breadcrumb[] = ['title' => $node->label(), 'url' => ''];
+
+  return [
+    'manufacturer' => ['label' => $data['manufacturer']],
+    'device_type' => ['label' => $data['type']],
+    'summary' => $fields['summary'],
+    'gallery' => $gallery,
+    'breadcrumb' => $breadcrumb,
+    'in_stock' => $fields['in_stock'],
+    'dual_pricing_ready' => $fields['dual_pricing_ready'],
+    'lease_terms' => $fields['lease_terms'],
+    'buy_terms' => $fields['buy_terms'],
+    'fees' => $fields['fees'],
+    'key_features' => $fields['key_features'],
+    'specs' => $fields['specs'],
+    'gateways' => $fields['gateways'],
+    'gateway_note' => $fields['gateway_note'],
+    'documents' => $fields['documents'],
+    'related' => _impeccabyte_teasers(array_column($fields['related_devices'], 'entity')),
+  ] + $data;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ *
+ * The hardware catalog's facets move into the filter rail, with "Clear all"
+ * in its head. The sort select stays outside so it can sit above the results.
+ */
+function impeccabyte_form_views_exposed_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  if (($form['#id'] ?? '') !== 'views-exposed-form-hardware-catalog-page-1') {
+    return;
+  }
+  $form['#attributes']['class'][] = 'catalog-form';
+  // "Clear all" is a plain link back to the unfiltered catalog. The form's
+  // own buttons stay where Views put them: moving them makes Views read a
+  // plain page load as a reset and redirect forever.
+  $rail = [
+    '#type' => 'container',
+    '#attributes' => ['class' => ['catalog-rail'], 'id' => 'catalog-filters', 'role' => 'group', 'aria-label' => t('Filters')],
+    '#weight' => -10,
+    'head' => [
+      '#type' => 'inline_template',
+      '#template' => '<div class="catalog-rail__head"><h2 class="catalog-rail__title">{{ title }}</h2><a class="catalog-rail__reset" href="{{ url }}">{{ reset }}</a></div>',
+      '#context' => ['title' => t('Filters'), 'reset' => t('Clear all'), 'url' => Url::fromUserInput('/hardware')->toString()],
+    ],
+  ];
+  foreach (['type', 'channel', 'industry', 'make'] as $key) {
+    if (isset($form[$key])) {
+      $rail[$key] = $form[$key];
+      unset($form[$key]);
+    }
+  }
+  $form['rail'] = $rail;
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#attributes']['class'][] = 'button--secondary';
+  }
+  $form['actions']['#attributes']['class'][] = 'catalog-form__actions';
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function impeccabyte_preprocess_views_view(array &$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if ($view->id() === 'hardware_catalog') {
+    $variables['total'] = count($view->result);
+    $input = $view->getExposedInput();
+    $labels = [];
+    $active = 0;
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    foreach (['type', 'channel', 'industry', 'make'] as $key) {
+      $ids = array_filter((array) ($input[$key] ?? []));
+      $active += count($ids);
+      if ($key === 'type' && $ids) {
+        foreach ($terms->loadMultiple($ids) as $term) {
+          $labels[] = $term->label();
+        }
+      }
+    }
+    $variables['active_count'] = $active;
+    $variables['summary'] = $labels ? implode(', ', $labels) : ($active ? t('Filtered') : t('All types'));
+  }
+}

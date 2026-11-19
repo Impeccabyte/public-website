@@ -1,0 +1,15 @@
+.choice { display: flex; flex-direction: column; gap: var(--space-5); }
+.choice__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.choice__card { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; padding: var(--space-5); border: 1.5px solid var(--ink-400); border-radius: var(--radius-lg); background: var(--white); color: inherit; font: inherit; text-align: left; cursor: pointer; transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out); }
+.choice__card:hover { border-color: var(--clay-600); }
+.choice__card[aria-selected="true"] { border-color: var(--clay-600); background: var(--clay-50); box-shadow: 0 0 0 3px var(--clay-100); }
+.choice__head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+.choice__name { font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--ink-700); }
+.choice__mark { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid var(--ink-500); border-radius: var(--radius-pill); background: var(--white); color: transparent; }
+.choice__card[aria-selected="true"] .choice__mark { background: var(--clay-600); border-color: var(--clay-600); color: var(--white); }
+.choice__price { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-3xl); letter-spacing: -0.02em; line-height: var(--lh-display); color: var(--ink-900); }
+.choice__unit { font-family: var(--font-sans); font-size: var(--text-base); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--ink-600); }
+.choice__soon { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-lg); line-height: var(--lh-heading); color: var(--ink-900); }
+.choice__note { font-size: var(--text-sm); color: var(--ink-700); }
+.choice__panel { padding: var(--space-6); background: var(--white); border: 1px solid var(--ink-200); border-radius: var(--radius-lg); }
+@media (max-width: 420px) { .choice__card { padding: var(--space-4); } }

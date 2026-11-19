@@ -1,0 +1,10 @@
+uuid: c0b2e93a-821e-4df4-8887-6b21b2b375f9
+langcode: en
+status: true
+dependencies: {  }
+id: spec_row
+label: 'Spec row'
+icon_uuid: null
+icon_default: null
+description: 'One line of a device spec table.'
+behavior_plugins: {  }

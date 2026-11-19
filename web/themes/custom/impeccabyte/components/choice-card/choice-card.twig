@@ -1,0 +1,18 @@
+<div{{ attributes.addClass('choice') }} data-choice>
+  <div class="choice__list" role="tablist" aria-label="{{ label }}">
+    {% for option in options %}
+      <button class="choice__card" type="button" role="tab" id="{{ id }}-tab-{{ option.key }}" aria-controls="{{ id }}-panel-{{ option.key }}" aria-selected="{{ loop.first ? 'true' : 'false' }}"{{ loop.first ? '' : ' tabindex="-1"' }}>
+        <span class="choice__head"><span class="choice__name">{{ option.name }}</span><span class="choice__mark" aria-hidden="true">{{ include('impeccabyte:icon', {name: 'check', size: 14}, with_context = false) }}</span></span>
+        {% if show_prices and option.price %}
+          <span class="choice__price">{{ option.price }}<span class="choice__unit"> {{ option.unit }}</span></span>
+        {% else %}
+          <span class="choice__soon">{{ price_placeholder }}</span>
+        {% endif %}
+        {% if option.note %}<span class="choice__note">{{ option.note }}</span>{% endif %}
+      </button>
+    {% endfor %}
+  </div>
+  {% for option in options %}
+    <div class="choice__panel" role="tabpanel" id="{{ id }}-panel-{{ option.key }}" aria-labelledby="{{ id }}-tab-{{ option.key }}" tabindex="0"{{ loop.first ? '' : ' hidden' }}>{{ option.panel }}</div>
+  {% endfor %}
+</div>

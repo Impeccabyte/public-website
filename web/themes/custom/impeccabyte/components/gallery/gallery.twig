@@ -1,0 +1,19 @@
+<div{{ attributes.addClass('gallery') }} data-gallery>
+  <div class="gallery__stage">
+    {% if images %}
+      {% for image in images %}
+        <img class="gallery__image" id="{{ id }}-view-{{ loop.index }}" src="{{ image.url }}" alt="{{ image.alt }}"{{ loop.first ? '' : ' hidden' }}>
+      {% endfor %}
+    {% else %}
+      {{ include('impeccabyte:device-shot', {name: name, shape: shape, size: 'lg'}, with_context = false) }}
+      <span class="gallery__tag">{{ 'Product photo to come'|t }}</span>
+    {% endif %}
+  </div>
+  {% if images|length > 1 %}
+    <div class="gallery__thumbs" role="group" aria-label="{{ 'Gallery views'|t }}">
+      {% for image in images %}
+        <button class="gallery__thumb" type="button" aria-pressed="{{ loop.first ? 'true' : 'false' }}" aria-controls="{{ id }}-view-{{ loop.index }}" aria-label="{{ 'Show @view'|t({'@view': image.label|default(image.alt)}) }}"><img src="{{ image.url }}" alt="" loading="lazy"></button>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

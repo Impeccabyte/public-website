@@ -1,0 +1,21 @@
+uuid: dca477a2-539c-4669-8e90-26602046c5b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.device
+id: node.device.field_featured
+field_name: field_featured
+entity_type: node
+bundle: device
+label: Featured
+description: 'Featured devices show in the Home hardware row.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

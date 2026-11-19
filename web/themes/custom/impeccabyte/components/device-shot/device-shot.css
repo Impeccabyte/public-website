@@ -1,0 +1,8 @@
+.device-shot { display: flex; align-items: center; justify-content: center; }
+.device-shot--photo { max-height: 100%; max-width: 100%; object-fit: contain; }
+.device-shot__body { --_w: 130px; --_h: 110px; display: block; width: var(--_w); height: var(--_h); padding: 7px; background: var(--clove-800); border-radius: var(--radius-md); box-shadow: var(--shadow-xl); }
+.device-shot__screen { display: block; height: 66%; background: var(--paper); border-radius: var(--radius-sm); }
+.device-shot--tall .device-shot__body { --_w: 76px; --_h: 140px; }
+.device-shot--square .device-shot__body { --_w: 90px; --_h: 120px; }
+.device-shot--reader .device-shot__body { --_w: 76px; --_h: 76px; }
+.device-shot--lg .device-shot__body { width: calc(var(--_w) * 2.2); height: calc(var(--_h) * 2.2); padding: var(--space-4); border-radius: var(--radius-xl); }

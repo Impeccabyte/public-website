@@ -1,0 +1,5 @@
+{% if image.url %}
+<img{{ attributes.addClass(['device-shot', 'device-shot--photo']) }} src="{{ image.url }}" alt="{{ decorative ? '' : image.alt }}" loading="lazy">
+{% else %}
+<span{{ attributes.addClass(['device-shot', 'device-shot--' ~ shape|default('wide'), 'device-shot--' ~ size|default('md')]) }}{% if decorative %} aria-hidden="true"{% else %} role="img" aria-label="{{ '@name photo placeholder'|t({'@name': name}) }}"{% endif %}><span class="device-shot__body"><span class="device-shot__screen"></span></span></span>
+{% endif %}

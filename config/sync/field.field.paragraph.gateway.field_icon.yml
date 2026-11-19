@@ -1,0 +1,19 @@
+uuid: 28bb18fa-951b-4b49-93b8-cea992bfc0e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.gateway
+id: paragraph.gateway.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: gateway
+label: Icon
+description: 'A Lucide icon name, such as credit-card or globe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

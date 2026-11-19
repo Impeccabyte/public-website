@@ -1,0 +1,17 @@
+/* The compare tray and comparison page from the impeccabyte_compare module. */
+.compare-tray { position: sticky; bottom: var(--space-4); z-index: 10; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); padding: var(--space-4) 18px; border-radius: var(--radius-lg); background: var(--ink-900); color: var(--text-on-dark); box-shadow: var(--shadow-xl); }
+.compare-tray__count { margin-right: 6px; font-weight: var(--fw-semibold); }
+.compare-tray__slots { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.compare-tray__slot { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 40px; padding: 0 var(--space-2) 0 14px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--text-on-dark) 12%, transparent); font-size: var(--text-sm); }
+.compare-tray__slot--empty { padding: 0 14px; background: none; border: 1px dashed color-mix(in srgb, var(--text-on-dark) 55%, transparent); color: var(--clove-100); }
+.compare-tray__remove { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-on-dark); cursor: pointer; }
+.compare-tray__remove:hover { background: color-mix(in srgb, var(--text-on-dark) 18%, transparent); }
+.compare-tray__go { margin-left: auto; }
+.compare-page { padding-block: var(--space-16); }
+.compare-page__inner { gap: var(--space-8); }
+.compare-page__header { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+.compare-page__title { font-size: clamp(var(--text-3xl), 4.4vw, var(--text-4xl)); line-height: var(--lh-display); letter-spacing: -0.025em; }
+.compare-page__table { min-width: 640px; }
+.compare-page__table thead a { font-weight: var(--fw-semibold); }
+.compare-page__table ul { margin: 0; padding-left: var(--space-5); }
+@media (max-width: 760px) { .compare-tray__go { margin-left: 0; width: 100%; } }

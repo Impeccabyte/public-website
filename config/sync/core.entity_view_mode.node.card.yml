@@ -1,0 +1,11 @@
+uuid: 97075fe8-3058-44f4-bf06-c72c9175c6b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card
+label: 'Catalog card'
+description: null
+targetEntityType: node
+cache: true

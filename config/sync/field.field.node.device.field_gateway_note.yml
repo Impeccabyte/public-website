@@ -1,0 +1,19 @@
+uuid: 97a9e55d-41a9-4dcd-a77a-4ff689cc67a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gateway_note
+    - node.type.device
+id: node.device.field_gateway_note
+field_name: field_gateway_note
+entity_type: node
+bundle: device
+label: 'Gateway note'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

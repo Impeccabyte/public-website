@@ -1,0 +1,65 @@
+uuid: c2141989-172c-462d-a643-b5c002f43ddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.device.field_buy_price
+    - field.field.node.device.field_buy_terms
+    - field.field.node.device.field_card_summary
+    - field.field.node.device.field_device_type
+    - field.field.node.device.field_documents
+    - field.field.node.device.field_dual_pricing_ready
+    - field.field.node.device.field_featured
+    - field.field.node.device.field_fees
+    - field.field.node.device.field_gallery
+    - field.field.node.device.field_gateway_note
+    - field.field.node.device.field_gateways
+    - field.field.node.device.field_in_stock
+    - field.field.node.device.field_industries
+    - field.field.node.device.field_key_features
+    - field.field.node.device.field_lease_price
+    - field.field.node.device.field_lease_terms
+    - field.field.node.device.field_manufacturer
+    - field.field.node.device.field_related_devices
+    - field.field.node.device.field_sales_channels
+    - field.field.node.device.field_sort_weight
+    - field.field.node.device.field_specs
+    - field.field.node.device.field_summary
+    - node.type.device
+  module:
+    - user
+id: node.device.teaser
+targetEntityType: node
+bundle: device
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_buy_price: true
+  field_buy_terms: true
+  field_card_summary: true
+  field_device_type: true
+  field_documents: true
+  field_dual_pricing_ready: true
+  field_featured: true
+  field_fees: true
+  field_gallery: true
+  field_gateway_note: true
+  field_gateways: true
+  field_in_stock: true
+  field_industries: true
+  field_key_features: true
+  field_lease_price: true
+  field_lease_terms: true
+  field_manufacturer: true
+  field_related_devices: true
+  field_sales_channels: true
+  field_sort_weight: true
+  field_specs: true
+  field_summary: true
+  search_api_excerpt: true

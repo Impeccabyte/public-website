@@ -1,0 +1,21 @@
+uuid: c06b29ae-ed2b-4c3c-9597-f4003d2f6c70
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - node.type.resource
+  module:
+    - user
+id: node.resource.card
+targetEntityType: node
+bundle: resource
+mode: card
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

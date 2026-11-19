@@ -1,0 +1,442 @@
+uuid: fbb2f130-51d7-4917-9046-da22fcd8a038
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.devices
+  module:
+    - better_exposed_filters
+    - facets_exposed_filters
+    - search_api
+id: hardware_catalog
+label: 'Hardware catalog'
+module: views
+description: 'Device cards with filters, sorting and the compare tray.'
+tag: ''
+base_table: search_api_index_devices
+base_field: search_api_id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Hardware
+      fields: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: bef
+        options:
+          submit_button: 'Apply filters'
+          reset_button: false
+          reset_button_label: 'Clear all'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
+            filter:
+              facets_device_type:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              facets_sales_channel:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              facets_industry:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              facets_manufacturer:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: search_api_tag
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
+          empty: true
+          content: 'No devices match those filters. Clear a filter, or ask us and we will recommend one.'
+          tokenize: false
+      sorts:
+        recommended_rank:
+          id: recommended_rank
+          table: search_api_index_devices
+          field: recommended_rank
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: Recommended
+            field_identifier: recommended_rank
+          exposed: true
+        lease_price:
+          id: lease_price
+          table: search_api_index_devices
+          field: lease_price
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Monthly: low to high'
+            field_identifier: lease_price
+          exposed: true
+        buy_price:
+          id: buy_price
+          table: search_api_index_devices
+          field: buy_price
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Price: low to high'
+            field_identifier: buy_price
+          exposed: true
+        created:
+          id: created
+          table: search_api_index_devices
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: Newest
+            field_identifier: created
+          exposed: true
+      arguments: {  }
+      filters:
+        facets_device_type:
+          id: facets_device_type
+          table: search_api_index_devices
+          field: facets_device_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: facets_filter
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Device type'
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          hierarchy: false
+          label_display: visible
+          facet:
+            query_operator: or
+            min_count: 1
+            missing: false
+            missing_label: others
+            show_numbers: true
+            processor_configs:
+              translate_entity:
+                processor_id: translate_entity
+                weights:
+                  build: 5
+                settings: {  }
+              term_weight_widget_order:
+                processor_id: term_weight_widget_order
+                weights:
+                  sort: 60
+                settings:
+                  sort: ASC
+        facets_sales_channel:
+          id: facets_sales_channel
+          table: search_api_index_devices
+          field: facets_sales_channel
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: facets_filter
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Sales channel'
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: channel
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          hierarchy: false
+          label_display: visible
+          facet:
+            query_operator: or
+            min_count: 1
+            missing: false
+            missing_label: others
+            show_numbers: true
+            processor_configs:
+              translate_entity:
+                processor_id: translate_entity
+                weights:
+                  build: 5
+                settings: {  }
+              term_weight_widget_order:
+                processor_id: term_weight_widget_order
+                weights:
+                  sort: 60
+                settings:
+                  sort: ASC
+        facets_industry:
+          id: facets_industry
+          table: search_api_index_devices
+          field: facets_industry
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: facets_filter
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Industry
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: industry
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          hierarchy: false
+          label_display: visible
+          facet:
+            query_operator: or
+            min_count: 1
+            missing: false
+            missing_label: others
+            show_numbers: true
+            processor_configs:
+              translate_entity:
+                processor_id: translate_entity
+                weights:
+                  build: 5
+                settings: {  }
+              term_weight_widget_order:
+                processor_id: term_weight_widget_order
+                weights:
+                  sort: 60
+                settings:
+                  sort: ASC
+        facets_manufacturer:
+          id: facets_manufacturer
+          table: search_api_index_devices
+          field: facets_manufacturer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: facets_filter
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Manufacturer
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: make
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          hierarchy: false
+          label_display: visible
+          facet:
+            query_operator: or
+            min_count: 1
+            missing: false
+            missing_label: others
+            show_numbers: true
+            processor_configs:
+              translate_entity:
+                processor_id: translate_entity
+                weights:
+                  build: 5
+                settings: {  }
+              term_weight_widget_order:
+                processor_id: term_weight_widget_order
+                weights:
+                  sort: 60
+                settings:
+                  sort: ASC
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              device: card
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+          query_tags: {  }
+      relationships: {  }
+      use_ajax: false
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'url.query_args:sort_by'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.devices'
+        - 'search_api_list:devices'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: hardware
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'url.query_args:sort_by'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.devices'
+        - 'search_api_list:devices'

@@ -1,0 +1,24 @@
+uuid: 6dad8170-d155-4289-8eec-315291f25c37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documents
+    - media.type.document
+    - node.type.device
+id: node.device.field_documents
+field_name: field_documents
+entity_type: node
+bundle: device
+label: Documents
+description: 'Spec sheets and quick reference guides.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+field_type: entity_reference

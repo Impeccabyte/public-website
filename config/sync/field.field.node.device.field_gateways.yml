@@ -1,0 +1,27 @@
+uuid: c818ab56-4b09-4b0f-8060-365216e2fc22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gateways
+    - node.type.device
+    - paragraphs.paragraphs_type.gateway
+  module:
+    - entity_reference_revisions
+id: node.device.field_gateways
+field_name: field_gateways
+entity_type: node
+bundle: device
+label: 'Compatible gateways'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      gateway: gateway
+    negate: 0
+field_type: entity_reference_revisions

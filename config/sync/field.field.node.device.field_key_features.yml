@@ -1,0 +1,19 @@
+uuid: dd83380f-f1e2-4732-a1df-da32116b7037
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key_features
+    - node.type.device
+id: node.device.field_key_features
+field_name: field_key_features
+entity_type: node
+bundle: device
+label: 'Key features'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

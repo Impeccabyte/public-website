@@ -1,0 +1,2 @@
+{# Device cards: "card" is the catalog card with the compare toggle, every other view mode is the simple card. #}
+{{ include('impeccabyte:device-card', device|merge({variant: view_mode == 'card' ? 'catalog' : 'simple'}), with_context = false) }}

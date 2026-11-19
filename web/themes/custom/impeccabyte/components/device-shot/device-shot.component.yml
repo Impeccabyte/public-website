@@ -1,0 +1,10 @@
+name: Device photo
+description: 'A product photo, or a drawn placeholder until photography is supplied.'
+props:
+  type: object
+  properties:
+    image: { title: 'Image {url, alt}' }
+    name: { title: 'Device name' }
+    shape: { title: 'tall, wide, square or reader' }
+    decorative: { title: 'Hide from assistive technology' }
+    size: { title: 'sm, md or lg' }

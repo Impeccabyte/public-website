@@ -4,3 +4,5 @@ description: 'Site-wide settings for the Impeccabyte marketing site, including w
 package: Impeccabyte
 core_version_requirement: ^11
 configure: impeccabyte_site.settings
+dependencies:
+  - search_api:search_api

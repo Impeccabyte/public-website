@@ -1,0 +1,19 @@
+uuid: 115836d1-c345-4cfc-8251-ca6b09f0ee78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.gateway
+id: paragraph.gateway.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: gateway
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

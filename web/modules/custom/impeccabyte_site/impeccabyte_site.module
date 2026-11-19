@@ -17,3 +17,25 @@ function impeccabyte_site_entity_build_defaults_alter(array &$build, EntityInter
     $build['#cache']['tags'][] = 'config:impeccabyte_site.settings';
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ *
+ * Sorting by price would order devices by numbers that are not public yet,
+ * so those sort options are left out while "Show prices" is off.
+ */
+function impeccabyte_site_form_views_exposed_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['#cache']['tags'][] = 'config:impeccabyte_site.settings';
+  if (\Drupal::service('impeccabyte_site.prices')->shown()) {
+    return;
+  }
+  foreach (['sort_bef_combine', 'sort_by'] as $key) {
+    if (isset($form[$key]['#options'])) {
+      foreach (array_keys($form[$key]['#options']) as $option) {
+        if (str_contains((string) $option, 'price')) {
+          unset($form[$key]['#options'][$option]);
+        }
+      }
+    }
+  }
+}

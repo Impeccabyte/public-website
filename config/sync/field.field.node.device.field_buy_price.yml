@@ -1,0 +1,23 @@
+uuid: 5c8a1252-eac0-48f2-90e0-85405b69291b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_buy_price
+    - node.type.device
+id: node.device.field_buy_price
+field_name: field_buy_price
+entity_type: node
+bundle: device
+label: 'Buy price'
+description: 'Shown as "Buy from $X" once "Show prices" is on.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0.0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

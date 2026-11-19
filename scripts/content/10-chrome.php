@@ -16,7 +16,8 @@ require_once dirname(__DIR__) . '/setup/_helpers.php';
 
 $term_filter = function (string $base, string $facet, string $vid, string $name): string {
   $tid = ib_term_id($vid, $name);
-  return $tid ? "internal:$base?$facet=$tid" : "internal:$base";
+  // Checkbox filters read their values as facet[id]=id.
+  return $tid ? "internal:$base?{$facet}[$tid]=$tid" : "internal:$base";
 };
 
 // Main menu. Solutions are grouped under the three solution categories.

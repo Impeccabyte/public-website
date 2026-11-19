@@ -1,0 +1,27 @@
+uuid: 352c8eee-25bf-439b-8e50-404e263c984a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fees
+    - node.type.device
+    - paragraphs.paragraphs_type.fee_row
+  module:
+    - entity_reference_revisions
+id: node.device.field_fees
+field_name: field_fees
+entity_type: node
+bundle: device
+label: 'Monthly fees'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fee_row: fee_row
+    negate: 0
+field_type: entity_reference_revisions

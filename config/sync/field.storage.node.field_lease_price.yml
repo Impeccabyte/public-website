@@ -1,0 +1,20 @@
+uuid: 56219294-6d7a-427a-b50c-c5524fbd5793
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_lease_price
+field_name: field_lease_price
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

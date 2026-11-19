@@ -1,0 +1,25 @@
+name: Device card
+description: 'A device in a grid. The catalog variant adds the compare toggle and a details link.'
+props:
+  type: object
+  properties:
+    nid: { title: 'Node id' }
+    title: { title: 'Device name' }
+    url: { title: 'Device page' }
+    manufacturer: { title: 'Manufacturer name' }
+    type: { title: 'Device type name' }
+    summary: { title: 'One-line description' }
+    lease: { title: 'Formatted lease price' }
+    buy: { title: 'Formatted buy price' }
+    image: { title: 'Photo {url, alt}' }
+    shape: { title: 'Placeholder shape' }
+    variant: { title: 'simple or catalog' }
+    heading_level: { title: 'Heading level of the name' }
+    show_prices: { title: 'Whether prices are shown' }
+    price_placeholder: { title: 'Placeholder text' }
+    quote_url: { title: 'Quote form path' }
+libraryOverrides:
+  dependencies:
+    - core/components.impeccabyte--card
+    - core/components.impeccabyte--price
+    - core/components.impeccabyte--badge

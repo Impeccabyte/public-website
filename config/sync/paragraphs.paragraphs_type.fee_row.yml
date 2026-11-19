@@ -1,0 +1,10 @@
+uuid: 6bd519dc-4f75-4f52-8cd4-2ca54a40772d
+langcode: en
+status: true
+dependencies: {  }
+id: fee_row
+label: 'Monthly fee'
+icon_uuid: null
+icon_default: null
+description: 'One monthly software fee on a device.'
+behavior_plugins: {  }

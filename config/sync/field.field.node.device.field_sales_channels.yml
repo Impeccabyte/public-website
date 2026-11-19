@@ -1,0 +1,25 @@
+uuid: e74f05ef-dc05-407a-ba0f-1c918d3036cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sales_channels
+    - node.type.device
+    - taxonomy.vocabulary.sales_channel
+id: node.device.field_sales_channels
+field_name: field_sales_channels
+entity_type: node
+bundle: device
+label: 'Sales channels'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sales_channel: sales_channel
+    auto_create: false
+field_type: entity_reference

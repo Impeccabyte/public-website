@@ -1,0 +1,23 @@
+uuid: 4010106d-f2d2-442a-b266-f81da10fe8d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount
+    - paragraphs.paragraphs_type.fee_row
+id: paragraph.fee_row.field_amount
+field_name: field_amount
+entity_type: paragraph
+bundle: fee_row
+label: 'Amount per month'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

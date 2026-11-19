@@ -1,0 +1,23 @@
+uuid: 96d3c11a-b081-4bc5-aaad-fc0ce5c0ca3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_in_stock
+    - node.type.device
+id: node.device.field_in_stock
+field_name: field_in_stock
+entity_type: node
+bundle: device
+label: 'In stock'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

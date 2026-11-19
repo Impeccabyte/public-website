@@ -1,0 +1,7 @@
+compare:
+  version: 1.x
+  js:
+    js/compare.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

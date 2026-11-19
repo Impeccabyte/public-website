@@ -1,0 +1,7 @@
+impeccabyte_compare.page:
+  path: '/hardware/compare'
+  defaults:
+    _controller: '\Drupal\impeccabyte_compare\Controller\CompareController::page'
+    _title: 'Compare devices'
+  requirements:
+    _permission: 'access content'

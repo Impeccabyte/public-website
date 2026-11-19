@@ -1,0 +1,13 @@
+name: Gallery
+description: 'A main product image with thumbnail buttons that switch it.'
+props:
+  type: object
+  properties:
+    id: { title: 'Unique id prefix' }
+    name: { title: 'Device name' }
+    images: { title: 'List of {url, alt, label}' }
+    shape: { title: 'Placeholder shape when there are no images' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

@@ -1,0 +1,20 @@
+uuid: 2f80107a-40a6-4528-8516-94c937a3296c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_sales_channels
+field_name: field_sales_channels
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,31 @@
+{#
+  The hardware catalog: compact hero, filter rail, sort, result count, device
+  cards and the compare tray. Counts and labels come from
+  impeccabyte_preprocess_views_view().
+#}
+{{ include('impeccabyte:hero', {
+  id: 'catalog-hero',
+  hero_variant: 'compact',
+  eyebrow: 'Hardware'|t,
+  heading: 'Find the right device for your counter, cart or kitchen.'|t,
+  accent_word: 'kitchen'|t,
+  intro: 'Buy outright or lease month to month. Every device arrives programmed for your account and ready for its first sale.'|t,
+}, with_context = false) }}
+<section class="section catalog" aria-label="{{ 'Devices'|t }}" data-catalog>
+  <div class="section__inner catalog__inner">
+    {{ exposed }}
+    <div class="catalog__toolbar">
+      <button class="catalog__filter-btn" type="button" aria-expanded="false" aria-controls="catalog-filters" data-catalog-filters-toggle>{{ include('impeccabyte:icon', {name: 'sliders-horizontal', size: 18}, with_context = false) }}{{ 'Filters'|t }}{% if active_count %}<span class="catalog__filter-count">{{ active_count }}</span><span class="visually-hidden"> {{ 'applied'|t }}</span>{% endif %}</button>
+      <p class="catalog__count" role="status"><strong>{% trans %}1 device{% plural total %}{{ count }} devices{% endtrans %}</strong> · {{ summary }}</p>
+    </div>
+    <div class="catalog__results">
+      {% if rows|render|trim %}
+        <div class="catalog__grid" data-show-more="12">{{ rows }}</div>
+        <div class="catalog__more" hidden data-show-more-control><button class="button button--secondary" type="button">{{ 'Show more devices'|t }}</button></div>
+      {% else %}
+        <div class="catalog__empty">{{ empty }}</div>
+      {% endif %}
+      {{ drupal_block('impeccabyte_compare_tray') }}
+    </div>
+  </div>
+</section>
