@@ -1,0 +1,14 @@
+{% if href %}
+<a{{ attributes.addClass(['check', 'check--link', checked ? 'is-checked']) }} href="{{ href }}" role="checkbox" aria-checked="{{ checked ? 'true' : 'false' }}" rel="nofollow">
+  <span class="check__box" aria-hidden="true">{{ include('impeccabyte:icon', {name: 'check', size: 14}, with_context = false) }}</span>
+  <span class="check__label">{{ label }}</span>
+  {% if count is not null %}<span class="check__count">{{ count }}</span>{% endif %}
+</a>
+{% else %}
+<label{{ attributes.addClass('check') }} for="{{ id }}">
+  <input class="check__input" type="checkbox" id="{{ id }}" name="{{ name|default(id) }}" value="{{ value|default('1') }}"{{ checked ? ' checked' }}>
+  <span class="check__box" aria-hidden="true">{{ include('impeccabyte:icon', {name: 'check', size: 14}, with_context = false) }}</span>
+  <span class="check__label">{{ label }}</span>
+  {% if count is not null %}<span class="check__count">{{ count }}</span>{% endif %}
+</label>
+{% endif %}

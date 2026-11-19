@@ -1,0 +1,11 @@
+{# The mega menu's featured card, a custom block of type featured_card. #}
+{% set block_content = content['#block_content'] %}
+{% if block_content %}
+  {{ include('impeccabyte:featured-card', {
+    badge: block_content.field_badge.value,
+    title: block_content.field_heading.value,
+    body: block_content.field_body.value,
+    link_label: block_content.field_link.title,
+    link_url: block_content.field_link.0.url,
+  }, with_context = false) }}
+{% endif %}

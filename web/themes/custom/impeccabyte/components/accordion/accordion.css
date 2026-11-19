@@ -1,0 +1,15 @@
+.accordion { border-top: 1px solid var(--ink-200); }
+.accordion__item { border-bottom: 1px solid var(--ink-200); }
+.accordion__heading { margin: 0; font-family: var(--font-sans); letter-spacing: 0; }
+.accordion__trigger {
+  display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+  width: 100%; min-height: 64px; padding: var(--space-4) 4px;
+  border: 0; background: none; cursor: pointer; text-align: left;
+  font: var(--fw-semibold) var(--text-md)/1.4 var(--font-sans);
+  color: var(--ink-900);
+}
+.accordion__trigger:hover { color: var(--clay-700); }
+.accordion__trigger .icon { flex-shrink: 0; color: var(--clay-600); transition: transform var(--dur-base) var(--ease-out); }
+.accordion__trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
+.accordion__body { padding: 0 4px var(--space-6); max-width: 720px; color: var(--ink-700); line-height: var(--lh-body); }
+.accordion__body p + p { margin-top: var(--space-3); }

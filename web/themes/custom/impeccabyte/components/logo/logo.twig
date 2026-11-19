@@ -1,0 +1,10 @@
+{# The mark's colors are the brand ramp: clay-500 rising to amber-400. #}
+<span{{ attributes.addClass(['logo', tone == 'on-dark' ? 'logo--on-dark']) }}>
+  <svg class="logo__mark" width="34" height="34" viewBox="14 20 72 72" aria-hidden="true" focusable="false">
+    {% if tone != 'on-dark' %}<defs><linearGradient id="{{ id|default('logo-rise') }}" x1="0" y1="1" x2="1" y2="0"><stop offset="0" class="logo__stop-1"/><stop offset="0.55" class="logo__stop-2"/><stop offset="1" class="logo__stop-3"/></linearGradient></defs>{% endif %}
+    <rect class="logo__base" x="16" y="60" width="68" height="30" rx="7"/>
+    <rect class="logo__chip" x="25" y="68" width="13" height="9" rx="2.5"/>
+    <g{% if tone != 'on-dark' %} fill="url(#{{ id|default('logo-rise') }})"{% else %} class="logo__rise"{% endif %}><rect x="28" y="46" width="11" height="11" rx="3.4"/><rect x="43" y="34" width="11" height="11" rx="3.4"/><rect x="58" y="22" width="11" height="11" rx="3.4"/></g>
+  </svg>
+  <span class="logo__word">Impecca<span class="logo__byte">byte</span></span>
+</span>

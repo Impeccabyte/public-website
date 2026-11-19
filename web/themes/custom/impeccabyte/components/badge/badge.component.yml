@@ -1,0 +1,10 @@
+name: Badge
+description: 'A small pill label.'
+props:
+  type: object
+  properties:
+    label: { title: 'Label' }
+    variant: { title: 'neutral, brand, accent, success, danger, warning or info' }
+    solid: { title: 'Solid fill' }
+    dot: { title: 'Leading dot' }
+    size: { title: 'sm or md' }

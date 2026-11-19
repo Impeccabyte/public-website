@@ -1,0 +1,33 @@
+{% set grouped = items|filter(i => i.children is not empty)|length > 0 %}
+{% macro link(item) %}
+  <a class="mega__link{{ item.active ? ' is-on' }}" href="{{ item.url }}"{{ item.current ? ' aria-current="page"' }}>
+    {% if item.icon %}<span class="mega__icon">{{ include('impeccabyte:icon', {name: item.icon, size: 20}, with_context = false) }}</span>{% endif %}
+    <span class="mega__text"><span class="mega__title">{{ item.title }}</span>{% if item.description %}<span class="mega__desc">{{ item.description }}</span>{% endif %}</span>
+  </a>
+{% endmacro %}
+<div{{ attributes.addClass('mega') }} id="{{ id }}" data-mega>
+  <div class="mega__grid{{ grouped ? '' : ' mega__grid--flat' }}">
+    {% if grouped %}
+      {% for group in items %}
+        <div class="mega__col">
+          <p class="eyebrow mega__heading" id="{{ id }}-g{{ loop.index }}">{{ group.title }}</p>
+          <ul class="mega__list" aria-labelledby="{{ id }}-g{{ loop.index }}">
+            {% for item in group.children %}<li>{{ _self.link(item) }}</li>{% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    {% else %}
+      <ul class="mega__list mega__list--flat" aria-label="{{ label }}">
+        {% for item in items %}<li>{{ _self.link(item) }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+    <div class="mega__featured">{{ featured }}</div>
+  </div>
+  <div class="mega__help">
+    <div class="mega__help-inner">
+      <span>{{ 'Not sure where to start? A local specialist can help.'|t }}</span>
+      <a class="mega__help-link" href="{{ quote_url }}">{{ 'Talk to us'|t }}</a>
+      <span class="mega__help-phone">{{ 'Call @phone'|t({'@phone': phone}) }}{% if hours %} · {{ hours }}{% endif %}</span>
+    </div>
+  </div>
+</div>

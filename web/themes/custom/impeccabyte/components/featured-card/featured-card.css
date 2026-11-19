@@ -1,0 +1,5 @@
+.featured-card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); height: 100%; padding: 28px; border-radius: var(--radius-lg); background: var(--clove-800); color: var(--text-on-dark); }
+.featured-card__title { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-xl); line-height: var(--lh-heading); letter-spacing: -0.02em; color: var(--white); }
+.featured-card__body { line-height: var(--lh-body); }
+.featured-card__link, .featured-card__link:hover { margin-top: auto; display: inline-flex; align-items: center; gap: var(--space-2); min-height: 24px; font-weight: var(--fw-semibold); color: var(--amber-200); }
+.featured-card__link:hover { color: var(--white); }

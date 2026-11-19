@@ -178,3 +178,52 @@ if (!function_exists('ib_vocabulary')) {
   }
 
 }
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\system\Entity\Menu;
+
+if (!function_exists('ib_menu')) {
+
+  function ib_menu(string $id, string $label, string $description = ''): void {
+    if (!Menu::load($id)) {
+      Menu::create(['id' => $id, 'label' => $label, 'description' => $description])->save();
+    }
+  }
+
+  /**
+   * Creates a menu link, or updates the one with the same title and parent.
+   *
+   * Options: parent (a link returned by this function), description, icon,
+   * weight. Returns the link so it can be used as a parent.
+   */
+  function ib_menu_link(string $menu, string $title, string $uri, array $options = []): MenuLinkContent {
+    $options += ['parent' => NULL, 'description' => '', 'icon' => '', 'weight' => 0];
+    $parent_id = $options['parent'] ? $options['parent']->getPluginId() : '';
+    $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+    $query = $storage->getQuery()->accessCheck(FALSE)->condition('menu_name', $menu)->condition('title', $title);
+    $parent_id ? $query->condition('parent', $parent_id) : $query->notExists('parent');
+    $ids = $query->execute();
+    if (!$ids && !$parent_id) {
+      // A top-level link may have been saved with an empty string parent.
+      $ids = $storage->getQuery()->accessCheck(FALSE)->condition('menu_name', $menu)->condition('title', $title)->condition('parent', '')->execute();
+    }
+    /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
+    $link = $ids ? $storage->load(reset($ids)) : MenuLinkContent::create(['menu_name' => $menu, 'title' => $title, 'expanded' => TRUE]);
+    $before = [$link->get('link')->uri, $link->getDescription(), $link->hasField('field_icon') ? $link->get('field_icon')->value : NULL, (int) $link->getWeight()];
+    $link->set('link', ['uri' => $uri]);
+    $link->set('description', $options['description']);
+    $link->set('weight', $options['weight']);
+    if ($parent_id) {
+      $link->set('parent', $parent_id);
+    }
+    if ($link->hasField('field_icon')) {
+      $link->set('field_icon', $options['icon']);
+    }
+    $after = [$uri, $options['description'], $link->hasField('field_icon') ? $options['icon'] : NULL, (int) $options['weight']];
+    if ($link->isNew() || $before !== $after) {
+      $link->save();
+    }
+    return $link;
+  }
+
+}

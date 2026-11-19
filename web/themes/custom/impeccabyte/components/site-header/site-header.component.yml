@@ -1,0 +1,16 @@
+name: Site header
+description: 'The global header: logo, main navigation with mega menus, log in link, quote button and the mobile drawer.'
+props:
+  type: object
+  properties:
+    featured: { title: 'Rendered featured card, shown in each mega menu' }
+    home_url: { title: 'Front page URL' }
+    items: { title: 'The main menu tree' }
+    quote_url: { title: 'Quote form path' }
+    login_url: { title: 'Merchant app address' }
+    phone: { title: 'Phone number' }
+    hours: { title: 'Phone hours' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

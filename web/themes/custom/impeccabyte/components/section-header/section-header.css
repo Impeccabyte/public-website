@@ -1,0 +1,5 @@
+.section-header { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); justify-content: space-between; align-items: flex-end; }
+.section-header__text { display: flex; flex-direction: column; gap: var(--space-4); max-width: 680px; min-width: 0; }
+.section-header--center { justify-content: center; text-align: center; }
+.section-header--center .section-header__text { align-items: center; }
+.section-header__heading { font-size: clamp(var(--text-2xl), 3.4vw, var(--text-3xl)); line-height: var(--lh-heading); letter-spacing: -0.02em; }

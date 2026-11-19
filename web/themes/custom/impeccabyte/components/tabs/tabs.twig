@@ -1,0 +1,10 @@
+<div{{ attributes.addClass(['tabs', 'tabs--' ~ variant|default('pill')]) }} data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="{{ label }}">
+    {% for tab in tabs %}
+      <button class="tabs__tab" type="button" role="tab" id="{{ id }}-tab-{{ loop.index }}" aria-controls="{{ id }}-panel-{{ loop.index }}" aria-selected="{{ loop.first ? 'true' : 'false' }}"{{ loop.first ? '' : ' tabindex="-1"' }}>{{ tab.label }}</button>
+    {% endfor %}
+  </div>
+  {% for tab in tabs %}
+    <div class="tabs__panel" role="tabpanel" id="{{ id }}-panel-{{ loop.index }}" aria-labelledby="{{ id }}-tab-{{ loop.index }}" tabindex="0"{{ loop.first ? '' : ' hidden' }}>{{ tab.content }}</div>
+  {% endfor %}
+</div>

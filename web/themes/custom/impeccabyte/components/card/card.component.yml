@@ -1,0 +1,13 @@
+name: Card
+description: 'A surface with a 20px radius, a hairline border and a soft shadow.'
+props:
+  type: object
+  properties:
+    padding: { title: 'sm, md or lg' }
+    elevation: { title: 'flat, default or raised' }
+    tone: { title: 'default, brand or dark' }
+    interactive: { title: 'Lift on hover' }
+    href: { title: 'Makes the whole card a link' }
+    tag: { title: 'Element name, div by default' }
+slots:
+  content: { title: 'Card content' }

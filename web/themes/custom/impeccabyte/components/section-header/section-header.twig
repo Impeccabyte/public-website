@@ -1,0 +1,11 @@
+{% set h = 'h' ~ heading_level|default(2) %}
+<div{{ attributes.addClass(['section-header', align == 'center' ? 'section-header--center', link_url ? 'section-header--with-link']) }}>
+  <div class="section-header__text">
+    {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+    {% if heading %}<{{ h }} class="section-header__heading">{{ heading }}</{{ h }}>{% endif %}
+    {% if intro %}<div class="section-header__intro lead">{{ intro }}</div>{% endif %}
+  </div>
+  {% if link_url and link_label %}
+    {{ include('impeccabyte:button', {label: link_label, href: link_url, variant: 'secondary'}, with_context = false) }}
+  {% endif %}
+</div>

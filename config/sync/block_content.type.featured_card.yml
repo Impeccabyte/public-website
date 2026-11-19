@@ -1,0 +1,8 @@
+uuid: 1c771d22-cecb-4fa5-8fdf-eb3777b25ba4
+langcode: en
+status: true
+dependencies: {  }
+id: featured_card
+label: 'Featured card'
+revision: false
+description: 'The highlighted card in the mega menu: badge, title, body and one link.'

@@ -1,0 +1,3 @@
+{% set el = href ? 'a' : tag|default('div') %}
+{% set classes = ['card', 'card--pad-' ~ padding|default('md'), 'card--' ~ elevation|default('default'), 'card--tone-' ~ tone|default('default'), (interactive or href) ? 'card--interactive'] %}
+<{{ el }}{{ attributes.addClass(classes) }}{% if href %} href="{{ href }}"{% endif %}>{% block content %}{% endblock %}</{{ el }}>

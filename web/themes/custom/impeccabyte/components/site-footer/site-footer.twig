@@ -1,0 +1,35 @@
+<footer{{ attributes.addClass('site-footer') }} role="contentinfo">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div class="site-footer__pitch">
+        <a class="site-footer__logo" href="{{ home_url }}" aria-label="{{ 'Impeccabyte home'|t }}">{{ include('impeccabyte:logo', {tone: 'on-dark'}, with_context = false) }}</a>
+        <h2 class="site-footer__heading">{{ 'Payments tips for Austin business owners, once a month.'|t }}</h2>
+        <p class="site-footer__sub">{{ 'Fee changes, new hardware and small-business news. No spam, unsubscribe any time.'|t }}</p>
+      </div>
+      <div class="site-footer__newsletter">{{ newsletter }}</div>
+    </div>
+    <div class="site-footer__cols">
+      {% for menu in menus %}
+        <nav class="site-footer__col" aria-labelledby="footer-col-{{ loop.index }}">
+          <h3 class="site-footer__col-title" id="footer-col-{{ loop.index }}">{{ menu.title }}</h3>
+          <ul>{% for item in menu.items %}<li><a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+        </nav>
+      {% endfor %}
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-title">{{ 'Visit or call'|t }}</h3>
+        <p>Impeccabyte<br>{{ address_line1 }}<br>{{ address_line2 }}</p>
+        <ul>
+          <li><a href="{{ contact_url }}">{{ phone }}</a></li>
+          <li><a href="mailto:{{ email }}">{{ email }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <p class="site-footer__disclosure">{{ disclosure }}</p>
+      <div class="site-footer__legal-row">
+        <span>© {{ year }} Impeccabyte. <em class="site-footer__tagline">{{ 'Impeccably convenient.'|t }}</em> {{ 'Made in Austin, Texas.'|t }}</span>
+        {% if legal %}<ul class="site-footer__legal-links">{% for item in legal %}<li><a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul>{% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

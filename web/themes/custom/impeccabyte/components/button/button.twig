@@ -1,0 +1,16 @@
+{% set classes = [
+  'button',
+  'button--' ~ variant|default('primary'),
+  'button--' ~ size|default('md'),
+  block ? 'button--block',
+] %}
+{% set inner %}
+  {%- if icon and icon_position|default('right') == 'left' %}{{ include('impeccabyte:icon', {name: icon, size: 18}, with_context = false) }}{% endif -%}
+  <span class="button__label">{% block content %}{{ label }}{% endblock %}{% if sr_suffix %}<span class="visually-hidden"> {{ sr_suffix }}</span>{% endif %}</span>
+  {%- if icon and icon_position|default('right') == 'right' %}{{ include('impeccabyte:icon', {name: icon, size: 18}, with_context = false) }}{% endif -%}
+{% endset %}
+{% if href and not disabled %}
+<a{{ attributes.addClass(classes).setAttribute('href', href) }}>{{ inner }}</a>
+{% else %}
+<button{{ attributes.addClass(classes).setAttribute('type', type|default('button')) }}{{ disabled ? ' disabled' }}>{{ inner }}</button>
+{% endif %}

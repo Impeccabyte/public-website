@@ -1,0 +1,9 @@
+name: Chip
+description: 'A toggle chip. As a button it carries aria-pressed; as a link it marks the current filter.'
+props:
+  type: object
+  properties:
+    label: { title: 'Label' }
+    pressed: { title: 'Selected' }
+    href: { title: 'Renders a link, for filters that reload the page' }
+    controls: { title: 'Id of the element this chip shows' }

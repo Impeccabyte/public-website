@@ -1,0 +1,19 @@
+uuid: 5ccdd00f-ce47-46a0-8135-ae37463840f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_card
+    - field.storage.block_content.field_badge
+id: block_content.featured_card.field_badge
+field_name: field_badge
+entity_type: block_content
+bundle: featured_card
+label: Badge
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

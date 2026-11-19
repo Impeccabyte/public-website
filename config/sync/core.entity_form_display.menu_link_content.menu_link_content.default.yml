@@ -1,0 +1,31 @@
+uuid: a0cadd3e-41f7-4deb-9c82-02aae380cb1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.menu_link_content.field_icon
+  module:
+    - link
+    - menu_link_content
+id: menu_link_content.menu_link_content.default
+targetEntityType: menu_link_content
+bundle: menu_link_content
+mode: default
+content:
+  field_icon:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

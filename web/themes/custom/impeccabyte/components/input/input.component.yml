@@ -1,0 +1,21 @@
+name: Input
+description: 'A labelled text input with optional hint and error.'
+props:
+  type: object
+  properties:
+    id: { title: 'Element id' }
+    name: { title: 'Field name' }
+    label: { title: 'Visible label' }
+    type: { title: 'Input type' }
+    value: { title: 'Value' }
+    placeholder: { title: 'Placeholder' }
+    hint: { title: 'Hint under the label' }
+    error: { title: 'Error message' }
+    required: { title: 'Required' }
+    prefix: { title: 'Text before the value, such as $' }
+    suffix: { title: 'Text after the value, such as %' }
+    autocomplete: { title: 'Autocomplete token' }
+    inputmode: { title: 'Input mode' }
+    on_dark: { title: 'On a dark surface' }
+    hide_label: { title: 'Hide the label visually' }
+    size: { title: 'md (44px) or lg (52px)' }

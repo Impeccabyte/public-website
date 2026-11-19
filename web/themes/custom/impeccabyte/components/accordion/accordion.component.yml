@@ -1,0 +1,14 @@
+name: Accordion
+description: 'Questions that open one at a time by default.'
+props:
+  type: object
+  properties:
+    id: { title: 'Unique id prefix' }
+    items: { title: 'List of {question, answer}' }
+    multiple: { title: 'Allow several items open at once' }
+    open_first: { title: 'Open the first item on load' }
+    heading_level: { title: 'Heading level of each question, 3 by default' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

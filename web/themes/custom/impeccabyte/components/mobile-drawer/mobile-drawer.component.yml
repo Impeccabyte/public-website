@@ -1,0 +1,10 @@
+name: Mobile drawer
+description: 'The main menu below 1180px. Opens by height under the header bar.'
+props:
+  type: object
+  properties:
+    id: { title: 'Drawer id' }
+    items: { title: 'The main menu tree' }
+    quote_url: { title: 'Quote form path' }
+    login_url: { title: 'Merchant app address' }
+    phone: { title: 'Phone number' }

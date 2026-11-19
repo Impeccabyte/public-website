@@ -1,0 +1,43 @@
+{#
+  The page shell: global header, messages, main content and global footer.
+  Header and footer data comes from impeccabyte_preprocess_page().
+#}
+{{ chrome_cache }}
+<a href="#main-content" class="skip-link visually-hidden focusable">{{ 'Skip to main content'|t }}</a>
+{{ include('impeccabyte:site-header', {
+  home_url: front_url,
+  items: main_menu,
+  quote_url: site.quote_url,
+  login_url: site.login_url,
+  phone: site.phone,
+  hours: site.hours,
+  featured: page.mega_featured,
+}, with_context = false) }}
+{% if page.highlighted|render|striptags('<div><ul><li><a><nav><h2>')|trim %}
+  <div class="page-highlighted">{{ page.highlighted }}</div>
+{% endif %}
+<main id="main-content" class="page-main" tabindex="-1">
+  {% if fallback_title %}
+    <div class="section page-plain">
+      <div class="section__inner page-plain__inner">
+        <h1 class="page-plain__title">{{ fallback_title }}</h1>
+        {{ page.content }}
+      </div>
+    </div>
+  {% else %}
+    {{ page.content }}
+  {% endif %}
+</main>
+{{ include('impeccabyte:site-footer', {
+  home_url: front_url,
+  menus: footer_menus,
+  legal: legal_menu,
+  phone: site.phone,
+  email: site.email,
+  address_line1: site.address_line1,
+  address_line2: site.address_line2,
+  contact_url: site.quote_url,
+  disclosure: site.disclosure,
+  year: 'now'|date('Y'),
+  newsletter: newsletter,
+}, with_context = false) }}

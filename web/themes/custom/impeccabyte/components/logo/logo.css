@@ -1,0 +1,12 @@
+.logo { display: inline-flex; align-items: center; gap: var(--space-3); }
+.logo__mark { flex-shrink: 0; }
+.logo__base { fill: var(--clay-500); }
+.logo__chip { fill: var(--ink-900); opacity: 0.2; }
+.logo__stop-1 { stop-color: var(--clay-500); }
+.logo__stop-2 { stop-color: var(--clay-400); }
+.logo__stop-3 { stop-color: var(--amber-400); }
+.logo__word { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-xl); letter-spacing: -0.02em; color: var(--ink-900); line-height: 1; }
+.logo__byte { color: var(--clay-500); }
+.logo--on-dark .logo__base, .logo--on-dark .logo__rise { fill: var(--white); }
+.logo--on-dark .logo__chip { fill: var(--clove-800); opacity: 0.25; }
+.logo--on-dark .logo__word, .logo--on-dark .logo__byte { color: var(--white); }

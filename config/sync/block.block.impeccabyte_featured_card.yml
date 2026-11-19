@@ -1,0 +1,19 @@
+uuid: 5b76cb5e-dbaf-47c8-9392-44900de96270
+langcode: en
+status: true
+dependencies:
+  theme:
+    - impeccabyte
+id: impeccabyte_featured_card
+theme: impeccabyte
+region: mega_featured
+weight: 0
+provider: null
+plugin: 'block_content:b1f0a8e2-6a53-4c0e-9d7a-5e1c3a7f2d41'
+settings:
+  id: broken
+  label: 'Mega menu featured card'
+  label_display: '0'
+  provider: core
+  view_mode: full
+visibility: {  }

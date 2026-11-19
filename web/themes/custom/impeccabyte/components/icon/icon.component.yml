@@ -1,0 +1,7 @@
+name: Icon
+description: 'A Lucide outline icon at 1.75 stroke. Decorative: hidden from assistive technology.'
+props:
+  type: object
+  properties:
+    name: { title: 'Lucide icon name' }
+    size: { title: 'Width and height in pixels' }

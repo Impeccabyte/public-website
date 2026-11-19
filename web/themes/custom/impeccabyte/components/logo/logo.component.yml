@@ -1,0 +1,7 @@
+name: Logo
+description: 'The Impeccabyte lockup: the rising-blocks mark and the wordmark.'
+props:
+  type: object
+  properties:
+    tone: { title: 'default or on-dark' }
+    id: { title: 'Unique id for the gradient' }

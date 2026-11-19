@@ -1,0 +1,6 @@
+<div{{ attributes.addClass('featured-card') }}>
+  {% if badge %}{{ include('impeccabyte:badge', {label: badge, variant: 'accent', solid: true}, with_context = false) }}{% endif %}
+  <p class="featured-card__title">{{ title }}</p>
+  <p class="featured-card__body">{{ body }}</p>
+  {% if link_url %}<a class="featured-card__link" href="{{ link_url }}">{{ link_label }} {{ include('impeccabyte:icon', {name: 'arrow-right', size: 16}, with_context = false) }}</a>{% endif %}
+</div>

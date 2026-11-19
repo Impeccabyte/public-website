@@ -1,0 +1,17 @@
+{% set h = 'h' ~ heading_level|default(3) %}
+<div{{ attributes.addClass('accordion') }} data-accordion{{ multiple ? ' data-accordion-multiple' }}>
+  {% for item in items %}
+    {% set open = open_first and loop.first %}
+    <div class="accordion__item">
+      <{{ h }} class="accordion__heading">
+        <button class="accordion__trigger" type="button" id="{{ id }}-q-{{ loop.index }}" aria-controls="{{ id }}-a-{{ loop.index }}" aria-expanded="{{ open ? 'true' : 'false' }}">
+          <span>{{ item.question }}</span>
+          {{ include('impeccabyte:icon', {name: 'chevron-down', size: 20}, with_context = false) }}
+        </button>
+      </{{ h }}>
+      <div class="accordion__panel" id="{{ id }}-a-{{ loop.index }}" role="region" aria-labelledby="{{ id }}-q-{{ loop.index }}"{{ open ? '' : ' hidden' }}>
+        <div class="accordion__body">{{ item.answer }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

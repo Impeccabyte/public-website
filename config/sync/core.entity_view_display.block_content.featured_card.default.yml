@@ -1,0 +1,56 @@
+uuid: e8cc19b7-c705-4720-a736-c658b4ac15d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_card
+    - field.field.block_content.featured_card.field_badge
+    - field.field.block_content.featured_card.field_body
+    - field.field.block_content.featured_card.field_heading
+    - field.field.block_content.featured_card.field_link
+  module:
+    - link
+id: block_content.featured_card.default
+targetEntityType: block_content
+bundle: featured_card
+mode: default
+content:
+  field_badge:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,30 @@
+<div{{ attributes.addClass('drawer') }} id="{{ id }}" data-drawer>
+  <div class="drawer__clip">
+    <nav class="drawer__inner" aria-label="{{ 'Main, mobile'|t }}">
+      {% for item in items %}
+        {% if item.children %}
+          <details class="drawer__group"{{ item.active ? ' open' }}>
+            <summary class="drawer__top">{{ item.title }} {{ include('impeccabyte:icon', {name: 'chevron-down', size: 18}, with_context = false) }}</summary>
+            <ul class="drawer__links">
+              {% if item.url %}<li><a href="{{ item.url }}">{{ 'All @section'|t({'@section': item.title|lower}) }}</a></li>{% endif %}
+              {% for child in item.children %}
+                {% if child.children %}
+                  {% for leaf in child.children %}<li><a href="{{ leaf.url }}"{{ leaf.current ? ' aria-current="page"' }}>{{ leaf.title }}</a></li>{% endfor %}
+                {% else %}
+                  <li><a href="{{ child.url }}"{{ child.current ? ' aria-current="page"' }}>{{ child.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </details>
+        {% else %}
+          <a class="drawer__top drawer__top--link" href="{{ item.url }}"{{ item.current ? ' aria-current="page"' }}>{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+      <div class="drawer__actions">
+        {{ include('impeccabyte:button', {label: 'Get a quote'|t, href: quote_url, variant: 'primary', size: 'lg', block: true}, with_context = false) }}
+        {{ include('impeccabyte:button', {label: 'Log in to your account'|t, href: login_url, variant: 'secondary', size: 'lg', block: true}, with_context = false) }}
+      </div>
+      <p class="drawer__phone">{{ 'Questions? Call @phone'|t({'@phone': phone}) }}</p>
+    </nav>
+  </div>
+</div>

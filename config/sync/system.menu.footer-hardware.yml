@@ -1,0 +1,8 @@
+uuid: 07377e99-c79a-42d0-b4af-92aab7a9b95c
+langcode: en
+status: true
+dependencies: {  }
+id: footer-hardware
+label: Hardware
+description: 'Footer column: hardware.'
+locked: false

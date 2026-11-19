@@ -1,0 +1,12 @@
+name: Section header
+description: 'Eyebrow, heading and intro for a section, with an optional link beside it.'
+props:
+  type: object
+  properties:
+    eyebrow: { title: 'Eyebrow' }
+    heading: { title: 'Heading' }
+    intro: { title: 'Intro text or markup' }
+    link_label: { title: 'Link label' }
+    link_url: { title: 'Link target' }
+    heading_level: { title: 'Heading level, 2 by default' }
+    align: { title: 'left or center' }

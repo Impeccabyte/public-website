@@ -1,0 +1,10 @@
+<div{{ attributes.addClass(['field', on_dark ? 'field--on-dark', error ? 'field--error', size == 'lg' ? 'field--lg']) }}>
+  <label class="field__label{{ hide_label ? ' visually-hidden' }}" for="{{ id }}">{{ label }}{% if required %}<span class="field__required" aria-hidden="true"> *</span>{% endif %}</label>
+  {% if hint %}<span class="field__hint" id="{{ id }}-hint">{{ hint }}</span>{% endif %}
+  <span class="field__control{{ prefix ? ' field__control--prefix' }}{{ suffix ? ' field__control--suffix' }}">
+    {% if prefix %}<span class="field__affix field__affix--prefix" aria-hidden="true">{{ prefix }}</span>{% endif %}
+    <input class="field__input" id="{{ id }}" name="{{ name|default(id) }}" type="{{ type|default('text') }}"{% if value is not null %} value="{{ value }}"{% endif %}{% if placeholder %} placeholder="{{ placeholder }}"{% endif %}{% if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}{% if inputmode %} inputmode="{{ inputmode }}"{% endif %}{% if required %} required{% endif %}{% if hint or error %} aria-describedby="{{ hint ? id ~ '-hint' }}{{ hint and error ? ' ' }}{{ error ? id ~ '-error' }}"{% endif %}{% if error %} aria-invalid="true"{% endif %}>
+    {% if suffix %}<span class="field__affix field__affix--suffix" aria-hidden="true">{{ suffix }}</span>{% endif %}
+  </span>
+  {% if error %}<span class="field__error" id="{{ id }}-error">{{ error }}</span>{% endif %}
+</div>

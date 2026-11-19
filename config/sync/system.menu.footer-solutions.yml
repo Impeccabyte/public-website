@@ -1,0 +1,8 @@
+uuid: eddc2933-f479-409c-8fdd-99a0bc214075
+langcode: en
+status: true
+dependencies: {  }
+id: footer-solutions
+label: Solutions
+description: 'Footer column: solutions.'
+locked: false

@@ -1,0 +1,10 @@
+name: Featured card
+description: 'The clove card in the mega menu: badge, title, body and one link.'
+props:
+  type: object
+  properties:
+    badge: { title: 'Badge label' }
+    title: { title: 'Title' }
+    body: { title: 'Body' }
+    link_label: { title: 'Link label' }
+    link_url: { title: 'Link target' }

@@ -5,6 +5,7 @@ global:
       css/tokens.css: {}
       css/base.css: {}
     component:
+      css/forms.css: {}
       css/a11y.css: {}
   dependencies:
     - core/drupal

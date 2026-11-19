@@ -11,3 +11,24 @@ impeccabyte_site.settings:
     quote_path:
       type: string
       label: 'Path of the quote form'
+    phone:
+      type: label
+      label: 'Phone number'
+    hours:
+      type: label
+      label: 'Phone hours'
+    email:
+      type: email
+      label: 'Contact email'
+    address_line1:
+      type: label
+      label: 'Street address'
+    address_line2:
+      type: label
+      label: 'City, state and ZIP'
+    login_url:
+      type: uri
+      label: 'Merchant app address'
+    disclosure:
+      type: text
+      label: 'Footer disclosure'

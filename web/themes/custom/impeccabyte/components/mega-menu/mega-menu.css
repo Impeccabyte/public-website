@@ -1,0 +1,26 @@
+.mega {
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--ink-200);
+  box-shadow: var(--shadow-xl);
+  opacity: 0; visibility: hidden; transform: translateY(-8px); pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-base);
+}
+.mega.is-open { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition-delay: 0s; }
+.mega__grid { max-width: var(--container-xl); margin-inline: auto; padding: var(--space-10) var(--gutter) var(--space-8); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 300px; gap: var(--space-8); }
+.mega__grid--flat { grid-template-columns: minmax(0, 1fr) 300px; }
+.mega__col { display: flex; flex-direction: column; gap: var(--space-2); }
+.mega__heading { margin-bottom: var(--space-2); padding-left: var(--space-3); }
+.mega__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.mega__list--flat { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2) var(--space-8); align-content: start; }
+.mega__link { display: flex; gap: var(--space-4); min-height: 44px; padding: var(--space-3); border-radius: var(--radius-md); text-decoration: none; transition: background-color var(--dur-fast) var(--ease-out); }
+.mega__link:hover, .mega__link.is-on { background: var(--ink-50); }
+.mega__icon { flex-shrink: 0; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-md); background: var(--clay-50); color: var(--clay-600); }
+.mega__text { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.mega__title { font-weight: var(--fw-semibold); color: var(--ink-900); }
+.mega__desc { font-size: var(--text-sm); line-height: var(--lh-body); color: var(--ink-600); }
+.mega__help { border-top: 1px solid var(--ink-100); background: var(--ink-50); }
+.mega__help-inner { max-width: var(--container-xl); margin-inline: auto; padding: var(--space-4) var(--gutter); display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-8); align-items: center; font-size: var(--text-sm); color: var(--ink-700); }
+.mega__help-link { display: inline-flex; align-items: center; min-height: 24px; font-weight: var(--fw-semibold); }
+.mega__help-phone { margin-left: auto; }
+@media (max-width: 1180px) { .mega { display: none; } }

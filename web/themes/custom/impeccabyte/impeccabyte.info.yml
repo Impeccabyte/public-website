@@ -6,7 +6,6 @@ base theme: false
 libraries:
   - impeccabyte/global
 regions:
-  header: Header
-  highlighted: Highlighted
+  highlighted: 'Messages and tabs'
   content: Content
-  footer: Footer
+  mega_featured: 'Mega menu featured card'

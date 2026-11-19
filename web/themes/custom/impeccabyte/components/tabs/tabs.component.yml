@@ -1,0 +1,13 @@
+name: Tabs
+description: 'Pill or underline tabs with arrow-key support.'
+props:
+  type: object
+  properties:
+    id: { title: 'Unique id prefix' }
+    label: { title: 'Accessible name of the tab list' }
+    variant: { title: 'pill or underline' }
+    tabs: { title: 'List of {label, content}' }
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

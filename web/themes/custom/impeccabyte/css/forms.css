@@ -1,0 +1,97 @@
+/* Form controls. The input, select and checkbox components and Drupal's own
+   form elements (webforms, exposed filters) share these rules. */
+.field, .form-item { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; margin: 0; }
+.field--inline { flex-direction: row; align-items: center; gap: var(--space-3); }
+.field__label, .form-item > label, .fieldset__legend, fieldset > legend {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-strong);
+  padding: 0;
+}
+.field--on-dark .field__label { color: var(--text-on-dark); }
+.field__required, .form-required::after { color: var(--brick-600); }
+.form-required::after { content: " *"; }
+.field__hint, .form-item .description, .webform-element-description { font-size: var(--text-sm); color: var(--ink-600); }
+.field__control { position: relative; display: flex; }
+.field__input,
+.form-text, .form-email, .form-tel, .form-number, .form-url, .form-search, .form-select, .form-textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 1.5px solid var(--ink-400);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--ink-900);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.4;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.form-textarea { padding: var(--space-3) var(--space-4); min-height: 120px; }
+.field--lg .field__input { min-height: 52px; }
+.field__input:hover, .form-text:hover, .form-email:hover, .form-tel:hover, .form-number:hover, .form-select:hover, .form-textarea:hover { border-color: var(--ink-600); }
+.field__input::placeholder, .form-text::placeholder, .form-email::placeholder, .form-tel::placeholder { color: var(--ink-500); }
+.field__input--select, .form-select {
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232a211a' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.field__control--prefix .field__input { padding-left: 34px; }
+.field__control--suffix .field__input { padding-right: 40px; }
+.field__affix { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; color: var(--ink-600); font-weight: var(--fw-medium); pointer-events: none; }
+.field__affix--prefix { left: 16px; }
+.field__affix--suffix { right: 16px; }
+.field--error .field__input, .form-item .error, input.error, select.error, textarea.error { border-color: var(--brick-600); }
+.field__error, .form-item--error-message { font-size: var(--text-sm); font-weight: var(--fw-medium); color: var(--brick-600); }
+
+/* Checkboxes and radios: a 24px box inside a 44px row. */
+.check { display: flex; align-items: center; gap: var(--space-3); min-height: 44px; color: var(--ink-800); cursor: pointer; text-decoration: none; }
+a.check, a.check:hover { color: var(--ink-800); }
+.check__input { position: absolute; opacity: 0; width: 24px; height: 24px; margin: 0; }
+.check__box {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--ink-500);
+  border-radius: var(--radius-xs);
+  background: var(--white);
+  color: transparent;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.check:hover .check__box { border-color: var(--clay-600); }
+.check__input:checked + .check__box, .check.is-checked .check__box { background: var(--clay-600); border-color: var(--clay-600); color: var(--white); }
+.check__input:focus-visible + .check__box { outline: 2px solid var(--clay-600); outline-offset: 2px; box-shadow: 0 0 0 5px var(--white); }
+.check__label { flex: 1; min-width: 0; }
+.check__count { font-size: var(--text-sm); color: var(--ink-600); }
+
+.form-type-checkbox, .form-type-radio, .js-form-type-checkbox, .js-form-type-radio { flex-direction: row; align-items: center; gap: var(--space-3); min-height: 44px; }
+.form-checkbox, .form-radio {
+  appearance: none;
+  flex-shrink: 0;
+  width: 24px; height: 24px; margin: 0;
+  border: 1.5px solid var(--ink-500);
+  background: var(--white);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.form-checkbox { border-radius: var(--radius-xs); }
+.form-radio { border-radius: var(--radius-round); }
+.form-checkbox:hover, .form-radio:hover { border-color: var(--clay-600); }
+.form-checkbox:checked {
+  background: var(--clay-600) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center no-repeat;
+  border-color: var(--clay-600);
+}
+.form-radio:checked { border-color: var(--clay-600); background: radial-gradient(var(--clay-600) 0 45%, var(--white) 50%); }
+.form-type-checkbox label, .form-type-radio label, .js-form-type-checkbox label, .js-form-type-radio label { font-size: var(--text-base); font-weight: var(--fw-regular); color: var(--ink-800); cursor: pointer; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+fieldset > legend { margin-bottom: var(--space-2); }
+.fieldset__wrapper, .fieldset-wrapper { display: flex; flex-direction: column; }
+
+/* Status messages. */
+.messages { padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--ink-200); background: var(--white); margin-block: var(--space-4); }
+.messages--status { background: var(--sage-50); border-color: var(--sage-100); color: var(--sage-700); }
+.messages--warning { background: var(--amber-50); border-color: var(--amber-100); color: var(--amber-800); }
+.messages--error { background: var(--brick-50); border-color: var(--brick-100); color: var(--brick-700); }
+.messages ul { margin: 0; padding-left: var(--space-5); }

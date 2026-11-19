@@ -1,0 +1,1 @@
+<span{{ attributes.addClass(['badge', 'badge--' ~ variant|default('neutral'), solid ? 'badge--solid', size == 'sm' ? 'badge--sm']) }}>{% if dot %}<span class="badge__dot" aria-hidden="true"></span>{% endif %}{{ label }}</span>

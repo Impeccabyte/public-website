@@ -1,0 +1,14 @@
+name: Select
+description: 'A labelled select.'
+props:
+  type: object
+  properties:
+    id: { title: 'Element id' }
+    name: { title: 'Field name' }
+    label: { title: 'Visible label' }
+    options: { title: 'List of {value, label, selected}' }
+    hint: { title: 'Hint' }
+    error: { title: 'Error message' }
+    required: { title: 'Required' }
+    hide_label: { title: 'Hide the label visually' }
+    inline: { title: 'Label beside the control' }

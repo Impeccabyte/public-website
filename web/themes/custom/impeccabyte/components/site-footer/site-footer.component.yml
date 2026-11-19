@@ -1,0 +1,16 @@
+name: Site footer
+description: 'The global footer: newsletter signup, four link columns, contact details, the disclosure line and legal links.'
+props:
+  type: object
+  properties:
+    newsletter: { title: 'Rendered newsletter form' }
+    home_url: { title: 'Front page URL' }
+    menus: { title: 'List of {title, items} for the four link columns' }
+    legal: { title: 'Legal links' }
+    phone: { title: 'Phone number' }
+    email: { title: 'Contact email' }
+    address_line1: { title: 'Street address' }
+    address_line2: { title: 'City, state and ZIP' }
+    contact_url: { title: 'Where the phone and contact links lead' }
+    disclosure: { title: 'Disclosure line. Required on every page.' }
+    year: { title: 'Copyright year' }

@@ -1,0 +1,8 @@
+uuid: d6be5bf6-db49-43e0-ae62-143a6a1d5931
+langcode: en
+status: true
+dependencies: {  }
+id: footer-legal
+label: 'Legal links'
+description: 'The row of links under the footer disclosure.'
+locked: false

@@ -1,0 +1,27 @@
+.badge {
+  --_bg: var(--ink-100);
+  --_fg: var(--ink-800);
+  --_solid: var(--ink-800);
+  --_on: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.badge--sm { min-height: 24px; padding: 0 10px; font-size: var(--text-xs); }
+.badge--brand { --_bg: var(--clay-50); --_fg: var(--clay-700); --_solid: var(--clay-600); }
+.badge--accent { --_bg: var(--amber-50); --_fg: var(--amber-800); --_solid: var(--amber-400); --_on: var(--ink-900); }
+.badge--success { --_bg: var(--sage-50); --_fg: var(--sage-700); --_solid: var(--sage-600); }
+.badge--danger { --_bg: var(--brick-50); --_fg: var(--brick-700); --_solid: var(--brick-600); }
+.badge--warning { --_bg: var(--amber-50); --_fg: var(--amber-800); --_solid: var(--amber-400); --_on: var(--ink-900); }
+.badge--info { --_bg: var(--slate-50); --_fg: var(--slate-700); --_solid: var(--slate-500); }
+.badge--solid { background: var(--_solid); color: var(--_on); }
+.badge__dot { width: 7px; height: 7px; border-radius: var(--radius-round); background: currentColor; }

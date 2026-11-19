@@ -1,0 +1,9 @@
+{% set v = variant|default('info') %}
+{% set icons = {info: 'info', success: 'circle-check', warning: 'triangle-alert', danger: 'circle-alert', brand: 'sparkles'} %}
+<div{{ attributes.addClass(['callout', 'callout--' ~ v]) }}{{ v == 'danger' or v == 'warning' ? ' role="note"' : ' role="note"' }}>
+  <span class="callout__icon">{{ include('impeccabyte:icon', {name: icons[v] ?? 'info', size: 22}, with_context = false) }}</span>
+  <div class="callout__content">
+    {% if title %}<{{ 'h' ~ heading_level|default(3) }} class="callout__title">{{ title }}</{{ 'h' ~ heading_level|default(3) }}>{% endif %}
+    <div class="callout__body">{% block content %}{{ body }}{% endblock %}</div>
+  </div>
+</div>

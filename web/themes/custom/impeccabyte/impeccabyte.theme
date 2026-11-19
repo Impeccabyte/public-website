@@ -5,9 +5,162 @@
  * Theme hooks for Impeccabyte.
  */
 
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Url;
+use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
+
 /**
  * Implements hook_page_attachments_alter().
  */
 function impeccabyte_page_attachments_alter(array &$attachments) {
   $attachments['#attached']['library'][] = 'impeccabyte/fonts';
+}
+
+/**
+ * Builds a plain array from a menu: title, url, description, icon, children.
+ *
+ * The description is the menu link's own description; the icon is the Lucide
+ * name in its Icon field.
+ */
+function _impeccabyte_menu(string $menu_name, int $depth = 3): array {
+  $menu_tree = \Drupal::menuTree();
+  $parameters = (new MenuTreeParameters())
+    ->setMaxDepth($depth)
+    ->onlyEnabledLinks()
+    ->setActiveTrail(\Drupal::service('menu.active_trail')->getActiveTrailIds($menu_name));
+  $tree = $menu_tree->transform($menu_tree->load($menu_name, $parameters), [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ]);
+  $current = Url::fromRoute('<current>')->toString();
+  $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+
+  $build = function (array $elements) use (&$build, $current, $storage): array {
+    $items = [];
+    foreach ($elements as $element) {
+      if ($element->access !== NULL && !$element->access->isAllowed()) {
+        continue;
+      }
+      $link = $element->link;
+      $url_object = $link->getUrlObject();
+      $url = $url_object->isRouted() && in_array($url_object->getRouteName(), ['<nolink>', '<button>', '<none>'], TRUE) ? '' : $url_object->toString();
+      $icon = '';
+      if ($link instanceof MenuLinkContent) {
+        $entities = $storage->loadByProperties(['uuid' => $link->getDerivativeId()]);
+        if (($entity = reset($entities)) && $entity->hasField('field_icon')) {
+          $icon = (string) $entity->get('field_icon')->value;
+        }
+      }
+      $items[] = [
+        'title' => $link->getTitle(),
+        'url' => $url,
+        'description' => (string) $link->getDescription(),
+        'icon' => $icon,
+        'active' => $element->inActiveTrail,
+        'current' => $url !== '' && $url === $current,
+        'children' => $element->subtree ? $build($element->subtree) : [],
+      ];
+    }
+    return $items;
+  };
+  return $build($tree);
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function impeccabyte_preprocess_page(array &$variables) {
+  $settings = \Drupal::config('impeccabyte_site.settings');
+  $quote_path = $settings->get('quote_path') ?: '/get-a-quote';
+  $variables['front_url'] = Url::fromRoute('<front>')->toString();
+  $variables['site'] = [
+    'quote_url' => Url::fromUserInput($quote_path)->toString(),
+    'login_url' => $settings->get('login_url'),
+    'phone' => $settings->get('phone'),
+    'hours' => $settings->get('hours'),
+    'email' => $settings->get('email'),
+    'address_line1' => $settings->get('address_line1'),
+    'address_line2' => $settings->get('address_line2'),
+    'disclosure' => $settings->get('disclosure'),
+  ];
+
+  $variables['main_menu'] = _impeccabyte_menu('main');
+  $variables['footer_menus'] = [];
+  $cache_tags = ['config:impeccabyte_site.settings', 'config:system.menu.main'];
+  $menus = \Drupal::entityTypeManager()->getStorage('menu');
+  foreach (['footer-solutions', 'footer-hardware', 'footer-industries', 'footer-company'] as $name) {
+    if ($menu = $menus->load($name)) {
+      $variables['footer_menus'][] = ['title' => $menu->label(), 'items' => _impeccabyte_menu($name, 1)];
+      $cache_tags[] = 'config:system.menu.' . $name;
+    }
+  }
+  $variables['legal_menu'] = $menus->load('footer-legal') ? _impeccabyte_menu('footer-legal', 1) : [];
+  $cache_tags[] = 'config:system.menu.footer-legal';
+
+  $variables['newsletter'] = NULL;
+  if (\Drupal::moduleHandler()->moduleExists('webform') && \Drupal::entityTypeManager()->getStorage('webform')->load('newsletter')) {
+    $variables['newsletter'] = ['#type' => 'webform', '#webform' => 'newsletter'];
+  }
+
+  // The header marks the current section, so the chrome varies by path.
+  $variables['chrome_cache'] = ['#cache' => ['tags' => $cache_tags, 'contexts' => ['url.path']]];
+
+  // Pages built here bring their own h1 in a hero. Everything else (log in,
+  // error pages, admin-facing lists) gets a plain title above its content.
+  $route = \Drupal::routeMatch();
+  $own_title = FALSE;
+  if (($node = $route->getParameter('node')) && $route->getRouteName() === 'entity.node.canonical') {
+    $own_title = TRUE;
+  }
+  if (str_starts_with((string) $route->getRouteName(), 'view.') || in_array($route->getRouteName(), ['impeccabyte_compare.page'], TRUE)) {
+    $own_title = TRUE;
+  }
+  if ($route->getRouteName() === 'entity.webform.canonical' && ($webform = $route->getParameter('webform')) && in_array($webform->id(), ['get_a_quote', 'specialty_prequal', 'statement_review'], TRUE)) {
+    $own_title = TRUE;
+  }
+  $variables['fallback_title'] = NULL;
+  if (!$own_title) {
+    $title = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route->getRouteObject());
+    $variables['fallback_title'] = is_array($title) ? \Drupal::service('renderer')->renderInIsolation($title) : $title;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ *
+ * Custom blocks get a template named after their type.
+ */
+function impeccabyte_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $content = $variables['elements']['content'] ?? [];
+  if (isset($content['#block_content'])) {
+    $suggestions[] = 'block__' . $content['#block_content']->bundle();
+  }
+}
+
+/**
+ * Implements hook_preprocess_input().
+ *
+ * Submit buttons take the button component's classes unless a form set its own.
+ */
+function impeccabyte_preprocess_input(array &$variables) {
+  $type = $variables['attributes']['type'] ?? '';
+  if (in_array($type, ['submit', 'button'], TRUE)) {
+    $classes = $variables['attributes']['class'] ?? [];
+    $variants = ['button--secondary', 'button--ghost', 'button--accent', 'button--danger', 'button--on-dark'];
+    if (array_intersect($variants, $classes)) {
+      // Webform adds the primary class to every submit button.
+      $classes = array_diff($classes, ['button--primary']);
+    }
+    elseif (in_array('webform-button--previous', $classes, TRUE)) {
+      $classes = array_diff($classes, ['button--primary']);
+      $classes[] = 'button--secondary';
+    }
+    elseif (!in_array('button--primary', $classes, TRUE)) {
+      $classes[] = 'button--primary';
+    }
+    if (!in_array('button', $classes, TRUE)) {
+      $classes[] = 'button';
+    }
+    $variables['attributes']['class'] = array_values($classes);
+  }
 }

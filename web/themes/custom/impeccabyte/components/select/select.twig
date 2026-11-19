@@ -1,0 +1,8 @@
+<div{{ attributes.addClass(['field', error ? 'field--error', inline ? 'field--inline']) }}>
+  <label class="field__label{{ hide_label ? ' visually-hidden' }}" for="{{ id }}">{{ label }}</label>
+  {% if hint %}<span class="field__hint" id="{{ id }}-hint">{{ hint }}</span>{% endif %}
+  <select class="field__input field__input--select" id="{{ id }}" name="{{ name|default(id) }}"{% if required %} required{% endif %}{% if hint %} aria-describedby="{{ id }}-hint"{% endif %}>
+    {% for option in options %}<option value="{{ option.value }}"{{ option.selected ? ' selected' }}>{{ option.label }}</option>{% endfor %}
+  </select>
+  {% if error %}<span class="field__error" id="{{ id }}-error">{{ error }}</span>{% endif %}
+</div>

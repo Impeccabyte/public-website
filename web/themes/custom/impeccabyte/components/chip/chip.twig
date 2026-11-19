@@ -1,0 +1,5 @@
+{% if href %}
+<a{{ attributes.addClass(['chip', pressed ? 'is-pressed']) }} href="{{ href }}"{{ pressed ? ' aria-current="true"' }}>{% if pressed %}{{ include('impeccabyte:icon', {name: 'check', size: 16}, with_context = false) }}{% endif %}{{ label }}</a>
+{% else %}
+<button{{ attributes.addClass('chip') }} type="button" aria-pressed="{{ pressed ? 'true' : 'false' }}"{% if controls %} aria-controls="{{ controls }}"{% endif %}>{{ include('impeccabyte:icon', {name: 'check', size: 16}, with_context = false) }}{{ label }}</button>
+{% endif %}

@@ -1,0 +1,40 @@
+.button {
+  --_bg: var(--white);
+  --_bgh: var(--ink-50);
+  --_bga: var(--ink-100);
+  --_fg: var(--ink-900);
+  --_bd: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1.5px solid var(--_bd);
+  border-radius: var(--radius-pill);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.button:hover { background: var(--_bgh); }
+.button:active { background: var(--_bga); }
+.button--sm { min-height: 36px; padding: 0 16px; font-size: var(--text-sm); }
+.button--lg { min-height: 52px; padding: 0 26px; }
+.button--block { display: flex; width: 100%; }
+.button--primary { box-shadow: var(--shadow-brand); }
+.button--secondary { --_bd: var(--ink-400); }
+.button--secondary:hover { --_bd: var(--ink-500); }
+.button--ghost { --_bg: transparent; --_fg: var(--clay-600); }
+.button--accent { --_bg: var(--amber-400); --_bgh: var(--amber-500); --_bga: var(--amber-600); --_fg: var(--ink-900); }
+.button--danger { --_bg: var(--brick-500); --_bgh: var(--brick-600); --_bga: var(--brick-700); --_fg: var(--white); }
+/* Outline button for clove surfaces. */
+.button--on-dark { --_bg: transparent; --_bgh: color-mix(in srgb, var(--text-on-dark) 12%, transparent); --_bga: color-mix(in srgb, var(--text-on-dark) 20%, transparent); --_fg: var(--white); --_bd: color-mix(in srgb, var(--text-on-dark) 50%, transparent); }
+.button[disabled] { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+.button .icon { flex-shrink: 0; }

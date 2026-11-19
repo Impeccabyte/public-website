@@ -1,0 +1,12 @@
+name: Checkbox
+description: 'A labelled checkbox with a 24px box and a 44px row.'
+props:
+  type: object
+  properties:
+    id: { title: 'Element id' }
+    name: { title: 'Field name' }
+    label: { title: 'Visible label' }
+    value: { title: 'Value' }
+    checked: { title: 'Checked' }
+    count: { title: 'Count shown after the label' }
+    href: { title: 'When set, the row is a link that toggles a filter' }
