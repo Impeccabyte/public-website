@@ -48,14 +48,23 @@ foreach ($resources as $index => [$slug, $type, $topic, $title, $summary, $meta,
   ]);
 }
 
-// The dual pricing page's "Keep reading" row.
-$dual = ib_node_by_alias('/solutions/dual-pricing');
-if ($dual) {
-  foreach ($dual->get('field_sections')->referencedEntities() as $section) {
+// "Keep reading" rows on pages built before the resources existed. On a new
+// site the page scripts run first and leave these rows empty.
+$keep_reading = [
+  '/solutions/dual-pricing' => ['boutique-switching-to-dual-pricing', 'read-a-processing-statement', 'interchange-assessments-markup'],
+  '/solutions/in-person' => ['merchant-account-checklist', 'clover-flex-first-tableside-payment', 'read-a-processing-statement'],
+  '/solutions/online' => ['payment-links-vs-online-store', 'customer-disputes-a-charge', 'interchange-assessments-markup'],
+  '/solutions/on-the-go' => ['clover-flex-first-tableside-payment', 'merchant-account-checklist', 'funding-times-explained'],
+];
+foreach ($keep_reading as $alias => $slugs) {
+  if (!($page = ib_node_by_alias($alias))) {
+    continue;
+  }
+  foreach ($page->get('field_sections')->referencedEntities() as $section) {
     if ($section->bundle() === 'related_resources' && $section->get('field_resources')->isEmpty()) {
-      $section->set('field_resources', array_map(fn(string $slug) => ['target_id' => $nodes[$slug]->id()], ['boutique-switching-to-dual-pricing', 'read-a-processing-statement', 'interchange-assessments-markup']));
+      $section->set('field_resources', array_map(fn(string $slug) => ['target_id' => $nodes[$slug]->id()], $slugs));
       $section->save();
-      $dual->save();
+      $page->save();
     }
   }
 }
