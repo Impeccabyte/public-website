@@ -78,3 +78,10 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Accounting sync.** "Payments sync to your accounting software, so invoices are marked paid without retyping." Depends on the gateway or app chosen.
 - **Reports by tech.** "Every payment lands in the same reports, by tech and by job." Confirm reports can split by tech and job on the setup you would sell.
 - **ACH** listed as a setup add-on, through the virtual terminal.
+
+## Healthcare and dental (`/industries/healthcare`)
+
+- **HSA and FSA cards.** "Most HSA and FSA cards run on the major card networks and are taken like any other card for eligible services." Confirm for Impeccabyte healthcare accounts.
+- **Card on file.** "With the patient's written permission ... stored as a token by the gateway, not in your files or practice software."
+- **Practice software.** "Many practice management systems connect to a payment gateway." Confirm which ones you would check against.
+- **No compliance claims.** The page deliberately says nothing about HIPAA. Add wording only if Impeccabyte or Maverick can back it.
