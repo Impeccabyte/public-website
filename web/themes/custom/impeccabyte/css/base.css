@@ -85,3 +85,7 @@ img { height: auto; }
 .webform-submission-form > div:not(.form-actions):not(.webform-progress):not(.form-grid):not(.form-item) { display: flex; flex-direction: column; gap: var(--space-5); }
 .form-item--error-message { display: flex; gap: 6px; }
 .form-item--error-message::before { content: "!"; flex-shrink: 0; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-round); background: var(--brick-600); color: var(--white); font-size: var(--text-xs); font-weight: var(--fw-bold); }
+
+/* A view placed inside a grid brings one wrapper of its own. Without this the
+   wrapper is the grid's only item and its cards stack in a single column. */
+.grid-auto > .views-element-container { display: contents; }
