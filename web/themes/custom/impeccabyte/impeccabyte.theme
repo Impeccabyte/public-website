@@ -362,6 +362,11 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
 
     case 'webform_embed':
       $data['form'] = $data['webform'] ? ['#type' => 'webform', '#webform' => $data['webform']] : NULL;
+      // On a specialty industry page the form starts on that industry.
+      $page = \Drupal::routeMatch()->getParameter('node');
+      if ($data['form'] && $data['webform'] === 'specialty_prequal' && $page && $page->hasField('field_industry') && ($industry = $page->get('field_industry')->entity)) {
+        $data['form']['#default_data'] = ['vertical' => $industry->label()];
+      }
       break;
 
     case 'bundle':

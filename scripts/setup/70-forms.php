@@ -318,6 +318,129 @@ YAML;
   $webform->save();
 }
 
+// Specialty pre-qualification, embedded on each specialty industry page. The
+// page it sits on picks the industry; the Intercom handler tags by it.
+if (!Webform::load('specialty_prequal')) {
+  $elements = <<<YAML
+vertical:
+  '#type': select
+  '#title': Industry
+  '#required': true
+  '#empty_option': 'Choose one'
+  '#options':
+    'Hemp and CBD': 'Hemp and CBD'
+    'Smoke and vape': 'Smoke and vape'
+    Kratom: Kratom
+    Firearms: Firearms
+    'Adult content': 'Adult content'
+    Dating: Dating
+    Gaming: Gaming
+    Collections: Collections
+    'Credit repair': 'Credit repair'
+    Lending: Lending
+    'Nutraceuticals and subscriptions': 'Nutraceuticals and subscriptions'
+    'Online pharmacy and telehealth': 'Online pharmacy and telehealth'
+website_urls:
+  '#type': textarea
+  '#title': 'Website addresses'
+  '#description': 'List every site you sell on, one per line.'
+  '#description_display': before
+  '#rows': 3
+  '#required': true
+business_numbers:
+  '#type': container
+  '#attributes':
+    class:
+      - form-grid
+  monthly_volume:
+    '#type': select
+    '#title': 'Monthly card sales, roughly'
+    '#empty_option': 'Choose one'
+    '#options':
+      none: 'Not taking cards yet'
+      under_10k: 'Under $10,000'
+      10k_to_50k: '$10,000 to $50,000'
+      50k_to_150k: '$50,000 to $150,000'
+      over_150k: 'Over $150,000'
+  average_ticket:
+    '#type': textfield
+    '#title': 'Average sale'
+    '#placeholder': '$60'
+    '#maxlength': 20
+chargeback_history:
+  '#type': select
+  '#title': 'Chargebacks in the last 12 months'
+  '#empty_option': 'Choose one'
+  '#options':
+    none: 'None'
+    few: 'A few'
+    monthly: 'Some most months'
+    unsure: 'Not sure'
+    new: 'New business, no history'
+licenses:
+  '#type': textarea
+  '#title': 'Licenses and permits you hold'
+  '#description': 'For example state licenses, permits or registrations. Leave blank if none apply.'
+  '#description_display': before
+  '#rows': 3
+contact_fields:
+  '#type': container
+  '#attributes':
+    class:
+      - form-grid
+  name:
+    '#type': textfield
+    '#title': 'Your name'
+    '#required': true
+    '#attributes':
+      autocomplete: name
+  business_name:
+    '#type': textfield
+    '#title': 'Business name'
+    '#required': true
+    '#attributes':
+      autocomplete: organization
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+    '#attributes':
+      autocomplete: email
+  phone:
+    '#type': tel
+    '#title': Phone
+    '#description': Optional
+    '#description_display': before
+    '#attributes':
+      autocomplete: tel
+consent:
+  '#type': checkbox
+  '#title': "It's okay to contact me about this request"
+  '#description': 'We review your website before we send an application to underwriting. We never sell your information.'
+  '#required': true
+  '#required_error': 'Please check the box so we can reply.'
+actions:
+  '#type': webform_actions
+  '#title': 'Submit button'
+  '#submit__label': 'Send my details'
+  '#submit__attributes':
+    class:
+      - button--lg
+      - button--block
+YAML;
+  $webform = Webform::create(['id' => 'specialty_prequal', 'title' => 'Specialty pre-qualification', 'description' => 'First questions for a specialty industry, embedded on each specialty page.', 'category' => 'Leads', 'elements' => $elements]);
+  $webform->setSettings([
+    'ajax' => FALSE,
+    'page' => TRUE,
+    'page_submit_path' => '/industries/specialty/pre-qualify',
+    'form_title' => 'source_entity_webform',
+    'confirmation_type' => 'inline',
+    'confirmation_message' => '<p><strong>Thanks. We have your details.</strong></p><p>A local specialist will review your website and reply within one business day with the paperwork underwriting will ask for. Sending this form is not an application and not an approval.</p>',
+    'form_novalidate' => FALSE,
+  ]);
+  $webform->save();
+}
+
 // Lead handlers. A handler that is already on a form is left as it is.
 $has_token = \Drupal::service('impeccabyte_site.intercom')->isConfigured();
 $handlers = \Drupal::service('plugin.manager.webform.handler');
@@ -325,6 +448,7 @@ $forms = [
   'get_a_quote' => ['Website lead', 'Quote request'],
   'statement_review' => ['Website lead', 'Statement review'],
   'newsletter' => ['Newsletter'],
+  'specialty_prequal' => ['Website lead', 'Specialty'],
 ];
 foreach ($forms as $id => $tags) {
   $webform = Webform::load($id);
@@ -341,7 +465,8 @@ foreach ($forms as $id => $tags) {
       'notes' => 'On only when a token is set in settings.local.php or the environment.',
       'status' => $has_token,
       'weight' => 0,
-      'settings' => ['tags' => $tags, 'tag_elements' => []],
+      // Specialty leads are also tagged with the industry they picked.
+      'settings' => ['tags' => $tags, 'tag_elements' => $id === 'specialty_prequal' ? ['vertical'] : []],
     ]));
     $changed = TRUE;
   }
