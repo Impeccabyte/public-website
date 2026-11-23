@@ -115,7 +115,7 @@ $sections = [
       $faq('Is Impeccabyte a bank or a payment processor?', 'Neither. We are an authorized sales agent of Maverick Payments. Your merchant account is provided by Maverick Payments and its sponsor banks, and we help you choose, apply for and run it.'),
       $faq('Who is Maverick Payments?', 'Maverick Payments is the processor behind your merchant account. They process your card sales, pay your deposits and hold your Merchant Agreement. We are their authorized sales agent in Austin.'),
       $faq('Does Impeccabyte hold my money?', 'No. Deposits are paid by Maverick Payments and its sponsor banks directly to your business bank account. We never hold or move your funds.'),
-      $faq('Do you only work with Austin businesses?', '[Confirm: whether we take on businesses outside Austin and Central Texas.]'),
+      $faq('Do you only work with Austin businesses?', "No. We're based in Austin and work with businesses across Central Texas, and we take on clients outside Central Texas too. Outside Central Texas, on-site support is optional and comes with a fee, which we list on your quote."),
       $faq('How do I reach you?', 'Email us at howdy@impeccabyte.com or use the quote form on any page. A local specialist in Austin replies within one business day. Our mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064. It takes mail only, so we can\'t meet you there.'),
     ],
   ]],
