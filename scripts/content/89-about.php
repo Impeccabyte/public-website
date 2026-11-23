@@ -23,7 +23,8 @@ $path = '/about';
 $faq = fn(string $question, string $answer) => ['_type' => 'faq_item', 'question' => $question, 'answer' => ib_html('<p>' . $answer . '</p>')];
 $step = fn(string $title, string $body) => ['_type' => 'step', 'title' => $title, 'body' => $body];
 $card = fn(string $icon, string $title, string $body) => ['_type' => 'feature_card', 'icon' => $icon, 'title' => $title, 'body' => $body];
-$industry = fn(string $title, string $url) => ['_type' => 'feature_card', 'title' => $title, 'link' => ib_link($url, 'See how we help')];
+// Industry cards use the same icons as the Industries menu.
+$industry = fn(string $icon, string $title, string $url) => ['_type' => 'feature_card', 'icon' => $icon, 'title' => $title, 'link' => ib_link($url, 'See how we help')];
 
 $sections = [
   ['hero', [
@@ -82,17 +83,17 @@ $sections = [
     'heading' => "Built for Austin's small businesses",
     'intro' => 'Small and mid-sized local businesses come first. See how we set up payments for yours.',
     'items' => [
-      $industry('Restaurants & Bars', '/industries/restaurants'),
-      $industry('Food Trucks', '/industries/food-trucks'),
-      $industry('Retail', '/industries/retail'),
-      $industry('Salons & Spas', '/industries/salons-and-spas'),
-      $industry('Home Services', '/industries/home-services'),
-      $industry('Healthcare & Dental', '/industries/healthcare'),
-      $industry('Auto Repair', '/industries/auto-repair'),
-      $industry('Professional Services', '/industries/professional-services'),
-      $industry('Nonprofits', '/industries/nonprofits'),
-      $industry('Pop-Ups & Markets', '/industries/pop-ups-and-markets'),
-      $industry('Specialty Industries', '/industries/specialty'),
+      $industry('utensils', 'Restaurants & Bars', '/industries/restaurants'),
+      $industry('truck', 'Food Trucks', '/industries/food-trucks'),
+      $industry('store', 'Retail', '/industries/retail'),
+      $industry('sparkles', 'Salons & Spas', '/industries/salons-and-spas'),
+      $industry('plug', 'Home Services', '/industries/home-services'),
+      $industry('heart-pulse', 'Healthcare & Dental', '/industries/healthcare'),
+      $industry('zap', 'Auto Repair', '/industries/auto-repair'),
+      $industry('file-text', 'Professional Services', '/industries/professional-services'),
+      $industry('users', 'Nonprofits', '/industries/nonprofits'),
+      $industry('map-pin', 'Pop-Ups & Markets', '/industries/pop-ups-and-markets'),
+      $industry('shield-check', 'Specialty Industries', '/industries/specialty'),
     ],
   ]],
   ['media_split', [
