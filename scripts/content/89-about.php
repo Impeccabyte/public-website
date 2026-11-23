@@ -8,8 +8,8 @@
  * Maverick Payments), what each party behind a merchant account does, and
  * how working with us goes. The mailing address takes mail only, so no copy
  * invites a visit, and there is no phone number: people reach us by email
- * or the quote form. The hours stay a placeholder until they are supplied;
- * the founder photo is never generated.
+ * or the quote form. No business hours are listed. The founder photo is
+ * never generated.
  *
  * Safe to re-run. A new site gets the page; a site that still has the short
  * "more about us is on the way" page has its sections replaced; a page
@@ -104,7 +104,6 @@ $sections = [
     'checklist' => [
       'Email: howdy@impeccabyte.com',
       'Mailing address, mail only: 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064',
-      'Hours: [Business hours]',
     ],
     'link' => ib_link('/get-a-quote', 'Contact us'),
     'media_label' => 'a street of local Austin storefronts',
