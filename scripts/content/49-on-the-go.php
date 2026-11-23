@@ -35,7 +35,7 @@ $sections = [
     'eyebrow' => 'Mobile payments',
     'heading' => 'Get paid wherever the work is.',
     'accent_word' => 'wherever',
-    'intro' => 'Pocket-size readers, handhelds with their own connection and tap to pay on your phone, for markets, pop-ups, job sites and deliveries. All on one merchant account, with a local team to call.',
+    'intro' => 'Pocket-size readers, handhelds with their own connection and tap to pay on your phone, for markets, pop-ups, job sites and deliveries. All on one merchant account, with a local team behind you.',
     'link' => ib_link('/get-a-quote', 'Get a mobile quote'),
     'link_secondary' => ib_link($catalog('Mobile Reader'), 'See mobile readers'),
     'checklist' => ['Chip, tap and swipe', 'Wi-Fi or cellular', 'Support from Austin'],
@@ -91,7 +91,7 @@ $sections = [
     'heading' => 'Mobile payment questions',
     'layout' => 'centered',
     'items' => [
-      $faq('Can I take payments on my own phone?', 'Yes, with tap to pay you can accept contactless cards and phone wallets on most smartphones, iPhone and Android alike, with no extra hardware. For chip cards, add a reader that pairs with your phone.'),
+      $faq('Can I take payments on my own phone?', 'Yes, with tap to pay you can accept contactless cards and phone wallets on most smartphones, iPhone and Android alike, with no extra hardware. We set it up with Authorize.Net, iPOSGo, SwipeSimple Tap to Pay or the Clover Go app. For chip cards, add a reader that pairs with your phone.'),
       $faq('Do I need a data plan for my device?', "Readers that pair with your phone use your phone's connection. Handhelds connect over Wi-Fi, and some models also take a cellular data plan, which we can add if you work where Wi-Fi is not available."),
       $faq('What happens if I lose signal?', 'Clover devices can keep taking payments offline for a period and send them once you reconnect. Offline payments carry some risk if a card is later declined, so we explain the limits when we set you up.'),
       $faq('Can I use the same account at my shop and on the road?', 'Yes. Mobile devices run on the same merchant account as your counter terminal or online checkout, so your deposits and reports stay together.'),

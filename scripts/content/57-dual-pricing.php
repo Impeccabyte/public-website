@@ -106,9 +106,10 @@ $sections = [
   ib_paragraph('card_grid', [
     'eyebrow' => 'Hardware',
     'heading' => 'Devices that are dual pricing ready',
-    'intro' => 'These show both prices on screen and print them on the receipt. Already have one? We can usually reprogram it.',
+    'intro' => 'A few of the 13 devices that show both prices on screen and print them on the receipt. Already have one? We can usually reprogram it.',
     'link' => ib_link('/hardware', 'See all hardware'),
-    'source' => 'dual_pricing',
+    'source' => 'manual',
+    'devices' => array_values(array_filter(array_map(fn(string $alias) => ($device = ib_node_by_alias($alias)) ? ['target_id' => $device->id()] : NULL, ['/hardware/dejavoo-z8', '/hardware/dejavoo-qd4', '/hardware/valor-vp550', '/hardware/dejavoo-p3']))),
   ]),
   ib_paragraph('callout', [
     'callout_variant' => 'warning',
