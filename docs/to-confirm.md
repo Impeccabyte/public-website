@@ -18,7 +18,7 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## On the go (`/solutions/on-the-go`)
 
-- **Tap to pay on your phone.** Offered as a setup option. Confirm it is available on Impeccabyte accounts, and which phones it supports. The FAQ still says "[Supported phones and setup steps to be confirmed.]"
+- **Tap to pay on your phone.** Offered as a setup option. Confirm it is available on Impeccabyte accounts. Resolved 2026-11-23: it works on most smartphones, iPhone and Android, and the FAQ now says so. Setup steps are not listed on the site.
 - **Cellular.** "Wi-Fi or cellular, depending on the model" for handhelds, and "a cellular data plan, which we can add". Confirm a data plan can be added.
 
 ## Recurring billing (`/solutions/recurring-billing`)
