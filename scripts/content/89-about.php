@@ -100,7 +100,7 @@ $sections = [
     'reverse' => 1,
     'eyebrow' => 'Reach us',
     'heading' => 'A real person, close by',
-    'body' => 'Email us, and a local specialist in Austin is nearby and ready to help. When something goes wrong at the register, you reach someone who knows your setup.',
+    'body' => 'Email us to book a time with a local specialist in Austin, in person at your business or on Microsoft Teams. When something goes wrong at the register, you reach someone who knows your setup.',
     'checklist' => [
       // Icon lines: the theme shows a mail or mailbox icon in place of the
       // check, and reads "Email" or "Mailing address" to screen readers.
@@ -118,7 +118,7 @@ $sections = [
       $faq('Who is Maverick Payments?', 'Maverick Payments is the processor behind your merchant account. They process your card sales, pay your deposits and hold your Merchant Agreement. We are their authorized sales agent in Austin.'),
       $faq('Does Impeccabyte hold my money?', 'No. Deposits are paid by Maverick Payments and its sponsor banks directly to your business bank account. We never hold or move your funds.'),
       $faq('Do you only work with Austin businesses?', "No. We're based in Austin and work with businesses across Central Texas, and we take on clients outside Central Texas too. Outside Central Texas, on-site support is optional and comes with a fee, which we list on your quote."),
-      $faq('How do I reach you?', 'Email us at howdy@impeccabyte.com or use the quote form on any page. A local specialist in Austin replies within one business day. Our mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064. It takes mail only, so we can\'t meet you there.'),
+      $faq('How do I reach you?', 'Email us at howdy@impeccabyte.com or use the quote form on any page. A local specialist in Austin replies within one business day, and we meet by appointment, in person at your business or on Microsoft Teams. Our mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064. It takes mail only, so we can\'t meet you there.'),
     ],
   ]],
   ['cta_band', [
