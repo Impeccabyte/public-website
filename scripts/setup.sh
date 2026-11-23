@@ -82,6 +82,10 @@ if [ -f config/sync/core.extension.yml ]; then
   # Structure comes from config/sync. The setup scripts built it and are kept
   # for the record and for changes; they do not need to run on an install.
   if [ "$FRESH" = "1" ]; then
+    # An install from config can leave plugin caches stale (seen on the
+    # production server: a Metatag field type "did not exist"), so rebuild
+    # them before any script loads entities.
+    $DRUSH cr
     # Home is the front page and other settings point at content, so the
     # first content has to exist right after an install from config.
     for script in scripts/content/*.php; do
