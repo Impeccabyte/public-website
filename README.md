@@ -59,15 +59,7 @@ A script only creates what is missing. To rebuild a view or form from its script
 
 Merchant prices from the pricing playbook (November 2026) are loaded: the three program rates and monthly fees on Pricing, the chargeback fee, Clover's monthly fees and Reg-tier hardware prices. They are set by `scripts/content/96-pricing-programs.php` and the source content scripts.
 
-The "Show prices" setting at `/admin/config/system/impeccabyte` is off in the exported config, and stays off until Maverick approves the merchant-facing pricing in writing and counsel reviews the dual pricing wording. While it is off every price shows "Pricing coming soon" with a Get a quote link, price sorts are hidden and the savings estimator is replaced by a quote prompt.
-
-To show prices on your own local site only, add this to `web/sites/default/settings.local.php` inside the container, then run `./scripts/drush cr`:
-
-```php
-$config['impeccabyte_site.settings']['show_prices'] = TRUE;
-```
-
-The admin checkbox still reads off while the override is in place. Delete the line (and clear caches) to hide prices again. When pricing is approved, tick the checkbox, run `./scripts/drush cex -y` and commit, which turns prices on for every install.
+The "Show prices" setting at `/admin/config/system/impeccabyte` is on in the exported config since 2026-11-23, after Maverick approved the merchant-facing pricing in writing and counsel reviewed the dual pricing wording. Untick it, run `./scripts/drush cex -y` and commit to hide every price again; while it is off each price shows "Pricing coming soon" with a Get a quote link.
 
 ## Leads
 
@@ -87,4 +79,4 @@ Production runs on a Vultr server behind Caddy, and every push to `main` deploys
 
 ## Before this goes anywhere public
 
-The Docker setup above is for local development. `docker-compose.prod.yml` adds the production pieces: HTTPS through Caddy, read-only code and an optional password lock, with backups from `scripts/deploy.sh` and `scripts/server/backup.sh`. Mail delivery is not set up yet. Still to do for launch: fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, self-host the fonts, and have the disclosure and pricing copy reviewed.
+The Docker setup above is for local development. `docker-compose.prod.yml` adds the production pieces: HTTPS through Caddy, read-only code and an optional password lock, with backups from `scripts/deploy.sh` and `scripts/server/backup.sh`. Mail delivery is not set up yet. Still to do for launch: fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, and have the disclosure and pricing copy reviewed.
