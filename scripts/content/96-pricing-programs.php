@@ -149,7 +149,6 @@ if ($pricing) {
         $fee('Address verification', '5¢ each on interchange plus. Included on flat rate and dual pricing.'),
         $fee('ACH (eCheck) payments', '35¢ each, plus $9.95/mo'),
         $fee('ACH returns', '$5 each, or $25 for an unauthorized return'),
-        $fee('Card account updater', '$39.95/mo plus 50¢ per updated card, with a $187.95 setup fee'),
         $fee('3D Secure for online payments', '30¢ each'),
       ],
       'footnote' => 'Clover devices add their own monthly fees, listed on each device page.',
@@ -162,8 +161,9 @@ if ($pricing) {
 }
 
 // Gateway and software fees come off the "Other fees" table (2026-11-21);
-// they are quoted per setup instead.
-$dropped = ['Online checkout gateway (Accept.Blue)', 'Virtual terminal gateway (NMI)', 'B2B gateway with Level 2 and 3 data (Paytrace)', 'Dejavoo gateway (iPOSPays or Denovo)', 'SwipeSimple mobile app'];
+// they are quoted per setup instead. The card account updater followed on
+// 2026-11-23: it belongs to the Maverick gateway, not to every program.
+$dropped = ['Card account updater', 'Online checkout gateway (Accept.Blue)', 'Virtual terminal gateway (NMI)', 'B2B gateway with Level 2 and 3 data (Paytrace)', 'Dejavoo gateway (iPOSPays or Denovo)', 'SwipeSimple mobile app'];
 foreach ($storage->loadByProperties(['type' => 'comparison_table', 'field_eyebrow' => 'Other fees']) as $table) {
   $keep = [];
   $removed = [];

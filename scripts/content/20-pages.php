@@ -216,7 +216,6 @@ ib_page('landing_page', 'Pricing', '/pricing', [
       $price_row('Address verification', ['5¢ each on Pro. Included on Simple and Cash Price.']),
       $price_row('ACH (eCheck) payments', ['35¢ each, plus $9.95/mo']),
       $price_row('ACH returns', ['$5 each, or $25 for an unauthorized return']),
-      $price_row('Card account updater', ['$39.95/mo plus 50¢ per updated card, with a $187.95 setup fee']),
       $price_row('3D Secure for online payments', ['30¢ each']),
     ],
     'footnote' => 'Clover devices add their own monthly fees, listed on each device page.',
