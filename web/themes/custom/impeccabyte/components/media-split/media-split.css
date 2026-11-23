@@ -6,6 +6,9 @@
 .media-split__checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
 .media-split__checks li { display: flex; gap: var(--space-3); align-items: flex-start; }
 .media-split__checks .icon { flex-shrink: 0; margin-top: 4px; color: var(--sage-500); }
+.media-split__contact .icon { color: var(--clay-600); }
+.media-split__contact a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; transition: color 140ms ease-out; }
+.media-split__contact a:hover { color: var(--clay-700); }
 @media (max-width: 760px) { .media-split__inner { gap: var(--space-8); } .media-split__media { min-height: 240px; } }
 /* Stacked: text first, image after, so the image never sits right under a hero
    image. 1000px is just above where the 420px image and 460px text stop fitting

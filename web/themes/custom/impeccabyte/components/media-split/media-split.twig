@@ -7,8 +7,18 @@
       {# A blank line in the body starts a new paragraph; the first one is the lead. #}
       {% if body %}{% for paragraph in body|replace({"\r\n": "\n"})|split("\n\n") %}{% if paragraph|trim %}<p{{ loop.first ? ' class="lead"' }}>{{ paragraph|trim }}</p>{% endif %}{% endfor %}{% endif %}
       {% if checklist %}
+        {# A line that starts with one of these icon names and ": " shows that
+           icon in place of the check, with the label for screen readers. #}
+        {% set line_icons = {'mail': 'Email'|t, 'mailbox': 'Mailing address'|t, 'clock': 'Hours'|t} %}
         <ul class="media-split__checks">
-          {% for line in checklist %}<li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}<span>{{ line }}</span></li>{% endfor %}
+          {% for line in checklist %}
+            {% set parts = line|split(': ', 2) %}
+            {% if parts|length == 2 and parts[0] in line_icons|keys %}
+              <li class="media-split__contact">{{ include('impeccabyte:icon', {name: parts[0], size: 18}, with_context = false) }}<span><span class="visually-hidden">{{ line_icons[parts[0]] }}: </span>{% if parts[0] == 'mail' %}<a href="mailto:{{ parts[1] }}">{{ parts[1] }}</a>{% else %}{{ parts[1] }}{% endif %}</span></li>
+            {% else %}
+              <li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}<span>{{ line }}</span></li>
+            {% endif %}
+          {% endfor %}
         </ul>
       {% endif %}
       {% if link.url %}<div>{{ include('impeccabyte:button', {label: link.title, href: link.url, variant: 'secondary', size: 'lg'}, with_context = false) }}</div>{% endif %}

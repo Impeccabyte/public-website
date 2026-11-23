@@ -5,7 +5,9 @@ description: 'A photo beside a heading, a paragraph, a checklist and one link.'
 #   eyebrow: Eyebrow
 #   heading: Heading
 #   body: Body
-#   checklist: List of short lines
+#   checklist: List of short lines. A line starting "mail: ", "mailbox: " or
+#     "clock: " shows that icon instead of a check ("mail: " also links the
+#     address), with Email, Mailing address or Hours read out to screen readers.
 #   link: Link {url, title}
 #   media: Image {url, alt}
 #   media_label: What the photo should show

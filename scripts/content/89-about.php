@@ -102,8 +102,10 @@ $sections = [
     'heading' => 'A real person, close by',
     'body' => 'Email us, and a local specialist in Austin is nearby and ready to help. When something goes wrong at the register, you reach someone who knows your setup.',
     'checklist' => [
-      'Email: howdy@impeccabyte.com',
-      'Mailing address, mail only: 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064',
+      // Icon lines: the theme shows a mail or mailbox icon in place of the
+      // check, and reads "Email" or "Mailing address" to screen readers.
+      'mail: howdy@impeccabyte.com',
+      'mailbox: 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064',
     ],
     'link' => ib_link('/get-a-quote', 'Contact us'),
     'media_label' => 'a street of local Austin storefronts',
