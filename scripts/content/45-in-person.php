@@ -74,7 +74,7 @@ $sections = [
     'eyebrow' => 'How it works',
     'heading' => 'From a quote to your first sale',
     'items' => [
-      $step('Tell us how you sell', 'Three short steps online, or a call. We ask about your counter, your volume and what you use today.'),
+      $step('Tell us how you sell', 'Three short steps online. We ask about your counter, your volume and what you use today.'),
       $step('Get a quote in writing', 'We recommend a device and a pricing program, and list every fee before you sign anything.'),
       $step('Your device arrives programmed', 'It ships set up for your merchant account, so there is no configuration to work out on your own.'),
       $step('Take your first payment', 'Plug in, run a test sale with us and start ringing people up. We stay your local point of contact.'),

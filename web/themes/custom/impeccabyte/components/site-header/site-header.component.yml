@@ -10,6 +10,7 @@ description: 'The global header: logo, main navigation with mega menus, log in l
 #   login_url: Merchant app address
 #   phone: Phone number
 #   hours: Phone hours
+#   email: Contact email, shown when there is no phone number
 libraryOverrides:
   dependencies:
     - core/drupal

@@ -24,3 +24,5 @@
 .mega__help-link { display: inline-flex; align-items: center; min-height: 24px; font-weight: var(--fw-semibold); }
 .mega__help-phone { margin-left: auto; }
 @media (max-width: 1180px) { .mega { display: none; } }
+.mega__help-phone a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; transition: color 140ms ease-out; }
+.mega__help-phone a:hover { color: var(--clay-700); }

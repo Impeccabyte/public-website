@@ -10,3 +10,4 @@ description: 'The panel under one main menu item: its child links in columns, th
 #   quote_url: Quote form path
 #   phone: Phone number
 #   hours: Phone hours
+#   email: Contact email, shown when there is no phone number

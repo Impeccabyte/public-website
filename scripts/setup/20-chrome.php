@@ -20,9 +20,9 @@ require_once __DIR__ . '/_helpers.php';
 // Site settings added after the module was first installed.
 $settings = \Drupal::configFactory()->getEditable('impeccabyte_site.settings');
 $defaults = [
-  'phone' => '(512) [XXX-XXXX]',
+  'phone' => '',
   'hours' => 'Mon to Fri, 8 to 6 Central',
-  'email' => 'hello@impeccabyte.com',
+  'email' => 'howdy@impeccabyte.com',
   'address_line1' => '17350 State Hwy 249, Ste 220 #37005',
   'address_line2' => 'Houston, TX 77064',
   'login_url' => 'https://app.impeccabyte.com',

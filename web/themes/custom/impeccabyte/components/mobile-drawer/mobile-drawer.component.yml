@@ -8,3 +8,4 @@ description: 'The main menu below 1180px. Opens by height under the header bar.'
 #   quote_url: Quote form path
 #   login_url: Merchant app address
 #   phone: Phone number
+#   email: Contact email, shown when there is no phone number

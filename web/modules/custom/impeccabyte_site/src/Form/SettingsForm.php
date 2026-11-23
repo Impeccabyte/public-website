@@ -68,6 +68,7 @@ class SettingsForm extends ConfigFormBase {
         '#default_value' => $config->get($key),
       ];
     }
+    $form['contact']['phone']['#description'] = $this->t('Leave empty to show no phone number. The contact email shows in its place.');
     $form['disclosure'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Footer disclosure'),

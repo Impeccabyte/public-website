@@ -10,6 +10,7 @@ description: 'The quote page: heading, the form in a card and the reassurance si
 #   form: Rendered form
 #   phone: Phone number
 #   hours: Phone hours
+#   email: Contact email, shown when there is no phone number
 #   points: Reassurance points {icon, title, body}
 #   quote: Sidebar quote {text, source, placeholder}
 libraryOverrides:

@@ -7,8 +7,9 @@
  * Says what Impeccabyte is (an Austin agency and authorized sales agent of
  * Maverick Payments), what each party behind a merchant account does, and
  * how working with us goes. The mailing address takes mail only, so no copy
- * invites a visit. The phone and hours stay placeholders until they are
- * supplied; the founder photo is never generated.
+ * invites a visit, and there is no phone number: people reach us by email
+ * or the quote form. The hours stay a placeholder until they are supplied;
+ * the founder photo is never generated.
  *
  * Safe to re-run. A new site gets the page; a site that still has the short
  * "more about us is on the way" page has its sections replaced; a page
@@ -98,10 +99,10 @@ $sections = [
     'reverse' => 1,
     'eyebrow' => 'Reach us',
     'heading' => 'A real person, close by',
-    'body' => 'Call or email, and a local specialist in Austin is nearby and ready to help. When something goes wrong at the register, you reach someone who knows your setup.',
+    'body' => 'Email us, and a local specialist in Austin is nearby and ready to help. When something goes wrong at the register, you reach someone who knows your setup.',
     'checklist' => [
+      'Email: howdy@impeccabyte.com',
       'Mailing address, mail only: 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064',
-      'Phone: [Phone number]',
       'Hours: [Business hours]',
     ],
     'link' => ib_link('/get-a-quote', 'Contact us'),
@@ -115,7 +116,7 @@ $sections = [
       $faq('Who is Maverick Payments?', 'Maverick Payments is the processor behind your merchant account. They process your card sales, pay your deposits and hold your Merchant Agreement. We are their authorized sales agent in Austin.'),
       $faq('Does Impeccabyte hold my money?', 'No. Deposits are paid by Maverick Payments and its sponsor banks directly to your business bank account. We never hold or move your funds.'),
       $faq('Do you only work with Austin businesses?', '[Confirm: whether we take on businesses outside Austin and Central Texas.]'),
-      $faq('How do I reach you?', 'Call us at [Phone number] or use the quote form on any page. A local specialist in Austin replies within one business day. Our mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064. It takes mail only, so we can\'t meet you there.'),
+      $faq('How do I reach you?', 'Email us at howdy@impeccabyte.com or use the quote form on any page. A local specialist in Austin replies within one business day. Our mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064. It takes mail only, so we can\'t meet you there.'),
     ],
   ]],
   ['cta_band', [

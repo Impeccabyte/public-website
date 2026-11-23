@@ -55,3 +55,4 @@
 /* Webform's own tracker colors are neutral grays; these are the ink tones. */
 .webform-progress .progress-step .progress-text, .webform-progress .progress-step .progress-title { color: var(--ink-600); }
 .webform-progress .progress-step.is-active .progress-text, .webform-progress .progress-step.is-active .progress-title, .webform-progress .progress-step.is-complete .progress-text, .webform-progress .progress-step.is-complete .progress-title { color: var(--ink-900); }
+.quote-layout__call a { text-decoration: underline; text-underline-offset: 0.2em; }

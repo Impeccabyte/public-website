@@ -7,7 +7,7 @@ description: 'The global footer: newsletter signup, four link columns, contact d
 #   home_url: Front page URL
 #   menus: List of {title, items} for the four link columns
 #   legal: Legal links
-#   phone: Phone number
+#   phone: Phone number, left out when empty
 #   email: Contact email
 #   address_line1: Mailing address, street line (mail only, no visits)
 #   address_line2: City, state and ZIP

@@ -86,7 +86,7 @@ $sections = [
     'items' => [
       $faq('What is a chargeback?', 'A chargeback happens when a customer asks their bank to reverse a card payment. The bank pulls the money back from your account while it reviews the dispute, and you can send evidence that the sale was valid.'),
       $faq('How long do I have to respond?', 'Card networks set the deadline, and it is short. Answer as soon as the alert arrives; the dashboard shows each open chargeback so nothing slips.'),
-      $faq('Will you respond for me?', 'You send your response through the dashboard, and we help you decide what to include. For a tricky dispute, call us and we will walk through it with you.'),
+      $faq('Will you respond for me?', 'You send your response through the dashboard, and we help you decide what to include. For a tricky dispute, email us and we will walk through it with you.'),
       $faq('What is friendly fraud?', "It is when a real customer disputes a real purchase, often because they don't recognize the name on their statement or forgot the order. A clear billing name and clear purchase details prevent most of these."),
       $faq('Can some disputes be settled automatically?', 'Yes. Rapid dispute resolution can refund certain disputes automatically under rules you set, before they become a chargeback that counts against you.'),
       $faq('Does chargeback protection cost extra?', 'Alerts and dashboard tools come with your account. Any chargeback fees or add-on tools are listed in your quote, line by line.'),

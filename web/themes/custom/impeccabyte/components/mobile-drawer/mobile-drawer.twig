@@ -24,7 +24,11 @@
         {{ include('impeccabyte:button', {label: 'Get a quote'|t, href: quote_url, variant: 'primary', size: 'lg', block: true}, with_context = false) }}
         {{ include('impeccabyte:button', {label: 'Log in to your account'|t, href: login_url, variant: 'secondary', size: 'lg', block: true}, with_context = false) }}
       </div>
-      <p class="drawer__phone">{{ 'Questions? Call @phone'|t({'@phone': phone}) }}</p>
+      {% if phone %}
+        <p class="drawer__phone">{{ 'Questions? Call @phone'|t({'@phone': phone}) }}</p>
+      {% elseif email %}
+        <p class="drawer__phone">{{ 'Questions? Email'|t }} <a href="mailto:{{ email }}">{{ email }}</a></p>
+      {% endif %}
     </nav>
   </div>
 </div>

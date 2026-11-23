@@ -11,13 +11,14 @@
   login_url: site.login_url,
   phone: site.phone,
   hours: site.hours,
+  email: site.email,
   featured: page.mega_featured,
 }, with_context = false) }}
 {# Messages are filled in late by Drupal, so this region always prints. #}
 <div class="page-highlighted">{{ page.highlighted }}</div>
 <main id="main-content" class="page-main" tabindex="-1">
   {% if quote_page %}
-    {{ include('impeccabyte:quote-layout', quote_page|merge({form: page.content, phone: site.phone, hours: site.hours}), with_context = false) }}
+    {{ include('impeccabyte:quote-layout', quote_page|merge({form: page.content, phone: site.phone, hours: site.hours, email: site.email}), with_context = false) }}
   {% elseif fallback_title %}
     <div class="section page-plain">
       <div class="section__inner page-plain__inner">

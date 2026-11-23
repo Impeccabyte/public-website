@@ -27,7 +27,11 @@
     <div class="mega__help-inner">
       <span>{{ 'Not sure where to start? A local specialist can help.'|t }}</span>
       <a class="mega__help-link" href="{{ quote_url }}">{{ 'Talk to us'|t }}</a>
-      <span class="mega__help-phone">{{ 'Call @phone'|t({'@phone': phone}) }}{% if hours %} · {{ hours }}{% endif %}</span>
+      {% if phone %}
+        <span class="mega__help-phone">{{ 'Call @phone'|t({'@phone': phone}) }}{% if hours %} · {{ hours }}{% endif %}</span>
+      {% elseif email %}
+        <span class="mega__help-phone">{{ 'Email'|t }} <a href="mailto:{{ email }}">{{ email }}</a></span>
+      {% endif %}
     </div>
   </div>
 </div>

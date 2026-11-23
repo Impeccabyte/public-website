@@ -30,7 +30,11 @@
         {% endif %}
         <div class="quote-layout__call">
           <strong>{{ 'Rather talk it through?'|t }}</strong>
-          <span>{{ 'Call @phone, @hours.'|t({'@phone': phone, '@hours': hours}) }}</span>
+          {% if phone %}
+            <span>{{ 'Call @phone, @hours.'|t({'@phone': phone, '@hours': hours}) }}</span>
+          {% elseif email %}
+            <span>{{ 'Email'|t }} <a href="mailto:{{ email }}">{{ email }}</a> {{ 'and a local specialist in Austin will reply.'|t }}</span>
+          {% endif %}
         </div>
       </aside>
     </div>

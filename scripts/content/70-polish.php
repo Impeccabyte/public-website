@@ -16,7 +16,7 @@ require_once dirname(__DIR__) . '/setup/_helpers.php';
 $legal = [
   ['Privacy', '/privacy', 'How we handle your information.', 'information', '[Privacy policy to be supplied and reviewed by counsel before launch.] Until then: we use the details you send us only to answer your request, and we never sell them.'],
   ['Terms', '/terms', 'The terms for using this website.', 'terms', '[Website terms of use to be supplied and reviewed by counsel before launch.] Merchant accounts are governed by your Merchant Agreement with Maverick Payments and its sponsor banks, not by this page.'],
-  ['Accessibility', '/accessibility', 'This site should work for everyone.', 'everyone', 'We build this site to meet WCAG 2.2 level AA: readable contrast, full keyboard support, labeled forms and no information carried by color alone. If something does not work for you, email hello@impeccabyte.com or call (512) [XXX-XXXX] and we will help and fix it. [Formal accessibility statement to be reviewed before launch.]'],
+  ['Accessibility', '/accessibility', 'This site should work for everyone.', 'everyone', 'We build this site to meet WCAG 2.2 level AA: readable contrast, full keyboard support, labeled forms and no information carried by color alone. If something does not work for you, email howdy@impeccabyte.com and we will help and fix it. [Formal accessibility statement to be reviewed before launch.]'],
 ];
 foreach ($legal as [$title, $path, $headline, $accent, $body]) {
   ib_page('landing_page', $title, $path, [

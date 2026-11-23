@@ -16,10 +16,10 @@
         </nav>
       {% endfor %}
       <div class="site-footer__col">
-        <h3 class="site-footer__col-title">{{ 'Write or call'|t }}</h3>
+        <h3 class="site-footer__col-title">{{ phone ? 'Write or call'|t : 'Email or write'|t }}</h3>
         <p>{{ 'Mailing address'|t }}<br>Impeccabyte<br>{{ address_line1 }}<br>{{ address_line2 }}</p>
         <ul>
-          <li><a href="{{ contact_url }}">{{ phone }}</a></li>
+          {% if phone %}<li><a href="{{ contact_url }}">{{ phone }}</a></li>{% endif %}
           <li><a href="mailto:{{ email }}">{{ email }}</a></li>
         </ul>
       </div>
