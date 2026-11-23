@@ -24,9 +24,9 @@
         <table class="estimator__grid" aria-live="polite">
           <thead><tr><th scope="col">{{ 'Pricing program'|t }}</th><th scope="col">{{ 'Est. monthly cost'|t }}</th><th scope="col">{{ 'Per year'|t }}</th></tr></thead>
           <tbody>
-            <tr><th scope="row">{{ 'Simple (flat rate)'|t }}</th><td data-estimator-flat>${{ flat|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-flat-year>${{ (flat * 12)|round|number_format(0, '.', ',') }}</td></tr>
-            <tr><th scope="row">{{ 'Pro (interchange plus)'|t }}</th><td data-estimator-icp>${{ icp|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-icp-year>${{ (icp * 12)|round|number_format(0, '.', ',') }}</td></tr>
-            <tr class="estimator__best"><th scope="row">{{ 'Cash Price (dual pricing)'|t }} {{ include('impeccabyte:badge', {label: 'Lowest'|t, variant: 'brand', size: 'sm'}, with_context = false) }}</th><td>${{ dp_fee|number_format(2, '.', ',') }}</td><td class="estimator__save">{{ 'Save about'|t }} <span data-estimator-save>${{ ((flat - dp_fee) * 12)|round|number_format(0, '.', ',') }}</span>/{{ 'yr'|t }}</td></tr>
+            <tr><th scope="row">{{ 'Simple'|t }}</th><td data-estimator-flat>${{ flat|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-flat-year>${{ (flat * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr><th scope="row">{{ 'Pro'|t }}</th><td data-estimator-icp>${{ icp|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-icp-year>${{ (icp * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr class="estimator__best"><th scope="row">{{ 'Cash Price'|t }} {{ include('impeccabyte:badge', {label: 'Lowest'|t, variant: 'brand', size: 'sm'}, with_context = false) }}</th><td>${{ dp_fee|number_format(2, '.', ',') }}</td><td class="estimator__save">{{ 'Save about'|t }} <span data-estimator-save>${{ ((flat - dp_fee) * 12)|round|number_format(0, '.', ',') }}</span>/{{ 'yr'|t }}</td></tr>
           </tbody>
         </table>
       </div>

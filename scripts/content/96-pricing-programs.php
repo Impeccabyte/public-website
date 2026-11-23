@@ -225,7 +225,8 @@ foreach ($storage->loadByProperties(['type' => 'savings_estimator']) as $estimat
 
 // Program names from the pricing playbook (2026-11-21), without the
 // Impeccabyte prefix: Simple (flat rate), Cash Price (dual pricing) and Pro
-// (interchange plus), wherever a program is offered or compared. Pages that
+// (interchange plus), wherever a program is offered or compared. The
+// comparison table headers use the names alone (2026-11-23). Pages that
 // explain the pricing types keep the generic terms.
 $names = [
   'Flat rate' => ['Simple', "One rate on every card. Easy to budget while you're getting started.", "A flat rate: one rate on every card. Easy to budget while you're getting started.", 'Get a flat-rate quote', 'Get a Simple quote'],
@@ -248,8 +249,9 @@ foreach ($storage->loadByProperties(['type' => 'pricing_card']) as $card) {
   $changes[] = "pricing card: $title is now $name";
 }
 foreach ($storage->loadByProperties(['type' => 'comparison_table']) as $table) {
-  if (array_column($table->get('field_columns')->getValue(), 'value') === ['Flat rate', 'Dual pricing', 'Interchange plus']) {
-    $table->set('field_columns', ['Simple (flat rate)', 'Cash Price (dual pricing)', 'Pro (interchange plus)'])->save();
+  $columns = array_column($table->get('field_columns')->getValue(), 'value');
+  if ($columns === ['Flat rate', 'Dual pricing', 'Interchange plus'] || $columns === ['Simple (flat rate)', 'Cash Price (dual pricing)', 'Pro (interchange plus)']) {
+    $table->set('field_columns', ['Simple', 'Cash Price', 'Pro'])->save();
     $changes[] = 'comparison table: program names in the headers';
   }
 }

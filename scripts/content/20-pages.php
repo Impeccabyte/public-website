@@ -189,7 +189,7 @@ ib_page('landing_page', 'Pricing', '/pricing', [
   ['comparison_table', [
     'eyebrow' => 'Side by side',
     'heading' => 'How the three programs compare',
-    'columns' => ['Simple (flat rate)', 'Cash Price (dual pricing)', 'Pro (interchange plus)'],
+    'columns' => ['Simple', 'Cash Price', 'Pro'],
     'highlight_column' => 2,
     'items' => [
       $row('How it works', ['One percentage plus a few cents on every card sale.', 'Two prices at checkout. The card price covers the processing cost.', "The network's real cost per card, plus one fixed markup."]),
