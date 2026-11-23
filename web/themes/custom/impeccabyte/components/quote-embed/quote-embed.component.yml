@@ -1,0 +1,10 @@
+name: Quote embed
+description: 'The quote form from the Impeccabyte app, with a loading skeleton and a fallback if it never loads.'
+# Props:
+#   form_id: The data-ib-form ID
+#   script: Address of the app's embed script for that form
+#   email: Contact email for the fallback message
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

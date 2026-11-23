@@ -141,6 +141,8 @@ function impeccabyte_preprocess_page(array &$variables) {
         ['icon' => 'file-check', 'title' => t('Every fee in writing'), 'body' => t('No surprises on your first statement.')],
         ['icon' => 'shield-check', 'title' => t('No obligation'), 'body' => t('A quote is just a quote. We never sell your info.')],
       ],
+      // The form itself comes from the Impeccabyte app (2026-11-23).
+      'embed' => _impeccabyte_quote_embed(),
       // No customer quote until a real, approved one is supplied (the
       // example was removed on 2026-11-23). Add one as 'quote' => ['text' =>
       // ..., 'source' => ...].
@@ -375,6 +377,11 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
 
     case 'webform_embed':
       $data['form'] = $data['webform'] ? ['#type' => 'webform', '#webform' => $data['webform']] : NULL;
+      // General quote requests use the Impeccabyte app's form instead of the
+      // Drupal one (2026-11-23). The specialty prequalification form stays.
+      if (in_array($data['webform'], ['get_a_quote', 'statement_review'], TRUE) && ($embed = _impeccabyte_quote_embed())) {
+        $data['form'] = $embed;
+      }
       // On a specialty industry page the form starts on that industry.
       $page = \Drupal::routeMatch()->getParameter('node');
       if ($data['form'] && $data['webform'] === 'specialty_prequal' && $page && $page->hasField('field_industry') && ($industry = $page->get('field_industry')->entity)) {
@@ -766,4 +773,30 @@ function _impeccabyte_bundle_item_icon($node, string $title): string {
     }
   }
   return 'credit-card';
+}
+
+/**
+ * The quote form from the Impeccabyte app, or NULL when it is not set up.
+ *
+ * Replaces the Drupal Get a quote and statement review forms. The form ID
+ * and the app's address are site settings (Quote form, at
+ * /admin/config/system/impeccabyte).
+ */
+function _impeccabyte_quote_embed(): ?array {
+  $config = \Drupal::config('impeccabyte_site.settings');
+  $id = (string) $config->get('quote_form_id');
+  $base = rtrim((string) $config->get('forms_base_url'), '/');
+  if ($id === '' || $base === '') {
+    return NULL;
+  }
+  return [
+    '#type' => 'component',
+    '#component' => 'impeccabyte:quote-embed',
+    '#props' => [
+      'form_id' => $id,
+      'script' => $base . '/embed/' . rawurlencode($id) . '.js',
+      'email' => $config->get('email'),
+    ],
+    '#cache' => ['tags' => ['config:impeccabyte_site.settings']],
+  ];
 }

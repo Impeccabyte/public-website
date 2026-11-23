@@ -1,0 +1,26 @@
+.quote-embed__frame { position: relative; min-height: 420px; }
+/* The iframe sits hidden under the skeleton until it has loaded. */
+.quote-embed:not(.is-loaded) .quote-embed__frame iframe { position: absolute; inset: 0; visibility: hidden; }
+.quote-embed.is-loaded .quote-embed__skeleton,
+.quote-embed.is-loaded .quote-embed__frame > [role="status"] { display: none; }
+.quote-embed.is-loaded .quote-embed__frame { min-height: 0; }
+
+/* Loading skeleton: labels, inputs and a button. The shimmer stops under
+   reduced motion (css/a11y.css). */
+.quote-embed__skeleton { display: flex; flex-direction: column; gap: var(--space-2); }
+.quote-embed__bar {
+  display: block;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--ink-100) 0%, var(--ink-50) 50%, var(--ink-100) 100%) 0 0 / 200% 100% var(--ink-100);
+  animation: quote-embed-shimmer 1.4s var(--ease-out) infinite;
+}
+.quote-embed__bar--label { width: 32%; height: var(--space-3); border-radius: var(--radius-pill); margin-top: var(--space-3); }
+.quote-embed__bar--input { width: 100%; height: var(--space-12); }
+.quote-embed__bar--button { width: 40%; height: var(--space-12); border-radius: var(--radius-pill); margin-top: var(--space-5); }
+@keyframes quote-embed-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+.quote-embed__fallback { padding: var(--space-5) var(--space-6); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-card); color: var(--text-body); }
+.quote-embed__fallback a { color: var(--text-link); text-decoration: underline; text-underline-offset: 0.2em; }

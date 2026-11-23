@@ -63,6 +63,8 @@ The "Show prices" setting at `/admin/config/system/impeccabyte` is on in the exp
 
 ## Leads
 
+The Get a quote page and the statement review on Pricing show the quote form from the Impeccabyte app (`app.impeccabyte.com`) in place of the Drupal forms, so those requests arrive in the app, not in Drupal. The form ID and app address are site settings (Quote form, at `/admin/config/system/impeccabyte`). The app only serves the form to impeccabyte.com, so a local site shows "This form can't be shown on this site" inside it. Specialty industry pages keep the Drupal prequalification form.
+
 Every form saves its submissions in Drupal (`/admin/structure/webform`). Each also has an Intercom handler and an Apollo placeholder, both off.
 
 To turn Intercom on, put the access token in `.env` as `INTERCOM_ACCESS_TOKEN` and recreate the container, or add this to `web/sites/default/settings.local.php` inside the container:

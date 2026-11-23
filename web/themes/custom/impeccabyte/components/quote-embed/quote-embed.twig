@@ -1,0 +1,22 @@
+{#
+  The app's embed script finds the data-ib-form element and adds an iframe
+  with the form inside it. The script does not clear the element, so
+  quote-embed.js keeps the iframe hidden behind the skeleton until it has
+  loaded, and shows a fallback if it has not after 15 seconds.
+#}
+<div class="quote-embed" data-quote-embed data-quote-email="{{ email }}" aria-busy="true">
+  <div data-ib-form="{{ form_id }}" class="quote-embed__frame">
+    <div class="quote-embed__skeleton" aria-hidden="true">
+      {% for field in 1..4 %}
+        <span class="quote-embed__bar quote-embed__bar--label"></span>
+        <span class="quote-embed__bar quote-embed__bar--input"></span>
+      {% endfor %}
+      <span class="quote-embed__bar quote-embed__bar--button"></span>
+    </div>
+    <p class="visually-hidden" role="status">{{ 'Loading the quote form.'|t }}</p>
+  </div>
+  <noscript>
+    <p class="quote-embed__fallback">{{ 'The quote form needs JavaScript. Turn it on, or email'|t }} <a href="mailto:{{ email }}">{{ email }}</a> {{ 'and a local specialist will reply.'|t }}</p>
+  </noscript>
+  <script src="{{ script }}" async></script>
+</div>

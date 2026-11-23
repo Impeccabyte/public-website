@@ -32,6 +32,12 @@ impeccabyte_site.settings:
     disclosure:
       type: text
       label: 'Footer disclosure'
+    forms_base_url:
+      type: uri
+      label: 'Address of the app that serves the embedded quote form'
+    quote_form_id:
+      type: string
+      label: 'Embedded quote form ID'
     service_area:
       type: sequence
       label: 'Service area'
