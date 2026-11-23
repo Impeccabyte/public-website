@@ -3,9 +3,11 @@
 /**
  * @file
  * The founder story on About us, in the founder's words (supplied
- * 2026-11-21). Impeccabyte was founded in 2025 by Ryan Bealey.
+ * 2026-11-21). Impeccabyte was founded in 2025 by Ryan Bealey. "My mom"
+ * became "my moms" on 2026-11-23.
  *
- * Safe to re-run: the story only replaces the original placeholder, so an
+ * Safe to re-run: the story only replaces the original placeholder or the
+ * previous, unedited version of the story, so an
  * edited story is left alone. Run it with
  *   ./scripts/drush php:script scripts/content/97-founder-story.php
  */
@@ -13,10 +15,16 @@
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
 $placeholder = "[Founder story: why Impeccabyte started in [Year founded] and what [Founder name] did before, in the founder's own words. Two or three short paragraphs, signed by [Founder name], founder.]";
-$story = "When my mom opened Luxury On A Leash, her puppy boutique, in 2012, I became the family's website guy. The online store, the hosting and the payment integration all landed with me, and that's where my passion for technology began.\n\nI also saw the part of running a small business nobody warns you about. Every month my mom sat down with a processing statement that was hard to make sense of, and every month the fees caught her off guard. For a small business those fees add up quickly, and no one had explained them when she started. I didn't love watching that.\n\nI was raised on a simple idea: do the next right thing. It still guides me, at home and at work. In 2025 I started Impeccabyte to do the next right thing for small businesses, setting them up to run smoothly from day one, with pricing they understand and fees that never come as a surprise.\n\nRyan Bealey, Founder";
+$story = "When my moms opened Luxury On A Leash, their puppy boutique, in 2012, I became the family's website guy. The online store, the hosting and the payment integration all landed with me, and that's where my passion for technology began.\n\nI also saw the part of running a small business nobody warns you about. Every month my moms sat down with a processing statement that was hard to make sense of, and every month the fees caught them off guard. For a small business those fees add up quickly, and no one had explained them when they started. I didn't love watching that.\n\nI was raised on a simple idea: do the next right thing. It still guides me, at home and at work. In 2025 I started Impeccabyte to do the next right thing for small businesses, setting them up to run smoothly from day one, with pricing they understand and fees that never come as a surprise.\n\nRyan Bealey, Founder";
+// The story before "my mom" became "my moms" (2026-11-23), replaced while unedited.
+$previous_story = "When my mom opened Luxury On A Leash, her puppy boutique, in 2012, I became the family's website guy. The online store, the hosting and the payment integration all landed with me, and that's where my passion for technology began.\n\nI also saw the part of running a small business nobody warns you about. Every month my mom sat down with a processing statement that was hard to make sense of, and every month the fees caught her off guard. For a small business those fees add up quickly, and no one had explained them when she started. I didn't love watching that.\n\nI was raised on a simple idea: do the next right thing. It still guides me, at home and at work. In 2025 I started Impeccabyte to do the next right thing for small businesses, setting them up to run smoothly from day one, with pricing they understand and fees that never come as a surprise.\n\nRyan Bealey, Founder";
 
 $updated = 0;
 $storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+foreach ($storage->loadByProperties(['type' => 'media_split', 'field_body' => $previous_story]) as $section) {
+  $section->set('field_body', $story)->save();
+  $updated++;
+}
 foreach ($storage->loadByProperties(['type' => 'media_split', 'field_body' => $placeholder]) as $section) {
   $section->set('field_body', $story)->save();
   $updated++;
