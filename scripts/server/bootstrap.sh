@@ -2,7 +2,8 @@
 # One-time setup of the production server. Run it as root on a server that
 # has Docker, from anywhere:
 #
-#   SITE_ADDRESS=":80" SITE_HOSTS="45.76.238.138" \
+#   SITE_ADDRESS="impeccabyte.com, www.impeccabyte.com" \
+#   SITE_HOSTS="impeccabyte.com www.impeccabyte.com 45.76.238.138" \
 #   ACTIONS_PUBKEY="ssh-ed25519 AAAA... github-actions-deploy" \
 #   bash bootstrap.sh
 #
@@ -29,6 +30,8 @@ SITE_ADDRESS="${SITE_ADDRESS:-:80}"
 # Host names Drupal answers to, separated by spaces.
 SITE_HOSTS="${SITE_HOSTS:-}"
 ADMIN_MAIL="${ADMIN_MAIL:-howdy@impeccabyte.com}"
+# "on" puts a password on every page and turns off search indexing.
+SITE_LOCK="${SITE_LOCK:-off}"
 ACTIONS_PUBKEY="${ACTIONS_PUBKEY:-}"
 CREDENTIALS=/root/impeccabyte-credentials.txt
 
@@ -84,7 +87,7 @@ ADMIN_MAIL=${ADMIN_MAIL}
 INTERCOM_ACCESS_TOKEN=
 SITE_ADDRESS="${SITE_ADDRESS}"
 SITE_HOSTS="${SITE_HOSTS}"
-SITE_LOCK=on
+SITE_LOCK=${SITE_LOCK}
 SITE_LOCK_USER=preview
 SITE_LOCK_HASH='${lock_hash}'
 BACKUP_DIR=${BACKUP_DIR}
@@ -93,7 +96,7 @@ ENV
   cat > "$CREDENTIALS" <<CREDS
 Impeccabyte production, written $(date -u +%Y-%m-%d) by scripts/server/bootstrap.sh.
 
-Site lock (until launch): user "preview", password ${lock_password}
+Site lock (used only while SITE_LOCK=on): user "preview", password ${lock_password}
 Drupal admin: user "admin", password ${admin_password}
 CREDS
   chmod 600 "$CREDENTIALS"

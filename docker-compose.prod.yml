@@ -32,8 +32,8 @@ services:
       # the server's IP until DNS points here.
       SITE_ADDRESS: ${SITE_ADDRESS:-:80}
       # "on" asks for a password and tells search engines not to index the
-      # site. Set it to "off" at launch.
-      SITE_LOCK: ${SITE_LOCK:-on}
+      # site; "off" (production since 2026-11-23) leaves it open.
+      SITE_LOCK: ${SITE_LOCK:-off}
       SITE_LOCK_USER: ${SITE_LOCK_USER:-preview}
       SITE_LOCK_HASH: ${SITE_LOCK_HASH:-}
     volumes:

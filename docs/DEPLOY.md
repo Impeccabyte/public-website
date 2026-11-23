@@ -28,25 +28,23 @@ Watch deploys under the repository's Actions tab. You can also re-run one there 
   - A local database is never copied up.
 - **Never add the show prices override on the server.** Prices go live when "Show prices" is ticked in exported config, as the README describes.
 
-## Before launch: the site lock
-
-Until launch, Caddy asks for a password on every page and tells search engines not to index the site.
-- **Credentials:** the user is `preview`. The password is in `/root/impeccabyte-credentials.txt` on the server, along with the Drupal admin password.
-- **To launch:**
-  1. Set `SITE_LOCK=off` in `/srv/impeccabyte/.env`.
-  2. Run `docker compose up -d` in `/srv/impeccabyte` as `deploy`.
-
 ## The domain and HTTPS
 
-- **Today:** the site answers on the IP over plain HTTP (`SITE_ADDRESS=":80"`).
-- **To move impeccabyte.com:**
-  1. Point its A record (and `www`) at 45.76.238.138.
-  2. Once DNS answers with that address, set these in `/srv/impeccabyte/.env`:
-     - `SITE_ADDRESS="impeccabyte.com, www.impeccabyte.com"`
-     - `SITE_HOSTS="impeccabyte.com www.impeccabyte.com 45.76.238.138"`
-  3. Update the trusted host names in `web/sites/default/settings.local.php` inside the container. Re-running `scripts/server/bootstrap.sh` as root rewrites that file from `SITE_HOSTS`.
-  4. Run `docker compose up -d`.
-- Caddy gets the certificate on its own.
+The site is served at https://impeccabyte.com and https://www.impeccabyte.com. Both point at the server, and Caddy gets and renews the certificates on its own. These are set in `/srv/impeccabyte/.env`:
+- `SITE_ADDRESS="impeccabyte.com, www.impeccabyte.com"`
+- `SITE_HOSTS="impeccabyte.com www.impeccabyte.com 45.76.238.138"`
+
+When you change either value:
+1. Re-run `scripts/server/bootstrap.sh` as root. It rewrites Drupal's trusted host names in `web/sites/default/settings.local.php` from `SITE_HOSTS`.
+2. Run `docker compose up -d`.
+
+## The site lock
+
+The site is open (`SITE_LOCK=off`). To put a password on every page and turn off search indexing, for example while something is being fixed:
+1. Set `SITE_LOCK=on` in `/srv/impeccabyte/.env`.
+2. Run `docker compose up -d` in `/srv/impeccabyte` as `deploy`.
+
+The user is `preview`. The password is in `/root/impeccabyte-credentials.txt` on the server, along with the Drupal admin password.
 
 ## Backups
 
@@ -61,7 +59,7 @@ On a server with Docker (Compose 2.24.4 or newer), as root:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Impeccabyte/public-website/main/scripts/server/bootstrap.sh -o bootstrap.sh
-SITE_ADDRESS=":80" SITE_HOSTS="45.76.238.138" ACTIONS_PUBKEY="ssh-ed25519 AAAA... github-actions-deploy" bash bootstrap.sh
+SITE_ADDRESS="impeccabyte.com, www.impeccabyte.com" SITE_HOSTS="impeccabyte.com www.impeccabyte.com 45.76.238.138" ACTIONS_PUBKEY="ssh-ed25519 AAAA... github-actions-deploy" bash bootstrap.sh
 ```
 
 Then set the repository secrets:
