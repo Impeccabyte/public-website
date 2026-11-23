@@ -62,6 +62,14 @@ foreach ($storage->loadByProperties(['type' => 'stat', 'field_value' => '40+']) 
   }
 }
 
+// Home stat: "1 day" instead of "1 business day" (2026-11-23).
+foreach ($storage->loadByProperties(['type' => 'stat', 'field_value' => '1 business day']) as $stat) {
+  if ($stat->get('field_label')->value === 'How fast a local specialist replies to your question') {
+    $stat->set('field_value', '1 day')->save();
+    $changes[] = 'Home stat: 1 day';
+  }
+}
+
 // Dual Pricing device grid: four devices and a link to the rest.
 foreach ($storage->loadByProperties(['type' => 'card_grid', 'field_source' => 'dual_pricing', 'field_heading' => 'Devices that are dual pricing ready']) as $grid) {
   $devices = [];

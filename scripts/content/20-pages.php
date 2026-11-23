@@ -120,7 +120,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
   ['stats', [
     'items' => [
       ['_type' => 'stat', 'value' => '25+', 'label' => 'Terminals, readers and POS systems we can set up'],
-      ['_type' => 'stat', 'value' => '1 business day', 'label' => 'How fast a local specialist replies to your question'],
+      ['_type' => 'stat', 'value' => '1 day', 'label' => 'How fast a local specialist replies to your question'],
       ['_type' => 'stat', 'value' => 'Free', 'label' => 'A line-by-line review of your current statement'],
       ['_type' => 'stat', 'value' => '$10/mo', 'label' => 'Starting lease for a mobile card reader', 'is_price' => 1],
     ],
