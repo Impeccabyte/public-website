@@ -19,6 +19,29 @@
     {% if footnote %}<p class="logo-strip__footnote">{{ footnote }}</p>{% endif %}
   </div>
 </section>
+{% elseif logos and logos|length > 6 %}
+{#
+  Many logos scroll slowly in one row. logo-strip.js starts the scroll and
+  shows the pause button, and only when the visitor has not asked for
+  reduced motion. Without it the logos stay still and wrap, so nothing moves
+  without a way to stop it. The second copy of the logos makes the loop
+  seamless and is hidden from assistive technology.
+#}
+<section{{ attributes.addClass(['logo-strip', 'logo-strip--scroll']) }} aria-label="{{ 'Hardware and partners'|t }}" data-logo-strip style="--_duration: {{ logos|length * 5 }}s;">
+  <div class="logo-strip__inner">
+    {% if intro %}<p class="logo-strip__intro">{{ intro }}</p>{% endif %}
+    <div class="logo-strip__viewport">
+      <ul class="logo-strip__list logo-strip__track">
+        {% for logo in logos %}<li>{{ _self.mark(logo, 3400) }}</li>{% endfor %}
+        {% for logo in logos %}<li class="logo-strip__clone" aria-hidden="true">{{ _self.mark(logo, 3400) }}</li>{% endfor %}
+      </ul>
+    </div>
+    <button type="button" class="logo-strip__toggle" data-logo-strip-toggle aria-label="{{ 'Pause the scrolling logos'|t }}" hidden>
+      <span class="logo-strip__toggle-pause">{{ include('impeccabyte:icon', {name: 'pause', size: 16}, with_context = false) }}</span>
+      <span class="logo-strip__toggle-play" hidden>{{ include('impeccabyte:icon', {name: 'play', size: 16}, with_context = false) }}</span>
+    </button>
+  </div>
+</section>
 {% else %}
 <section{{ attributes.addClass('logo-strip') }} aria-label="{{ 'Hardware and partners'|t }}">
   <div class="logo-strip__inner">

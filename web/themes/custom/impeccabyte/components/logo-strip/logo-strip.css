@@ -24,3 +24,37 @@
 /* Five tiles: one row on desktop, three and two on tablets. */
 @media (min-width: 1101px) { .logo-strip--tiles-5 .logo-strip__tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (min-width: 561px) and (max-width: 1100px) { .logo-strip--tiles-5 .logo-strip__tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Scrolling strip (more than six logos). Still and wrapped until
+   logo-strip.js adds .is-playing, which it does only when the visitor has not
+   asked for reduced motion. */
+.logo-strip--scroll .logo-strip__viewport { flex: 1 1 0; min-width: 0; }
+.logo-strip--scroll .logo-strip__clone { display: none; }
+.logo-strip--scroll.is-playing .logo-strip__inner { flex-wrap: nowrap; justify-content: flex-start; }
+.logo-strip--scroll.is-playing .logo-strip__viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, var(--ink-900) var(--space-12), var(--ink-900) calc(100% - var(--space-12)), transparent);
+  mask-image: linear-gradient(90deg, transparent, var(--ink-900) var(--space-12), var(--ink-900) calc(100% - var(--space-12)), transparent);
+}
+/* Each logo carries its own trailing space, so the two copies are exactly
+   the same width and the loop joins without a jump. */
+.logo-strip--scroll.is-playing .logo-strip__track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 0; animation: logo-strip-scroll var(--_duration, 60s) linear infinite; }
+.logo-strip--scroll.is-playing .logo-strip__track > li { padding-inline-end: var(--space-12); }
+.logo-strip--scroll.is-playing .logo-strip__clone { display: block; }
+.logo-strip--scroll.is-paused .logo-strip__track,
+.logo-strip--scroll.is-playing .logo-strip__viewport:hover .logo-strip__track { animation-play-state: paused; }
+@keyframes logo-strip-scroll { to { transform: translateX(-50%); } }
+
+.logo-strip__toggle { flex: none; display: grid; place-items: center; inline-size: var(--space-10); block-size: var(--space-10); padding: 0; border: 1px solid var(--ink-200); border-radius: var(--radius-round); background: var(--white); color: var(--ink-700); cursor: pointer; transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); }
+.logo-strip__toggle:hover { color: var(--ink-900); border-color: var(--ink-400); }
+.logo-strip__toggle[hidden] { display: none; }
+
+/* Tablets and phones: the intro above, so the scrolling row and its button
+   get the full width. */
+@media (max-width: 1000px) {
+  .logo-strip--scroll.is-playing .logo-strip__inner { flex-wrap: wrap; }
+  .logo-strip--scroll.is-playing .logo-strip__intro { flex-basis: 100%; text-align: center; }
+}
+@media (max-width: 760px) {
+  .logo-strip--scroll.is-playing .logo-strip__track > li { padding-inline-end: var(--space-8); }
+}

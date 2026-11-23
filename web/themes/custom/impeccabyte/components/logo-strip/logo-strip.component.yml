@@ -12,6 +12,10 @@ description: 'A row of partner names or logos.'
 #   eyebrow, heading, body: Section header, tiles layout
 #   title, note: Text tile after the logos, tiles layout
 #   footnote: Small print under the tiles
+# More than six logos in the strip layout scroll slowly, with a pause button
+# (logo-strip.js), unless the visitor prefers reduced motion.
 libraryOverrides:
   dependencies:
+    - core/drupal
+    - core/once
     - core/components.impeccabyte--section-header
