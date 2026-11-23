@@ -2,12 +2,13 @@
 
 /**
  * @file
- * Ryan Bealey's photo beside the founder story on About us (supplied
- * 2026-11-21). See scripts/content/assets/about/README.md.
+ * The photo beside the founder story on About us: Ryan Bealey's moms and
+ * their dog, Olivia (Livvy), supplied 2026-11-23 in place of a portrait of
+ * the founder. See scripts/content/assets/about/README.md.
  *
  * Safe to re-run: the photo is created once, and the story section only gets
- * it while it has no image. When the file in assets/about changes (a new
- * photo was supplied on 2026-11-21), the existing photo is replaced in place. Run it with
+ * it while it has no image. When the file in assets/about or the alt text
+ * changes, the existing photo is replaced in place. Run it with
  *   ./scripts/drush php:script scripts/content/98-founder-photo.php
  */
 
@@ -20,7 +21,7 @@ require_once dirname(__DIR__) . '/setup/_helpers.php';
 
 $name = 'About: founder';
 $filename = 'founder.jpg';
-$alt = 'Ryan Bealey, founder of Impeccabyte.';
+$alt = "The founder's moms on a sunny boat ride with their dog, Olivia.";
 
 $media_storage = \Drupal::entityTypeManager()->getStorage('media');
 $existing = $media_storage->loadByProperties(['bundle' => 'image', 'name' => $name]);
