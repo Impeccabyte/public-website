@@ -65,7 +65,7 @@ $sections = [
     'items' => [
       $step('Tell us where you sell', 'Markets, job sites or a truck, how often, and roughly what you take in each month.'),
       $step('Get a quote in writing', 'We recommend a device and a pricing program and list every fee before you sign.'),
-      $step('We program your device', 'It arrives set up to your account, paired and ready. We walk you through it in person.'),
+      $step('We program your device', 'It arrives set up to your account, paired and ready. We walk you through it in person or by email.'),
       $step('Take your first sale', 'Run a test sale with us, then head out. We stay your local point of contact.'),
     ],
   ]],

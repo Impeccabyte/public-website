@@ -28,7 +28,9 @@ $swaps = [
   'Call or email, and a local specialist in Austin is nearby and ready to help.' => 'Email us, and a local specialist in Austin is nearby and ready to help.',
   'Call us at [Phone number] or use the quote form on any page.' => "Email us at $email or use the quote form on any page.",
   'For a tricky dispute, call us and we will walk through it with you.' => 'For a tricky dispute, email us and we will walk through it with you.',
-  'We walk you through it by phone or in person.' => 'We walk you through it in person.',
+  'We walk you through it by phone or in person.' => 'We walk you through it in person or by email.',
+  // The interim wording from earlier on 2026-11-23.
+  'We walk you through it in person.' => 'We walk you through it in person or by email.',
   'Three short steps online, or a call. We ask' => 'Three short steps online. We ask',
   'email hello@impeccabyte.com or call (512) [XXX-XXXX] and we will help' => "email $email and we will help",
   'One local team that answers the phone when your volunteers have a question.' => 'One local team that answers when your volunteers have a question.',
