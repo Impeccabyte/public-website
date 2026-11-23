@@ -1,0 +1,9 @@
+# The public entry point on the production server (docker-compose.prod.yml).
+# SITE_ADDRESS and SITE_LOCK come from the server's .env.
+{$SITE_ADDRESS} {
+	encode zstd gzip
+	# lock-on.caddy asks for a password and sets noindex; lock-off.caddy is
+	# empty. Choose with SITE_LOCK=on or SITE_LOCK=off.
+	import /etc/caddy/lock-{$SITE_LOCK}.caddy
+	reverse_proxy drupal:80
+}

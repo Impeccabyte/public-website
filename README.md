@@ -81,6 +81,10 @@ $settings['impeccabyte_intercom']['access_token'] = '...';
 
 Then enable the "Intercom lead" handler on each form. The token is never stored in config. The Apollo handler does nothing yet; that account does not exist.
 
+## Production
+
+Production runs on a Vultr server behind Caddy, and every push to `main` deploys automatically. See [docs/DEPLOY.md](docs/DEPLOY.md).
+
 ## Before this goes anywhere public
 
-This setup is for local development. It has not been hardened for production: no HTTPS, no backups, no mail delivery, and the web container can write to its own code. Fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, self-host the fonts, supply the legal pages, and have the disclosure and pricing copy reviewed.
+The Docker setup above is for local development. `docker-compose.prod.yml` adds the production pieces: HTTPS through Caddy, read-only code and a pre-launch password lock, with backups from `scripts/deploy.sh` and `scripts/server/backup.sh`. Mail delivery is not set up yet. Before the lock comes off, fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, self-host the fonts, supply the legal pages, and have the disclosure and pricing copy reviewed.

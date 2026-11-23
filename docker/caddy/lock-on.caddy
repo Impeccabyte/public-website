@@ -1,0 +1,5 @@
+# Pre-launch lock: a password for every page, and no search indexing.
+basic_auth {
+	{$SITE_LOCK_USER} {$SITE_LOCK_HASH}
+}
+header X-Robots-Tag "noindex, nofollow"

@@ -1,0 +1,46 @@
+# Production overrides for the Vultr server. The server's .env loads this
+# file after docker-compose.yml through COMPOSE_FILE, so setup.sh,
+# scripts/drush and scripts/deploy.sh work there unchanged.
+#
+# - Caddy is the only public entry point: ports 80 and 443, with an automatic
+#   HTTPS certificate once SITE_ADDRESS is a domain that points here.
+# - Drupal listens on the server only (WEB_PORT=127.0.0.1:8080 in .env).
+# - Code is mounted read-only, so the web container cannot change it. Only
+#   private uploads and the sites volume (settings and files) are writable.
+# - The design wireframes are not mounted.
+services:
+  drupal:
+    volumes: !override
+      - ./web/themes/custom:/opt/drupal/web/themes/custom:ro
+      - ./web/modules/custom:/opt/drupal/web/modules/custom:ro
+      - ./config/sync:/opt/drupal/config/sync:ro
+      - ./scripts:/opt/drupal/scripts:ro
+      - ./private:/opt/drupal/private
+      - drupal_sites:/opt/drupal/web/sites
+
+  caddy:
+    image: caddy:2.8
+    restart: unless-stopped
+    depends_on:
+      - drupal
+    ports:
+      # Other host ports only for a local rehearsal; production uses 80 and 443.
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    environment:
+      # A domain (impeccabyte.com) gets HTTPS; ":80" serves plain HTTP on
+      # the server's IP until DNS points here.
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+      # "on" asks for a password and tells search engines not to index the
+      # site. Set it to "off" at launch.
+      SITE_LOCK: ${SITE_LOCK:-on}
+      SITE_LOCK_USER: ${SITE_LOCK_USER:-preview}
+      SITE_LOCK_HASH: ${SITE_LOCK_HASH:-}
+    volumes:
+      - ./docker/caddy:/etc/caddy:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

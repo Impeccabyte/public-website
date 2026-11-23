@@ -7,7 +7,9 @@ cd "$(dirname "$0")/.."
 command -v docker >/dev/null || { echo "Docker is not installed or not on PATH."; exit 1; }
 docker compose version >/dev/null 2>&1 || { echo "Docker Compose v2 is required (docker compose)."; exit 1; }
 
-rand() { LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24; }
+# Reads a fixed amount of randomness so no command in the pipe is cut off
+# early, which would fail the script under pipefail.
+rand() { head -c 512 /dev/urandom | LC_ALL=C tr -dc 'A-Za-z0-9' | tr -d '\n' | cut -c1-24; }
 
 if [ ! -f .env ]; then
   cp .env.example .env
@@ -105,6 +107,8 @@ $DRUSH search-api:index 2>/dev/null || true
 $DRUSH cr
 
 echo
-echo "Done. Site: http://localhost:${WEB_PORT:-8080}"
+# WEB_PORT can carry an address (127.0.0.1:8080 on the server); keep the port.
+PORT="${WEB_PORT:-8080}"; PORT="${PORT##*:}"
+echo "Done. Site: http://localhost:${PORT}"
 echo "One-time admin login link:"
-$DRUSH uli --uri="http://localhost:${WEB_PORT:-8080}"
+$DRUSH uli --uri="http://localhost:${PORT}" || true
