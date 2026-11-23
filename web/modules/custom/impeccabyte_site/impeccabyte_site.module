@@ -56,3 +56,48 @@ function impeccabyte_site_metatags_alter(array &$metatags, array &$context) {
     $metatags['og_description'] = $description;
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Describes the business to search engines on the home page, as JSON-LD:
+ * a FinancialService (a LocalBusiness subtype) with its service area.
+ *
+ * There is deliberately no street address. Specialists work mobile and meet
+ * merchants by appointment, and the only address is a mail-only mailbox,
+ * which is not where the business operates. Google's LocalBusiness rich
+ * result needs a street address, so this markup earns no rich result; it
+ * states who the business is and where it serves, matching the Google
+ * Business Profile's service area (2026-11-23).
+ */
+function impeccabyte_site_page_attachments(array &$attachments) {
+  if (!\Drupal::service('path.matcher')->isFrontPage()) {
+    return;
+  }
+  $config = \Drupal::config('impeccabyte_site.settings');
+  $base = \Drupal::request()->getSchemeAndHttpHost();
+  $texas = ['@type' => 'State', 'name' => 'Texas'];
+  $data = [
+    '@context' => 'https://schema.org',
+    '@type' => 'FinancialService',
+    '@id' => $base . '/#business',
+    'name' => \Drupal::config('system.site')->get('name'),
+    'url' => $base . '/',
+    'logo' => $base . '/themes/custom/impeccabyte/apple-touch-icon.png',
+    'image' => $base . '/themes/custom/impeccabyte/apple-touch-icon.png',
+    'email' => $config->get('email'),
+    'description' => 'Merchant services agency in Austin, Texas: card processing, POS hardware and payment software, set up and supported by local specialists who meet merchants by appointment, in person or on Microsoft Teams. Authorized sales agent of Maverick Payments.',
+    'areaServed' => array_map(fn(string $city) => ['@type' => 'City', 'name' => $city, 'containedInPlace' => $texas], $config->get('service_area') ?? []),
+  ];
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#attributes' => ['type' => 'application/ld+json'],
+      '#value' => json_encode(array_filter($data), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+    ],
+    'impeccabyte_site_business_jsonld',
+  ];
+  $attachments['#cache']['tags'][] = 'config:impeccabyte_site.settings';
+  $attachments['#cache']['tags'][] = 'config:system.site';
+}

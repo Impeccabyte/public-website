@@ -69,6 +69,13 @@ class SettingsForm extends ConfigFormBase {
       ];
     }
     $form['contact']['phone']['#description'] = $this->t('Leave empty to show no phone number. The contact email shows in its place.');
+    $form['service_area'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Service area'),
+      '#description' => $this->t('Cities in Texas where specialists meet merchants, one per line. Search engines read this list from the home page, so keep it the same as the service area in the Google Business Profile.'),
+      '#default_value' => implode("\n", $config->get('service_area') ?? []),
+      '#rows' => 6,
+    ];
     $form['disclosure'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Footer disclosure'),
@@ -91,6 +98,8 @@ class SettingsForm extends ConfigFormBase {
     foreach (['phone', 'hours', 'email', 'address_line1', 'address_line2', 'login_url', 'disclosure'] as $key) {
       $config->set($key, trim((string) $form_state->getValue($key)));
     }
+    $cities = array_map('trim', preg_split('/\R/', (string) $form_state->getValue('service_area')));
+    $config->set('service_area', array_values(array_unique(array_filter($cities, 'strlen'))));
     $config->save();
     parent::submitForm($form, $form_state);
   }

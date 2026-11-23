@@ -32,6 +32,12 @@ impeccabyte_site.settings:
     disclosure:
       type: text
       label: 'Footer disclosure'
+    service_area:
+      type: sequence
+      label: 'Service area'
+      sequence:
+        type: label
+        label: 'City'
 
 webform.webform.third_party.impeccabyte_site:
   type: mapping
