@@ -1,6 +1,6 @@
 # Device photos
 
-Official product images for the 26 devices in the hardware catalog, taken on 2026-11-19 from each manufacturer's own website and edited to fit the site. They are the manufacturers' marketing images, used to show the products Impeccabyte sells. Swap any of them for a newer official image or your own photography by changing the device's gallery.
+Official product images for the 28 devices in the hardware catalog, taken on 2026-11-19 from each manufacturer's own website and edited to fit the site. They are the manufacturers' marketing images, used to show the products Impeccabyte sells. Swap any of them for a newer official image or your own photography by changing the device's gallery.
 
 ## How they were edited
 
@@ -14,6 +14,8 @@ The first image for each device is its catalog and gallery lead.
 
 | File | Source |
 |---|---|
+| `clover-kds-14-1-front.webp` | clover.com/kitchen-display-system: `kitchen-display-system-14-inch.webp` (added 2026-11-23, normalised with the same steps in PHP) |
+| `clover-kds-24-1-front.webp` | clover.com/kitchen-display-system: `kitchen-display-system-24-inch.webp` (added 2026-11-23) |
 | `clover-mini-1-angled.webp` | clover.com/mini: `clover-mini-order-screen.webp` |
 | `clover-mini-2-front.webp` | clover.com/shop: `mini-shop.png` (small source, upscaled 1.6×) |
 | `clover-flex-1-angled.webp` | clover.com/flex: `flex-3-left-up-Order-Screen-sq.png` |

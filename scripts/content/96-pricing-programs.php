@@ -333,7 +333,9 @@ $clover = ib_term_id('manufacturer', 'Clover');
 $cellular = ['clover-flex'];
 $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)->condition('type', 'device')->condition('field_manufacturer', $clover)->execute();
 foreach (\Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids) as $device) {
-  if (!$device->get('field_fees')->isEmpty()) {
+  // Kitchen displays take no payments, and their monthly fee through
+  // Maverick is not in the playbook, so they get no fees here.
+  if (!$device->get('field_fees')->isEmpty() || $device->get('field_device_type')->entity?->label() === 'Kitchen Display') {
     continue;
   }
   $fees = [

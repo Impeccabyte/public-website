@@ -46,6 +46,12 @@ $photos = [
   'clover-go' => [
     ['clover-go-1-front.webp', 'front view', 'Clover Go, a small white pocket card reader with the contactless symbol.'],
   ],
+  'clover-kds-14' => [
+    ['clover-kds-14-1-front.webp', 'front view', 'Clover Kitchen Display 14-inch, a white-framed screen showing open order tickets.'],
+  ],
+  'clover-kds-24' => [
+    ['clover-kds-24-1-front.webp', 'front view', 'Clover Kitchen Display 24-inch, a wide screen showing a grid of open order tickets.'],
+  ],
   'clover-kiosk' => [
     ['clover-kiosk-1-front.webp', 'front view', 'Clover Kiosk, a tall self-order screen showing menu items, with a payment terminal below.'],
   ],
