@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Search descriptions for the Privacy, Terms and Accessibility pages, which
+ * Search descriptions for the Privacy and Terms pages, which
  * were built without one. Each restates what the page already says.
  *
  * Safe to re-run: a description that is already set is left alone. Run it
@@ -13,9 +13,8 @@
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
 $descriptions = [
-  '/privacy' => 'How Impeccabyte handles the information you send us. We use your details only to answer your request, and we never sell them.',
+  '/privacy' => "Impeccabyte's privacy policy: what information this website collects and how we use and protect it.",
   '/terms' => 'The terms for using the Impeccabyte website. Merchant accounts are governed by your Merchant Agreement with Maverick Payments, not by this page.',
-  '/accessibility' => 'We build this site to meet WCAG 2.2 level AA. If something does not work for you, tell us and we will help and fix it.',
 ];
 
 $set = 0;

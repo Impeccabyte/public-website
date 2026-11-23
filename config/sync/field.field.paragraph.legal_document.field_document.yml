@@ -1,0 +1,21 @@
+uuid: 6d200dc2-5481-4317-8165-b77364c50fbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document
+    - paragraphs.paragraphs_type.legal_document
+  module:
+    - options
+id: paragraph.legal_document.field_document
+field_name: field_document
+entity_type: paragraph
+bundle: legal_document
+label: Document
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,30 @@
+uuid: e06b207e-4b5c-4bc7-9bd9-e6cacfce6744
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.legal_document.field_document
+    - field.field.paragraph.legal_document.field_getterms_id
+    - paragraphs.paragraphs_type.legal_document
+id: paragraph.legal_document.default
+targetEntityType: paragraph
+bundle: legal_document
+mode: default
+content:
+  field_document:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_getterms_id:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

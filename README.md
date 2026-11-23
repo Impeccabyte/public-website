@@ -87,4 +87,4 @@ Production runs on a Vultr server behind Caddy, and every push to `main` deploys
 
 ## Before this goes anywhere public
 
-The Docker setup above is for local development. `docker-compose.prod.yml` adds the production pieces: HTTPS through Caddy, read-only code and an optional password lock, with backups from `scripts/deploy.sh` and `scripts/server/backup.sh`. Mail delivery is not set up yet. Still to do for launch: fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, self-host the fonts, supply the legal pages, and have the disclosure and pricing copy reviewed.
+The Docker setup above is for local development. `docker-compose.prod.yml` adds the production pieces: HTTPS through Caddy, read-only code and an optional password lock, with backups from `scripts/deploy.sh` and `scripts/server/backup.sh`. Mail delivery is not set up yet. Still to do for launch: fill every `[bracketed]` placeholder, replace the placeholder testimonials and customer stories with real, approved ones, self-host the fonts, and have the disclosure and pricing copy reviewed.

@@ -1,0 +1,10 @@
+uuid: 409cbdc8-cb53-4745-ba00-3daca4db9e24
+langcode: en
+status: true
+dependencies: {  }
+id: legal_document
+label: 'Legal document'
+icon_uuid: null
+icon_default: null
+description: 'A policy from GetTerms, such as the terms of service or the privacy policy.'
+behavior_plugins: {  }

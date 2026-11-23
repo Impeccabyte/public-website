@@ -1,0 +1,21 @@
+uuid: f2441f77-46fd-4a50-816b-6566d6018585
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_getterms_id
+    - paragraphs.paragraphs_type.legal_document
+id: paragraph.legal_document.field_getterms_id
+field_name: field_getterms_id
+entity_type: paragraph
+bundle: legal_document
+label: 'GetTerms site ID'
+description: 'The data-getterms value in the embed code GetTerms gives you.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 7RS3i
+default_value_callback: ''
+settings: {  }
+field_type: string

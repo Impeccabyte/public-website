@@ -15,9 +15,9 @@ These are visible on public pages today as placeholders, or present invented con
 | # | Item | Where | Now | Action |
 |---|---|---|---|---|
 | 1.1 | **Office address and phone** | Footer of every page (79 pages), About, quote page | `[Street address], Suite [XXX]`, `Austin, TX 787[XX]`, `(512) [XXX-XXXX]` | **Supply.** Set once in Site settings (`/admin/config/system/impeccabyte`); About's "Find us" also shows `[Phone number]` and `[ZIP]`. |
-| 1.2 | **Privacy policy** | `/privacy` | "[Privacy policy to be supplied and reviewed by counsel before launch.]" | **Supply**, reviewed by counsel. |
-| 1.3 | **Website terms of use** | `/terms` | "[Website terms of use to be supplied and reviewed by counsel before launch.]" | **Supply**, reviewed by counsel. |
-| 1.4 | **Accessibility statement** | `/accessibility` | "[Formal accessibility statement to be reviewed before launch.]" | **Supply** or approve a draft. |
+| 1.2 | ~~**Privacy policy**~~ | `/privacy` | "[Privacy policy to be supplied and reviewed by counsel before launch.]" | **Done** 2026-11-23: served from GetTerms through its embed, with a loading skeleton. |
+| 1.3 | ~~**Website terms of use**~~ | `/terms` | "[Website terms of use to be supplied and reviewed by counsel before launch.]" | **Done** 2026-11-23: served from GetTerms through its embed, with a loading skeleton. |
+| 1.4 | ~~**Accessibility statement**~~ | `/accessibility` | "[Formal accessibility statement to be reviewed before launch.]" | **Removed** 2026-11-23: the page is unpublished and its footer link is off. |
 | 1.5 | **Home testimonial and savings** | Home | Labelled "Example quote": `[Merchant name], owner [Business name]`, monthly fees "Before $[X,XXX] After $[XXX]" | **Supply** a real, approved quote and figures, or **Decide** to remove the block. |
 | 1.6 | **Quote page testimonial** | `/get-a-quote` | Labelled "Example quote": `[Merchant name], [Business name] · North Loop` | **Supply** or remove. |
 | 1.7 | **Restaurants customer story** | `/industries/restaurants` | "Example story", `[Restaurant name]`, `[XX]-seat [cuisine]`, `[X]%`, `[X] min`, "Photo to come" | **Supply** a real, approved story, or remove the section. |

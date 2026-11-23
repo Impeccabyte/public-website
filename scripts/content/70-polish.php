@@ -4,7 +4,7 @@
  * @file
  * Last content: the legal pages, the error pages and search descriptions.
  *
- * The legal pages are placeholders for counsel to fill. Search descriptions
+ * Terms and Privacy come from GetTerms. Search descriptions
  * are taken from each page's own hero lead where none has been written.
  *
  * Safe to re-run. Run it with
@@ -13,15 +13,16 @@
 
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
+// Terms and Privacy are written in GetTerms and shown through its embed
+// (legal_document, 2026-11-23). There is no Accessibility page.
 $legal = [
-  ['Privacy', '/privacy', 'How we handle your information.', 'information', '[Privacy policy to be supplied and reviewed by counsel before launch.] Until then: we use the details you send us only to answer your request, and we never sell them.'],
-  ['Terms', '/terms', 'The terms for using this website.', 'terms', '[Website terms of use to be supplied and reviewed by counsel before launch.] Merchant accounts are governed by your Merchant Agreement with Maverick Payments and its sponsor banks, not by this page.'],
-  ['Accessibility', '/accessibility', 'This site should work for everyone.', 'everyone', 'We build this site to meet WCAG 2.2 level AA: readable contrast, full keyboard support, labeled forms and no information carried by color alone. If something does not work for you, email howdy@impeccabyte.com and we will help and fix it. [Formal accessibility statement to be reviewed before launch.]'],
+  ['Privacy', '/privacy', 'How we handle your information.', 'information', 'privacy'],
+  ['Terms', '/terms', 'The terms for using this website.', 'terms', 'terms-of-service'],
 ];
-foreach ($legal as [$title, $path, $headline, $accent, $body]) {
+foreach ($legal as [$title, $path, $headline, $accent, $document]) {
   ib_page('landing_page', $title, $path, [
     ['hero', ['hero_variant' => 'centered', 'eyebrow' => $title, 'heading' => $headline, 'accent_word' => $accent]],
-    ['callout', ['callout_variant' => 'info', 'title' => $title, 'text' => ib_html('<p>' . $body . '</p>')]],
+    ['legal_document', ['document' => $document, 'getterms_id' => '7RS3i']],
   ]);
 }
 

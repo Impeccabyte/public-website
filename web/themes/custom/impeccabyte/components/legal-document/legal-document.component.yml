@@ -1,0 +1,18 @@
+name: Legal document
+description: 'A policy from GetTerms, with a loading skeleton until it arrives and a fallback if it never does.'
+# Props, all optional unless the template needs them.
+#   id: Section id
+#   document: GetTerms document key, such as terms-of-service or privacy
+#   label: The document's name, such as "Privacy policy"
+#   getterms_id: GetTerms site ID (the data-getterms value)
+#   email: Contact email for the fallback message
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
+  js:
+    legal-document.js: {}
+    # GetTerms' loader. It finds .getterms-document-embed elements, fetches
+    # each policy through a hidden iframe and replaces the element's contents
+    # with it.
+    'https://gettermscdn.com/dist/js/embed.js': { type: external, attributes: { id: getterms-embed-js, defer: true } }

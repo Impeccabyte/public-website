@@ -370,6 +370,12 @@ function impeccabyte_preprocess_paragraph(array &$variables) {
       unset($data['resources']);
       break;
 
+    case 'legal_document':
+      $labels = ['terms-of-service' => t('Terms of service'), 'privacy' => t('Privacy policy')];
+      $data['label'] = $labels[$data['document'] ?? ''] ?? t('Policy');
+      $data['email'] = \Drupal::config('impeccabyte_site.settings')->get('email');
+      break;
+
     case 'webform_embed':
       $data['form'] = $data['webform'] ? ['#type' => 'webform', '#webform' => $data['webform']] : NULL;
       // On a specialty industry page the form starts on that industry.

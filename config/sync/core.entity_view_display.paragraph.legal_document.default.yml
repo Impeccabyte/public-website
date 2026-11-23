@@ -1,0 +1,17 @@
+uuid: de2b693c-cd88-46b7-a2a3-a18a64f5f4f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.legal_document.field_document
+    - field.field.paragraph.legal_document.field_getterms_id
+    - paragraphs.paragraphs_type.legal_document
+id: paragraph.legal_document.default
+targetEntityType: paragraph
+bundle: legal_document
+mode: default
+content: {  }
+hidden:
+  field_document: true
+  field_getterms_id: true
+  search_api_excerpt: true

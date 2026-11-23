@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.faq
     - paragraphs.paragraphs_type.feature_grid
     - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.legal_document
     - paragraphs.paragraphs_type.logo_strip
     - paragraphs.paragraphs_type.media_split
     - paragraphs.paragraphs_type.pricing_cards
@@ -59,5 +60,6 @@ settings:
       cta_band: cta_band
       webform_embed: webform_embed
       media_split: media_split
+      legal_document: legal_document
     negate: 0
 field_type: entity_reference_revisions

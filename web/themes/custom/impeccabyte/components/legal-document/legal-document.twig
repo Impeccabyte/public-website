@@ -1,0 +1,29 @@
+{#
+  The skeleton sits inside the GetTerms element, so it disappears on its own
+  when GetTerms replaces the element's contents with the policy.
+  legal-document.js then clears aria-busy, or swaps the skeleton for a
+  fallback message if the policy has not arrived after 15 seconds.
+#}
+<section{{ attributes.addClass(['section', 'legal-document']) }} id="{{ id }}" aria-label="{{ label }}">
+  <div class="section__inner legal-document__inner">
+    <div class="legal-document__frame" aria-busy="true" data-legal-document data-legal-label="{{ label }}" data-legal-email="{{ email }}">
+      <div class="getterms-document-embed rich-text legal-document__body" data-getterms="{{ getterms_id }}" data-getterms-document="{{ document }}" data-getterms-lang="en-us" data-getterms-mode="direct" data-getterms-env="https://gettermscdn.com">
+        <div class="legal-document__skeleton" aria-hidden="true">
+          <span class="legal-document__bar legal-document__bar--title"></span>
+          <span class="legal-document__bar legal-document__bar--meta"></span>
+          {% for group in 1..3 %}
+            <span class="legal-document__bar legal-document__bar--heading"></span>
+            <span class="legal-document__bar"></span>
+            <span class="legal-document__bar legal-document__bar--long"></span>
+            <span class="legal-document__bar"></span>
+            <span class="legal-document__bar legal-document__bar--short"></span>
+          {% endfor %}
+        </div>
+        <p class="visually-hidden" role="status">{{ 'Loading the @label.'|t({'@label': label|lower}) }}</p>
+      </div>
+      <noscript>
+        <p class="legal-document__fallback">{{ 'This page needs JavaScript to show our @label. Turn it on, or email'|t({'@label': label|lower}) }} <a href="mailto:{{ email }}">{{ email }}</a> {{ 'for a copy.'|t }}</p>
+      </noscript>
+    </div>
+  </div>
+</section>

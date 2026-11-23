@@ -1,0 +1,27 @@
+uuid: 3130a882-5918-426e-936a-98deaa4bb21f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_document
+field_name: field_document
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: terms-of-service
+      label: 'Terms of service'
+    -
+      value: privacy
+      label: 'Privacy policy'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
