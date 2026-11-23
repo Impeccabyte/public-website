@@ -33,9 +33,11 @@ $not_found = ib_page('landing_page', 'Page not found', '/page-not-found', [
 $denied = ib_page('landing_page', 'Log in needed', '/log-in-needed', [
   ['hero', ['hero_variant' => 'centered', 'eyebrow' => 'Log in needed', 'heading' => 'That page is for our team.', 'accent_word' => 'team', 'intro' => 'If you are a merchant looking for your account, the merchant app is the place to log in.', 'link' => ib_link('https://app.impeccabyte.com', 'Log in to the merchant app'), 'link_secondary' => ib_link('/', 'Go to the home page')]],
 ]);
+// By address, not node ID: IDs differ between installs, and the exported
+// config must match every site it is imported into.
 $site = \Drupal::configFactory()->getEditable('system.site');
-if ($site->get('page.404') !== '/node/' . $not_found->id() || $site->get('page.403') !== '/node/' . $denied->id()) {
-  $site->set('page.404', '/node/' . $not_found->id())->set('page.403', '/node/' . $denied->id())->save();
+if ($site->get('page.404') !== '/page-not-found' || $site->get('page.403') !== '/log-in-needed') {
+  $site->set('page.404', '/page-not-found')->set('page.403', '/log-in-needed')->save();
 }
 // Error pages stay out of the XML sitemap.
 $sitemap_entities = \Drupal::service('simple_sitemap.entity_manager');

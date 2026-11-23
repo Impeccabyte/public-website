@@ -61,7 +61,9 @@ foreach ($devices as [$name, $slug, $make, $type, $line, $lease, $buy, $order, $
     'field_featured' => (int) $featured,
     'field_sort_weight' => $order,
   ];
-  if ($slug === 'clover-mini') {
+  // Clover Mini's page details are paragraphs, which are saved as soon as
+  // they are built, so build them only when the device is being created.
+  if ($slug === 'clover-mini' && !ib_node_by_alias('/hardware/' . $slug)) {
     $spec = fn(string $label, string $value) => ib_paragraph('spec_row', ['label' => $label, 'spec_value' => $value]);
     $fields += [
       'field_summary' => 'A full point of sale on a small footprint. Take every way to pay, track inventory and sales, and add the apps you need, all from an 8-inch screen.',
@@ -91,6 +93,20 @@ foreach ($devices as [$name, $slug, $make, $type, $line, $lease, $buy, $order, $
     ];
   }
   $nodes[$slug] = ib_page('device', $name, '/hardware/' . $slug, [], $fields);
+}
+
+// Earlier versions of this script built Clover Mini's rows on every run and
+// left them unattached. Rows of these types without a parent are never shown,
+// so remove them.
+$orphans = \Drupal::entityQuery('paragraph')
+  ->accessCheck(FALSE)
+  ->condition('type', ['spec_row', 'fee_row', 'gateway'], 'IN')
+  ->notExists('parent_id')
+  ->execute();
+if ($orphans) {
+  $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $paragraph_storage->delete($paragraph_storage->loadMultiple($orphans));
+  print count($orphans) . " unattached device rows removed.\n";
 }
 
 // Clover Mini's related devices, once every device exists.

@@ -6,8 +6,8 @@ name: Impeccabyte
 mail: admin@example.com
 slogan: 'Impeccably convenient.'
 page:
-  403: /node/62
-  404: /node/61
+  403: /log-in-needed
+  404: /page-not-found
   front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
