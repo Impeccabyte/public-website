@@ -51,8 +51,9 @@ for script in scripts/content/*.php; do
   $DRUSH php:script "$script"
 done
 
-# 6. Search index and caches.
+# 6. Search index, sitemap and caches.
 $DRUSH search-api:index 2>/dev/null || true
+$DRUSH simple-sitemap:generate || echo "The sitemap did not regenerate; the previous one stays up."
 $DRUSH cr
 
 # 7. The home page must answer. Caddy's lock is not in this path, because

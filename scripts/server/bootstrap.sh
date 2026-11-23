@@ -103,6 +103,17 @@ CREDS
   umask 022
 fi
 
+# The site's public address, for links built outside a web request (the
+# XML sitemap and drush). Added to an existing .env too. Defaults to https://
+# and the first host name.
+set -a; . ./.env; set +a
+if ! grep -q '^SITE_URL=' .env; then
+  first_host="${SITE_HOSTS%% *}"
+  if [ -n "$first_host" ]; then
+    echo "SITE_URL=https://${first_host}" >> .env
+  fi
+fi
+
 # 5. Install the site (setup.sh skips the install when it is already done).
 sudo -u "$DEPLOY_USER" ./scripts/setup.sh > /root/impeccabyte-setup.log 2>&1 || { echo "setup.sh failed; see /root/impeccabyte-setup.log"; exit 1; }
 
@@ -125,6 +136,10 @@ sudo -u "$DEPLOY_USER" docker compose exec -T drupal bash -c "cat > web/sites/de
 
 \$settings['trusted_host_patterns'] = [
 ${hosts_php}];
+
+// The sitemap is generated outside a web request, where Drupal would
+// otherwise use http://default as the address.
+\$config['simple_sitemap.settings']['base_url'] = '${SITE_URL:-}';
 PHP
 sudo -u "$DEPLOY_USER" ./scripts/drush cr >/dev/null
 

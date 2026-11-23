@@ -33,6 +33,7 @@ Watch deploys under the repository's Actions tab. You can also re-run one there 
 The site is served at https://impeccabyte.com and https://www.impeccabyte.com. Both point at the server, and Caddy gets and renews the certificates on its own. These are set in `/srv/impeccabyte/.env`:
 - `SITE_ADDRESS="impeccabyte.com, www.impeccabyte.com"`
 - `SITE_HOSTS="impeccabyte.com www.impeccabyte.com 45.76.238.138"`
+- `SITE_URL=https://impeccabyte.com`: the address used for links built outside a web request, such as the XML sitemap. Without it, Drupal writes `http://default`.
 
 When you change either value:
 1. Re-run `scripts/server/bootstrap.sh` as root. It rewrites Drupal's trusted host names in `web/sites/default/settings.local.php` from `SITE_HOSTS`.
