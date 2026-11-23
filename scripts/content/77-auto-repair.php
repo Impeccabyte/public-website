@@ -5,7 +5,7 @@
  * The Auto repair industry page, 2026-11-19.
  *
  * Built on the Restaurants and bars page's pattern. The sample setup follows
- * the Home page's auto repair chip: a Valor VP550 countertop, dual pricing
+ * the Home page's auto repair chip: a Valor VP550 terminal, dual pricing
  * and chargeback protection. Fraud tools named are the ones on the
  * Chargeback protection page (address and code checks). No prices in text.
  *
@@ -30,7 +30,7 @@ $setup = fn(string $title, string $body, string $note, string $photo, string $li
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Auto repair',
+    'eyebrow' => 'Auto Repair',
     'heading' => 'Close out big tickets with confidence.',
     'accent_word' => 'confidence',
     'intro' => 'Higher-ticket payments with fraud checks, plus text-to-pay so customers can approve and pay before pickup. One local team for your setup and support.',
@@ -55,7 +55,7 @@ $sections = [
     'heading' => 'At the counter, by text and through your shop software',
     'intro' => 'Most shops use all three. They run on one merchant account, so every payment lands in the same reports.',
     'items' => [
-      $setup('At the counter', 'A countertop terminal that is ready for dual pricing and quick with tap, chip and phone wallets.', 'Good for: walk-ins, pickups, parts sales', 'a countertop card terminal on a shop counter', 'See countertop terminals', $catalog('Countertop terminal')),
+      $setup('At the counter', 'A countertop terminal that is ready for dual pricing and quick with tap, chip and phone wallets.', 'Good for: walk-ins, pickups, parts sales', 'a countertop card terminal on a shop counter', 'See countertop terminals', $catalog('Countertop Terminal')),
       $setup('By text', 'Send the approval and a payment link by text, so the bill is settled before the customer walks in.', 'Good for: pickups, repairs over the phone', 'a customer approving a repair on her phone', 'See online payments', '/solutions/online'),
       $setup('In your shop software', 'Connect payments to your shop management or accounting software, so invoices close themselves.', 'Good for: busy shops, fleet accounts', 'a service advisor at the front desk computer', 'See integrations', '/solutions/integrations'),
     ],
@@ -66,7 +66,7 @@ $sections = [
     'intro' => 'A starting point we tune to your bays, your customers and your volume. Swap any piece for something that fits better.',
     'anchor' => 'setup',
     'items' => array_values(array_filter([
-      ($valor = $node_ref('/hardware/valor-vp550')) ? ['_type' => 'bundle_item', 'label' => 'Front counter', 'reference' => $valor, 'note' => 'Countertop terminal built for dual pricing', 'quantity' => 1] : NULL,
+      ($valor = $node_ref('/hardware/valor-vp550')) ? ['_type' => 'bundle_item', 'label' => 'At the counter or in the bay', 'reference' => $valor, 'note' => 'Android terminal built for dual pricing, on Wi-Fi or 4G', 'quantity' => 1] : NULL,
       ($dual = $node_ref('/solutions/dual-pricing')) ? ['_type' => 'bundle_item', 'label' => 'Pricing', 'reference' => $dual, 'note' => 'Card customers cover processing on big repairs', 'quantity' => 1] : NULL,
       ($cb = $node_ref('/solutions/chargeback-protection')) ? ['_type' => 'bundle_item', 'label' => 'Disputes', 'reference' => $cb, 'note' => 'Alerts and fraud checks before disputes escalate', 'quantity' => 1] : NULL,
     ])),
@@ -96,7 +96,7 @@ $sections = [
     'devices' => array_values(array_filter(array_map(fn(string $slug) => $node_ref('/hardware/' . $slug), ['valor-vp550', 'dejavoo-z8', 'clover-mini', 'pax-a920-pro']))),
   ]],
   ['faq', [
-    'heading' => 'Auto repair questions',
+    'heading' => 'Auto Repair questions',
     'layout' => 'centered',
     'items' => [
       $faq('Can customers pay before they pick up?', 'Yes. Text a payment link when the car is ready and the customer pays by card from their phone. When they arrive, they just pick up the keys.'),

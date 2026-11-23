@@ -31,7 +31,7 @@ $setup = fn(string $title, string $body, string $note, string $photo, string $li
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Healthcare and dental',
+    'eyebrow' => 'Healthcare & Dental',
     'heading' => 'Payments that respect the front desk.',
     'accent_word' => 'respect',
     'intro' => 'Card on file, payment plans and text-to-pay for balances, with card storage handled by the gateway. One local team for your setup and support.',
@@ -56,7 +56,7 @@ $sections = [
     'heading' => 'At check-out, after the visit and over time',
     'intro' => 'Most practices use all three. They run on one merchant account, so every payment lands in the same reports.',
     'items' => [
-      $setup('At check-out', 'A compact countertop terminal for copays and same-day payments.', 'Good for: dental, chiropractic, therapy, vision', 'a countertop card terminal at a clinic front desk', 'See countertop terminals', $catalog('Countertop terminal')),
+      $setup('At check-out', 'A compact countertop terminal for copays and same-day payments.', 'Good for: dental, chiropractic, therapy, vision', 'a countertop card terminal at a clinic front desk', 'See countertop terminals', $catalog('Countertop Terminal')),
       $setup('After the visit', 'Text or email a payment link for the balance once the amount is known.', 'Good for: balances after insurance, missed copays', 'a patient paying a balance on her phone at home', 'See online payments', '/solutions/online'),
       $setup('Over time', 'Payment plans that charge on schedule, with expired cards updated automatically.', 'Good for: orthodontics, larger treatment plans', 'a treatment coordinator walking a parent through a plan', 'See recurring billing', '/solutions/recurring-billing'),
     ],
@@ -97,7 +97,7 @@ $sections = [
     'devices' => array_values(array_filter(array_map(fn(string $slug) => $node_ref('/hardware/' . $slug), ['dejavoo-z8', 'dejavoo-qd4', 'clover-compact', 'clover-mini']))),
   ]],
   ['faq', [
-    'heading' => 'Healthcare and dental questions',
+    'heading' => 'Healthcare & Dental questions',
     'layout' => 'centered',
     'items' => [
       $faq('Can we text patients a link to pay a balance?', 'Yes. Send a payment link by text or email once the balance is known, and the patient pays by card from their phone.'),

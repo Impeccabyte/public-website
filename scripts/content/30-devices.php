@@ -22,28 +22,28 @@ $terms = fn(string $vid, array $names) => array_map(fn($name) => $term($vid, $na
 // Sales channel follows the device type. Industries are the ones the Home
 // wireframe pairs each device with.
 $channels = [
-  'Countertop terminal' => ['In store'],
-  'POS system' => ['In store'],
-  'Self-order kiosk' => ['In store'],
+  'Countertop Terminal' => ['In store'],
+  'POS System' => ['In store'],
+  'Self-Order Kiosk' => ['In store'],
   'Handheld' => ['Tableside', 'On the go'],
-  'Mobile reader' => ['On the go'],
+  'Mobile Reader' => ['On the go'],
 ];
 
 // Name, alias, manufacturer, type, card line, lease, buy, order, industries,
 // dual pricing ready, featured.
 $devices = [
-  ['Clover Mini', 'clover-mini', 'Clover', 'POS system', '8-inch all-in-one counter station with 500+ apps.', 60, 1189, 1, ['Retail shops'], FALSE, TRUE],
-  ['Clover Flex', 'clover-flex', 'Clover', 'Handheld', 'Tableside and curbside pay with a built-in printer.', 50, 1029, 2, ['Restaurants and bars', 'Food trucks'], FALSE, TRUE],
-  ['Clover Station Duo', 'clover-station-duo', 'Clover', 'POS system', 'Dual-screen flagship POS for busy counters.', 135, 2739, 3, ['Restaurants and bars'], FALSE, FALSE],
-  ['Clover Station Solo', 'clover-station-solo', 'Clover', 'POS system', 'Big-screen POS with printer for full service.', 125, 2469, 4, [], FALSE, FALSE],
-  ['Clover Compact', 'clover-compact', 'Clover', 'Countertop terminal', 'A small, simple terminal for tight counters.', 20, 399, 5, ['Salons and spas'], FALSE, FALSE],
-  ['Clover Go', 'clover-go', 'Clover', 'Mobile reader', 'Pocket reader that pairs with your phone.', 10, 209, 6, ['Home services', 'Nonprofits'], FALSE, TRUE],
-  ['Clover Kiosk', 'clover-kiosk', 'Clover', 'Self-order kiosk', '24-inch self-order screen to shorten the line.', 215, 4259, 7, [], FALSE, FALSE],
-  ['Dejavoo Z8', 'dejavoo-z8', 'Dejavoo', 'Countertop terminal', 'Budget-friendly Wi-Fi terminal, dual pricing ready.', 20, 399, 1, ['Healthcare and dental'], TRUE, TRUE],
-  ['Dejavoo QD4', 'dejavoo-qd4', 'Dejavoo', 'Countertop terminal', 'Android smart terminal with a large touchscreen.', 25, 499, 2, [], FALSE, FALSE],
+  ['Clover Mini', 'clover-mini', 'Clover', 'POS System', '8-inch all-in-one counter station with 500+ apps.', 60, 1189, 1, ['Retail'], FALSE, TRUE],
+  ['Clover Flex', 'clover-flex', 'Clover', 'Handheld', 'Tableside and curbside pay with a built-in printer.', 50, 1029, 2, ['Restaurants & Bars', 'Food Trucks'], FALSE, TRUE],
+  ['Clover Station Duo', 'clover-station-duo', 'Clover', 'POS System', 'Dual-screen flagship POS for busy counters.', 135, 2739, 3, ['Restaurants & Bars'], FALSE, FALSE],
+  ['Clover Station Solo', 'clover-station-solo', 'Clover', 'POS System', 'Big-screen POS with printer for full service.', 125, 2469, 4, [], FALSE, FALSE],
+  ['Clover Compact', 'clover-compact', 'Clover', 'Countertop Terminal', 'A small, simple terminal for tight counters.', 20, 399, 5, ['Salons & Spas'], FALSE, FALSE],
+  ['Clover Go', 'clover-go', 'Clover', 'Mobile Reader', 'Pocket reader that pairs with your phone.', 10, 209, 6, ['Home Services', 'Nonprofits'], FALSE, TRUE],
+  ['Clover Kiosk', 'clover-kiosk', 'Clover', 'Self-Order Kiosk', '24-inch self-order screen to shorten the line.', 215, 4259, 7, [], FALSE, FALSE],
+  ['Dejavoo Z8', 'dejavoo-z8', 'Dejavoo', 'Countertop Terminal', 'Budget-friendly Wi-Fi terminal, dual pricing ready.', 20, 399, 1, ['Healthcare & Dental'], TRUE, TRUE],
+  ['Dejavoo QD4', 'dejavoo-qd4', 'Dejavoo', 'Countertop Terminal', 'Android smart terminal with a large touchscreen.', 25, 499, 2, [], FALSE, FALSE],
   ['PAX A920 Pro', 'pax-a920-pro', 'PAX', 'Handheld', 'Flexible handheld for tableside and delivery.', 35, 749, 1, [], FALSE, FALSE],
-  ['Valor VP550', 'valor-vp550', 'Valor', 'Countertop terminal', 'Value Android countertop built for dual pricing.', 30, 599, 1, ['Auto repair'], TRUE, FALSE],
-  ['SwipeSimple B350', 'swipesimple-b350', 'SwipeSimple', 'Mobile reader', 'The lowest-cost reader for phones and tablets.', 10, 199, 1, ['Pop-ups and markets'], FALSE, FALSE],
+  ['Valor VP550', 'valor-vp550', 'Valor', 'Handheld', 'Android mobile terminal built for dual pricing.', 30, 599, 1, ['Auto Repair'], TRUE, FALSE],
+  ['SwipeSimple B350', 'swipesimple-b350', 'SwipeSimple', 'Mobile Reader', 'The lowest-cost reader for phones and tablets.', 10, 199, 1, ['Pop-Ups & Markets'], FALSE, FALSE],
 ];
 
 $nodes = [];
@@ -100,35 +100,6 @@ if ($mini->get('field_related_devices')->isEmpty()) {
   $mini->save();
 }
 
-// Placeholder gallery art for Clover Mini, so the gallery works before
-// product photography arrives. Replace each with a real photo.
-if ($mini->get('field_gallery')->isEmpty()) {
-  $views = [
-    'front' => ['Front view', '<rect x="150" y="95" width="300" height="250" rx="28" fill="#302419"/><rect x="166" y="111" width="268" height="218" rx="14" fill="#faf6ef"/><text x="300" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="38" font-weight="600" fill="#2a211a">$18.75</text><text x="300" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#635648">Tap, insert or swipe</text>'],
-    'side' => ['Side view', '<rect x="240" y="95" width="120" height="250" rx="28" fill="#302419"/>'],
-    'back' => ['Back view', '<path d="M168 120h264a28 28 0 0 1 28 28v152a20 20 0 0 1-20 20H160a20 20 0 0 1-20-20V148a28 28 0 0 1 28-28z" fill="#463424"/>'],
-    'box' => ['What is in the box', '<rect x="110" y="150" width="220" height="180" rx="20" fill="#302419"/><rect x="350" y="270" width="90" height="60" rx="14" fill="#e0d6c6"/><rect x="460" y="240" width="60" height="90" rx="14" fill="#c3b7a6"/>'],
-  ];
-  $directory = 'public://device-placeholders';
-  \Drupal::service('file_system')->prepareDirectory($directory, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY | \Drupal\Core\File\FileSystemInterface::MODIFY_PERMISSIONS);
-  $gallery = [];
-  foreach ($views as $key => [$label, $shapes]) {
-    $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img"><title>Clover Mini, ' . strtolower($label) . ' (placeholder)</title><rect width="600" height="440" fill="#ffffff"/>' . $shapes . '<text x="24" y="416" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#635648">Product photo · ' . $label . '</text></svg>';
-    $uri = \Drupal::service('file_system')->saveData($svg, "$directory/clover-mini-$key.svg", \Drupal\Core\File\FileExists::Replace);
-    $file = \Drupal\file\Entity\File::create(['uri' => $uri, 'status' => 1, 'uid' => 1]);
-    $file->save();
-    $media = \Drupal\media\Entity\Media::create([
-      'bundle' => 'image',
-      'name' => "Clover Mini: $label (placeholder)",
-      'uid' => 1,
-      'status' => 1,
-      'field_media_image' => ['target_id' => $file->id(), 'alt' => 'Clover Mini, ' . strtolower($label) . '. Placeholder drawing until product photos arrive.'],
-    ]);
-    $media->save();
-    $gallery[] = ['target_id' => $media->id()];
-  }
-  $mini->set('field_gallery', $gallery);
-  $mini->save();
-}
+// Product photos are attached by 92-device-photos.php.
 
 print count($nodes) . " devices are in place.\n";

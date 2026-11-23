@@ -6,9 +6,14 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## Across the site
 
-- **Logos.** Permission and usage rules for every third-party logo shown: the six partner logos in the Home strip, the three gateway logos on Online, and the eleven platform logos on Integrations (DoorDash, Uber Eats, Grubhub, Shopify, WooCommerce, BigCommerce, Magento, QuickBooks, Xero, NetSuite, Salesforce). Sources are in each `scripts/content/assets/*logos/README.md`.
+- **Logos.** Permission and usage rules for every third-party logo shown: the six partner logos in the Home strip, the three gateway logos on Online, and the nine platform logos on Integrations (DoorDash, Uber Eats, Grubhub, Shopify, WooCommerce, BigCommerce, Magento, QuickBooks, Xero). Sources are in each `scripts/content/assets/*logos/README.md`.
 - **Photos.** Every page photo is a generated illustration (Higgsfield). Replace with real photography when there is some. Screens show sample amounts only on Online ($420.00 invoice, $48.00 checkout, card ending 4242).
 - **Log in link.** Points at `app.impeccabyte.com`; the merchant app MVP is at `pos.impeccabyte.com`. Confirm which.
+
+## Pricing (`/pricing`)
+
+- **Keyed and online rate on Simple.** Raised on 2026-11-22 from 2.99% + 25¢ to 3.29% + 30¢, because Maverick's sponsor banks charge more on keyed and online sales than the pricing playbook assumed. Update the playbook to match, or say which rate to show.
+- **Specialty industries.** A new Pricing FAQ says specialty industries are quoted one by one, and each specialty page's "Are there extra fees?" answer says their rates are not taken from the standard programs. Confirm that is how you will quote them.
 
 ## On the go (`/solutions/on-the-go`)
 
@@ -17,7 +22,7 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## Recurring billing (`/solutions/recurring-billing`)
 
-- **Card account updater** is described as included ("Card updater included" in the hero).
+- **Card account updater.** The hero and the Home salon chip no longer say "included", because the pricing playbook prices the updater as an add-on ($39.95/mo, 50¢ per update, $187.95 setup; shown on Pricing under "Other fees"). The Online page footnote still says Maverick's gateway "comes standard" with a card account updater, from Maverick's materials. Confirm which is right for your merchants.
 - **Receipts.** "The gateway ... emails your customer a receipt."
 - **Dashboard.** "Change an amount, a date or a card from the gateway dashboard" and "See every scheduled and declined payment in one report."
 
@@ -40,10 +45,11 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## Integrations (`/solutions/integrations`)
 
-- **Delivery apps.** Uber Eats and Grubhub "connect through order-management apps ... which we include in your quote." Confirm which app you would recommend.
-- **Accounting.** "Several gateways and partner apps sync payments and fees to QuickBooks Online and Desktop."
-- **Shopify.** "Shopify may charge an extra fee on sales that don't use Shopify Payments."
-- **ERPs.** "Sage, Acumatica and Dynamics can connect too" (via accept.blue).
+Rewritten on 2026-11-22 to name only what Maverick's knowledge base supports (see `docs/maverick-offerings.md`, section 11).
+
+- **Delivery apps.** "On Clover's restaurant plans, DoorDash, Uber Eats and Grubhub connect straight to your POS." Confirm which Clover plan you would sell for it.
+- **Shopify.** Through OpenPath or Checkout Champ. "Shopify may charge an extra fee on sales that don't use Shopify Payments."
+- **Accounting.** QuickBooks, Xero and FreshBooks through Chargezoom, Biller Genie and RECUR360, and QuickBooks Online sync in the Valor and iPOSPays portals.
 
 ## Funding (`/solutions/funding`)
 
@@ -122,11 +128,26 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 ## About us (`/about`)
 
-- **Founder story.** "Our story" is one placeholder: why Impeccabyte started, [Year founded], what [Founder name] did before, signed by [Founder name]. Supply the founder's own words.
-- **Founder photo.** Left as a labelled placeholder on purpose; it will not be generated. Supply a real photo.
+- **Founder story.** Written up from the founder's own words (2026-11-21), with 2025 as the founding year. It names the family business, Luxury On A Leash, and ends "fees that never come as a surprise". Confirm both are fine to publish. It is signed "Ryan Bealey, Founder".
+- **Founder photo.** Ryan's own photo, supplied 2026-11-21: a selfie at his desk with a decorated holiday tree behind him. Swap it for a year-round shot whenever there is one (replace `scripts/content/assets/about/founder.jpg` and the media item "About: founder").
 - **Office, phone and hours.** "Find us" and the FAQ show [Street address], Austin, TX [ZIP], [Phone number] and [Business hours]. Confirm whether visitors can stop by the office at all; if not, the "stop by" wording comes out.
 - **Service area.** The FAQ "Do you only work with Austin businesses?" is a [Confirm] placeholder.
 - **Reply time.** "A local specialist replies within one business day" appears in the FAQ and closing band, as on other pages.
 - **Application help.** "We help you through the application" and "help with the application" describe our role. Confirm this matches what you do.
 - **Who does what.** The sponsor banks card says Maverick and its sponsor banks "review and approve each application," and the Maverick card says "Your agreement is with them." Confirm both against the Merchant Agreement.
 - **Photos.** The hero (a specialist and a cafe owner at a terminal) and the street of storefronts are generated illustrations, not your team or premises.
+
+## Hardware (`/hardware` and the 26 device pages)
+
+- **Prices for the Maverick lineup.** The 14 devices added from Maverick's lineup were priced on 2026-11-22 to match the pricing playbook's Reg tier (`scripts/content/96-hardware-prices.php`). Confirm them, and whether Clover Go stays at $209.
+- **Lineup from Maverick.** The catalog now lists every payment terminal in Maverick's agent knowledge base (kb.maverickpayments.com, read 2026-11-19): the 12 original devices plus Dejavoo QD2, QD3, P1, P3, P5, P8 and P18, Valor VP100, VP800 and VL550, PAX A80 and A35, Fiserv FD150 and Clover Flex Pocket. Descriptions, specs, industries and pricing programs for the non-Clover devices come from the knowledge base; its terminal costs and placement program levels were not used.
+- **Not added.** The Equinox terminal (the knowledge base does not name the model and recommends it for lodging only), the Clover Kitchen Display System (14 and 24 inch, not a payment terminal), the Quantic, DejaPayPro and TouchBistro POS platforms, and tap to pay on a phone (iPOSGO, SwipeSimple Tap to Pay on iPhone). Say which of these you want on the site.
+- **Corrected.** Valor VP550 was listed as a countertop terminal; the knowledge base calls it an Android mobile terminal on Wi-Fi and 4G, so it is now a handheld, and the Home auto repair chip, the In person countertop examples and the Auto repair setup no longer call it a countertop (In person now names the Valor VP100). PAX A920 Pro was marked dual pricing ready; the knowledge base lists PAX for surcharging only, so the badge is gone and its page says surcharging.
+- **Dual pricing page.** Its device grid follows the "Dual pricing ready" flag, so it now shows 13 devices (all Dejavoo and Valor) instead of 4. Say if it should show a shorter, picked list.
+- **No prices on new devices.** The 14 new devices have no lease or buy amounts. They show "Pricing coming soon" like every device while "Show prices" is off, but need amounts before prices go live.
+- **Clover specs still missing.** The knowledge base has no Clover spec sheets, so the Clover devices other than Mini still have no spec table, and Clover Mini's printer row still reads "[Confirm with current Clover spec sheet]".
+- **Product photos.** Every device shows official images from its manufacturer's website (Clover, Dejavoo, PAX, Valor, SwipeSimple, Fiserv), trimmed and centred on one transparent canvas. Sources are in `scripts/content/assets/devices/README.md`. Confirm that your agreements allow using manufacturer marketing images.
+- **Details written from existing copy.** Summaries for the original Clover devices reuse what the site already says. Two are worth a check: Clover Station Duo "one screen for your team and one facing your customer", and Clover Kiosk "customers order and pay on their own". Clover Flex Pocket's line ("lighter, without a built-in printer") comes from clover.com.
+- **Lease and buy terms.** Clover devices say the starter kit and 3-year protection are included, as on Pricing. The other devices only say "Month to month" and "One payment and the device is yours" until their terms are confirmed.
+- **Compatible gateways.** All Clover devices show the Clover gateway section. The other devices have no gateway section yet; confirm which gateways each supports.
+- **PAX A920 Pro.** PAX now sells the A920Pro Duo (PCI 7) as its current model; Maverick's knowledge base still lists the A920 Pro.

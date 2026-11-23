@@ -91,7 +91,7 @@ $sections = [
       $faq('Why does my cost change from month to month?', 'Because your card mix changes. A month with more rewards credit cards costs a little more than a month with more debit cards. Our markup stays the same.'),
       $faq('Can the markup change after I sign?', 'Your markup is in your agreement in writing. If anything about your pricing ever changes, we tell you first and explain why.'),
       $faq('Are there monthly fees too?', 'Usually a small set of monthly fees, such as for your gateway or PCI compliance. Your quote lists each one by name so nothing shows up unexplained.'),
-      $faq('Can I switch to dual pricing later?', 'Yes. If your numbers change, we can move you to dual pricing or a flat rate. We review the math with you first.'),
+      $faq('Can I switch to dual pricing later?', 'Yes. If your numbers change, we can move you to Cash Price or Simple. We review the math with you first.'),
       $faq('How fast will I get my money?', 'Deposit timing depends on your account and on when you close your batch each day. Funding cutoffs vary by processor, and we walk you through yours when we set you up.'),
     ],
   ]],
@@ -111,8 +111,8 @@ $sections = [
 $meta = 'Interchange plus pricing: the card networks\' real cost plus one markup in writing, with statements that show every line. Set up and supported from Austin.';
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('solution', 'Interchange plus', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Lower your costs')],
+  ib_page('solution', 'Interchange Plus', $path, $sections, [
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Lower Your Costs')],
     'field_short_description' => 'Pass-through pricing with one clear markup',
     'field_icon' => 'chart-line',
     'field_meta_description' => $meta,

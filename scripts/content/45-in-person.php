@@ -57,8 +57,8 @@ $sections = [
     'heading' => 'Three ways to set up a counter',
     'intro' => "Start with how you sell. Not sure? Tell us about your counter and we'll recommend one.",
     'items' => [
-      $setup('Countertop terminal', 'A small, simple device for taking payments. Good when you already have a register or just need to ring up a total.', 'Clover Compact · Dejavoo Z8 · Valor VP550', 'a countertop terminal beside a register', 'See countertop terminals', 'Countertop terminal'),
-      $setup('Full POS system', 'Payments, orders, inventory and reporting on one screen. Good when the counter runs your whole front of house.', 'Clover Mini · Clover Station Solo · Clover Station Duo', 'a full POS station on a shop counter', 'See POS systems', 'POS system'),
+      $setup('Countertop terminal', 'A small, simple device for taking payments. Good when you already have a register or just need to ring up a total.', 'Clover Compact · Dejavoo Z8 · Valor VP100', 'a countertop terminal beside a register', 'See countertop terminals', 'Countertop Terminal'),
+      $setup('Full POS system', 'Payments, orders, inventory and reporting on one screen. Good when the counter runs your whole front of house.', 'Clover Mini · Clover Station Solo · Clover Station Duo', 'a full POS station on a shop counter', 'See POS systems', 'POS System'),
       $setup('Handheld', "Bring the terminal to the table, the curb or the back of the line. Good when customers don't come to you.", 'Clover Flex · PAX A920 Pro', 'a handheld terminal being passed to a customer', 'See handhelds', 'Handheld'),
     ],
   ]],
@@ -122,7 +122,7 @@ $sections = [
 ];
 
 $fields = [
-  'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept payments')],
+  'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept Payments')],
   'field_short_description' => 'Countertop terminals and full POS systems',
   'field_icon' => 'store',
   'field_meta_description' => 'Countertop terminals and full POS systems that take tap, chip and swipe, programmed for your account and supported from Austin.',
@@ -130,7 +130,7 @@ $fields = [
 
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('solution', 'In person', $path, $sections, $fields);
+  ib_page('solution', 'In Person', $path, $sections, $fields);
   print "In person page created.\n";
   return;
 }

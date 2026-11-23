@@ -32,3 +32,11 @@ impeccabyte_site.settings:
     disclosure:
       type: text
       label: 'Footer disclosure'
+
+webform.webform.third_party.impeccabyte_site:
+  type: mapping
+  label: 'Impeccabyte site settings for a webform'
+  mapping:
+    meta_description:
+      type: text
+      label: 'Search description for the form page'

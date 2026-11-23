@@ -141,15 +141,15 @@ business:
       '#title': 'Type of business'
       '#empty_option': 'Choose one'
       '#options':
-        restaurant: 'Restaurant or bar'
-        food_truck: 'Food truck'
-        retail: 'Retail shop'
-        salon: 'Salon or spa'
-        home_services: 'Home or field services'
-        healthcare: 'Healthcare or dental'
-        auto: 'Auto repair'
-        professional: 'Professional services'
-        nonprofit: Nonprofit
+        restaurant: 'Restaurants & Bars'
+        food_truck: 'Food Trucks'
+        retail: Retail
+        salon: 'Salons & Spas'
+        home_services: 'Home Services'
+        healthcare: 'Healthcare & Dental'
+        auto: 'Auto Repair'
+        professional: 'Professional Services'
+        nonprofit: Nonprofits
         other: 'Something else'
     time_open:
       '#type': select
@@ -328,18 +328,18 @@ vertical:
   '#required': true
   '#empty_option': 'Choose one'
   '#options':
-    'Hemp and CBD': 'Hemp and CBD'
-    'Smoke and vape': 'Smoke and vape'
+    'Hemp & CBD': 'Hemp & CBD'
+    'Smoke & Vape': 'Smoke & Vape'
     Kratom: Kratom
     Firearms: Firearms
-    'Adult content': 'Adult content'
+    'Adult Content': 'Adult Content'
     Dating: Dating
     Gaming: Gaming
     Collections: Collections
-    'Credit repair': 'Credit repair'
+    'Credit Repair': 'Credit Repair'
     Lending: Lending
-    'Nutraceuticals and subscriptions': 'Nutraceuticals and subscriptions'
-    'Online pharmacy and telehealth': 'Online pharmacy and telehealth'
+    'Nutraceuticals & Subscriptions': 'Nutraceuticals & Subscriptions'
+    'Online Pharmacy & Telehealth': 'Online Pharmacy & Telehealth'
 website_urls:
   '#type': textarea
   '#title': 'Website addresses'

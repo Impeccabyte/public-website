@@ -108,8 +108,8 @@ $sections = [
 $meta = 'Chargeback alerts, fraud checks and dispute help from a local Austin team, so disputes cost you less and happen less often.';
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('solution', 'Chargeback protection', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Lower your costs')],
+  ib_page('solution', 'Chargeback Protection', $path, $sections, [
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Lower Your Costs')],
     'field_short_description' => 'Alerts and dispute help before losses stack up',
     'field_icon' => 'shield-check',
     'field_meta_description' => $meta,

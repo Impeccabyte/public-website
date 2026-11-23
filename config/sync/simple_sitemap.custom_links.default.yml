@@ -1,5 +1,3 @@
-_core:
-  default_config_hash: 25hWeYa4sasuJtHqKKcEN_nYiuEC1lMPYHsn5dawJEw
 links:
   -
     path: /
@@ -8,10 +6,6 @@ links:
   -
     path: /hardware
     priority: '0.9'
-    changefreq: weekly
-  -
-    path: /resources
-    priority: '0.8'
     changefreq: weekly
   -
     path: /get-a-quote

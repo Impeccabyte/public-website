@@ -5,10 +5,12 @@
  * The Integrations solution page, as designed and approved on 2026-11-19.
  *
  * Every platform named has a source; see
- * scripts/content/assets/integration-logos/README.md. DoorDash connects to
- * Clover directly (DoorDash help center); Uber Eats and Grubhub go through
- * order-management apps. Carts through Authorize.Net, NMI and accept.blue
- * plugins. No prices.
+ * scripts/content/assets/integration-logos/README.md and
+ * docs/maverick-offerings.md. DoorDash, Uber Eats and Grubhub connect to
+ * Clover's restaurant plans; carts through Maverick's checkout partners
+ * (OpenPath and Checkout Champ for Shopify) and the Valor and iPOSPays
+ * plugins; accounting through Chargezoom, Biller Genie and RECUR360. No
+ * prices.
  *
  * Safe to re-run. A new site gets the page; a site that still has the short
  * "more detail is on the way" page at /solutions/integrations has its
@@ -41,8 +43,6 @@ $logos = [
   'Magento' => ['magento.svg', 179, 60],
   'QuickBooks' => ['quickbooks.svg', 270, 69],
   'Xero' => ['xero.svg', 208, 208],
-  'NetSuite' => ['netsuite.png', 417, 152],
-  'Salesforce' => ['salesforce.svg', 273, 191],
 ];
 $file_system = \Drupal::service('file_system');
 $directory = 'public://integration-logos';
@@ -84,7 +84,7 @@ $sections = [
     'items' => [
       $jump('truck', 'Delivery apps', 'DoorDash, Uber Eats and Grubhub orders on the same screen as your in-store sales.', 'delivery', 'Delivery and online ordering'),
       $jump('store', 'Online stores', 'Checkout plugins for Shopify, WooCommerce, BigCommerce and Magento.', 'online-store', 'Online stores'),
-      $jump('file-text', 'Accounting and CRM', 'Sales, fees and invoices synced to QuickBooks, Xero, NetSuite or Salesforce.', 'accounting', 'Accounting and software'),
+      $jump('file-text', 'Accounting', 'Sales, fees and invoices synced to QuickBooks, Xero or FreshBooks.', 'accounting', 'Accounting and software'),
       $jump('monitor', 'Your current POS', 'Keep your register software and add a terminal that works alongside it.', 'your-pos', 'Keep your POS'),
     ],
   ]],
@@ -93,18 +93,18 @@ $sections = [
     'anchor' => 'delivery',
     'eyebrow' => 'Delivery and online ordering',
     'heading' => 'Delivery orders, straight to your Clover',
-    'body' => 'DoorDash connects directly to Clover, so delivery orders land on your POS and print in the kitchen next to everything else. Uber Eats, Grubhub and others connect through order apps that send every order to the same screen, so you can retire the stack of tablets.',
+    'body' => "On Clover's restaurant plans, DoorDash, Uber Eats and Grubhub connect straight to your POS, so delivery orders land on the same screen and print in the kitchen next to everything else. You can retire the stack of tablets.",
     'logos' => $pick(['DoorDash', 'Uber Eats', 'Grubhub']),
     'title' => 'Using another service?',
     'note' => "Tell us which one and we'll check how it connects.",
-    'footnote' => 'Delivery services and order apps charge their own fees. Names and logos belong to their owners.',
+    'footnote' => 'Delivery services charge their own fees. Names and logos belong to their owners.',
   ]],
   ['logo_strip', [
     'layout' => 'tiles',
     'anchor' => 'online-store',
     'eyebrow' => 'Online stores',
     'heading' => 'Checkout plugins for the carts you know',
-    'body' => 'Authorize.Net, NMI and accept.blue all have ready-made plugins for the big shopping carts. We match the gateway to your cart, connect it to your merchant account and run a test order with you.',
+    'body' => 'Maverick works with checkout partners and gateways that have ready-made plugins for the big shopping carts, such as OpenPath and Checkout Champ for Shopify, and Valor and iPOSPays for WooCommerce. We match the plugin to your cart, connect it to your merchant account and run a test order with you.',
     'logos' => $pick(['Shopify', 'WooCommerce', 'BigCommerce', 'Magento']),
     'title' => 'Built on something else?',
     'note' => "Some site builders only take their own payments. Tell us your cart and we'll check.",
@@ -115,10 +115,10 @@ $sections = [
     'anchor' => 'accounting',
     'eyebrow' => 'Accounting and business software',
     'heading' => 'Sales that land in your books on their own',
-    'body' => 'Connect your payments to accounting, invoicing and CRM software through your gateway or apps built for Maverick accounts, so payments, fees and invoices match up without retyping.',
-    'logos' => $pick(['QuickBooks', 'Xero', 'NetSuite', 'Salesforce']),
+    'body' => 'Connect your payments to your accounting and invoicing software through apps built for Maverick accounts, such as Chargezoom, Biller Genie and RECUR360, so payments, fees and invoices match up without retyping.',
+    'logos' => $pick(['QuickBooks', 'Xero']),
     'title' => 'Using an ERP?',
-    'note' => 'Sage, Acumatica and Dynamics can connect too. Ask us.',
+    'note' => "Tell us which one and we'll check whether it connects.",
     'footnote' => 'Some connections use a separate app with its own monthly fee. We list it in your quote. Names and logos belong to their owners.',
   ]],
   ['media_split', [
@@ -149,10 +149,10 @@ $sections = [
     'layout' => 'centered',
     'items' => [
       $faq('Will DoorDash orders print in my kitchen?', 'Yes, with Clover. DoorDash connects directly to Clover, so orders show on your POS and print to your kitchen printer like any other ticket. DoorDash handles the setup on its side, usually within a day.'),
-      $faq('What about Uber Eats and Grubhub?', 'They connect through order-management apps that collect orders from every delivery service and send them to your Clover. Those apps have their own monthly fee, which we include in your quote.'),
-      $faq('Can I use my merchant account with Shopify?', "Yes, through a gateway plugin such as Authorize.Net or NMI. Shopify may charge an extra fee on sales that don't use Shopify Payments, so we compare the total cost with you before you switch."),
-      $faq('Does it sync with QuickBooks automatically?', "It can. Several gateways and partner apps sync payments and fees to QuickBooks Online and Desktop. Tell us which version you use and we'll recommend the simplest route."),
-      $faq("What if my software isn't listed?", "Ask us. Gateways connect to hundreds of carts and business tools, and Maverick works with certified software partners. If something won't connect, we'll tell you before you sign."),
+      $faq('What about Uber Eats and Grubhub?', "They connect to Clover too. Clover's restaurant plans include Uber Eats, DoorDash and Grubhub, so orders from each show on your POS. Each delivery service charges its own fees on its orders."),
+      $faq('Can I use my merchant account with Shopify?', "Yes, through a checkout partner Maverick works with, such as OpenPath or Checkout Champ. Shopify may charge an extra fee on sales that don't use Shopify Payments, so we compare the total cost with you before you switch."),
+      $faq('Does it sync with QuickBooks automatically?', "It can. Partner apps such as Chargezoom, Biller Genie and RECUR360 sync payments to QuickBooks Online and Desktop, and the Valor and iPOSPays portals sync to QuickBooks Online. Tell us which version you use and we'll recommend the simplest route."),
+      $faq("What if my software isn't listed?", "Ask us. Maverick works with certified software partners, and many tools connect through a gateway. If something won't connect, we'll tell you before you sign."),
       $faq('Do integrations cost extra?', "Some do. Native connections usually don't, while separate apps and plugins can carry their own fee. Every one is listed in your quote."),
     ],
   ]],
@@ -173,7 +173,7 @@ $meta = 'Connect payments to DoorDash, Shopify, WooCommerce, QuickBooks and the 
 $node = ib_node_by_alias($path);
 if (!$node) {
   ib_page('solution', 'Integrations', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Run your business')],
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Run Your Business')],
     'field_short_description' => 'Connect invoicing, accounting and your POS',
     'field_icon' => 'plug',
     'field_meta_description' => $meta,

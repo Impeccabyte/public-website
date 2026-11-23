@@ -8,8 +8,9 @@
 .device-page__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .device-page__actions [data-compare-toggle][aria-pressed="true"] { background: var(--clay-50); border-color: var(--clay-600); color: var(--clay-700); }
 .device-page__features { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3) var(--space-5); }
-.device-page__features li { display: flex; gap: var(--space-3); align-items: center; }
-.device-page__features .icon { flex-shrink: 0; color: var(--sage-500); }
+.device-page__features li { display: flex; gap: var(--space-3); align-items: flex-start; }
+/* Centre the 18px check on the first line, however many lines the item wraps to. */
+.device-page__features .icon { flex-shrink: 0; margin-top: calc((1lh - 18px) / 2); color: var(--sage-500); }
 .choice__panel { display: flex; flex-direction: column; gap: var(--space-4); }
 .choice__panel strong { color: var(--ink-900); }
 .device-page__fees-label { font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--ink-600); margin-bottom: calc(var(--space-2) * -1); }

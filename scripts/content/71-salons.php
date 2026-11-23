@@ -31,7 +31,7 @@ $recurring = ib_node_by_alias('/solutions/recurring-billing');
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Salons and spas',
+    'eyebrow' => 'Salons & Spas',
     'heading' => 'Book, check out and tip in one tap.',
     'accent_word' => 'tip',
     'intro' => 'Card on file for no-shows, easy tips for stylists and a small countertop device that fits a crowded front desk. One local team for your hardware, pricing and support.',
@@ -56,7 +56,7 @@ $sections = [
     'heading' => 'At the desk, at the chair and every month',
     'intro' => 'Most salons and spas use two of these. They run on one merchant account, with one set of deposits.',
     'items' => [
-      $setup('At the front desk', 'A small countertop device for services, tips and the retail products on your shelf.', 'Good for: salons, barbers, nail studios', 'a compact card terminal at a salon front desk', 'See countertop terminals', $catalog('Countertop terminal')),
+      $setup('At the front desk', 'A small countertop device for services, tips and the retail products on your shelf.', 'Good for: salons, barbers, nail studios', 'a compact card terminal at a salon front desk', 'See countertop terminals', $catalog('Countertop Terminal')),
       $setup('At the chair', 'A handheld so clients can pay and tip without walking to the desk.', 'Good for: spas, busy salons, suites', 'a stylist taking payment at the chair with a handheld', 'See handhelds', $catalog('Handheld')),
       $setup('Every month', 'Memberships and packages that charge on schedule, with expired cards updated for you.', 'Good for: memberships, facials, lash fills', 'a spa client relaxing in a treatment room', 'See recurring billing', '/solutions/recurring-billing'),
     ],

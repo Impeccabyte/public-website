@@ -40,8 +40,8 @@ $sections = [
   ['media_split', [
     'eyebrow' => 'Our story',
     'heading' => 'Why we started Impeccabyte',
-    'body' => "[Founder story: why Impeccabyte started in [Year founded] and what [Founder name] did before, in the founder's own words. Two or three short paragraphs, signed by [Founder name], founder.]",
-    'media_label' => '[Founder name], photo to be supplied',
+    'body' => "When my mom opened Luxury On A Leash, her puppy boutique, in 2012, I became the family's website guy. The online store, the hosting and the payment integration all landed with me, and that's where my passion for technology began.\n\nI also saw the part of running a small business nobody warns you about. Every month my mom sat down with a processing statement that was hard to make sense of, and every month the fees caught her off guard. For a small business those fees add up quickly, and no one had explained them when she started. I didn't love watching that.\n\nI was raised on a simple idea: do the next right thing. It still guides me, at home and at work. In 2025 I started Impeccabyte to do the next right thing for small businesses, setting them up to run smoothly from day one, with pricing they understand and fees that never come as a surprise.\n\nRyan Bealey, Founder",
+    'media_label' => 'Ryan Bealey, photo to be supplied',
   ]],
   ['feature_grid', [
     'anchor' => 'how-we-work',
@@ -81,17 +81,17 @@ $sections = [
     'heading' => "Built for Austin's small businesses",
     'intro' => 'Small and mid-sized local businesses come first. See how we set up payments for yours.',
     'items' => [
-      $industry('Restaurants and bars', '/industries/restaurants'),
-      $industry('Food trucks', '/industries/food-trucks'),
-      $industry('Retail shops', '/industries/retail'),
-      $industry('Salons and spas', '/industries/salons-and-spas'),
-      $industry('Home services', '/industries/home-services'),
-      $industry('Healthcare and dental', '/industries/healthcare'),
-      $industry('Auto repair', '/industries/auto-repair'),
-      $industry('Professional services', '/industries/professional-services'),
+      $industry('Restaurants & Bars', '/industries/restaurants'),
+      $industry('Food Trucks', '/industries/food-trucks'),
+      $industry('Retail', '/industries/retail'),
+      $industry('Salons & Spas', '/industries/salons-and-spas'),
+      $industry('Home Services', '/industries/home-services'),
+      $industry('Healthcare & Dental', '/industries/healthcare'),
+      $industry('Auto Repair', '/industries/auto-repair'),
+      $industry('Professional Services', '/industries/professional-services'),
       $industry('Nonprofits', '/industries/nonprofits'),
-      $industry('Pop-ups and markets', '/industries/pop-ups-and-markets'),
-      $industry('Specialty industries', '/industries/specialty'),
+      $industry('Pop-Ups & Markets', '/industries/pop-ups-and-markets'),
+      $industry('Specialty Industries', '/industries/specialty'),
     ],
   ]],
   ['media_split', [
@@ -130,7 +130,7 @@ $sections = [
 $meta = 'Impeccabyte is an Austin merchant services agency and authorized sales agent of Maverick Payments. Plain-English advice, every fee in writing, local support.';
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('landing_page', 'About us', $path, $sections, ['field_meta_description' => $meta]);
+  ib_page('landing_page', 'About Us', $path, $sections, ['field_meta_description' => $meta]);
   print "About us page created.\n";
   return;
 }

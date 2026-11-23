@@ -13,9 +13,7 @@ Logo files for the platforms on the Integrations page, fetched on 2026-11-19. Th
 | `magento.svg` | Wikimedia Commons, "Magento Logo.svg" ("Magento, An Adobe Company") |
 | `quickbooks.svg` | Wikimedia Commons, "Intuit QuickBooks logo.svg", converted (see below) |
 | `xero.svg` | English Wikipedia, "Xero software logo.svg", converted (see below) |
-| `salesforce.svg` | Wikimedia Commons, "Salesforce.com logo.svg", converted (see below) |
-| `netsuite.png` | Wikimedia Commons, "2024 NetSuite logo.png" |
 
-The page draws each file as a mask filled with the `--ink-600` token, so only the shape matters. QuickBooks, Xero and Salesforce put white lettering on a coloured shape, which a mask would fill in solid. Those three were converted so the white parts become cut-outs: the original artwork sits inside an SVG mask, recoloured so the shape is white and the lettering black.
+The page draws each file as a mask filled with the `--ink-600` token, so only the shape matters. QuickBooks and Xero put white lettering on a coloured shape, which a mask would fill in solid. Both were converted so the white parts become cut-outs: the original artwork sits inside an SVG mask, recoloured so the shape is white and the lettering black.
 
-A platform is named on the site only where a source confirms the connection: DoorDash's help center for Clover, Authorize.Net, NMI and accept.blue for the carts, and NMI, accept.blue and Maverick partner announcements for the accounting and CRM tools.
+A platform is named on the site only where Maverick's knowledge base confirms the connection (see `docs/maverick-offerings.md`, Integrations): Clover's restaurant plans for the delivery services, Maverick's checkout partners and the Valor and iPOSPays plugins for the carts, and Chargezoom, Biller Genie and RECUR360 for the accounting tools. NetSuite and Salesforce were dropped on 2026-11-22 because the knowledge base does not name them.

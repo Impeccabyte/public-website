@@ -291,7 +291,12 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      enabled: false
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'Plain-English answers about fees, hardware, chargebacks and getting started, written by our team in Austin.'
+            og_description: 'Plain-English answers about fees, hardware, chargebacks and getting started, written by our team in Austin.'
       path: resources
     cache_metadata:
       max-age: -1

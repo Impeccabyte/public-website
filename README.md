@@ -57,7 +57,17 @@ A script only creates what is missing. To rebuild a view or form from its script
 
 ## Prices
 
-Pricing is not public yet. Device and setup prices are stored as numbers, and the "Show prices" setting at `/admin/config/system/impeccabyte` is off. While it is off every price shows "Pricing coming soon" with a Get a quote link, price sorts are hidden and the savings estimator is replaced by a quote prompt. Turn it on once pricing is final.
+Merchant prices from the pricing playbook (November 2026) are loaded: the three program rates and monthly fees on Pricing, the chargeback fee, Clover's monthly fees and Reg-tier hardware prices. They are set by `scripts/content/96-pricing-programs.php` and the source content scripts.
+
+The "Show prices" setting at `/admin/config/system/impeccabyte` is off in the exported config, and stays off until Maverick approves the merchant-facing pricing in writing and counsel reviews the dual pricing wording. While it is off every price shows "Pricing coming soon" with a Get a quote link, price sorts are hidden and the savings estimator is replaced by a quote prompt.
+
+To show prices on your own local site only, add this to `web/sites/default/settings.local.php` inside the container, then run `./scripts/drush cr`:
+
+```php
+$config['impeccabyte_site.settings']['show_prices'] = TRUE;
+```
+
+The admin checkbox still reads off while the override is in place. Delete the line (and clear caches) to hide prices again. When pricing is approved, tick the checkbox, run `./scripts/drush cex -y` and commit, which turns prices on for every install.
 
 ## Leads
 

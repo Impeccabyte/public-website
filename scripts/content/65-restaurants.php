@@ -12,7 +12,7 @@
  *
  * Claims reuse what the page and the Integrations page already say: split
  * checks on Clover Flex, tips adjusted before the batch closes, Clover's
- * offline mode, DoorDash connecting directly to Clover. No prices in text.
+ * offline mode, delivery apps connecting to Clover. No prices in text.
  *
  * Runs after scripts/content/61-integrations.php, which adds the delivery
  * logos. Safe to re-run: only a page still in its wireframe shape is
@@ -60,9 +60,9 @@ $sections = [
     'heading' => 'Counter, table or kiosk, on one system',
     'intro' => 'Most restaurants use two of these. They all run on the same menu, the same reports and the same deposits.',
     'items' => [
-      $setup('At the counter', 'A dual-screen POS where staff ring up orders and guests see their total and add a tip.', 'Good for: quick service, coffee, bars', 'a counter POS with a customer-facing screen', 'See POS systems', $catalog('POS system')),
+      $setup('At the counter', 'A dual-screen POS where staff ring up orders and guests see their total and add a tip.', 'Good for: quick service, coffee, bars', 'a counter POS with a customer-facing screen', 'See POS systems', $catalog('POS System')),
       $setup('At the table', 'A handheld that takes the order and the payment, prints the receipt and splits the check.', 'Good for: full service, patios, curbside', 'a server taking payment at the table', 'See handhelds', $catalog('Handheld')),
-      $setup('At a kiosk', 'A self-order screen that takes orders and payment on its own, so the line keeps moving.', 'Good for: fast casual, lunch rush', 'a guest ordering at a self-order kiosk', 'See self-order kiosks', $catalog('Self-order kiosk')),
+      $setup('At a kiosk', 'A self-order screen that takes orders and payment on its own, so the line keeps moving.', 'Good for: fast casual, lunch rush', 'a guest ordering at a self-order kiosk', 'See self-order kiosks', $catalog('Self-Order Kiosk')),
     ],
   ]),
   $bundle,
@@ -71,11 +71,11 @@ $sections = [
     'anchor' => 'delivery',
     'eyebrow' => 'Delivery',
     'heading' => 'Delivery orders on the same screen',
-    'body' => 'DoorDash connects directly to Clover, so delivery orders print in your kitchen with everything else. Uber Eats and Grubhub connect through order apps that do the same.',
+    'body' => "DoorDash, Uber Eats and Grubhub connect to Clover's restaurant plans, so delivery orders print in your kitchen with everything else.",
     'logos' => $logos,
     'title' => 'More on integrations',
     'note' => 'Online ordering, accounting and other tools are on our integrations page.',
-    'footnote' => 'Delivery services and order apps charge their own fees. Names and logos belong to their owners.',
+    'footnote' => 'Delivery services charge their own fees. Names and logos belong to their owners.',
   ]),
   ib_paragraph('media_split', [
     'eyebrow' => 'Service',

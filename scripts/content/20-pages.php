@@ -38,7 +38,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
     // attached by scripts/content/25-partner-logos.php; the names are the
     // fallback when a strip has no logos.
     'intro' => 'Hardware and partners we set up:',
-    'names' => ['Clover', 'PAX', 'Dejavoo', 'Valor', 'Ingenico', 'NMI'],
+    'names' => ['Clover', 'PAX', 'Dejavoo', 'Valor', 'Ingenico'],
   ]],
   ['feature_grid', [
     'eyebrow' => 'Start with the job',
@@ -57,42 +57,42 @@ $home = ib_page('landing_page', 'Home', '/home', [
     'eyebrow' => 'Industries',
     'heading' => 'Built for the way Austin does business',
     'items' => [
-      $chip('Restaurants and bars', 'Faster tables, cleaner tips, smaller fees', 'Pay at the table, split checks in seconds and adjust tips before close. Dual pricing keeps card costs off your margins.', 'See restaurant solutions', '/industries/restaurants', [
+      $chip('Restaurants & Bars', 'Faster tables, cleaner tips, smaller fees', 'Pay at the table, split checks in seconds and adjust tips before close. Dual pricing keeps card costs off your margins.', 'See restaurant solutions', '/industries/restaurants', [
         $setup('Clover Station Duo at the counter', NULL, 'From $135/mo or $2,739 to own'),
         $setup('Clover Flex for tableside pay', NULL, 'From $50/mo per handheld'),
-        $setup('Dual pricing', 'Card customers cover the processing cost'),
+        $setup('Cash Price', 'Card customers cover the processing cost'),
       ]),
-      $chip('Food trucks', 'Take cards anywhere you park', 'A cellular terminal that keeps working when the Wi-Fi does not, with deposits set up before your first shift.', 'See food truck setups', '/industries/food-trucks', [
+      $chip('Food Trucks', 'Take cards anywhere you park', 'A cellular terminal that keeps working when the Wi-Fi does not, with deposits set up before your first shift.', 'See food truck setups', '/industries/food-trucks', [
         $setup('Clover Flex with cellular data', 'Works off LTE', 'From $50/mo, works off LTE'),
-        $setup('Dual pricing', 'Keep more of every taco'),
+        $setup('Cash Price', 'Keep more of every taco'),
         $setup('Funding', 'Cutoffs vary by processor'),
       ]),
-      $chip('Retail shops', 'A counter that keeps up with Saturday', 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.', 'See retail setups', '/industries/retail', [
+      $chip('Retail', 'A counter that keeps up with Saturday', 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.', 'See retail setups', '/industries/retail', [
         $setup('Clover Mini at checkout', NULL, 'From $60/mo or $1,189 to own'),
         $setup('Barcode scanner', NULL, 'From $10/mo'),
-        $setup('Interchange plus pricing', 'Best for higher monthly volume'),
+        $setup('Pro', 'Best for higher monthly volume'),
       ]),
-      $chip('Salons and spas', 'Book, check out and tip in one tap', 'Card-on-file for no-shows, easy tips for stylists and a small countertop device that fits a crowded station.', 'See salon setups', '/industries/salons-and-spas', [
+      $chip('Salons & Spas', 'Book, check out and tip in one tap', 'Card-on-file for no-shows, easy tips for stylists and a small countertop device that fits a crowded station.', 'See salon setups', '/industries/salons-and-spas', [
         $setup('Clover Compact at the front desk', NULL, 'From $20/mo or $399 to own'),
-        $setup('Recurring billing for memberships', 'Card updater included'),
-        $setup('Flat-rate pricing', 'One rate, easy to budget'),
+        $setup('Recurring billing for memberships', 'Card account updater'),
+        $setup('Simple', 'One rate, easy to budget'),
       ]),
-      $chip('Home services', 'Get paid before you leave the driveway', 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools.', 'See field service setups', '/industries/home-services', [
+      $chip('Home Services', 'Get paid before you leave the driveway', 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools.', 'See field service setups', '/industries/home-services', [
         $setup('Clover Go mobile reader', NULL, 'From $10/mo or $209 to own'),
         $setup('Payment links and invoices', 'Send by text or email'),
         $setup('Integrations', 'Connect your accounting software'),
       ]),
-      $chip('Healthcare and dental', 'Payments that respect the front desk', 'Card-on-file, payment plans and text-to-pay for balances, with secure storage handled by the gateway.', 'See healthcare setups', '/industries/healthcare', [
+      $chip('Healthcare & Dental', 'Payments that respect the front desk', 'Card-on-file, payment plans and text-to-pay for balances, with secure storage handled by the gateway.', 'See healthcare setups', '/industries/healthcare', [
         $setup('Countertop terminal', 'Dejavoo Z8', 'Dejavoo Z8 from $20/mo'),
         $setup('Text-to-pay', 'Collect balances after the visit'),
         $setup('Recurring payment plans', 'Automatic monthly charges'),
       ]),
-      $chip('Auto repair', 'Close out big tickets with confidence', 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.', 'See auto setups', '/industries/auto-repair', [
-        $setup('Valor VP550 countertop', NULL, 'From $30/mo or $599 to own'),
-        $setup('Dual pricing', 'Offset fees on large repairs'),
+      $chip('Auto Repair', 'Close out big tickets with confidence', 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.', 'See auto setups', '/industries/auto-repair', [
+        $setup('Valor VP550 terminal', NULL, 'From $30/mo or $599 to own'),
+        $setup('Cash Price', 'Offset fees on large repairs'),
         $setup('Chargeback protection', 'Alerts before disputes escalate'),
       ]),
-      $chip('Professional services', 'Invoices that pay themselves', 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.', 'See professional services', '/industries/professional-services', [
+      $chip('Professional Services', 'Invoices that pay themselves', 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.', 'See professional services', '/industries/professional-services', [
         $setup('Online gateway', 'Virtual terminal and invoicing'),
         $setup('ACH payments', 'Lower cost for large invoices'),
         $setup('Recurring billing', 'Retainers on a schedule'),
@@ -102,10 +102,10 @@ $home = ib_page('landing_page', 'Home', '/home', [
         $setup('Clover Go for events', NULL, 'From $10/mo'),
         $setup('Recurring giving', 'Monthly donors on autopay'),
       ]),
-      $chip('Pop-ups and markets', 'Set up in five minutes, sell all weekend', 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new.', 'See pop-up setups', '/industries/pop-ups-and-markets', [
+      $chip('Pop-Ups & Markets', 'Set up in five minutes, sell all weekend', 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new.', 'See pop-up setups', '/industries/pop-ups-and-markets', [
         $setup('SwipeSimple B350 reader', NULL, 'From $10/mo or $199 to own'),
         $setup('Tap to pay on your phone', 'No extra hardware needed'),
-        $setup('Flat-rate pricing', 'Simple while you are starting out'),
+        $setup('Simple', 'Easy while you are starting out'),
       ]),
     ],
   ]],
@@ -166,6 +166,8 @@ if ($site->get('page.front') !== '/node/' . $home->id()) {
 
 // Pricing.
 $row = fn(string $label, array $cells) => ['_type' => 'table_row', 'label' => $label, 'cells' => $cells];
+// Rows holding prices hide behind "Pricing coming soon" while "Show prices" is off.
+$price_row = fn(string $label, array $cells) => ['_type' => 'table_row', 'label' => $label, 'cells' => $cells, 'is_price' => 1];
 ib_page('landing_page', 'Pricing', '/pricing', [
   ['hero', [
     'hero_variant' => 'centered',
@@ -177,26 +179,47 @@ ib_page('landing_page', 'Pricing', '/pricing', [
   ['pricing_cards', [
     'heading' => 'Pricing programs',
     'items' => [
-      ['_type' => 'pricing_card', 'title' => 'Flat rate', 'body' => "One rate on every card. Easy to budget while you're getting started.", 'value' => '[X.X]% + [XX]¢', 'unit' => 'per card sale', 'bullets' => ['Best for new and lower-volume businesses', 'Same cost for every card type'], 'link' => ib_link('/get-a-quote', 'Get a flat-rate quote')],
-      ['_type' => 'pricing_card', 'title' => 'Dual pricing', 'badge' => 'Lowest fees per sale', 'body' => 'Show a cash price and a card price. Card customers cover the processing cost.', 'value' => '$19.95/mo', 'unit' => 'dual pricing software, plus gateway fees', 'bullets' => ['Best for restaurants, retail and services', 'Signage and receipt setup included'], 'link' => ib_link('/solutions/dual-pricing', 'See how dual pricing works'), 'featured' => 1],
-      ['_type' => 'pricing_card', 'title' => 'Interchange plus', 'body' => "You pay the card network's actual cost, plus one small markup we show in writing.", 'value' => 'Cost + [0.XX]%', 'unit' => '+ [XX]¢ per card sale', 'bullets' => ['Best for steady, higher monthly volume', 'Most transparent statement'], 'link' => ib_link('/get-a-quote', 'Get an interchange plus quote')],
+      ['_type' => 'pricing_card', 'title' => 'Simple', 'body' => "A flat rate: one rate on every card. Easy to budget while you're getting started.", 'value' => '2.59% + 10¢', 'unit' => 'per in-person card sale', 'bullets' => ['Best for new businesses', 'Same cost for every card type'], 'link' => ib_link('/get-a-quote', 'Get a Simple quote')],
+      ['_type' => 'pricing_card', 'title' => 'Cash Price', 'badge' => 'Lowest fees per sale', 'body' => 'Dual pricing: show a cash price and a card price. Card customers cover the processing cost.', 'value' => '$14.95/mo', 'unit' => 'program fee, gateway included', 'bullets' => ['Best for restaurants, retail and services', 'Signage and receipt setup included'], 'link' => ib_link('/solutions/dual-pricing', 'See how dual pricing works'), 'featured' => 1],
+      ['_type' => 'pricing_card', 'title' => 'Pro', 'body' => "Interchange plus: you pay the card network's actual cost, plus one small markup we show in writing.", 'value' => 'Cost + 0.35%', 'unit' => '+ 10¢ per in-person card sale', 'bullets' => ['Best for steady, higher monthly volume', 'Most transparent statement'], 'link' => ib_link('/get-a-quote', 'Get a Pro quote')],
     ],
     'footnote' => 'Gateway fees depend on your setup and are listed on every quote.',
-    'price_note' => 'Hardware from $10/mo leased or $199 to own. Gateway fees depend on your setup and are listed on every quote.',
+    'price_note' => 'Hardware from $10/mo leased or $199 to own. Keyed and online rates, and any gateway your setup needs, are listed on every quote.',
   ]],
   ['comparison_table', [
     'eyebrow' => 'Side by side',
     'heading' => 'How the three programs compare',
-    'columns' => ['Flat rate', 'Dual pricing', 'Interchange plus'],
+    'columns' => ['Simple (flat rate)', 'Cash Price (dual pricing)', 'Pro (interchange plus)'],
     'highlight_column' => 2,
     'items' => [
       $row('How it works', ['One percentage plus a few cents on every card sale.', 'Two prices at checkout. The card price covers the processing cost.', "The network's real cost per card, plus one fixed markup."]),
-      $row('Who pays the fee', ['You', 'Customers who pay by card', 'You']),
-      $row('Monthly predictability', ['High. Same rate every time.', 'High. A fixed software fee.', 'Medium. Varies with card mix.']),
-      $row('Usually cheapest when', ['You process under about $[X],000 a month', 'Your customers are comfortable seeing two prices', 'You process steady, higher volume']),
+      $price_row('Rate', ['2.59% + 10¢ in person. 3.29% + 30¢ keyed or online. American Express included.', 'The card price is the cash price plus 4%. Cash customers pay the posted cash price.', 'Card-network cost + 0.35% + 10¢ in person, or + 0.50% + 20¢ keyed or online. Lower markups from $75,000 a month.']),
+      $price_row('Monthly fee', ['$9.95 for your account and PCI compliance', '$14.95 program fee, with the gateway, dashboard and PCI compliance included', '$19.90 for your account, reporting and PCI compliance']),
+      $row('Who covers the processing cost', ['You', 'Customers who pay by card', 'You']),
+      $row('Monthly predictability', ['High. Same rate every time.', 'High. One fixed monthly fee.', 'Medium. Varies with card mix.']),
+      $row('Usually cheapest when', ['You process under about $15,000 a month', 'Your customers are comfortable seeing two prices', 'You process $15,000 or more a month']),
       $row('Setup needed', ['None', 'Signage and receipt setup, which we handle', 'None']),
       $row('Statement clarity', ['Simple', 'Simple', 'Detailed, line by line']),
+      $price_row('Chargeback fee', ['$25', '$25', '$25']),
+      $price_row('Account setup, batch, statement or annual fees', ['None', 'None', 'None']),
     ],
+  ]],
+  ['comparison_table', [
+    'eyebrow' => 'Other fees',
+    'heading' => 'Every other fee, in one place',
+    'intro' => 'These apply on any program, only when you use the service. Your quote lists the ones that fit your setup.',
+    'columns' => ['What it costs'],
+    'items' => [
+      $price_row('Chargeback', ['$25 each']),
+      $price_row('Retrieval request', ['$15 each']),
+      $price_row('Voice authorization', ['95¢ each']),
+      $price_row('Address verification', ['5¢ each on Pro. Included on Simple and Cash Price.']),
+      $price_row('ACH (eCheck) payments', ['35¢ each, plus $9.95/mo']),
+      $price_row('ACH returns', ['$5 each, or $25 for an unauthorized return']),
+      $price_row('Card account updater', ['$39.95/mo plus 50¢ per updated card, with a $187.95 setup fee']),
+      $price_row('3D Secure for online payments', ['30¢ each']),
+    ],
+    'footnote' => 'Clover devices add their own monthly fees, listed on each device page.',
   ]],
   ['webform_embed', [
     'eyebrow' => 'Free statement review',
@@ -215,16 +238,17 @@ ib_page('landing_page', 'Pricing', '/pricing', [
     'heading' => 'Pricing questions',
     'layout' => 'centered',
     'items' => [
-      $faq('Are there monthly fees?', 'Some setups have them, for example dual pricing software, a gateway or Clover platform fees. Every one is listed on your quote before you sign.'),
+      $faq('Are there monthly fees?', 'Yes, one for each program. It covers your account and PCI compliance, and on Cash Price the gateway too. Clover devices and online gateways add their own monthly fees. Every one is listed on your quote before you sign.'),
       $faq('Is there a contract or cancellation fee?', 'Your agreement terms are spelled out on your quote. Ask us anything before you sign, and we will answer in plain English. [Confirm current term and cancellation policy.]'),
       $faq('Why do you need my statement?', 'Your statement shows your real card mix and volume, which is the only honest way to compare programs. Without it, any savings number is a guess.'),
       $faq('Can I change programs later?', 'Yes. If your business changes, we will review your numbers and move you to the program that fits.'),
+      $faq('Do these prices apply to specialty industries?', 'Not always. Businesses such as CBD sellers, online pharmacies or firearms dealers cost more for the sponsor banks to process, so we quote their rates one by one. Your quote shows every rate and fee before you sign.'),
     ],
   ]],
 ]);
 
 // About, a short page so the Company links resolve until real copy arrives.
-ib_page('landing_page', 'About us', '/about', [
+ib_page('landing_page', 'About Us', '/about', [
   ['hero', [
     'hero_variant' => 'centered',
     'eyebrow' => 'Company',

@@ -7,3 +7,11 @@
 .media-split__checks li { display: flex; gap: var(--space-3); align-items: flex-start; }
 .media-split__checks .icon { flex-shrink: 0; margin-top: 4px; color: var(--sage-500); }
 @media (max-width: 760px) { .media-split__inner { gap: var(--space-8); } .media-split__media { min-height: 240px; } }
+/* Stacked: text first, image after, so the image never sits right under a hero
+   image. 1000px is just above where the 420px image and 460px text stop fitting
+   side by side. */
+@media (max-width: 1000px) {
+  .media-split__inner, .media-split--reverse .media-split__inner { flex-direction: column; align-items: stretch; }
+  .media-split__text { order: -1; flex: 0 0 auto; }
+  .media-split__media { flex: 0 0 auto; }
+}

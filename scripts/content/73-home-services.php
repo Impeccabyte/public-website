@@ -31,7 +31,7 @@ $solution = fn(string $alias) => ($node = ib_node_by_alias($alias)) ? ['target_i
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Home services',
+    'eyebrow' => 'Home Services',
     'heading' => 'Get paid before you leave the driveway.',
     'accent_word' => 'before',
     'intro' => 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools. One local team for your setup and support.',
@@ -56,7 +56,7 @@ $sections = [
     'heading' => 'On site, by text and on a schedule',
     'intro' => 'Most crews use all three. They run on one merchant account, so every payment lands in the same reports.',
     'items' => [
-      $setup('On site', 'A pocket reader that pairs with a phone for chip, tap and swipe at the door or in the driveway.', 'Good for: repairs, installs, service calls', 'a technician with a card reader and phone in a customer\'s kitchen', 'See mobile readers', $catalog('Mobile reader')),
+      $setup('On site', 'A pocket reader that pairs with a phone for chip, tap and swipe at the door or in the driveway.', 'Good for: repairs, installs, service calls', 'a technician with a card reader and phone in a customer\'s kitchen', 'See mobile readers', $catalog('Mobile Reader')),
       $setup('By text', 'Send an invoice or a payment link by text or email, for deposits, estimates and jobs finished after hours.', 'Good for: deposits, larger jobs, follow-ups', 'a homeowner paying an invoice on her phone', 'See online payments', '/solutions/online'),
       $setup('On a schedule', 'Service plans that charge on a set day, for lawn care, pest control, pool and cleaning routes.', 'Good for: recurring routes, maintenance plans', 'a lawn care crew finishing a yard', 'See recurring billing', '/solutions/recurring-billing'),
     ],
@@ -97,7 +97,7 @@ $sections = [
     'devices' => array_values(array_filter(array_map(fn(string $slug) => $node_ref('/hardware/' . $slug), ['clover-go', 'swipesimple-b350', 'clover-flex', 'pax-a920-pro']))),
   ]],
   ['faq', [
-    'heading' => 'Home services questions',
+    'heading' => 'Home Services questions',
     'layout' => 'centered',
     'items' => [
       $faq('Can customers pay an invoice by text?', 'Yes. Send an invoice or payment link by text or email, and the customer pays by card from their phone. You see it in your reports as soon as it goes through.'),

@@ -6,3 +6,7 @@
 .cta-band__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 /* A section that follows straight on needs the band's own bottom space only. */
 .cta-band:last-child { padding-bottom: var(--section-y); }
+/* After a white or tinted section there is no shared paper space to borrow, so the band gets its own top space to match the bottom. */
+:is(.section--white, .section--brand) + .cta-band { padding-top: var(--section-y); }
+@media (max-width: 760px) { :is(.section--white, .section--brand) + .cta-band { padding-top: var(--space-16); } }
+@media (max-width: 760px) { .cta-band:last-child { padding-bottom: var(--space-16); } }

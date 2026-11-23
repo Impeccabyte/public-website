@@ -545,7 +545,7 @@ function _impeccabyte_device_data($node, bool $full): array {
   $prices = \Drupal::service('impeccabyte_site.prices');
   $type = $node->get('field_device_type')->entity;
   $make = $node->get('field_manufacturer')->entity;
-  $shapes = ['Handheld' => 'tall', 'Mobile reader' => 'reader', 'Countertop terminal' => 'square', 'Self-order kiosk' => 'tall'];
+  $shapes = ['Handheld' => 'tall', 'Mobile Reader' => 'reader', 'Countertop Terminal' => 'square', 'Self-Order Kiosk' => 'tall'];
   $gallery = [];
   foreach ($node->get('field_gallery')->referencedEntities() as $media) {
     if ($image = _impeccabyte_reference_data($media)) {
@@ -748,11 +748,11 @@ function _impeccabyte_bundle_item_icon($node, string $title): string {
   }
   if ($node && $node->bundle() === 'device' && $node->hasField('field_device_type') && ($type = $node->get('field_device_type')->entity)) {
     $by_type = [
-      'Countertop terminal' => 'credit-card',
+      'Countertop Terminal' => 'credit-card',
       'Handheld' => 'smartphone',
-      'Mobile reader' => 'nfc',
-      'POS system' => 'monitor',
-      'Self-order kiosk' => 'store',
+      'Mobile Reader' => 'nfc',
+      'POS System' => 'monitor',
+      'Self-Order Kiosk' => 'store',
     ];
     return $by_type[$type->label()] ?? 'credit-card';
   }

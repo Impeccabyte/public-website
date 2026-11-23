@@ -31,6 +31,13 @@ if $DRUSH status --field=bootstrap 2>/dev/null | grep -q Successful; then
 else
   FRESH=1
   docker compose exec -T drupal bash -c 'chmod u+w web/sites/default 2>/dev/null || true'
+  # site:install --existing-config reads the sync directory from settings.php,
+  # so point it at config/sync before installing.
+  docker compose exec -T drupal bash -c '
+    f=web/sites/default/settings.php
+    [ -f "$f" ] || cp web/sites/default/default.settings.php "$f"
+    chmod u+w "$f"
+    grep -q "config_sync_directory.*config/sync" "$f" || echo "\$settings[\"config_sync_directory\"] = \"../config/sync\";" >> "$f"'
   if [ -f config/sync/core.extension.yml ]; then
     # The exported configuration is the site's structure: install from it.
     echo "Installing Drupal from config/sync..."

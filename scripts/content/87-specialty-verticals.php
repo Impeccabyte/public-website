@@ -14,7 +14,8 @@
  *   approval, with no new underwriting claims,
  * - a "Keep reading" row.
  *
- * The five verticals whose addenda are not reviewed keep their placeholder.
+ * The five verticals that start with a placeholder get their requirements
+ * from scripts/content/88-specialty-requirements.php, which runs next.
  *
  * Safe to re-run: only a page still in its first shape (a centered hero and
  * no image-and-text section) is changed. Run it with
@@ -31,7 +32,7 @@ $verticals = [
   'smoke-and-vape' => 'a specialty shop owner ringing up a purchase at the counter',
   'kratom' => 'a botanical tea shop owner weighing an order behind the counter',
   'firearms' => 'an outdoor goods store owner handing a customer a bag at the counter',
-  'adult-content' => 'an independent creator reviewing her business accounts in a home studio',
+  'adult-content' => 'two producers reviewing a schedule in the office of a video production studio',
   'dating' => 'two app founders looking at a phone together in their office',
   'gaming' => 'two colleagues talking at a desk in a small games company office',
   'collections' => 'an account representative on a call at a tidy desk',

@@ -35,7 +35,7 @@ Drupal 11 marketing site for Impeccabyte, an Austin, Texas merchant services age
 
 ## Voice
 
-Warm, plain-spoken, encouraging, professional. Speak to "you", refer to the company as "we". Sentence case everywhere, including buttons and navigation. No emoji. No em dashes. Buttons start with a verb ("Get a quote", "See pricing"). State prices and fees plainly. Explain payments terms in plain words.
+Warm, plain-spoken, encouraging, professional. Speak to "you", refer to the company as "we". Sentence case everywhere, including buttons, with these formal title-case exceptions (the full list is in `scripts/content/99-formal-names.php`): industry names wherever an industry is named as such (navigation, page titles, eyebrows, cards, filters, form options), with "&", such as "Restaurants & Bars", "Retail" or "Auto Repair"; and the Solutions, Hardware and Company menu labels, their page titles and their category names, such as "Dual Pricing", "On the Go", "Countertop Terminals" or "About Us". Inside a sentence, write these in lower case ("for auto repair shops", "how dual pricing works"). No emoji. No em dashes. Buttons start with a verb ("Get a quote", "See pricing"). State prices and fees plainly. Explain payments terms in plain words.
 
 ## Accessibility (WCAG 2.2 AA)
 
@@ -47,5 +47,8 @@ Follow the "Accessibility rules" section of the build brief. The short version: 
 - Testimonials and case studies are placeholders until real, approved ones are supplied. Never present invented quotes as real.
 - The footer disclosure must appear on every page, with this exact text: "Merchant accounts are provided by Maverick Payments and its sponsor banks. Impeccabyte is an authorized sales agent of Maverick Payments." It is the Footer disclosure setting at /admin/config/system/impeccabyte.
 - Merchant services only: no business banking in copy, menus or forms. No copy may promise approval, no reserves, or funding times beyond "cutoffs vary by processor".
-- Pricing is not public yet. Prices stay in number fields and every one renders as "Pricing coming soon" with a Get a quote link while the "Show prices" setting is off. Never put a price in free text, and never import the internal Lite, Reg. or Prem. pricing sheets.
-- Hardware prices and funding cutoff times in the wireframes come from Impeccabyte's internal pricing and funding references. Treat them as seed content the client can edit, not constants in code.
+- Merchant prices come from Impeccabyte's pricing playbook (November 2026): program rates and monthly fees, the chargeback fee, Clover's monthly fees and Reg-tier hardware prices. They live only in price fields (device prices, fee rows, pricing card values, price notes, price-flagged table rows and stats), never in free text, so the "Show prices" setting hides every one at once.
+- Never put Impeccabyte's costs, Maverick buy rates, residual shares, margins, Lite or Prem hardware prices or the free-placement rule anywhere in the repo or on the site, including comments, docs and commit messages.
+- The exported config keeps "Show prices" off until Maverick approves the merchant-facing pricing in writing and counsel reviews the dual pricing wording. A local site can show prices with a `settings.local.php` override (README, "Prices").
+- Dual pricing copy never calls the card price difference a fee. Only Dejavoo and Valor terminals are dual pricing ready through Maverick.
+- Funding cutoff times and any price the playbook does not cover (wireframe seeds) are seed content the client can edit, not constants in code.

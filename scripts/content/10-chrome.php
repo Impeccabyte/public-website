@@ -23,27 +23,27 @@ $term_filter = function (string $base, string $facet, string $vid, string $name)
 // Main menu. Solutions are grouped under the three solution categories.
 // Business banking is out of scope at launch, so it has no link.
 $solutions = ib_menu_link('main', 'Solutions', 'route:<nolink>', ['weight' => 0]);
-$accept = ib_menu_link('main', 'Accept payments', 'route:<nolink>', ['parent' => $solutions, 'weight' => 0]);
-ib_menu_link('main', 'In person', 'internal:/solutions/in-person', ['parent' => $accept, 'weight' => 0, 'icon' => 'store', 'description' => 'Countertop terminals and full POS systems']);
+$accept = ib_menu_link('main', 'Accept Payments', 'route:<nolink>', ['parent' => $solutions, 'weight' => 0]);
+ib_menu_link('main', 'In Person', 'internal:/solutions/in-person', ['parent' => $accept, 'weight' => 0, 'icon' => 'store', 'description' => 'Countertop terminals and full POS systems']);
 ib_menu_link('main', 'Online', 'internal:/solutions/online', ['parent' => $accept, 'weight' => 1, 'icon' => 'globe', 'description' => 'Gateways, hosted checkout and payment links']);
-ib_menu_link('main', 'On the go', 'internal:/solutions/on-the-go', ['parent' => $accept, 'weight' => 2, 'icon' => 'smartphone', 'description' => 'Mobile readers and tap to pay on your phone']);
-ib_menu_link('main', 'Recurring billing', 'internal:/solutions/recurring-billing', ['parent' => $accept, 'weight' => 3, 'icon' => 'repeat', 'description' => 'Subscriptions, invoices and card updater']);
-$lower = ib_menu_link('main', 'Lower your costs', 'route:<nolink>', ['parent' => $solutions, 'weight' => 1]);
-ib_menu_link('main', 'Dual pricing', 'internal:/solutions/dual-pricing', ['parent' => $lower, 'weight' => 0, 'icon' => 'circle-percent', 'description' => 'Show a cash and card price and keep more of each sale']);
-ib_menu_link('main', 'Interchange plus', 'internal:/solutions/interchange-plus', ['parent' => $lower, 'weight' => 1, 'icon' => 'chart-line', 'description' => 'Pass-through pricing with one clear markup']);
-ib_menu_link('main', 'Chargeback protection', 'internal:/solutions/chargeback-protection', ['parent' => $lower, 'weight' => 2, 'icon' => 'shield-check', 'description' => 'Alerts and dispute help before losses stack up']);
-$run = ib_menu_link('main', 'Run your business', 'route:<nolink>', ['parent' => $solutions, 'weight' => 2]);
+ib_menu_link('main', 'On the Go', 'internal:/solutions/on-the-go', ['parent' => $accept, 'weight' => 2, 'icon' => 'smartphone', 'description' => 'Mobile readers and tap to pay on your phone']);
+ib_menu_link('main', 'Recurring Billing', 'internal:/solutions/recurring-billing', ['parent' => $accept, 'weight' => 3, 'icon' => 'repeat', 'description' => 'Subscriptions, invoices and card updater']);
+$lower = ib_menu_link('main', 'Lower Your Costs', 'route:<nolink>', ['parent' => $solutions, 'weight' => 1]);
+ib_menu_link('main', 'Dual Pricing', 'internal:/solutions/dual-pricing', ['parent' => $lower, 'weight' => 0, 'icon' => 'circle-percent', 'description' => 'Show a cash and card price and keep more of each sale']);
+ib_menu_link('main', 'Interchange Plus', 'internal:/solutions/interchange-plus', ['parent' => $lower, 'weight' => 1, 'icon' => 'chart-line', 'description' => 'Pass-through pricing with one clear markup']);
+ib_menu_link('main', 'Chargeback Protection', 'internal:/solutions/chargeback-protection', ['parent' => $lower, 'weight' => 2, 'icon' => 'shield-check', 'description' => 'Alerts and dispute help before losses stack up']);
+$run = ib_menu_link('main', 'Run Your Business', 'route:<nolink>', ['parent' => $solutions, 'weight' => 2]);
 ib_menu_link('main', 'Integrations', 'internal:/solutions/integrations', ['parent' => $run, 'weight' => 0, 'icon' => 'plug', 'description' => 'Connect invoicing, accounting and your POS']);
 ib_menu_link('main', 'Funding', 'internal:/solutions/funding', ['parent' => $run, 'weight' => 1, 'icon' => 'zap', 'description' => 'How and when deposits reach your bank']);
 
 $hardware = ib_menu_link('main', 'Hardware', 'internal:/hardware', ['weight' => 1]);
-ib_menu_link('main', 'All devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card', 'description' => 'Every terminal, reader and POS system we set up']);
+ib_menu_link('main', 'All Devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card', 'description' => 'Every terminal, reader and POS system we set up']);
 $device_types = [
-  'Countertop terminals' => ['Countertop terminal', 'store', 'Reliable terminals for the front counter'],
-  'Handheld terminals' => ['Handheld', 'smartphone', 'Take payment at the table or curb'],
-  'POS systems' => ['POS system', 'calculator', 'Run orders, inventory and payments together'],
-  'Mobile readers' => ['Mobile reader', 'nfc', 'Pocket readers that pair with your phone'],
-  'Self-order kiosks' => ['Self-order kiosk', 'users', 'Let customers order and pay on their own'],
+  'Countertop Terminals' => ['Countertop Terminal', 'store', 'Reliable terminals for the front counter'],
+  'Handheld Terminals' => ['Handheld', 'smartphone', 'Take payment at the table or curb'],
+  'POS Systems' => ['POS System', 'calculator', 'Run orders, inventory and payments together'],
+  'Mobile Readers' => ['Mobile Reader', 'nfc', 'Pocket readers that pair with your phone'],
+  'Self-Order Kiosks' => ['Self-Order Kiosk', 'users', 'Let customers order and pay on their own'],
 ];
 $weight = 1;
 foreach ($device_types as $title => [$term, $icon, $description]) {
@@ -52,16 +52,16 @@ foreach ($device_types as $title => [$term, $icon, $description]) {
 
 $industries = ib_menu_link('main', 'Industries', 'route:<nolink>', ['weight' => 2]);
 $industry_links = [
-  'Restaurants and bars' => ['/industries/restaurants', 'utensils'],
-  'Food trucks' => ['/industries/food-trucks', 'truck'],
-  'Retail shops' => ['/industries/retail', 'store'],
-  'Salons and spas' => ['/industries/salons-and-spas', 'sparkles'],
-  'Home services' => ['/industries/home-services', 'plug'],
-  'Healthcare and dental' => ['/industries/healthcare', 'heart-pulse'],
-  'Auto repair' => ['/industries/auto-repair', 'zap'],
-  'Professional services' => ['/industries/professional-services', 'file-text'],
+  'Restaurants & Bars' => ['/industries/restaurants', 'utensils'],
+  'Food Trucks' => ['/industries/food-trucks', 'truck'],
+  'Retail' => ['/industries/retail', 'store'],
+  'Salons & Spas' => ['/industries/salons-and-spas', 'sparkles'],
+  'Home Services' => ['/industries/home-services', 'plug'],
+  'Healthcare & Dental' => ['/industries/healthcare', 'heart-pulse'],
+  'Auto Repair' => ['/industries/auto-repair', 'zap'],
+  'Professional Services' => ['/industries/professional-services', 'file-text'],
   'Nonprofits' => ['/industries/nonprofits', 'users'],
-  'Pop-ups and markets' => ['/industries/pop-ups-and-markets', 'map-pin'],
+  'Pop-Ups & Markets' => ['/industries/pop-ups-and-markets', 'map-pin'],
 ];
 $weight = 0;
 foreach ($industry_links as $title => [$path, $icon]) {
@@ -87,39 +87,39 @@ foreach ($resource_types as $title => [$icon, $description]) {
 }
 
 $company = ib_menu_link('main', 'Company', 'route:<nolink>', ['weight' => 5]);
-ib_menu_link('main', 'About us', 'internal:/about', ['parent' => $company, 'weight' => 0, 'icon' => 'users', 'description' => 'A local Austin team']);
+ib_menu_link('main', 'About Us', 'internal:/about', ['parent' => $company, 'weight' => 0, 'icon' => 'users', 'description' => 'A local Austin team']);
 ib_menu_link('main', 'Contact', 'internal:/get-a-quote', ['parent' => $company, 'weight' => 1, 'icon' => 'message-circle', 'description' => 'Talk to a local specialist']);
-ib_menu_link('main', 'Merchant log in', 'https://app.impeccabyte.com', ['parent' => $company, 'weight' => 2, 'icon' => 'lock', 'description' => 'Open the merchant app']);
+ib_menu_link('main', 'Merchant Log In', 'https://app.impeccabyte.com', ['parent' => $company, 'weight' => 2, 'icon' => 'lock', 'description' => 'Open the merchant app']);
 
 // Footer columns.
 $footer = [
   'footer-solutions' => [
-    'In-person payments' => 'internal:/solutions/in-person',
-    'Online payments' => 'internal:/solutions/online',
-    'Mobile payments' => 'internal:/solutions/on-the-go',
-    'Dual pricing' => 'internal:/solutions/dual-pricing',
-    'Chargeback protection' => 'internal:/solutions/chargeback-protection',
+    'In-Person Payments' => 'internal:/solutions/in-person',
+    'Online Payments' => 'internal:/solutions/online',
+    'Mobile Payments' => 'internal:/solutions/on-the-go',
+    'Dual Pricing' => 'internal:/solutions/dual-pricing',
+    'Chargeback Protection' => 'internal:/solutions/chargeback-protection',
   ],
   'footer-hardware' => [
-    'All devices' => 'internal:/hardware',
-    'Countertop terminals' => $term_filter('/hardware', 'type', 'device_type', 'Countertop terminal'),
-    'Handheld terminals' => $term_filter('/hardware', 'type', 'device_type', 'Handheld'),
-    'POS systems' => $term_filter('/hardware', 'type', 'device_type', 'POS system'),
-    'Mobile readers' => $term_filter('/hardware', 'type', 'device_type', 'Mobile reader'),
+    'All Devices' => 'internal:/hardware',
+    'Countertop Terminals' => $term_filter('/hardware', 'type', 'device_type', 'Countertop Terminal'),
+    'Handheld Terminals' => $term_filter('/hardware', 'type', 'device_type', 'Handheld'),
+    'POS Systems' => $term_filter('/hardware', 'type', 'device_type', 'POS System'),
+    'Mobile Readers' => $term_filter('/hardware', 'type', 'device_type', 'Mobile Reader'),
   ],
   'footer-industries' => [
-    'Restaurants and bars' => 'internal:/industries/restaurants',
-    'Retail shops' => 'internal:/industries/retail',
-    'Salons and spas' => 'internal:/industries/salons-and-spas',
-    'Home services' => 'internal:/industries/home-services',
-    'Food trucks' => 'internal:/industries/food-trucks',
+    'Restaurants & Bars' => 'internal:/industries/restaurants',
+    'Retail' => 'internal:/industries/retail',
+    'Salons & Spas' => 'internal:/industries/salons-and-spas',
+    'Home Services' => 'internal:/industries/home-services',
+    'Food Trucks' => 'internal:/industries/food-trucks',
   ],
   'footer-company' => [
-    'About us' => 'internal:/about',
+    'About Us' => 'internal:/about',
     'Pricing' => 'internal:/pricing',
     'Resources' => 'internal:/resources',
     'Contact' => 'internal:/get-a-quote',
-    'Merchant log in' => 'https://app.impeccabyte.com',
+    'Merchant Log In' => 'https://app.impeccabyte.com',
   ],
   'footer-legal' => [
     'Privacy' => 'internal:/privacy',

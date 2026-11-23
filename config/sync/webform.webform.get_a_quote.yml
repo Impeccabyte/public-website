@@ -4,6 +4,9 @@ status: open
 dependencies:
   module:
     - impeccabyte_site
+third_party_settings:
+  impeccabyte_site:
+    meta_description: 'Tell us about your business and how you take payments, and a local specialist will put together your quote. A quote is just a quote, and we never sell your info.'
 weight: 0
 open: null
 close: null
@@ -14,7 +17,7 @@ id: get_a_quote
 title: 'Get a quote'
 description: 'The three-step quote request.'
 categories: {  }
-elements: |-
+elements: |
   business:
     '#type': webform_wizard_page
     '#title': 'Business info'
@@ -38,15 +41,15 @@ elements: |-
         '#title': 'Type of business'
         '#empty_option': 'Choose one'
         '#options':
-          restaurant: 'Restaurant or bar'
-          food_truck: 'Food truck'
-          retail: 'Retail shop'
-          salon: 'Salon or spa'
-          home_services: 'Home or field services'
-          healthcare: 'Healthcare or dental'
-          auto: 'Auto repair'
-          professional: 'Professional services'
-          nonprofit: Nonprofit
+          restaurant: 'Restaurants & Bars'
+          food_truck: 'Food Trucks'
+          retail: Retail
+          salon: 'Salons & Spas'
+          home_services: 'Home Services'
+          healthcare: 'Healthcare & Dental'
+          auto: 'Auto Repair'
+          professional: 'Professional Services'
+          nonprofit: Nonprofits
           other: 'Something else'
       time_open:
         '#type': select

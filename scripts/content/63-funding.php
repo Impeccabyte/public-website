@@ -100,7 +100,7 @@ $meta = 'How card payments become deposits: batches, cutoffs, weekends and refun
 $node = ib_node_by_alias($path);
 if (!$node) {
   ib_page('solution', 'Funding', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Run your business')],
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Run Your Business')],
     'field_short_description' => 'How and when deposits reach your bank',
     'field_icon' => 'zap',
     'field_meta_description' => $meta,

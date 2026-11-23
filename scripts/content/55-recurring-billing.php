@@ -33,7 +33,7 @@ $sections = [
     'intro' => "Memberships, service plans, payment plans and retainers that charge on their own. Expired cards are updated for you, so payments don't quietly stop.",
     'link' => ib_link('/get-a-quote', 'Get a recurring billing quote'),
     'link_secondary' => ib_link('/pricing', 'See pricing'),
-    'checklist' => ['Card and ACH', 'Card updater included', 'Support from Austin'],
+    'checklist' => ['Card and ACH', 'Card account updater', 'Support from Austin'],
     'media_label' => 'a studio owner checking member payments at the front desk',
     'show_breadcrumb' => 1,
   ]],
@@ -112,8 +112,8 @@ $sections = [
 $meta = 'Recurring billing for memberships, service plans and payment plans, on card or ACH, with a card account updater. Set up and supported from Austin.';
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('solution', 'Recurring billing', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept payments')],
+  ib_page('solution', 'Recurring Billing', $path, $sections, [
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept Payments')],
     'field_short_description' => 'Subscriptions, invoices and card updater',
     'field_icon' => 'repeat',
     'field_meta_description' => $meta,

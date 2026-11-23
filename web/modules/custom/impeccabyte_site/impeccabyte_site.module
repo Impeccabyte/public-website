@@ -39,3 +39,20 @@ function impeccabyte_site_form_views_exposed_form_alter(array &$form, \Drupal\Co
     }
   }
 }
+
+/**
+ * Implements hook_metatags_alter().
+ *
+ * A webform page (such as /get-a-quote) has no node to carry a search
+ * description, so it comes from the form's own "impeccabyte_site" setting.
+ */
+function impeccabyte_site_metatags_alter(array &$metatags, array &$context) {
+  if (\Drupal::routeMatch()->getRouteName() !== 'entity.webform.canonical') {
+    return;
+  }
+  $webform = \Drupal::routeMatch()->getParameter('webform');
+  if ($webform instanceof \Drupal\webform\WebformInterface && ($description = $webform->getThirdPartySetting('impeccabyte_site', 'meta_description'))) {
+    $metatags['description'] = $description;
+    $metatags['og_description'] = $description;
+  }
+}

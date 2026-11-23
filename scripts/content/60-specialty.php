@@ -10,8 +10,9 @@
  * 2026-11-18, which summarizes the March 2026 Maverick addenda. Nothing is
  * added from memory. Fee amounts are left out: pricing is not public yet and
  * pass-through card-brand fees are stated only as "may apply". Firearms,
- * Dating, Collections, Credit repair and Lending have not had their addenda
- * reviewed, so those pages say their requirements are being confirmed.
+ * Dating, Collections, Credit repair and Lending start with a placeholder
+ * that scripts/content/88-specialty-requirements.php replaces with their
+ * addenda requirements.
  *
  * Tone: calm and factual. No page promises approval or says there are no
  * reserves, and none gives legal advice.
@@ -37,14 +38,14 @@ $fee_negative_option = $card('badge-check', 'Negative option registration', 'Reg
 
 // Slug => [term name, addendum, icon, card line, hero lead, underwriting cards, website cards, fee cards, extra callout].
 $verticals = [
-  'hemp-and-cbd' => ['Hemp and CBD', 'Hemp/CBD', 'leaf', 'Hemp and CBD products, online or in store.',
+  'hemp-and-cbd' => ['Hemp & CBD', 'Hemp/CBD', 'leaf', 'Hemp and CBD products, online or in store.',
     'Merchant accounts for hemp and CBD sellers go through extra underwriting. Here is what the review asks for, so you can have it ready.',
     [$card('list-checks', 'A product list', 'Have a full list of the products you sell ready when you apply.'), $card('file-check', 'Lab results on request', 'Be able to supply lab results within 3 days of a request.')],
     [$card('user', 'Age verification', 'Your site has to verify the age of your customers.'), $card('circle-alert', 'No health claims', 'Product pages and marketing cannot make health claims.'), $card('mail', 'No unsolicited marketing', 'No unsolicited email or telemarketing.')],
     [$fee_url],
     ['If you sell HHC products', 'HHC has its own certification. Certificates of Analysis have to be available to customers, age is checked before delivery, and online sales need geofencing. A monthly monitoring fee for each website address may apply.'],
   ],
-  'smoke-and-vape' => ['Smoke and vape', 'Tobacco, nicotine, e-cig', 'store', 'Tobacco, nicotine and e-cigarette retailers.',
+  'smoke-and-vape' => ['Smoke & Vape', 'Tobacco, nicotine, e-cig', 'store', 'Tobacco, nicotine and e-cigarette retailers.',
     'Smoke and vape shops are underwritten as a specialty industry. Here is what the review asks for before you apply.',
     [$card('file-check', 'Certificate of Analysis and safety data sheet', 'Have a Certificate of Analysis and a safety data sheet for your products.')],
     [$card('triangle-alert', 'Nicotine warning on every product', 'Each product needs a nicotine warning.'), $card('circle-alert', 'No sales to minors statement', 'Your site states that you do not sell to minors.'), $card('user', 'Age verification software', 'Your site uses age verification software.')],
@@ -58,7 +59,7 @@ $verticals = [
     [$fee_url],
     NULL,
   ],
-  'adult-content' => ['Adult content', 'Adult content', 'lock', 'Adult content sites and creators.',
+  'adult-content' => ['Adult Content', 'Adult Content', 'lock', 'Adult content websites.',
     'Adult content merchants are underwritten as a specialty industry with card-brand registration. Here is what the review asks for.',
     [$card('file-text', 'Monthly content reporting', 'Be ready to report on your content each month.')],
     [$card('user', 'Age and consent controls', 'Your site has controls for age and consent.'), $card('message-circle', 'Complaint and takedown process', 'Your site has a clear way to complain and to have content taken down.')],
@@ -72,14 +73,14 @@ $verticals = [
     [$fee_url],
     NULL,
   ],
-  'online-pharmacy-and-telehealth' => ['Online pharmacy and telehealth', 'Card-absent pharmacy', 'heart-pulse', 'Online pharmacies and telehealth providers.',
+  'online-pharmacy-and-telehealth' => ['Online Pharmacy & Telehealth', 'Card-absent pharmacy', 'heart-pulse', 'Online pharmacies and telehealth providers.',
     'Online pharmacy and telehealth merchants are underwritten as a specialty industry with card-brand registration. Here is what the review asks for.',
     [$card('truck', 'State shipping rules', 'Show that you follow the shipping rules of each state you ship to.')],
     [$card('user', 'Age and ID verification', 'Your site verifies the age and identity of your customers.')],
     [$fee_registration],
     NULL,
   ],
-  'nutraceuticals-and-subscriptions' => ['Nutraceuticals and subscriptions', 'Marketing practices; Negative option trial', 'repeat', 'Supplements and subscription or trial offers.',
+  'nutraceuticals-and-subscriptions' => ['Nutraceuticals & Subscriptions', 'Marketing practices; Negative option trial', 'repeat', 'Supplements and subscription or trial offers.',
     'Supplement sellers and businesses that bill on a subscription or after a trial go through extra underwriting. Here is what the review looks at.',
     [$card('file-text', 'Your marketing practices', 'The review covers how you market and how you bill, including any trial that turns into a paid plan.')],
     [$card('list-checks', 'Ingredients listed', 'Every product lists its ingredients.'), $card('circle-alert', 'No unapproved health claims', 'Product pages and marketing cannot make unapproved health claims.'), $card('circle-check', 'A consent box for recurring charges', 'An unchecked consent box for recurring charges sits beside the buy button.'), $card('x', 'Easy cancellation', 'Customers can cancel easily.')],
@@ -90,8 +91,8 @@ $verticals = [
   'firearms' => ['Firearms', '', 'shield-check', 'Firearms and accessories retailers.', 'Firearms merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
   'dating' => ['Dating', '', 'users', 'Dating sites and apps.', 'Dating merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
   'collections' => ['Collections', '', 'file-text', 'Collection agencies.', 'Collections merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
-  'credit-repair' => ['Credit repair', '', 'chart-line', 'Credit repair services.', 'Credit repair merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
-  'lending' => ['Lending', '', 'landmark', 'Lenders taking card payments.', 'Lending merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
+  'credit-repair' => ['Credit Repair', '', 'chart-line', 'Credit repair services.', 'Credit repair merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
+  'lending' => ['Lending', '', 'landmark', 'Lenders taking loan repayments by card.', 'Lending merchants are underwritten as a specialty industry under their own Maverick addendum.', NULL, NULL, NULL, NULL],
 ];
 // The order Ry listed them in.
 $order = ['hemp-and-cbd', 'smoke-and-vape', 'kratom', 'firearms', 'adult-content', 'dating', 'gaming', 'collections', 'credit-repair', 'lending', 'nutraceuticals-and-subscriptions', 'online-pharmacy-and-telehealth'];
@@ -110,7 +111,7 @@ $shared_faqs = [
   $faq('Will I be approved?', 'We cannot promise approval. Maverick Payments and its sponsor banks make the underwriting decision. Our part is to tell you plainly what the review asks for and to check your website before we send anything in.'),
   $faq('Will there be a reserve?', 'A reserve may be required. If one applies to your account, it is spelled out in writing before you sign.'),
   $faq('How long does underwriting take?', 'It depends on your business and on how complete the paperwork is. Specialty reviews take longer than standard ones, so it helps to have your documents ready.'),
-  $faq('Are there extra fees?', 'There can be. Specialty accounts may carry monitoring fees and pass-through card-brand fees. Every fee that applies to you is listed on your quote before you sign.'),
+  $faq('Are there extra fees?', 'There can be. Specialty accounts may carry monitoring fees and pass-through card-brand fees, and they cost more for the sponsor banks to process, so your rates are quoted for your business rather than taken from our standard programs. Every rate and fee is listed on your quote before you sign.'),
   $faq('Is this legal advice?', 'No. Laws for these industries change and differ by state. Staying compliant is your responsibility, so check current state rules or talk to a lawyer about your business.'),
 ];
 $form_section = ['webform_embed', [
@@ -134,7 +135,7 @@ foreach ($order as $slug) {
   $sections = [
     ['hero', [
       'hero_variant' => 'centered',
-      'eyebrow' => 'Specialty industries',
+      'eyebrow' => 'Specialty Industries',
       'heading' => $name . ' merchant accounts, explained plainly.',
       'accent_word' => 'plainly',
       'intro' => $lead,
@@ -186,10 +187,10 @@ foreach ($order as $slug) {
   [$name, , $icon, $line] = $verticals[$slug];
   $hub_cards[] = $card($icon, $name, $line, ib_link('/industries/specialty/' . $slug, 'See what it takes'));
 }
-ib_page('industry_page', 'Specialty industries', '/industries/specialty', [
+ib_page('industry_page', 'Specialty Industries', '/industries/specialty', [
   ['hero', [
     'hero_variant' => 'centered',
-    'eyebrow' => 'Specialty industries',
+    'eyebrow' => 'Specialty Industries',
     'heading' => 'Some businesses take more paperwork. We tell you which.',
     'accent_word' => 'more',
     'intro' => 'Hemp, vape, firearms, subscriptions and other specialty industries can get merchant accounts through Maverick Payments, with extra underwriting. We lay out what each one asks for before you apply.',
@@ -220,7 +221,7 @@ ib_page('industry_page', 'Specialty industries', '/industries/specialty', [
 
 // Reached from the Industries menu and the footer, not from Home.
 $industries = ib_menu_link('main', 'Industries', 'route:<nolink>', ['weight' => 2]);
-ib_menu_link('main', 'Specialty industries', 'internal:/industries/specialty', ['parent' => $industries, 'weight' => 20, 'icon' => 'shield-check', 'description' => 'Hemp, vape, firearms and other high-review businesses']);
-ib_menu_link('footer-industries', 'Specialty industries', 'internal:/industries/specialty', ['weight' => 10]);
+ib_menu_link('main', 'Specialty Industries', 'internal:/industries/specialty', ['parent' => $industries, 'weight' => 20, 'icon' => 'shield-check', 'description' => 'Hemp, vape, firearms and other high-review businesses']);
+ib_menu_link('footer-industries', 'Specialty Industries', 'internal:/industries/specialty', ['weight' => 10]);
 
 print "Specialty industries are in place.\n";

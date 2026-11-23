@@ -28,7 +28,7 @@ $dual = ib_node_by_alias('/solutions/dual-pricing');
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Food trucks',
+    'eyebrow' => 'Food Trucks',
     'heading' => 'Take cards anywhere you park.',
     'accent_word' => 'anywhere',
     'intro' => 'A handheld that keeps working when the Wi-Fi does not, prices that keep more of every small ticket, and deposits set up before your first shift. One local team for all of it.',

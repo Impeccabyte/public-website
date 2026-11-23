@@ -9,7 +9,8 @@
  * kept neutral and PG on purpose; see scripts/content/assets/specialty.
  *
  * Safe to re-run: photos are reused if they exist, and a section that
- * already has an image is left alone. Run it with
+ * already has an image is left alone. When an asset file or its alt text
+ * changes, the existing photo is replaced in place. Run it with
  *   ./scripts/drush php:script scripts/content/88-specialty-photos.php
  */
 
@@ -26,7 +27,7 @@ $photos = [
   'smoke-and-vape' => 'A shop owner rings up a purchase for a customer at the counter.',
   'kratom' => 'A botanical tea shop owner weighs an order behind the counter.',
   'firearms' => 'An outdoor goods store owner hands a customer a bag at the counter.',
-  'adult-content' => 'An independent creator reviews her business accounts on a laptop in her home studio.',
+  'adult-content' => 'Two producers review a schedule at a desk in the office of a video production studio.',
   'dating' => 'Two app founders look at a phone together in their office.',
   'gaming' => 'Two colleagues talk at a desk in a small games company office.',
   'collections' => 'An account representative on a call takes notes at her desk.',
@@ -44,11 +45,23 @@ $media_storage = \Drupal::entityTypeManager()->getStorage('media');
 
 $media_for = function (string $name, string $filename, string $alt) use ($file_system, $directory, $media_storage): int {
   $existing = $media_storage->loadByProperties(['bundle' => 'image', 'name' => $name]);
-  if ($item = reset($existing)) {
-    return (int) $item->id();
-  }
   $source = __DIR__ . '/assets/specialty/' . $filename;
   [$width, $height] = getimagesize($source);
+  if ($item = reset($existing)) {
+    $image = $item->get('field_media_image');
+    $file = $image->entity;
+    if ($file && (md5_file($file->getFileUri()) !== md5_file($source) || $image->alt !== $alt)) {
+      $file_system->saveData(file_get_contents($source), $file->getFileUri(), FileExists::Replace);
+      $file->setSize(filesize($source));
+      $file->save();
+      foreach (\Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple() as $style) {
+        $style->flush($file->getFileUri());
+      }
+      $item->set('field_media_image', ['target_id' => $file->id(), 'alt' => $alt, 'width' => $width, 'height' => $height]);
+      $item->save();
+    }
+    return (int) $item->id();
+  }
   $uri = $file_system->saveData(file_get_contents($source), $directory . '/' . $filename, FileExists::Replace);
   $file = File::create(['uri' => $uri, 'status' => 1, 'uid' => 1]);
   $file->save();

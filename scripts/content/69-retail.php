@@ -31,7 +31,7 @@ $ic_plus = ib_node_by_alias('/solutions/interchange-plus');
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Retail shops',
+    'eyebrow' => 'Retail',
     'heading' => 'A counter that keeps up with Saturday.',
     'accent_word' => 'Saturday',
     'intro' => 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three. One local team for your hardware, pricing and support.',
@@ -56,7 +56,7 @@ $sections = [
     'heading' => 'At the counter, on the floor and online',
     'intro' => 'Start with the counter and add the others when you need them. They all run on one merchant account, with one set of deposits.',
     'items' => [
-      $setup('At the counter', 'A POS with a barcode scanner that rings up sales, tracks stock and prints or texts receipts.', 'Good for: boutiques, gift shops, convenience', 'a shop counter with a POS and barcode scanner', 'See POS systems', $catalog('POS system')),
+      $setup('At the counter', 'A POS with a barcode scanner that rings up sales, tracks stock and prints or texts receipts.', 'Good for: boutiques, gift shops, convenience', 'a shop counter with a POS and barcode scanner', 'See POS systems', $catalog('POS System')),
       $setup('On the floor', 'A handheld that checks customers out wherever they are, so the line never forms.', 'Good for: busy weekends, sidewalk sales, events', 'a clerk checking out a customer between the racks', 'See handhelds', $catalog('Handheld')),
       $setup('Online', 'Payment links and online checkout on the same account, for orders by message or a web store.', 'Good for: local delivery, preorders, web shops', 'an owner packing an online order in the stockroom', 'See online payments', '/solutions/online'),
     ],

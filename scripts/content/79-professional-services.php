@@ -26,7 +26,7 @@ $setup = fn(string $title, string $body, string $note, string $photo, string $li
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Professional services',
+    'eyebrow' => 'Professional Services',
     'heading' => 'Invoices that pay themselves.',
     'accent_word' => 'themselves',
     'intro' => 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody. One local team for your setup and support.',
@@ -92,7 +92,7 @@ $sections = [
     'devices' => array_values(array_filter(array_map(fn(string $slug) => $node_ref('/hardware/' . $slug), ['clover-compact', 'dejavoo-z8', 'clover-go']))),
   ]],
   ['faq', [
-    'heading' => 'Professional services questions',
+    'heading' => 'Professional Services questions',
     'layout' => 'centered',
     'items' => [
       $faq('Can clients pay invoices online?', 'Yes. Each invoice goes out with a secure payment link, and clients pay by card or bank account from any device.'),

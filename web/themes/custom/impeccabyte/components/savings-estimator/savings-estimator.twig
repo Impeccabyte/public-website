@@ -24,16 +24,16 @@
         <table class="estimator__grid" aria-live="polite">
           <thead><tr><th scope="col">{{ 'Pricing program'|t }}</th><th scope="col">{{ 'Est. monthly cost'|t }}</th><th scope="col">{{ 'Per year'|t }}</th></tr></thead>
           <tbody>
-            <tr><th scope="row">{{ 'Flat rate'|t }}</th><td data-estimator-flat>${{ flat|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-flat-year>${{ (flat * 12)|round|number_format(0, '.', ',') }}</td></tr>
-            <tr><th scope="row">{{ 'Interchange plus'|t }}</th><td data-estimator-icp>${{ icp|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-icp-year>${{ (icp * 12)|round|number_format(0, '.', ',') }}</td></tr>
-            <tr class="estimator__best"><th scope="row">{{ 'Dual pricing'|t }} {{ include('impeccabyte:badge', {label: 'Lowest'|t, variant: 'brand', size: 'sm'}, with_context = false) }}</th><td>${{ dp_fee|number_format(2, '.', ',') }}</td><td class="estimator__save">{{ 'Save about'|t }} <span data-estimator-save>${{ ((flat - dp_fee) * 12)|round|number_format(0, '.', ',') }}</span>/{{ 'yr'|t }}</td></tr>
+            <tr><th scope="row">{{ 'Simple (flat rate)'|t }}</th><td data-estimator-flat>${{ flat|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-flat-year>${{ (flat * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr><th scope="row">{{ 'Pro (interchange plus)'|t }}</th><td data-estimator-icp>${{ icp|round|number_format(0, '.', ',') }}</td><td class="estimator__year" data-estimator-icp-year>${{ (icp * 12)|round|number_format(0, '.', ',') }}</td></tr>
+            <tr class="estimator__best"><th scope="row">{{ 'Cash Price (dual pricing)'|t }} {{ include('impeccabyte:badge', {label: 'Lowest'|t, variant: 'brand', size: 'sm'}, with_context = false) }}</th><td>${{ dp_fee|number_format(2, '.', ',') }}</td><td class="estimator__save">{{ 'Save about'|t }} <span data-estimator-save>${{ ((flat - dp_fee) * 12)|round|number_format(0, '.', ',') }}</span>/{{ 'yr'|t }}</td></tr>
           </tbody>
         </table>
       </div>
     {% else %}
       <div class="estimator__soon card card--pad-lg">
         {{ include('impeccabyte:price', {show_prices: false, price_placeholder: price_placeholder, size: 'lg', link: false}, with_context = false) }}
-        <p>{{ 'We will show the math for flat rate, interchange plus and dual pricing side by side, in writing.'|t }}</p>
+        <p>{{ 'We will show the math for Simple, Pro and Cash Price side by side, in writing.'|t }}</p>
         <div class="estimator__actions">
           {{ include('impeccabyte:button', {label: 'Get a quote'|t, href: quote_url, variant: 'primary'}, with_context = false) }}
           {{ include('impeccabyte:button', {label: 'Upload a statement'|t, href: '/pricing#statement', variant: 'secondary'}, with_context = false) }}

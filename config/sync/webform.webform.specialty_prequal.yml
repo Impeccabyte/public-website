@@ -14,25 +14,25 @@ id: specialty_prequal
 title: 'Specialty pre-qualification'
 description: 'First questions for a specialty industry, embedded on each specialty page.'
 categories: {  }
-elements: |-
+elements: |
   vertical:
     '#type': select
     '#title': Industry
     '#required': true
     '#empty_option': 'Choose one'
     '#options':
-      'Hemp and CBD': 'Hemp and CBD'
-      'Smoke and vape': 'Smoke and vape'
+      'Hemp & CBD': 'Hemp & CBD'
+      'Smoke & Vape': 'Smoke & Vape'
       Kratom: Kratom
       Firearms: Firearms
-      'Adult content': 'Adult content'
+      'Adult Content': 'Adult Content'
       Dating: Dating
       Gaming: Gaming
       Collections: Collections
-      'Credit repair': 'Credit repair'
+      'Credit Repair': 'Credit Repair'
       Lending: Lending
-      'Nutraceuticals and subscriptions': 'Nutraceuticals and subscriptions'
-      'Online pharmacy and telehealth': 'Online pharmacy and telehealth'
+      'Nutraceuticals & Subscriptions': 'Nutraceuticals & Subscriptions'
+      'Online Pharmacy & Telehealth': 'Online Pharmacy & Telehealth'
   website_urls:
     '#type': textarea
     '#title': 'Website addresses'
@@ -58,14 +58,14 @@ elements: |-
     average_ticket:
       '#type': textfield
       '#title': 'Average sale'
-      '#placeholder': '$60'
+      '#placeholder': $60
       '#maxlength': 20
   chargeback_history:
     '#type': select
     '#title': 'Chargebacks in the last 12 months'
     '#empty_option': 'Choose one'
     '#options':
-      none: 'None'
+      none: None
       few: 'A few'
       monthly: 'Some most months'
       unsure: 'Not sure'

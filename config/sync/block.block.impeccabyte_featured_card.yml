@@ -1,7 +1,11 @@
 uuid: 5b76cb5e-dbaf-47c8-9392-44900de96270
 langcode: en
-status: true
+status: false
 dependencies:
+  content:
+    - 'block_content:featured_card:b1f0a8e2-6a53-4c0e-9d7a-5e1c3a7f2d41'
+  module:
+    - block_content
   theme:
     - impeccabyte
 id: impeccabyte_featured_card

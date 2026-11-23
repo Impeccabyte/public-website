@@ -4,7 +4,8 @@
     <div class="media-split__text">
       {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
       <h2 class="section-header__heading" id="{{ id }}-title">{{ heading }}</h2>
-      {% if body %}<p class="lead">{{ body }}</p>{% endif %}
+      {# A blank line in the body starts a new paragraph; the first one is the lead. #}
+      {% if body %}{% for paragraph in body|replace({"\r\n": "\n"})|split("\n\n") %}{% if paragraph|trim %}<p{{ loop.first ? ' class="lead"' }}>{{ paragraph|trim }}</p>{% endif %}{% endfor %}{% endif %}
       {% if checklist %}
         <ul class="media-split__checks">
           {% for line in checklist %}<li>{{ include('impeccabyte:icon', {name: 'check', size: 18}, with_context = false) }}<span>{{ line }}</span></li>{% endfor %}

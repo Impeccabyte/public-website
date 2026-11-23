@@ -52,23 +52,8 @@ ib_field('taxonomy_term', 'industry', 'field_maverick_addendum', 'string', 'Mave
   'weight' => 2,
 ]);
 
-// First terms, in the order they should list.
-$terms = [
-  'device_type' => ['Countertop terminal', 'Handheld', 'Mobile reader', 'POS system', 'Self-order kiosk'],
-  'sales_channel' => ['In store', 'Tableside', 'On the go', 'Online and in person'],
-  'industry' => ['Restaurants and bars', 'Food trucks', 'Retail shops', 'Salons and spas', 'Home services', 'Healthcare and dental', 'Auto repair', 'Professional services', 'Nonprofits', 'Pop-ups and markets'],
-  // Clover leads: it is the hero hardware.
-  'manufacturer' => ['Clover', 'Dejavoo', 'PAX', 'Valor', 'SwipeSimple'],
-  'solution_category' => ['Accept payments', 'Lower your costs', 'Run your business'],
-  'resource_type' => ['Guides', 'Checklists', 'Videos', 'Customer stories', 'Glossary'],
-  // Merchant services only at launch, so there is no Banking topic.
-  'resource_topic' => ['Getting started', 'Pricing and fees', 'Hardware', 'Online payments', 'Chargebacks', 'Funding'],
-];
-foreach ($terms as $vid => $names) {
-  foreach ($names as $weight => $name) {
-    ib_term($vid, $name, $weight);
-  }
-}
+// First terms live in a content script so an install from config gets them too.
+require dirname(__DIR__) . '/content/05-terms.php';
 
 // Content type shells. Their fields are added by the later setup scripts.
 ib_node_type('landing_page', 'Landing page', 'A page built from sections. Used for Home and Pricing.');

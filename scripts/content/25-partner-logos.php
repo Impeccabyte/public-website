@@ -27,7 +27,6 @@ $logos = [
   'Dejavoo' => ['dejavoo.svg', 85, 33],
   'Valor' => ['valor.svg', 160, 53],
   'Ingenico' => ['ingenico.svg', 111, 33],
-  'NMI' => ['nmi.png', 838, 270],
 ];
 
 $file_system = \Drupal::service('file_system');
@@ -68,6 +67,17 @@ if ($home) {
     $changed = FALSE;
     if ($section->get('field_logos')->isEmpty()) {
       $section->set('field_logos', $items);
+      $changed = TRUE;
+    }
+    // NMI came off the strip on 2026-11-21; take it off a strip built before.
+    $kept = array_values(array_filter($section->get('field_logos')->referencedEntities(), fn($m) => $m->label() !== 'Partner logo: NMI'));
+    if (count($kept) !== $section->get('field_logos')->count()) {
+      $section->set('field_logos', array_map(fn($m) => ['target_id' => $m->id()], $kept));
+      $changed = TRUE;
+    }
+    $names = $section->hasField('field_names') ? array_column($section->get('field_names')->getValue(), 'value') : [];
+    if (in_array('NMI', $names, TRUE)) {
+      $section->set('field_names', array_values(array_diff($names, ['NMI'])));
       $changed = TRUE;
     }
     if ($section->get('field_intro')->value === 'Authorized agent of Maverick Payments. Hardware and partners we set up:') {

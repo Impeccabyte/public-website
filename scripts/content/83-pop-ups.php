@@ -30,7 +30,7 @@ $setup = fn(string $title, string $body, string $note, string $photo, string $li
 $sections = [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Pop-ups and markets',
+    'eyebrow' => 'Pop-Ups & Markets',
     'heading' => 'Set up in five minutes, sell all weekend.',
     'accent_word' => 'weekend',
     'intro' => 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new. One local team to call when the market opens early.',
@@ -55,7 +55,7 @@ $sections = [
     'heading' => 'At the booth, on your phone and online',
     'intro' => 'Start with a reader and add the others when you need them. They run on one merchant account, with one set of deposits.',
     'items' => [
-      $setup('At the booth', 'A pocket reader for chip, tap and swipe that pairs with your phone by Bluetooth.', 'Good for: farmers markets, craft fairs, flea markets', 'a reader on a market table beside handmade goods', 'See mobile readers', $catalog('Mobile reader')),
+      $setup('At the booth', 'A pocket reader for chip, tap and swipe that pairs with your phone by Bluetooth.', 'Good for: farmers markets, craft fairs, flea markets', 'a reader on a market table beside handmade goods', 'See mobile readers', $catalog('Mobile Reader')),
       $setup('On your phone', 'Tap to pay on your phone as a backup when the reader needs a charge.', 'Good for: a second checkout, busy hours', 'a customer tapping a card on a vendor\'s phone', 'See mobile payments', '/solutions/on-the-go'),
       $setup('Between markets', 'Payment links and an online shop on the same account, for preorders and regulars.', 'Good for: preorders, custom orders, restocks', 'a maker packing an order in her home studio', 'See online payments', '/solutions/online'),
     ],

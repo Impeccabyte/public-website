@@ -87,7 +87,7 @@ foreach ($priorities as $bundle => $priority) {
 }
 $custom_links = \Drupal::service('simple_sitemap.custom_link_manager');
 $existing = array_column($custom_links->get(), 'path');
-foreach (['/hardware' => '0.9', '/resources' => '0.8', '/get-a-quote' => '0.9'] as $path => $priority) {
+foreach (['/hardware' => '0.9', '/get-a-quote' => '0.9'] as $path => $priority) {
   if (!in_array($path, $existing, TRUE)) {
     $custom_links->add($path, ['priority' => $priority, 'changefreq' => 'weekly']);
   }

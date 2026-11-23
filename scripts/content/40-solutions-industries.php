@@ -22,8 +22,9 @@ $faq = fn(string $question, string $answer) => ['_type' => 'faq_item', 'question
 $step = fn(string $title, string $body) => ['_type' => 'step', 'title' => $title, 'body' => $body];
 $device = fn(string $slug) => ($node = ib_node_by_alias('/hardware/' . $slug)) ? ['target_id' => $node->id()] : NULL;
 
-// Devices the dual pricing wireframe lists as ready.
-foreach (['dejavoo-z8', 'dejavoo-qd4', 'valor-vp550', 'pax-a920-pro'] as $slug) {
+// Devices the dual pricing wireframe lists as ready, less PAX: Maverick's
+// knowledge base lists PAX terminals for surcharging only, not dual pricing.
+foreach (['dejavoo-z8', 'dejavoo-qd4', 'valor-vp550'] as $slug) {
   $node = ib_node_by_alias('/hardware/' . $slug);
   if ($node && !$node->get('field_dual_pricing_ready')->value) {
     $node->set('field_dual_pricing_ready', 1)->save();
@@ -31,7 +32,7 @@ foreach (['dejavoo-z8', 'dejavoo-qd4', 'valor-vp550', 'pax-a920-pro'] as $slug) 
 }
 
 // Dual pricing.
-$dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
+$dual = ib_page('solution', 'Dual Pricing', '/solutions/dual-pricing', [
   ['hero', [
     'hero_variant' => 'split',
     'hero_art' => 'receipt',
@@ -57,13 +58,13 @@ $dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
     'eyebrow' => 'Savings comparison',
     'heading' => 'See what a month could look like',
     'intro' => 'Move the slider to your typical monthly card sales. The estimate updates for each pricing program.',
-    'assumptions' => 'Example only. Assumes a 2.9% + 30¢ flat rate, a 2.3% + 10¢ blended interchange plus cost, a $25 average ticket and a $19.95 monthly dual pricing software fee. Your real numbers come from your statement.',
-    'flat_percent' => 2.9,
-    'flat_cents' => 30,
-    'ic_percent' => 2.3,
-    'ic_cents' => 10,
+    'assumptions' => 'Example only. Assumes Simple at 2.59% + 10¢ in person, Pro at a typical 1.80% + 10¢ card-network cost plus our 0.35% + 10¢ markup, a $25 average ticket and the $14.95 monthly Cash Price program fee. Your real numbers come from your statement.',
+    'flat_percent' => 2.59,
+    'flat_cents' => 10,
+    'ic_percent' => 2.15,
+    'ic_cents' => 20,
     'avg_ticket' => 25,
-    'dp_fee' => 19.95,
+    'dp_fee' => 14.95,
     'default_volume' => 30000,
     'anchor' => 'savings',
   ]],
@@ -83,9 +84,9 @@ $dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
     'items' => [
       $faq('Will my customers be upset?', 'Most customers already see cash and card prices at gas stations, so it rarely surprises anyone. Clear signage does the explaining, and cash stays an option for anyone who wants the lower price.'),
       $faq('Does it apply to debit cards too?', 'Yes. Under dual pricing the card price applies to every card, credit or debit. That keeps it simple at the register and consistent with card-brand rules.'),
-      $faq('What does it cost me each month?', 'Dual pricing has a monthly software fee, plus any gateway or hardware fees for your setup. Your quote lists every line so there are no surprises.'),
-      $faq('Can I switch back later?', 'Yes. If dual pricing is not right for your business, we can move you to interchange plus or a flat rate. We will review the numbers with you first.'),
-      $faq('Do I need new hardware?', 'Not always. Many Dejavoo, PAX and Valor terminals can be reprogrammed. If yours cannot, we will recommend a device that fits your counter and budget.'),
+      $faq('What does it cost me each month?', 'Dual pricing has one monthly program fee that covers the gateway, your dashboard and PCI compliance, plus any hardware you lease. Your quote lists every line so there are no surprises.'),
+      $faq('Can I switch back later?', 'Yes. If dual pricing is not right for your business, we can move you to Pro or Simple. We will review the numbers with you first.'),
+      $faq('Do I need new hardware?', 'Not always. Many Dejavoo and Valor terminals can be reprogrammed for dual pricing. If yours cannot, we will recommend a device that fits your counter and budget.'),
     ],
   ]],
   // The three resources are attached by scripts/content/50-resources.php.
@@ -95,7 +96,7 @@ $dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
     'link' => ib_link('/get-a-quote', 'Get a dual pricing quote'),
   ]],
 ], [
-  'field_category' => $term('solution_category', 'Lower your costs'),
+  'field_category' => $term('solution_category', 'Lower Your Costs'),
   'field_short_description' => 'Show a cash and card price and keep more of each sale',
   'field_icon' => 'circle-percent',
 ]);
@@ -103,13 +104,13 @@ $dual = ib_page('solution', 'Dual pricing', '/solutions/dual-pricing', [
 // The other solutions: a short page each, from the menu's own descriptions.
 // In person has its full page in scripts/content/45-in-person.php.
 $solutions = [
-  ['Online', 'online', 'Accept payments', 'globe', 'Gateways, hosted checkout and payment links', 'Sell online without rebuilding your site.', 'online', 'A payment gateway, hosted checkout and payment links that drop into your website or texts.'],
-  ['On the go', 'on-the-go', 'Accept payments', 'smartphone', 'Mobile readers and tap to pay on your phone', 'Get paid wherever the work is.', 'wherever', 'Pocket-size readers and tap to pay on your phone for markets, pop-ups and field work.'],
-  ['Recurring billing', 'recurring-billing', 'Accept payments', 'repeat', 'Subscriptions, invoices and card updater', 'Bill customers on a schedule.', 'schedule', "Recurring billing and invoices that update expired cards for you, so payments don't quietly stop."],
-  ['Interchange plus', 'interchange-plus', 'Lower your costs', 'chart-line', 'Pass-through pricing with one clear markup', 'Pay the real cost, plus one clear markup.', 'clear', "You pay the card network's actual cost, plus one small markup we show in writing."],
-  ['Chargeback protection', 'chargeback-protection', 'Lower your costs', 'shield-check', 'Alerts and dispute help before losses stack up', 'Catch disputes before they cost you.', 'before', 'Alerts and dispute help before losses stack up.'],
-  ['Integrations', 'integrations', 'Run your business', 'plug', 'Connect invoicing, accounting and your POS', 'Payments that talk to your other tools.', 'talk', 'Connect invoicing, accounting and your POS.'],
-  ['Funding', 'funding', 'Run your business', 'zap', 'How and when deposits reach your bank', 'Know when your money arrives.', 'when', 'We set up your deposits and show you how batching works. Funding cutoffs vary by processor.'],
+  ['Online', 'online', 'Accept Payments', 'globe', 'Gateways, hosted checkout and payment links', 'Sell online without rebuilding your site.', 'online', 'A payment gateway, hosted checkout and payment links that drop into your website or texts.'],
+  ['On the Go', 'on-the-go', 'Accept Payments', 'smartphone', 'Mobile readers and tap to pay on your phone', 'Get paid wherever the work is.', 'wherever', 'Pocket-size readers and tap to pay on your phone for markets, pop-ups and field work.'],
+  ['Recurring Billing', 'recurring-billing', 'Accept Payments', 'repeat', 'Subscriptions, invoices and card updater', 'Bill customers on a schedule.', 'schedule', "Recurring billing and invoices that update expired cards for you, so payments don't quietly stop."],
+  ['Interchange Plus', 'interchange-plus', 'Lower Your Costs', 'chart-line', 'Pass-through pricing with one clear markup', 'Pay the real cost, plus one clear markup.', 'clear', "You pay the card network's actual cost, plus one small markup we show in writing."],
+  ['Chargeback Protection', 'chargeback-protection', 'Lower Your Costs', 'shield-check', 'Alerts and dispute help before losses stack up', 'Catch disputes before they cost you.', 'before', 'Alerts and dispute help before losses stack up.'],
+  ['Integrations', 'integrations', 'Run Your Business', 'plug', 'Connect invoicing, accounting and your POS', 'Payments that talk to your other tools.', 'talk', 'Connect invoicing, accounting and your POS.'],
+  ['Funding', 'funding', 'Run Your Business', 'zap', 'How and when deposits reach your bank', 'Know when your money arrives.', 'when', 'We set up your deposits and show you how batching works. Funding cutoffs vary by processor.'],
 ];
 foreach ($solutions as [$title, $slug, $category, $icon, $short, $headline, $accent, $lead]) {
   ib_page('solution', $title, '/solutions/' . $slug, [
@@ -125,10 +126,10 @@ foreach ($solutions as [$title, $slug, $category, $icon, $short, $headline, $acc
 
 // Restaurants and bars.
 $card = fn(string $icon, string $title, string $body) => ['_type' => 'feature_card', 'icon' => $icon, 'title' => $title, 'body' => $body];
-ib_page('industry_page', 'Restaurants and bars', '/industries/restaurants', [
+ib_page('industry_page', 'Restaurants & Bars', '/industries/restaurants', [
   ['hero', [
     'hero_variant' => 'image_right',
-    'eyebrow' => 'Restaurants and bars',
+    'eyebrow' => 'Restaurants & Bars',
     'heading' => 'Faster tables, cleaner tips, smaller fees.',
     'accent_word' => 'smaller',
     'intro' => 'From taco trucks to sit-down dining rooms, we set up payments that keep the line moving and the margins intact. One local team for your hardware, pricing and support.',
@@ -187,19 +188,19 @@ ib_page('industry_page', 'Restaurants and bars', '/industries/restaurants', [
     'heading' => "Let's walk your floor and build the right setup.",
     'link' => ib_link('/get-a-quote', 'Book a visit'),
   ]],
-], ['field_industry' => $term('industry', 'Restaurants and bars')]);
+], ['field_industry' => $term('industry', 'Restaurants & Bars')]);
 
 // The other industries: a short page each, from the Home industry picker.
 $industries = [
-  ['Food trucks', 'food-trucks', 'Take cards anywhere you park.', 'anywhere', 'A cellular terminal that keeps working when the Wi-Fi does not, with deposits set up before your first shift.'],
-  ['Retail shops', 'retail', 'A counter that keeps up with Saturday.', 'Saturday', 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.'],
-  ['Salons and spas', 'salons-and-spas', 'Book, check out and tip in one tap.', 'one', 'Card-on-file for no-shows, easy tips for stylists and a small countertop device that fits a crowded station.'],
-  ['Home services', 'home-services', 'Get paid before you leave the driveway.', 'before', 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools.'],
-  ['Healthcare and dental', 'healthcare', 'Payments that respect the front desk.', 'respect', 'Card-on-file, payment plans and text-to-pay for balances, with secure storage handled by the gateway.'],
-  ['Auto repair', 'auto-repair', 'Close out big tickets with confidence.', 'confidence', 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.'],
-  ['Professional services', 'professional-services', 'Invoices that pay themselves.', 'themselves', 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.'],
+  ['Food Trucks', 'food-trucks', 'Take cards anywhere you park.', 'anywhere', 'A cellular terminal that keeps working when the Wi-Fi does not, with deposits set up before your first shift.'],
+  ['Retail', 'retail', 'A counter that keeps up with Saturday.', 'Saturday', 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.'],
+  ['Salons & Spas', 'salons-and-spas', 'Book, check out and tip in one tap.', 'one', 'Card-on-file for no-shows, easy tips for stylists and a small countertop device that fits a crowded station.'],
+  ['Home Services', 'home-services', 'Get paid before you leave the driveway.', 'before', 'Invoices by text, a reader in your pocket and payments that sync with your scheduling and accounting tools.'],
+  ['Healthcare & Dental', 'healthcare', 'Payments that respect the front desk.', 'respect', 'Card-on-file, payment plans and text-to-pay for balances, with secure storage handled by the gateway.'],
+  ['Auto Repair', 'auto-repair', 'Close out big tickets with confidence.', 'confidence', 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.'],
+  ['Professional Services', 'professional-services', 'Invoices that pay themselves.', 'themselves', 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.'],
   ['Nonprofits', 'nonprofits', 'More of every gift goes to the mission.', 'mission', 'Online donation pages, event-day card readers and recurring giving for monthly supporters.'],
-  ['Pop-ups and markets', 'pop-ups-and-markets', 'Set up in five minutes, sell all weekend.', 'weekend', 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new.'],
+  ['Pop-Ups & Markets', 'pop-ups-and-markets', 'Set up in five minutes, sell all weekend.', 'weekend', 'A reader that pairs with your phone, tap to pay as a backup, and no long setup when you are new.'],
 ];
 foreach ($industries as [$name, $slug, $headline, $accent, $lead]) {
   ib_page('industry_page', $name, '/industries/' . $slug, [

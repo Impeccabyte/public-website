@@ -155,7 +155,7 @@ $meta = 'Payment links, hosted checkout and a virtual terminal on Maverick’s g
 $node = ib_node_by_alias($path);
 if (!$node) {
   ib_page('solution', 'Online', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept payments')],
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept Payments')],
     'field_short_description' => 'Gateways, hosted checkout and payment links',
     'field_icon' => 'globe',
     'field_meta_description' => $meta,

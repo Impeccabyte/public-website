@@ -36,7 +36,7 @@ $sections = [
     'accent_word' => 'wherever',
     'intro' => 'Pocket-size readers, handhelds with their own connection and tap to pay on your phone, for markets, pop-ups, job sites and deliveries. All on one merchant account, with a local team to call.',
     'link' => ib_link('/get-a-quote', 'Get a mobile quote'),
-    'link_secondary' => ib_link($catalog('Mobile reader'), 'See mobile readers'),
+    'link_secondary' => ib_link($catalog('Mobile Reader'), 'See mobile readers'),
     'checklist' => ['Chip, tap and swipe', 'Wi-Fi or cellular', 'Support from Austin'],
     'media_label' => 'a market vendor taking a tap payment on a small reader',
     'show_breadcrumb' => 1,
@@ -47,7 +47,7 @@ $sections = [
     'intro' => 'Start small and add a device when the line gets longer. Every option runs on the same account, so your deposits and reports stay in one place.',
     'items' => [
       $setup('Tap to pay on your phone', 'Take contactless cards and phone wallets on the phone you already carry. No extra hardware to buy or charge.', 'Good for: occasional sales, a backup at busy events', 'a customer tapping a card on the back of a phone', 'Ask about tap to pay', '/get-a-quote'),
-      $setup('A reader that pairs with your phone', 'A pocket-size reader for chip, tap and swipe that connects to your phone or tablet by Bluetooth.', 'Good for: markets, pop-ups, home services', 'a small reader beside a phone on a market table', 'See mobile readers', $catalog('Mobile reader')),
+      $setup('A reader that pairs with your phone', 'A pocket-size reader for chip, tap and swipe that connects to your phone or tablet by Bluetooth.', 'Good for: markets, pop-ups, home services', 'a small reader beside a phone on a market table', 'See mobile readers', $catalog('Mobile Reader')),
       $setup('A handheld with its own connection', 'An all-in-one device with a built-in printer that runs on Wi-Fi or cellular, depending on the model.', 'Good for: food trucks, delivery, curbside', 'a handheld terminal printing a receipt outdoors', 'See handhelds', $catalog('Handheld')),
     ],
   ]],
@@ -55,7 +55,7 @@ $sections = [
     'eyebrow' => 'Mobile devices',
     'heading' => 'Readers and handhelds we set up most',
     'intro' => 'Every device ships programmed to your account and ready for its first sale.',
-    'link' => ib_link($catalog('Mobile reader'), 'See all mobile readers'),
+    'link' => ib_link($catalog('Mobile Reader'), 'See all mobile readers'),
     'source' => 'manual',
     'devices' => array_values(array_filter(array_map(fn(string $slug) => $node_ref('/hardware/' . $slug), ['clover-go', 'swipesimple-b350', 'clover-flex', 'pax-a920-pro']))),
   ]],
@@ -113,8 +113,8 @@ $sections = [
 $meta = 'Mobile card readers, cellular handhelds and tap to pay on your phone for markets, pop-ups and field work. Set up and supported from Austin.';
 $node = ib_node_by_alias($path);
 if (!$node) {
-  ib_page('solution', 'On the go', $path, $sections, [
-    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept payments')],
+  ib_page('solution', 'On the Go', $path, $sections, [
+    'field_category' => ['target_id' => ib_term_id('solution_category', 'Accept Payments')],
     'field_short_description' => 'Mobile readers and tap to pay on your phone',
     'field_icon' => 'smartphone',
     'field_meta_description' => $meta,

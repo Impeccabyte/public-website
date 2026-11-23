@@ -56,7 +56,7 @@ $sections = [
     'intro' => 'Most nonprofits use all three. They run on one merchant account, so every gift lands in the same reports.',
     'items' => [
       $setup('Online', 'A hosted donation page that matches your logo and drops into your website or a social post.', 'Good for: year-end appeals, campaigns', 'a donor giving online from her couch', 'See online payments', '/solutions/online'),
-      $setup('At events', 'Pocket readers that pair with a volunteer\'s phone for tickets, auctions and donations at the door.', 'Good for: galas, fun runs, community days', 'a volunteer taking a card at an event table', 'See mobile readers', $catalog('Mobile reader')),
+      $setup('At events', 'Pocket readers that pair with a volunteer\'s phone for tickets, auctions and donations at the door.', 'Good for: galas, fun runs, community days', 'a volunteer taking a card at an event table', 'See mobile readers', $catalog('Mobile Reader')),
       $setup('Every month', 'Recurring giving that charges on schedule and updates expired cards, so monthly gifts keep coming.', 'Good for: sustaining members, sponsors', 'volunteers packing donation boxes at a food bank', 'See recurring billing', '/solutions/recurring-billing'),
     ],
   ]],
