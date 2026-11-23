@@ -75,7 +75,7 @@ foreach ($devices as [$name, $slug, $make, $type, $line, $lease, $buy, $order, $
         $spec('Payments accepted', 'Contactless (Apple Pay, Google Pay), EMV chip with PIN or signature, magstripe, EBT'),
         $spec('Size', '4.2 × 8.3 × 6.7 in.'),
         $spec('Connectivity', 'Wi-Fi, Ethernet and LTE (cellular data plan optional)'),
-        $spec('Receipt printer', '[Confirm with current Clover spec sheet]'),
+        $spec('Receipt printer', 'Built-in thermal receipt printer'),
         $spec('Software', 'Register, orders, rewards, customers, reporting and time clock built in'),
         $spec('In the box', 'Clover Mini, starter kit'),
         $spec('Protection', '3-year protection included'),

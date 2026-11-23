@@ -60,7 +60,7 @@ Rewritten on 2026-11-22 to name only what Maverick's knowledge base supports (se
 
 ## Restaurants and bars (`/industries/restaurants`)
 
-- **Customer story.** Still a placeholder: "[Restaurant name]", "[XX]-seat [cuisine]", "[X]%" and "[X] min". Needs a real, approved story or should be removed.
+- **Customer story.** Removed on 2026-11-23 until a real, approved story is supplied.
 - **Kitchen display.** Bundle seed price for the Clover KDS 14-inch ($40/mo, $839) is wireframe seed content.
 
 ## Food trucks (`/industries/food-trucks`)
@@ -146,7 +146,7 @@ Rewritten on 2026-11-22 to name only what Maverick's knowledge base supports (se
 - **Corrected.** Valor VP550 was listed as a countertop terminal; the knowledge base calls it an Android mobile terminal on Wi-Fi and 4G, so it is now a handheld, and the Home auto repair chip, the In person countertop examples and the Auto repair setup no longer call it a countertop (In person now names the Valor VP100). PAX A920 Pro was marked dual pricing ready; the knowledge base lists PAX for surcharging only, so the badge is gone and its page says surcharging.
 - **Dual pricing page.** Its device grid follows the "Dual pricing ready" flag, so it now shows 13 devices (all Dejavoo and Valor) instead of 4. Say if it should show a shorter, picked list.
 - **No prices on new devices.** The 14 new devices have no lease or buy amounts. They show "Pricing coming soon" like every device while "Show prices" is off, but need amounts before prices go live.
-- **Clover specs still missing.** The knowledge base has no Clover spec sheets, so the Clover devices other than Mini still have no spec table, and Clover Mini's printer row still reads "[Confirm with current Clover spec sheet]".
+- **Clover specs still missing.** The knowledge base has no Clover spec sheets, so the Clover devices other than Mini still have no spec table. Clover Mini's printer row now reads "Built-in thermal receipt printer" (clover.com/mini, 2026-11-23).
 - **Product photos.** Every device shows official images from its manufacturer's website (Clover, Dejavoo, PAX, Valor, SwipeSimple, Fiserv), trimmed and centred on one transparent canvas. Sources are in `scripts/content/assets/devices/README.md`. Confirm that your agreements allow using manufacturer marketing images.
 - **Details written from existing copy.** Summaries for the original Clover devices reuse what the site already says. Two are worth a check: Clover Station Duo "one screen for your team and one facing your customer", and Clover Kiosk "customers order and pay on their own". Clover Flex Pocket's line ("lighter, without a built-in printer") comes from clover.com.
 - **Lease and buy terms.** Clover devices say the starter kit and 3-year protection are included, as on Pricing. The other devices only say "Month to month" and "One payment and the device is yours" until their terms are confirmed.
