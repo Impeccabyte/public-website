@@ -14,6 +14,7 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 
 - **Keyed and online rate on Simple.** Raised on 2026-11-22 from 2.99% + 25¢ to 3.29% + 30¢, because Maverick's sponsor banks charge more on keyed and online sales than the pricing playbook assumed. Update the playbook to match, or say which rate to show.
 - **Specialty industries.** A new Pricing FAQ says specialty industries are quoted one by one, and each specialty page's "Are there extra fees?" answer says their rates are not taken from the standard programs. Confirm that is how you will quote them.
+- **Contract and cancellation.** Resolved 2026-11-23: the term and cancellation policy are spelled out in each formal quote and are not published online. The FAQ "Is there a contract or cancellation fee?" now says so and states no term or fee.
 
 ## On the go (`/solutions/on-the-go`)
 

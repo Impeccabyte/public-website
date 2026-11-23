@@ -239,7 +239,7 @@ ib_page('landing_page', 'Pricing', '/pricing', [
     'layout' => 'centered',
     'items' => [
       $faq('Are there monthly fees?', 'Yes, one for each program. It covers your account and PCI compliance, and on Cash Price the gateway too. Clover devices and online gateways add their own monthly fees. Every one is listed on your quote before you sign.'),
-      $faq('Is there a contract or cancellation fee?', 'Your agreement terms are spelled out on your quote. Ask us anything before you sign, and we will answer in plain English. [Confirm current term and cancellation policy.]'),
+      $faq('Is there a contract or cancellation fee?', 'The contract term and any cancellation fee are spelled out in your formal quote, before you sign. They are not published online. Ask us anything before you sign, and we will answer in plain English.'),
       $faq('Why do you need my statement?', 'Your statement shows your real card mix and volume, which is the only honest way to compare programs. Without it, any savings number is a guess.'),
       $faq('Can I change programs later?', 'Yes. If your business changes, we will review your numbers and move you to the program that fits.'),
       $faq('Do these prices apply to specialty industries?', 'Not always. Businesses such as CBD sellers, online pharmacies or firearms dealers cost more for the sponsor banks to process, so we quote their rates one by one. Your quote shows every rate and fee before you sign.'),
