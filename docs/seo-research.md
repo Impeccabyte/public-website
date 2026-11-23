@@ -17,7 +17,7 @@ The verified evidence supports a campaign built around one gate: whether Impecca
 - **Structured data (2026-11-23):** the home page describes Impeccabyte as a `FinancialService` with `areaServed` listing Austin, Round Rock, Cedar Park, Pflugerville, Georgetown, Leander, Kyle, Buda, San Marcos, Lakeway and Bee Cave, and no street address. The cities are a site setting (Service area, at `/admin/config/system/impeccabyte`); keep them the same as the Google Business Profile service area.
 - **Meetings (2026-11-23):** About says specialists meet by appointment, in person at the merchant's business or on Microsoft Teams. That in-person contact is what makes a service-area Business Profile eligible.
 - **Sitemap (2026-11-23):** production writes `https://impeccabyte.com` addresses (it wrote `http://default` before).
-- **Still to do:** Search Console, the Business Profile (hidden address: a real Austin-area address the business is run from, never the Houston mailbox), suburb pages with real local substance, a review ask with no incentives, and a monthly measurement routine. No keyword research has been done (see Open questions).
+- **Still to do:** Search Console, the Business Profile (hidden address: a real Austin-area address the business is run from, never the Houston mailbox), suburb pages with real local substance, a review ask with no incentives, and a monthly measurement routine. Keyword research followed the same day: see `seo-keywords.md`.
 
 ## Findings
 
