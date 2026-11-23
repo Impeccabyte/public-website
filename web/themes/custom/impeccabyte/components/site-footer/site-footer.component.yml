@@ -9,7 +9,7 @@ description: 'The global footer: newsletter signup, four link columns, contact d
 #   legal: Legal links
 #   phone: Phone number
 #   email: Contact email
-#   address_line1: Street address
+#   address_line1: Mailing address, street line (mail only, no visits)
 #   address_line2: City, state and ZIP
 #   contact_url: Where the phone and contact links lead
 #   disclosure: Disclosure line. Required on every page.

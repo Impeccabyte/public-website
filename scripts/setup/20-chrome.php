@@ -23,8 +23,8 @@ $defaults = [
   'phone' => '(512) [XXX-XXXX]',
   'hours' => 'Mon to Fri, 8 to 6 Central',
   'email' => 'hello@impeccabyte.com',
-  'address_line1' => '[Street address], Suite [XXX]',
-  'address_line2' => 'Austin, TX 787[XX]',
+  'address_line1' => '17350 State Hwy 249, Ste 220 #37005',
+  'address_line2' => 'Houston, TX 77064',
   'login_url' => 'https://app.impeccabyte.com',
   'disclosure' => 'Merchant accounts are provided by Maverick Payments and its sponsor banks. Impeccabyte is an authorized sales agent of Maverick Payments.',
 ];

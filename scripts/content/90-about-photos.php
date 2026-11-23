@@ -4,7 +4,7 @@
  * @file
  * Photos for the About us page.
  *
- * Attaches the hero photo and the "Find us" street photo from
+ * Attaches the hero photo and the "Reach us" street photo from
  * scripts/content/assets/about. The founder photo in "Our story" is never
  * generated; that section keeps its placeholder until a real photo arrives.
  *

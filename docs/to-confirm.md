@@ -130,7 +130,7 @@ Rewritten on 2026-11-22 to name only what Maverick's knowledge base supports (se
 
 - **Founder story.** Written up from the founder's own words (2026-11-21), with 2025 as the founding year. It names the family business, Luxury On A Leash, and ends "fees that never come as a surprise". Confirm both are fine to publish. It is signed "Ryan Bealey, Founder".
 - **Founder photo.** Ryan's own photo, supplied 2026-11-21: a selfie at his desk with a decorated holiday tree behind him. Swap it for a year-round shot whenever there is one (replace `scripts/content/assets/about/founder.jpg` and the media item "About: founder").
-- **Office, phone and hours.** "Find us" and the FAQ show [Street address], Austin, TX [ZIP], [Phone number] and [Business hours]. Confirm whether visitors can stop by the office at all; if not, the "stop by" wording comes out.
+- **Phone and hours.** "Reach us" and the FAQ still show [Phone number] and [Business hours]. The site settings hold (512) [XXX-XXXX] and "Mon to Fri, 8 to 6 Central"; confirm both. Resolved 2026-11-23: the mailing address is 17350 State Hwy 249, Ste 220 #37005, Houston, TX 77064, for mail only. No copy invites a visit, and the "stop by" wording is gone from About, and the footer heading reads "Write or call".
 - **Service area.** The FAQ "Do you only work with Austin businesses?" is a [Confirm] placeholder.
 - **Reply time.** "A local specialist replies within one business day" appears in the FAQ and closing band, as on other pages.
 - **Application help.** "We help you through the application" and "help with the application" describe our role. Confirm this matches what you do.
