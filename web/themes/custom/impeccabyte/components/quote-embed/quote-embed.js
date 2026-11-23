@@ -22,12 +22,28 @@
           wrapper.classList.add('is-loaded');
           wrapper.removeAttribute('aria-busy');
         };
+        // The app's script sizes the iframe (640px to start) once the form
+        // inside reports its height, so any other height means the form has
+        // loaded. That also covers a form that loaded before this ran, when
+        // its load event has already fired.
+        const resized = (iframe) => iframe.style.height && iframe.style.height !== '640px';
         const watch = (iframe) => {
           if (iframe.dataset.quoteWatched) {
             return;
           }
           iframe.dataset.quoteWatched = '1';
+          if (resized(iframe)) {
+            ready();
+            return;
+          }
           iframe.addEventListener('load', ready, { once: true });
+          const sizes = new MutationObserver(() => {
+            if (resized(iframe)) {
+              sizes.disconnect();
+              ready();
+            }
+          });
+          sizes.observe(iframe, { attributes: true, attributeFilter: ['style'] });
         };
         const existing = frame.querySelector('iframe');
         if (existing) {
