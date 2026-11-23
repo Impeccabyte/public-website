@@ -33,6 +33,9 @@ if $DRUSH status --field=bootstrap 2>/dev/null | grep -q Successful; then
 fi
 
 # 2. Rebuild the image if the Dockerfile changed, and start everything.
+# The network Caddy shares with the CRM (docker-compose.prod.yml). Harmless
+# where the production file is not loaded.
+docker network inspect edge >/dev/null 2>&1 || docker network create edge >/dev/null
 docker compose up -d --build --remove-orphans
 
 # 3. Wait for Drupal to answer drush.

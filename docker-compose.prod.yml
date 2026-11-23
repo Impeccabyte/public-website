@@ -8,6 +8,8 @@
 # - Code is mounted read-only, so the web container cannot change it. Only
 #   private uploads and the sites volume (settings and files) are writable.
 # - The design wireframes are not mounted.
+# - Caddy also fronts the CRM, a separate Compose project, over the external
+#   network "edge" (scripts/deploy.sh and scripts/setup.sh create it).
 services:
   drupal:
     environment:
@@ -39,10 +41,21 @@ services:
       SITE_LOCK: ${SITE_LOCK:-off}
       SITE_LOCK_USER: ${SITE_LOCK_USER:-preview}
       SITE_LOCK_HASH: ${SITE_LOCK_HASH:-}
+      # The CRM's host name (app.impeccabyte.com). Unset, the block answers
+      # only to a local name over plain HTTP and asks for no certificate.
+      CRM_ADDRESS: ${CRM_ADDRESS:-http://crm.localhost}
+    networks:
+      - default
+      - edge
     volumes:
       - ./docker/caddy:/etc/caddy:ro
       - caddy_data:/data
       - caddy_config:/config
+
+networks:
+  # Shared with the CRM's Compose project, which attaches its app as crm-app.
+  edge:
+    external: true
 
 volumes:
   caddy_data:

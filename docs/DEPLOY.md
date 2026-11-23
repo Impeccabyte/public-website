@@ -39,6 +39,13 @@ When you change either value:
 1. Re-run `scripts/server/bootstrap.sh` as root. It rewrites Drupal's trusted host names in `web/sites/default/settings.local.php` from `SITE_HOSTS`.
 2. Run `docker compose up -d`.
 
+## The CRM at app.impeccabyte.com
+
+The CRM (the `Impeccabyte/private-crm` repo) runs on the same server as its own Compose project in `/srv/impeccabyte-crm`. It publishes no ports. This site's Caddy is its public entry point:
+- `CRM_ADDRESS=app.impeccabyte.com` in `/srv/impeccabyte/.env` names the host. Caddy gets and renews its certificate like the others.
+- Caddy reaches the CRM as `crm-app:3000` over the shared Docker network `edge`, which `scripts/deploy.sh` creates if it is missing.
+- If the CRM is stopped, app.impeccabyte.com answers 502 and this site is unaffected.
+
 ## The site lock
 
 The site is open (`SITE_LOCK=off`). To put a password on every page and turn off search indexing, for example while something is being fixed:
