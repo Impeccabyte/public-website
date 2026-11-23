@@ -23,6 +23,9 @@ fi
 set -a; . ./.env; set +a
 
 echo "Building and starting containers..."
+# The network Caddy shares with the CRM (docker-compose.prod.yml). Harmless
+# where the production file is not loaded.
+docker network inspect edge >/dev/null 2>&1 || docker network create edge >/dev/null
 docker compose up -d --build
 
 DRUSH="docker compose exec -T drupal /opt/drupal/vendor/bin/drush"

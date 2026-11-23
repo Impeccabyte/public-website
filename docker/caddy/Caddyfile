@@ -7,3 +7,11 @@
 	import /etc/caddy/lock-{$SITE_LOCK}.caddy
 	reverse_proxy drupal:80
 }
+
+# The CRM (Impeccabyte/private-crm) runs as its own Compose project on the
+# same server and joins the shared "edge" network as crm-app. CRM_ADDRESS is
+# its host name in the server's .env; the default serves nothing public.
+{$CRM_ADDRESS} {
+	encode zstd gzip
+	reverse_proxy crm-app:3000
+}
