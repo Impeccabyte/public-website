@@ -38,6 +38,9 @@ impeccabyte_site.settings:
     quote_form_id:
       type: string
       label: 'Embedded quote form ID'
+    specialty_form_id:
+      type: string
+      label: 'Embedded specialty prequalification form ID'
     service_area:
       type: sequence
       label: 'Service area'

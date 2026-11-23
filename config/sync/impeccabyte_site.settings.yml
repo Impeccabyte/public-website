@@ -12,6 +12,7 @@ login_url: 'https://app.impeccabyte.com'
 disclosure: 'Merchant accounts are provided by Maverick Payments and its sponsor banks. Impeccabyte is an authorized sales agent of Maverick Payments.'
 forms_base_url: 'https://app.impeccabyte.com'
 quote_form_id: m1AphWiONMmB
+specialty_form_id: D9HDm6rPrTz1
 service_area:
   - Austin
   - 'Round Rock'

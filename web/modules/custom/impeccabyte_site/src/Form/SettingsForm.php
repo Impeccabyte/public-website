@@ -71,8 +71,8 @@ class SettingsForm extends ConfigFormBase {
     $form['contact']['phone']['#description'] = $this->t('Leave empty to show no phone number. The contact email shows in its place.');
     $form['quote_form'] = [
       '#type' => 'details',
-      '#title' => $this->t('Quote form'),
-      '#description' => $this->t('The Get a quote page and the statement review on Pricing show this form from the Impeccabyte app, in place of the Drupal forms. Specialty industry pages keep their own form.'),
+      '#title' => $this->t('Embedded forms'),
+      '#description' => $this->t('Forms from the Impeccabyte app, shown in place of the Drupal forms.'),
       '#open' => TRUE,
     ];
     $form['quote_form']['forms_base_url'] = [
@@ -82,9 +82,15 @@ class SettingsForm extends ConfigFormBase {
     ];
     $form['quote_form']['quote_form_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Form ID'),
-      '#description' => $this->t('The data-ib-form value in the embed code, such as m1AphWiONMmB.'),
+      '#title' => $this->t('Quote form ID'),
+      '#description' => $this->t('Used on the Get a quote page and the statement review on Pricing. The data-ib-form value in the embed code.'),
       '#default_value' => $config->get('quote_form_id'),
+    ];
+    $form['quote_form']['specialty_form_id'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Specialty prequalification form ID'),
+      '#description' => $this->t('Used on the specialty industry pages. The data-ib-form value in the embed code.'),
+      '#default_value' => $config->get('specialty_form_id'),
     ];
     $form['service_area'] = [
       '#type' => 'textarea',
@@ -117,6 +123,7 @@ class SettingsForm extends ConfigFormBase {
     }
     $config->set('forms_base_url', rtrim(trim((string) $form_state->getValue('forms_base_url')), '/'));
     $config->set('quote_form_id', trim((string) $form_state->getValue('quote_form_id')));
+    $config->set('specialty_form_id', trim((string) $form_state->getValue('specialty_form_id')));
     $cities = array_map('trim', preg_split('/\R/', (string) $form_state->getValue('service_area')));
     $config->set('service_area', array_values(array_unique(array_filter($cities, 'strlen'))));
     $config->save();

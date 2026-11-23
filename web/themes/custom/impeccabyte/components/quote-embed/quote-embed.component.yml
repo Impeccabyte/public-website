@@ -1,5 +1,5 @@
 name: Quote embed
-description: 'The quote form from the Impeccabyte app, with a loading skeleton and a fallback if it never loads.'
+description: 'A form from the Impeccabyte app (quote or specialty prequalification), with a loading skeleton and a fallback if it never loads.'
 # Props:
 #   form_id: The data-ib-form ID
 #   script: Address of the app's embed script for that form

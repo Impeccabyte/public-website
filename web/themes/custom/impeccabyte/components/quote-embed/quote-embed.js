@@ -66,7 +66,7 @@
           const message = document.createElement('p');
           message.className = 'quote-embed__fallback';
           message.setAttribute('role', 'status');
-          message.append(Drupal.t('The quote form is taking longer than usual to load. Refresh the page, or email') + ' ');
+          message.append(Drupal.t('The form is taking longer than usual to load. Refresh the page, or email') + ' ');
           if (email) {
             const link = document.createElement('a');
             link.href = 'mailto:' + email;
