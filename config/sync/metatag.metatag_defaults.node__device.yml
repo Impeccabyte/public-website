@@ -8,3 +8,4 @@ tags:
   description: '[node:field_card_summary]'
   og_description: '[node:field_card_summary]'
   og_type: product
+  title: '[node:title]: price, specs and setup | [site:name]'

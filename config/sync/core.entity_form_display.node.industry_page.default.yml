@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.industry_page.field_industry
     - field.field.node.industry_page.field_meta_description
+    - field.field.node.industry_page.field_search_title
     - field.field.node.industry_page.field_sections
     - node.type.industry_page
   module:
@@ -33,6 +34,14 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_search_title:
+    type: string_textfield
+    weight: 90
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_sections:

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.industry_page.field_industry
     - field.field.node.industry_page.field_meta_description
+    - field.field.node.industry_page.field_search_title
     - field.field.node.industry_page.field_sections
     - node.type.industry_page
   module:
@@ -32,4 +33,5 @@ content:
 hidden:
   field_industry: true
   field_meta_description: true
+  field_search_title: true
   search_api_excerpt: true

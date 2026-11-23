@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.solution.field_category
     - field.field.node.solution.field_icon
     - field.field.node.solution.field_meta_description
+    - field.field.node.solution.field_search_title
     - field.field.node.solution.field_sections
     - field.field.node.solution.field_short_description
     - node.type.solution
@@ -43,6 +44,14 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_search_title:
+    type: string_textfield
+    weight: 90
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_sections:

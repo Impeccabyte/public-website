@@ -433,6 +433,7 @@ display:
           metatags:
             description: 'Card terminals, handhelds, mobile readers and POS systems from Clover, Dejavoo, PAX, Valor and more. Every device arrives programmed for your account.'
             og_description: 'Card terminals, handhelds, mobile readers and POS systems from Clover, Dejavoo, PAX, Valor and more. Every device arrives programmed for your account.'
+            title: 'Credit card machines and POS hardware | [site:name]'
       path: hardware
     cache_metadata:
       max-age: -1

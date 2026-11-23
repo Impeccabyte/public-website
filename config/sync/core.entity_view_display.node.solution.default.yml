@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.solution.field_category
     - field.field.node.solution.field_icon
     - field.field.node.solution.field_meta_description
+    - field.field.node.solution.field_search_title
     - field.field.node.solution.field_sections
     - field.field.node.solution.field_short_description
     - node.type.solution
@@ -35,5 +36,6 @@ hidden:
   field_category: true
   field_icon: true
   field_meta_description: true
+  field_search_title: true
   field_short_description: true
   search_api_excerpt: true

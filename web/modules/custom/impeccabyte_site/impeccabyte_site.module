@@ -43,10 +43,16 @@ function impeccabyte_site_form_views_exposed_form_alter(array &$form, \Drupal\Co
 /**
  * Implements hook_metatags_alter().
  *
- * A webform page (such as /get-a-quote) has no node to carry a search
- * description, so it comes from the form's own "impeccabyte_site" setting.
+ * A page's "Search title" field, when set, becomes the browser-tab title
+ * (scripts/setup/88-search-title.php). A webform page (such as /get-a-quote)
+ * has no node to carry a search description, so it comes from the form's own
+ * "impeccabyte_site" setting.
  */
 function impeccabyte_site_metatags_alter(array &$metatags, array &$context) {
+  $entity = $context['entity'] ?? NULL;
+  if ($entity instanceof \Drupal\node\NodeInterface && $entity->hasField('field_search_title') && ($title = trim((string) $entity->get('field_search_title')->value)) !== '') {
+    $metatags['title'] = $title;
+  }
   if (\Drupal::routeMatch()->getRouteName() !== 'entity.webform.canonical') {
     return;
   }

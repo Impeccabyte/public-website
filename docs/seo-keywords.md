@@ -103,6 +103,8 @@ The browser-tab titles carry no search terms. Examples: "Pricing | Impeccabyte",
 
 The other industry and solution pages follow the same pattern.
 
+**Applied 2026-11-23.** Each page has a "Search title" field, editable in the page's admin form (`scripts/content/98-search-titles.php` set the first ones). Device pages use the pattern "[Device]: price, specs and setup | Impeccabyte", and the hardware catalog uses "Credit card machines and POS hardware | Impeccabyte". Headlines are unchanged, and social sharing titles still use the page title.
+
 ## New content worth writing (in order)
 
 1. **Texas surcharging and dual pricing rules.** A sourced section or FAQ on the Dual Pricing page. It answers "is surcharging legal in texas", "are debit card surcharges legal in texas" and "dual pricing vs cash discount". Small competitors and a state library page rank today. Keep the existing "not legal advice" line and cite Texas sources.
@@ -119,5 +121,5 @@ BBB, Yelp, YellowPages, chamberofcommerce.com and the Round Rock Chamber all app
 ## Next steps
 
 1. Get search volumes from Google Keyword Planner for the phrases above, set to Austin and the suburbs, and re-rank this list.
-2. Apply the search titles (the biggest, cheapest win).
+2. ~~Apply the search titles~~ (done 2026-11-23).
 3. Set up Search Console, then review real queries by page every month and adjust.
