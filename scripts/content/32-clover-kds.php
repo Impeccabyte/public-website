@@ -10,8 +10,12 @@
  * optional KB9000 bump bar, runner tickets on any network printer, expo
  * mode, item-level routing, prep time reporting and color-coded order
  * status. Clover's own retail prices are not used. The 14-inch keeps the
- * seed price the Restaurants setup already used ($40/mo or $839); the
- * 24-inch has no price, so it shows "Pricing coming soon" with a quote link.
+ * seed price the Restaurants setup already used ($40/mo or $839). The
+ * 24-inch price is calculated from the other listings, not taken from the
+ * playbook: Clover sells the 24-inch for $100 more than the 14-inch, so $939
+ * (every Clover price ends in 9), and a lease of about 5% of the buy price
+ * rounded to $5, as on every Clover device, so $45/mo. Confirm it in the
+ * next price check.
  * A kitchen display takes no payments, so it gets no gateways and no
  * Clover payment fees (see 96-pricing-programs.php).
  *
@@ -52,7 +56,7 @@ $devices = [
     'Large overhead kitchen screen for busy lines.',
     'A 24-inch kitchen display made for mounting overhead, where the whole team can see it. Pair it with the optional bump bar when touching the screen is not practical.',
     [['Screen', '24-inch touchscreen'], ['Mounting', 'Made for overhead installation']],
-    NULL, NULL, 12,
+    45, 939, 12,
   ],
 ];
 
@@ -86,6 +90,13 @@ foreach ($devices as $slug => [$name, $line, $summary, $specs, $lease, $buy, $or
   $created[] = $name;
 }
 
+// A 24-inch built before its price was set gets it, while it has none.
+$kds24 = ib_node_by_alias('/hardware/clover-kds-24');
+if ($kds24 && $kds24->get('field_lease_price')->isEmpty() && $kds24->get('field_buy_price')->isEmpty()) {
+  $kds24->set('field_lease_price', 45)->set('field_buy_price', 939)->save();
+  $created[] = 'Clover Kitchen Display 24-inch price';
+}
+
 // Each one points to the other and to the Clover registers it works with.
 $related = [
   'clover-kds-14' => ['clover-kds-24', 'clover-station-duo', 'clover-mini'],
@@ -99,4 +110,4 @@ foreach ($related as $slug => $others) {
   }
 }
 
-print $created ? 'Kitchen displays added: ' . implode(', ', $created) . ".\n" : "Kitchen displays already in place.\n";
+print $created ? 'Kitchen displays: ' . implode(', ', $created) . ".\n" : "Kitchen displays already in place.\n";
