@@ -22,7 +22,7 @@ use Drupal\media\Entity\Media;
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
 $name = 'About: founder';
-$filename = 'founder-family.jpg';
+$filename = 'founder-family-warm.jpg';
 $alt = "The founder's moms on a sunny boat ride with their dog, Olivia.";
 
 $media_storage = \Drupal::entityTypeManager()->getStorage('media');

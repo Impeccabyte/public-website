@@ -5,4 +5,4 @@ Generated illustrations for the About us page, made on 2026-11-19. They are not 
 - `hero.jpg`: a payments specialist and a cafe owner look at a countertop terminal. The screen faces away from the camera.
 - `street.jpg`: a row of independent storefronts under a live oak. There are no landmarks and no readable signs.
 
-- `founder-family.jpg`: Ryan Bealey's moms on a boat with their dog, Olivia (Livvy). A real family photo supplied on 2026-11-23, replacing the founder's portrait; not generated. Kept at its original 960 x 720 and re-saved without metadata. These are the only real people pictured on the site.
+- `founder-family-warm.jpg`: Ryan Bealey's moms on a boat with their dog, Olivia (Livvy). A real family photo supplied on 2026-11-23, replacing the founder's portrait; not generated. Kept at its original 960 x 720, then graded so it sits with the paper background: highlights softened (whites at about 232), shadows lifted slightly, saturation down about a quarter and a small warm shift. Saved without metadata. These are the only real people pictured on the site.
