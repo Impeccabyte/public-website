@@ -160,3 +160,9 @@ Rewritten on 2026-11-22 to name only what Maverick's knowledge base supports (se
 - **Lease and buy terms.** Clover devices say the starter kit and 3-year protection are included, as on Pricing. The other devices only say "Month to month" and "One payment and the device is yours" until their terms are confirmed.
 - **Compatible gateways.** All Clover devices show the Clover gateway section. The other devices have no gateway section yet; confirm which gateways each supports.
 - **PAX A920 Pro.** PAX now sells the A920Pro Duo (PCI 7) as its current model; Maverick's knowledge base still lists the A920 Pro.
+
+## Travel (`/travel` and `/travel/hotel-perks`)
+
+- **Photos.** The three "Trips we plan" photos (business travel, family trips, celebrations) are generated illustrations, not clients or real hotels. Swap them for real photography when there is some.
+- **Loyalty points.** The pages say clients can use the loyalty points from their favorite hotel and travel programs (Ry, 2026-11-24). They do not say clients earn points or keep elite benefits on bookings; confirm with Fora before adding that.
+- **Resolved 2026-11-24:** no planning fee, and Fora Travel's registrations and licenses (California, Florida, Washington, British Columbia, Ontario, United Kingdom) are in the disclosure on both pages.
