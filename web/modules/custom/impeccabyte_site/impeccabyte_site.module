@@ -53,6 +53,7 @@ function impeccabyte_site_metatags_alter(array &$metatags, array &$context) {
   if ($entity instanceof \Drupal\node\NodeInterface && $entity->hasField('field_search_title') && ($title = trim((string) $entity->get('field_search_title')->value)) !== '') {
     $metatags['title'] = $title;
   }
+  impeccabyte_site_share_image($metatags);
   if (\Drupal::routeMatch()->getRouteName() !== 'entity.webform.canonical') {
     return;
   }
@@ -61,6 +62,39 @@ function impeccabyte_site_metatags_alter(array &$metatags, array &$context) {
     $metatags['description'] = $description;
     $metatags['og_description'] = $description;
   }
+}
+
+/**
+ * Sets the social share image for the current page.
+ *
+ * Images are 1200x630 PNGs in the theme's images/og folder
+ * (scripts/setup/89-og-images.php). Pages without their own image share
+ * the home page image.
+ */
+function impeccabyte_site_share_image(array &$metatags): void {
+  $images = [
+    '/pricing' => 'pricing',
+    '/solutions/dual-pricing' => 'dual-pricing',
+    '/hardware/clover-flex' => 'clover-flex',
+    '/travel' => 'travel',
+  ];
+  foreach (['restaurants', 'food-trucks', 'retail', 'salons-and-spas', 'home-services', 'healthcare', 'auto-repair', 'professional-services', 'nonprofits', 'pop-ups-and-markets', 'specialty'] as $slug) {
+    $images['/industries/' . $slug] = $slug;
+  }
+  foreach (['hemp-and-cbd', 'smoke-and-vape', 'kratom', 'firearms', 'adult-content', 'dating', 'gaming', 'collections', 'credit-repair', 'lending', 'nutraceuticals-and-subscriptions', 'online-pharmacy-and-telehealth'] as $slug) {
+    $images['/industries/specialty/' . $slug] = $slug;
+  }
+  $path = rtrim(\Drupal::request()->getPathInfo(), '/') ?: '/';
+  $url = \Drupal::request()->getSchemeAndHttpHost() . '/themes/custom/impeccabyte/images/og/' . ($images[$path] ?? 'home') . '.png';
+  $metatags['og_image'] = $url;
+  $metatags['og_image_secure_url'] = $url;
+  $metatags['og_image_type'] = 'image/png';
+  $metatags['og_image_width'] = '1200';
+  $metatags['og_image_height'] = '630';
+  $metatags['og_image_alt'] = $metatags['og_title'] ?? '[current-page:title]';
+  $metatags['twitter_cards_type'] = 'summary_large_image';
+  $metatags['twitter_cards_image'] = $url;
+  $metatags['twitter_cards_image_alt'] = $metatags['og_image_alt'];
 }
 
 /**
