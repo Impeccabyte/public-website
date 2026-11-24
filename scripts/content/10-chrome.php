@@ -42,6 +42,15 @@ ib_menu_link('main', 'Integrations', 'internal:/solutions/integrations', ['paren
 ib_menu_link('main', 'Funding', 'internal:/solutions/funding', ['parent' => $run, 'weight' => 1, 'icon' => 'zap', 'description' => 'How and when deposits reach your bank']);
 
 $hardware = ib_menu_link('main', 'Hardware', 'route:<nolink>', ['parent' => $payments, 'weight' => 3]);
+// Travel, the second line (2026-11-23): for businesses with an active
+// Impeccabyte merchant account, booked through their account manager in the
+// merchant app. Its pages are built by 52-travel.php.
+$travel = ib_menu_link('main', 'Travel', 'route:<nolink>', ['parent' => $services, 'weight' => 1]);
+$trip = ib_menu_link('main', 'Plan a Trip', 'route:<nolink>', ['parent' => $travel, 'weight' => 0]);
+ib_menu_link('main', 'Trip Planning', 'internal:/travel', ['parent' => $trip, 'weight' => 0, 'icon' => 'map-pin', 'description' => 'How we plan and what it costs']);
+ib_menu_link('main', 'Hotel Perks', 'internal:/travel/hotel-perks', ['parent' => $trip, 'weight' => 1, 'icon' => 'bed', 'description' => 'What partner hotels usually include']);
+$book = ib_menu_link('main', 'Book a Trip', 'route:<nolink>', ['parent' => $travel, 'weight' => 1]);
+ib_menu_link('main', 'Log In', 'https://app.impeccabyte.com', ['parent' => $book, 'weight' => 0, 'icon' => 'lock', 'description' => 'Your account manager books your trip']);
 // Hardware is the fourth column under Payments, so its links are titles only
 // to keep the column as short as the others.
 ib_menu_link('main', 'All Devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card']);
@@ -116,6 +125,10 @@ $footer = [
     'POS Systems' => $term_filter('/hardware', 'type', 'device_type', 'POS System'),
     'Mobile Readers' => $term_filter('/hardware', 'type', 'device_type', 'Mobile Reader'),
     'Self-Order Kiosks' => $term_filter('/hardware', 'type', 'device_type', 'Self-Order Kiosk'),
+  ],
+  'footer-travel' => [
+    'Trip Planning' => 'internal:/travel',
+    'Hotel Perks' => 'internal:/travel/hotel-perks',
   ],
   'footer-industries' => [
     'Restaurants & Bars' => 'internal:/industries/restaurants',

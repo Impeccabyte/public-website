@@ -13,7 +13,7 @@ description: 'The top of a page: headline with one italic clay word, lead, calls
 #   link_secondary: Secondary link {url, title}
 #   checklist: List of short reassurances
 #   media: Image {url, alt}
-#   hero_art: dashboard or receipt
+#   hero_art: dashboard, receipt, statement or confirmation
 #   media_label: Text alternative for the placeholder art
 #   breadcrumb: List of {title, url}
 #   search: Rendered search form

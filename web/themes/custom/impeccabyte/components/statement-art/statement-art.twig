@@ -1,31 +1,50 @@
 {#
-  An example processing statement from another processor, with three charges
-  explained in plain English. The figures are invented for a fictional
-  business to show how a statement reads; they are not Impeccabyte's prices.
-  The statement itself is decorative; the explanations are real text.
+  An example document with its confusing lines numbered and explained in
+  plain English. By default it is a processing statement from another
+  processor; confirmation-art passes a hotel confirmation instead. The
+  figures are invented to show how the document reads; they are not
+  Impeccabyte's prices. The document is decorative; the explanations are
+  real text.
+
+  rows: {label, value, num (numbered and highlighted), kind: 'meta' (muted),
+  'rule' (dashed line) or 'total'}. notes: {title, text}, one per num.
 #}
+{% set default_rows = [
+  {kind: 'rule'},
+  {label: 'Card sales'|t, value: '$18,420.00'},
+  {label: 'Interchange and assessments'|t, value: '$412.36', num: 1},
+  {label: 'Discount rate 0.25%'|t, value: '$46.05'},
+  {label: 'Non-qualified surcharge'|t, value: '$86.20', num: 2},
+  {label: 'Statement fee'|t, value: '$9.95'},
+  {label: 'PCI non-compliance'|t, value: '$39.95', num: 3},
+  {kind: 'rule'},
+  {label: 'Total fees'|t, value: '$594.51', kind: 'total'},
+] %}
+{% set default_notes = [
+  {title: 'Interchange and assessments'|t, text: "The card networks' own charge on each sale. Every processor pays it."|t},
+  {title: 'Non-qualified surcharge'|t, text: "An extra charge when a card didn't fit your quoted rate. Worth asking about."|t},
+  {title: 'PCI non-compliance'|t, text: 'Charged until your yearly security form is filed.'|t},
+] %}
 <figure{{ attributes.addClass('statement-art') }}>
   <div class="statement-art__sheet" aria-hidden="true">
     <div class="statement-art__head">
-      <div class="statement-art__title">{{ 'Monthly processing statement'|t }}</div>
+      <div class="statement-art__title">{{ title|default('Monthly processing statement'|t) }}</div>
       {{ include('impeccabyte:badge', {label: 'Example'|t, size: 'sm'}, with_context = false) }}
     </div>
-    <div class="statement-art__rule"></div>
-    <div class="statement-art__line"><span>{{ 'Card sales'|t }}</span><span>$18,420.00</span></div>
-    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">1</b>{{ 'Interchange and assessments'|t }}</span><span>$412.36</span></div>
-    <div class="statement-art__line"><span>{{ 'Discount rate 0.25%'|t }}</span><span>$46.05</span></div>
-    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">2</b>{{ 'Non-qualified surcharge'|t }}</span><span>$86.20</span></div>
-    <div class="statement-art__line"><span>{{ 'Statement fee'|t }}</span><span>$9.95</span></div>
-    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">3</b>{{ 'PCI non-compliance'|t }}</span><span>$39.95</span></div>
-    <div class="statement-art__rule"></div>
-    <div class="statement-art__line statement-art__line--total"><span>{{ 'Total fees'|t }}</span><span>$594.51</span></div>
+    {% for row in rows|default(default_rows) %}
+      {% if row.kind == 'rule' %}
+        <div class="statement-art__rule"></div>
+      {% else %}
+        <div class="statement-art__line{{ row.num ? ' statement-art__line--flag' }}{{ row.kind == 'total' ? ' statement-art__line--total' }}{{ row.kind == 'meta' ? ' statement-art__line--meta' }}"><span>{% if row.num %}<b class="statement-art__num">{{ row.num }}</b>{% endif %}{{ row.label }}</span><span>{{ row.value }}</span></div>
+      {% endif %}
+    {% endfor %}
   </div>
   <figcaption class="statement-art__notes">
     <p class="statement-art__eyebrow">{{ 'In plain English'|t }}</p>
     <ol class="statement-art__list">
-      <li><span class="statement-art__num" aria-hidden="true">1</span><span><strong>{{ 'Interchange and assessments'|t }}</strong> {{ "The card networks' own charge on each sale. Every processor pays it."|t }}</span></li>
-      <li><span class="statement-art__num" aria-hidden="true">2</span><span><strong>{{ 'Non-qualified surcharge'|t }}</strong> {{ "An extra charge when a card didn't fit your quoted rate. Worth asking about."|t }}</span></li>
-      <li><span class="statement-art__num" aria-hidden="true">3</span><span><strong>{{ 'PCI non-compliance'|t }}</strong> {{ 'Charged until your yearly security form is filed.'|t }}</span></li>
+      {% for note in notes|default(default_notes) %}
+        <li><span class="statement-art__num" aria-hidden="true">{{ loop.index }}</span><span><strong>{{ note.title }}</strong> {{ note.text }}</span></li>
+      {% endfor %}
     </ol>
   </figcaption>
 </figure>

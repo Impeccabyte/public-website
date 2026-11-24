@@ -20,6 +20,9 @@ settings:
     -
       value: statement
       label: 'Plain-English statement'
+    -
+      value: confirmation
+      label: 'Hotel confirmation'
   allowed_values_function: ''
 module: options
 locked: false

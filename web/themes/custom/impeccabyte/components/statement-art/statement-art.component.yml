@@ -1,3 +1,6 @@
 name: Statement art
-description: 'The illustration beside the home hero: an example processing statement with three charges explained in plain English. Example figures for a fictional business, not a price list.'
-# Takes no props.
+description: 'An example document with its confusing lines numbered and explained in plain English: by default a processing statement (Home hero), or any document passed in, such as the hotel confirmation on travel pages. Example figures, not a price list.'
+# Props, all optional (the default is the processing statement):
+#   title: Document title
+#   rows: Lines, each {label, value, num, kind: meta|rule|total}
+#   notes: Plain-English notes, one {title, text} per numbered line

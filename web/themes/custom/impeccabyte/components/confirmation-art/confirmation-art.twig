@@ -1,0 +1,26 @@
+{#
+  An example hotel booking confirmation with its perk lines explained in
+  plain English, for travel pages. Placeholders and example figures only:
+  perks vary by hotel, and upgrades and flexible check-in or check-out are
+  only ever "when available".
+#}
+{{ include('impeccabyte:statement-art', {
+  title: 'Booking confirmation'|t,
+  rows: [
+    {label: '[Partner hotel]', value: '[Dates]', kind: 'meta'},
+    {kind: 'rule'},
+    {label: 'Room'|t, value: '[Room type]'},
+    {label: 'Daily breakfast'|t, value: 'Included'|t, num: 1},
+    {label: 'Hotel credit'|t, value: '$100', num: 2},
+    {label: 'Room upgrade'|t, value: 'When available'|t, num: 3},
+    {label: 'Early in / late out'|t, value: 'When available'|t, num: 4},
+    {kind: 'rule'},
+    {label: 'Nightly rate'|t, value: '[Rate]', kind: 'total'},
+  ],
+  notes: [
+    {title: 'Daily breakfast'|t, text: "Included at many partner hotels. We confirm your hotel's perks before you book."|t},
+    {title: 'Hotel credit'|t, text: 'Money to spend at the hotel, often on dining or the spa. The amount depends on the hotel.'|t},
+    {title: 'Room upgrade'|t, text: "We ask for a better room. The hotel decides when you arrive, based on what's free."|t},
+    {title: 'Early check-in or late check-out'|t, text: "We ask for more time in your room. Also the hotel's call on the day."|t},
+  ],
+}, with_context = false) }}

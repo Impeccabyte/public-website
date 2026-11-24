@@ -19,7 +19,7 @@ Whether Impeccabyte takes clients outside Austin and Central Texas is undecided 
 
 ## Product Purpose
 
-Impeccabyte is a merchant services agency in Austin, Texas, and an authorized sales agent of Maverick Payments. The site explains card processing in plain words, shows the hardware and pricing programs Impeccabyte can set up, and turns a visitor into a conversation.
+Impeccabyte is a merchant services agency in Austin, Texas, and an authorized sales agent of Maverick Payments. The site explains card processing in plain words, shows the hardware and pricing programs Impeccabyte can set up, and turns a visitor into a conversation. A second line, travel planning, is a perk for existing merchant customers: partner-hotel stays booked through Fora Travel by their account manager (`/travel`).
 
 **Success is a processing statement uploaded for review** (the statement review form). A statement review is what wins a switch. The three-step Get a quote form and a call or text are the supporting paths.
 
@@ -45,7 +45,7 @@ Not a positioning claim: being a named local person you can call. Austin is wher
 
 ## Capabilities and Constraints
 
-- **Merchant services only.** No business banking in copy, menus or forms.
+- **Merchant services, plus travel for merchants.** No business banking in copy, menus or forms. Travel planning (independent advisor hosted by Fora Travel) is only for businesses with an active Impeccabyte merchant account, booked through their account manager in the merchant app; see `CLAUDE.md` for its copy rules.
 - **No promises** of approval, no reserves, or funding times beyond "cutoffs vary by processor".
 - **Prices** come only from Impeccabyte's pricing playbook (November 2026) and live only in price fields, never free text, so one setting hides them all. Prices the playbook does not cover are editable seed content.
 - **Never** put Impeccabyte's costs, Maverick buy rates, residual shares, margins, non-merchant hardware tiers or the placement rule anywhere in the site or repo.

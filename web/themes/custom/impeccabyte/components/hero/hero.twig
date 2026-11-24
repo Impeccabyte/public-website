@@ -35,6 +35,8 @@
           {{ include('impeccabyte:receipt-art', {}, with_context = false) }}
         {% elseif v == 'split' and hero_art == 'statement' %}
           {{ include('impeccabyte:statement-art', {}, with_context = false) }}
+        {% elseif v == 'split' and hero_art == 'confirmation' %}
+          {{ include('impeccabyte:confirmation-art', {}, with_context = false) }}
         {% elseif v == 'split' %}
           {{ include('impeccabyte:hero-art', {label: media_label}, with_context = false) }}
         {% else %}

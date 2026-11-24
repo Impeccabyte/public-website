@@ -99,7 +99,7 @@ function impeccabyte_preprocess_page(array &$variables) {
   $variables['footer_menus'] = [];
   $cache_tags = ['config:impeccabyte_site.settings', 'config:system.menu.main'];
   $menus = \Drupal::entityTypeManager()->getStorage('menu');
-  foreach (['footer-solutions', 'footer-hardware', 'footer-industries', 'footer-company'] as $name) {
+  foreach (['footer-solutions', 'footer-hardware', 'footer-travel', 'footer-industries', 'footer-company'] as $name) {
     if ($menu = $menus->load($name)) {
       $variables['footer_menus'][] = ['title' => $menu->label(), 'items' => _impeccabyte_menu($name, 1)];
       $cache_tags[] = 'config:system.menu.' . $name;
@@ -488,6 +488,11 @@ function _impeccabyte_breadcrumb(): array {
 
     default:
       $trail[] = ['title' => t('Home'), 'url' => Url::fromRoute('<front>')->toString()];
+      // Pages under /travel link back to the travel overview.
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+      if (str_starts_with($alias, '/travel/') && ($overview = ib_theme_node_by_alias('/travel'))) {
+        $trail[] = ['title' => $overview->label(), 'url' => $overview->toUrl()->toString()];
+      }
   }
   $trail[] = ['title' => $node->label(), 'url' => ''];
   return $trail;

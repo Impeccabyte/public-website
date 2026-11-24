@@ -1,0 +1,8 @@
+uuid: be1fb132-2525-4e5b-af0f-797fd1032595
+langcode: en
+status: true
+dependencies: {  }
+id: footer-travel
+label: Travel
+description: 'Footer column: travel.'
+locked: false

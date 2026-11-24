@@ -36,11 +36,12 @@ foreach ($defaults as $key => $value) {
 $settings->save();
 
 // Menus. The main menu ships with core; the footer has one menu per column.
-// Column titles follow the main menu (2026-11-23): Payments, Hardware, Who We
-// Serve and Company. The machine names keep their first names.
+// Column titles follow the main menu (2026-11-23): Payments, Hardware, Travel,
+// Who We Serve and Company. The machine names keep their first names.
 $footer_columns = [
   'footer-solutions' => ['Payments', 'Footer column: payments.'],
   'footer-hardware' => ['Hardware', 'Footer column: hardware.'],
+  'footer-travel' => ['Travel', 'Footer column: travel.'],
   'footer-industries' => ['Who We Serve', 'Footer column: who we serve.'],
   'footer-company' => ['Company', 'Footer column: company.'],
 ];

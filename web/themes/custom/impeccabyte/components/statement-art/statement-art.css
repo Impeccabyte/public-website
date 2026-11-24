@@ -22,6 +22,7 @@
 .statement-art__line > span:first-child { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
 .statement-art__line--flag { margin: 0 -10px; padding: var(--space-2) 10px; border-radius: var(--radius-sm); background: var(--clay-50); color: var(--ink-900); }
 .statement-art__line--total { font-weight: var(--fw-semibold); color: var(--ink-900); }
+.statement-art__line--meta { color: var(--ink-600); }
 .statement-art__num {
   flex-shrink: 0;
   width: 22px; height: 22px;

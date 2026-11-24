@@ -22,13 +22,14 @@ ib_field('node', 'industry_page', 'field_industry', 'entity_reference', 'Industr
 
 // The hero can show a drawn illustration when there is no photo.
 ib_field('paragraph', 'hero', 'field_hero_art', 'list_string', 'Illustration', [
-  'storage' => ['allowed_values' => $hero_art = ['dashboard' => 'Dashboard and terminal', 'receipt' => 'Dual pricing receipt', 'statement' => 'Plain-English statement']],
+  'storage' => ['allowed_values' => $hero_art = ['dashboard' => 'Dashboard and terminal', 'receipt' => 'Dual pricing receipt', 'statement' => 'Plain-English statement', 'confirmation' => 'Hotel confirmation']],
   'widget' => 'options_select',
   'weight' => 7,
   'description' => 'Used by the split variant when no media is chosen.',
 ]);
 // ib_field() leaves existing storage alone, so a site created before a
-// choice was added (the statement, 2026-11-23) gets the missing ones here.
+// choice was added (the statement and the hotel confirmation, 2026-11-23)
+// gets the missing ones here.
 $art_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'field_hero_art');
 $allowed = $art_storage->getSetting('allowed_values');
 if ($missing = array_diff_key($hero_art, $allowed)) {
