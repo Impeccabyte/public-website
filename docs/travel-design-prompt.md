@@ -4,18 +4,19 @@ Paste everything below the line into Claude Design. It is self-contained. The fa
 
 ---
 
-Design three pages, plus one menu panel, for a new travel line of business on the Impeccabyte website. Show each page at desktop (1440px) and phone (390px).
+Design two pages, plus one menu panel, for a new travel line of business on the Impeccabyte website. Show each page at desktop (1440px) and phone (390px).
 
 ## Who this is for
 
-Impeccabyte is a small Austin, Texas business best known for merchant services (card processing for small businesses). It is adding a second line: travel planning, as an independent advisor hosted by Fora Travel. Travel planning is only for businesses with an active Impeccabyte merchant account: it is a service for our payments customers. Visitors are mostly those business owners and their families, planning a special trip or business travel. They want a better hotel stay than booking it themselves, at the same price, with a real person to plan it. Success is a visitor sending a trip request.
+Impeccabyte is a small Austin, Texas business best known for merchant services (card processing for small businesses). It is adding a second line: travel planning, as an independent advisor hosted by Fora Travel. Travel planning is only for businesses with an active Impeccabyte merchant account: it is a service for our payments customers. Visitors are mostly those business owners and their families, planning a special trip or business travel. They want a better hotel stay than booking it themselves, at the same price, with a real person to plan it. Merchants book travel directly with their Impeccabyte account manager; there is no trip request form on the site. Success is a merchant contacting their account manager about a trip, or a non-customer asking for a quote.
 
 ## Pages
 
 1. **Travel overview** (`/travel`). Hero, how planning works in three steps, what you get at partner hotels, the kinds of trips we plan, what it costs, FAQ, and a closing call to action.
-2. **Hotel perks** (`/travel/hotel-perks`). Explains partner-hotel perks honestly: what partner hotels usually include, what is "when available", and an example perk card for a sample hotel. Ends with "Ask about a hotel".
-3. **Start planning** (`/travel/plan`). A short trip request form: destination or ideas, dates or season, travellers, budget range, hotels already in mind, how to reach you, and a consent checkbox. Include a reassurance sidebar: what happens next and any planning fee, agreed upfront.
-4. **Services menu panel.** The site's Services mega menu gains a second business line. Down the left: "Payments" and "Travel". With Travel selected, show columns such as "Plan a Trip" (Trip planning, Hotel perks, Start planning) and "Company" links. Desktop only; the phone menu nests each line in its own expandable row.
+2. **Hotel perks** (`/travel/hotel-perks`). Explains partner-hotel perks honestly: what partner hotels usually include, what is "when available", and an example perk card for a sample hotel. Ends with "Ask your account manager".
+3. **Services menu panel.** The site's Services mega menu gains a second business line. Down the left: "Payments" and "Travel". With Travel selected, show columns such as "Plan a Trip" (Trip planning, Hotel perks) and "Company" links. Desktop only; the phone menu nests each line in its own expandable row.
+
+There is no booking or trip request form. The main call to action on travel pages is "Contact your account manager" (contact details as a placeholder, "[account manager contact]"); the secondary path for non-customers is "Get a quote".
 
 ## What the pages may and may not say
 
@@ -24,7 +25,7 @@ These rules matter more than anything visual.
 - **Perks are examples, not guarantees.** Write "perks such as daily breakfast, a hotel credit and a welcome amenity, depending on the hotel". Upgrades and early check-in or late check-out are always "when available". Never write "guaranteed upgrade", "VIP status", "free breakfast everywhere" or "red carpet".
 - **Price:** "In most cases you pay the same rate as booking direct." Any planning fee is shown as a placeholder, "[Planning fee]", and described as agreed upfront. Never write "no fees", "lowest price" or "best rate guaranteed".
 - **Partners:** only "partner hotels" and "participating properties". Do not name hotel brands, consortia or cruise lines, and do not use Fora's logo. Use "[Partner hotel]" in examples, and label any figures in an example "Example".
-- **Who can use it:** every travel page says plainly that travel planning is for businesses with an active Impeccabyte merchant account, with a "Get a quote" path for anyone who isn't a customer yet. The trip request form asks for the business name on the merchant account. Never imply anyone can book travel without one.
+- **Who can use it:** every travel page says plainly that travel planning is for businesses with an active Impeccabyte merchant account, and that merchants book it through their account manager, with a "Get a quote" path for anyone who isn't a customer yet. Never imply anyone can book travel without one, or that travel can be booked online.
 - **Relationship:** say Impeccabyte is "an independent travel advisor hosted by Fora Travel". It is not Fora.
 - **Required disclosure on every travel page,** near the footer: "Impeccabyte is an independent contractor of Fora Travel, Inc., a registered seller of travel. California CST [number]. Florida [number]. Washington [number]. Registration as a seller of travel does not constitute approval by the State of California." Keep every number a placeholder in square brackets.
 - **No invented proof.** No testimonials, ratings, client counts, destination counts or years of experience. Where a quote would go, leave a clearly marked placeholder or leave the slot out.
@@ -32,7 +33,7 @@ These rules matter more than anything visual.
 
 ## Voice
 
-Warm, plain-spoken, encouraging and professional, like a well-travelled friend. Speak to "you"; the business is "we". Sentence case everywhere, buttons included. Buttons start with a verb: "Start planning", "Ask about a hotel", "See hotel perks". No emoji and no em dashes. Explain travel terms in plain words.
+Warm, plain-spoken, encouraging and professional, like a well-travelled friend. Speak to "you"; the business is "we". Sentence case everywhere, buttons included. Buttons start with a verb: "Contact your account manager", "Ask your account manager", "See hotel perks". No emoji and no em dashes. Explain travel terms in plain words.
 
 ## Visual system (use exactly; it is the existing Impeccabyte brand)
 
@@ -63,4 +64,4 @@ Warm, plain-spoken, encouraging and professional, like a well-travelled friend. 
 
 ## Accessibility
 
-WCAG 2.2 AA: 4.5:1 text contrast, visible focus (a 2px clay outline with a white halo), one h1 per page with headings in order, every form field labelled, no meaning carried by colour alone, and full keyboard use of the menu and the form.
+WCAG 2.2 AA: 4.5:1 text contrast, visible focus (a 2px clay outline with a white halo), one h1 per page with headings in order, no meaning carried by colour alone, and full keyboard use of the menu and the FAQ.
