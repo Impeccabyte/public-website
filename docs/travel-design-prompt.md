@@ -13,10 +13,10 @@ Impeccabyte is a small Austin, Texas business best known for merchant services (
 ## Pages
 
 1. **Travel overview** (`/travel`). Hero, how planning works in three steps, what you get at partner hotels, the kinds of trips we plan, what it costs, FAQ, and a closing call to action.
-2. **Hotel perks** (`/travel/hotel-perks`). Explains partner-hotel perks honestly: what partner hotels usually include, what is "when available", and an example perk card for a sample hotel. Ends with "Ask your account manager".
+2. **Hotel perks** (`/travel/hotel-perks`). Explains partner-hotel perks honestly: what partner hotels usually include, what is "when available", and an example perk card for a sample hotel. Ends with a "Log in" button.
 3. **Services menu panel.** The site's Services mega menu gains a second business line. Down the left: "Payments" and "Travel". With Travel selected, show columns such as "Plan a Trip" (Trip planning, Hotel perks) and "Company" links. Desktop only; the phone menu nests each line in its own expandable row.
 
-There is no booking or trip request form. The main call to action on travel pages is "Contact your account manager" (contact details as a placeholder, "[account manager contact]"); the secondary path for non-customers is "Get a quote".
+There is no booking or trip request form. The main call to action on travel pages is "Log in", to the merchant app at app.impeccabyte.com, where merchants reach their account manager; the secondary path for non-customers is "Get a quote".
 
 ## What the pages may and may not say
 
@@ -33,7 +33,7 @@ These rules matter more than anything visual.
 
 ## Voice
 
-Warm, plain-spoken, encouraging and professional, like a well-travelled friend. Speak to "you"; the business is "we". Sentence case everywhere, buttons included. Buttons start with a verb: "Contact your account manager", "Ask your account manager", "See hotel perks". No emoji and no em dashes. Explain travel terms in plain words.
+Warm, plain-spoken, encouraging and professional, like a well-travelled friend. Speak to "you"; the business is "we". Sentence case everywhere, buttons included. Buttons start with a verb: "Log in", "See hotel perks", "Get a quote". No emoji and no em dashes. Explain travel terms in plain words.
 
 ## Visual system (use exactly; it is the existing Impeccabyte brand)
 
