@@ -1,21 +1,23 @@
 {#
   An example hotel booking confirmation with its perk lines explained in
-  plain English, for travel pages. Placeholders and example figures only:
-  perks vary by hotel, and upgrades and flexible check-in or check-out are
-  only ever "when available".
+  plain English, for travel pages, marked "Example". Sample details only: a
+  hotel described, never named (no hotel brands), and the nightly rate as
+  "Same as booking direct" rather than a price. Perks vary by hotel, and
+  upgrades and flexible check-in or check-out are only ever "when
+  available".
 #}
 {{ include('impeccabyte:statement-art', {
   title: 'Booking confirmation'|t,
   rows: [
-    {label: '[Partner hotel]', value: '[Dates]', kind: 'meta'},
+    {label: 'Boutique hotel, Santa Fe'|t, value: 'Apr 10 to 13'|t, kind: 'meta'},
     {kind: 'rule'},
-    {label: 'Room'|t, value: '[Room type]'},
+    {label: 'Room'|t, value: 'King room'|t},
     {label: 'Daily breakfast'|t, value: 'Included'|t, num: 1},
     {label: 'Hotel credit'|t, value: '$100', num: 2},
     {label: 'Room upgrade'|t, value: 'When available'|t, num: 3},
     {label: 'Early in / late out'|t, value: 'When available'|t, num: 4},
     {kind: 'rule'},
-    {label: 'Nightly rate'|t, value: '[Rate]', kind: 'total'},
+    {label: 'Nightly rate'|t, value: 'Same as booking direct'|t, kind: 'total'},
   ],
   notes: [
     {title: 'Daily breakfast'|t, text: "Included at many partner hotels. We confirm your hotel's perks before you book."|t},

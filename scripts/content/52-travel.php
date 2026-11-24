@@ -163,7 +163,7 @@ $perks = ib_page('landing_page', 'Hotel Perks', '/travel/hotel-perks', [
   ]],
   ['cta_band', [
     'heading' => 'Have a hotel in mind?',
-    'accent_word' => 'mind',
+    'accent_word' => 'hotel',
     'body' => "Log in and tell your account manager which one and your dates. They'll check whether it's a partner and what perks it includes.",
     'link' => ib_link($login, 'Log in'),
     'link_secondary' => ib_link('/travel', 'See how planning works'),
