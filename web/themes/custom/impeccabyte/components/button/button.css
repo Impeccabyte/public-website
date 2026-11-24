@@ -29,6 +29,8 @@
 .button--lg { min-height: 52px; padding: 0 26px; }
 .button--block { display: flex; width: 100%; }
 .button--primary { box-shadow: var(--shadow-brand); }
+/* On clove the clay glow reads as a muddy halo; the fill carries the button. */
+:is(.cta-band__box, .card--tone-dark, .site-footer) .button--primary { box-shadow: none; }
 .button--secondary { --_bd: var(--ink-400); }
 .button--secondary:hover { --_bd: var(--ink-500); }
 .button--ghost { --_bg: transparent; --_fg: var(--clay-600); }

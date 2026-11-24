@@ -21,3 +21,18 @@ a.chip, a.chip:hover { color: var(--ink-800); }
   .chips { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--space-5) * -1); padding: 6px var(--space-5); }
   .chip { flex-shrink: 0; }
 }
+/* A sideways-scrolling chip row fades at its right edge while there is more
+   to see, and the fade clears at the end. Tied to the row's own scroll, so a
+   row that fits has no fade, and browsers without scroll timelines show the
+   row as before. */
+@property --_fade { syntax: '<length>'; inherits: false; initial-value: 0px; }
+@supports (animation-timeline: scroll()) {
+  @media (max-width: 760px) {
+    .chips {
+      mask-image: linear-gradient(to right, var(--ink-900) calc(100% - var(--_fade)), transparent);
+      animation: chips-fade linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+@keyframes chips-fade { 0%, 92% { --_fade: var(--space-12); } 100% { --_fade: 0px; } }

@@ -4,4 +4,4 @@
 /* Three cards: one row of three from tablet width up, never 2 + 1. */
 .feature-grid--three .feature-grid__grid { --_min: 220px; }
 /* A long list of link-only cards (no body), such as industries: four across. */
-.feature-grid--links .feature-grid__grid { --_min: 240px; gap: var(--space-4); }
+.feature-grid--links .feature-grid__grid { --_min: 240px; --_gap: var(--space-4); }

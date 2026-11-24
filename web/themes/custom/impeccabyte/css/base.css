@@ -26,7 +26,10 @@ h4, h5, h6 {
   line-height: var(--lh-snug);
   margin: 0;
 }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
 p { margin: 0; }
+/* No single word stranded on the last line of a paragraph or list item. */
+p, li, dd { text-wrap: pretty; }
 a { color: var(--text-link); text-decoration: none; transition: color var(--dur-fast) var(--ease-out); }
 a:hover { color: var(--clay-700); }
 code, pre, kbd, samp { font-family: var(--font-mono); }
@@ -54,7 +57,16 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
 .section--brand { background: var(--clay-50); }
 .section--flush-top { padding-top: 0; }
 .text-link { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: var(--fw-semibold); min-height: 24px; }
-.grid-auto { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_min, 300px)), 1fr)); }
+.grid-auto { display: grid; gap: var(--_gap, var(--space-6)); grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_min, 300px)), 1fr)); }
+/* Exactly four items: four across when four fit, otherwise two by two, never
+   three and one left alone (tablets, and the iPhone Duo opened sideways). The
+   column is half the grid until there is room for four at the minimum width;
+   the 999 multiplier switches between the two. A view's wrapper is display:
+   contents, so its cards count as the grid's items. */
+.grid-auto:is(:has(> :nth-child(4):last-child), :has(> .views-element-container:only-child > :nth-child(4):last-child)) {
+  --_four: calc(4 * var(--_min, 300px) + 3 * var(--_gap, var(--space-6)));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--_min, 300px), min(calc((100% - var(--_gap, var(--space-6))) / 2 - 0.1px), calc((var(--_four) - 100%) * 999)))), 1fr));
+}
 img, svg, video { max-width: 100%; }
 img { height: auto; }
 .table-scroll { position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ink-200); border-radius: var(--radius-lg); background: var(--white); }

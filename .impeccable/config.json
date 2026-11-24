@@ -1,0 +1,18 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "web/themes/custom/impeccabyte/components/tabs/tabs.css"
+        ],
+        "createdAt": "2026-11-24T01:03:38.093Z",
+        "reason": "Claude triage: line 17 sets border-radius: 0 for underline tabs, so the 3px bottom border sits on a square tab, not a rounded one"
+      }
+    ]
+  }
+}

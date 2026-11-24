@@ -31,11 +31,11 @@
 .device-page__gateway-name { display: block; font-weight: var(--fw-semibold); color: var(--ink-900); }
 .device-page__gateway-body { display: block; font-size: var(--text-sm); line-height: var(--lh-body); color: var(--ink-600); }
 .device-page__docs-inner { gap: var(--space-6); }
-.device-page__doc-list { --_min: 280px; list-style: none; margin: 0; padding: 0; gap: var(--space-4); }
+.device-page__doc-list { --_min: 280px; --_gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
 .device-page__doc { flex-direction: row; align-items: center; gap: var(--space-4); color: var(--clay-600); }
 .device-page__doc-icon { flex-shrink: 0; width: 48px; height: 56px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); background: var(--clay-50); color: var(--clay-600); }
 .device-page__doc-text { flex: 1; min-width: 0; }
 .device-page__doc-name { display: block; font-weight: var(--fw-semibold); color: var(--ink-900); }
 .device-page__doc-meta { display: block; font-size: var(--text-sm); color: var(--ink-600); }
-.device-page__related-grid { --_min: 240px; gap: var(--space-5); }
+.device-page__related-grid { --_min: 240px; --_gap: var(--space-5); }
 @media (max-width: 760px) { .device-page__cols { gap: var(--space-8); } }
