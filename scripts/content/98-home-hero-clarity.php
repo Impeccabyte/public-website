@@ -8,7 +8,8 @@
  * founding promise (every charge explained in plain English, every fee in
  * writing) and shows an example statement with three charges explained,
  * instead of the dashboard and terminal. Austin stays in the eyebrow and the
- * search title.
+ * search title. The industry picker's heading also leads with fit instead of
+ * Austin.
  *
  * Each value is only replaced while it still holds the old wording, so
  * anything edited in the admin is kept. On a fresh install 20-pages.php
@@ -57,6 +58,15 @@ foreach ($home->get('field_sections')->referencedEntities() as $hero) {
     $hero->save();
   }
   break;
+}
+
+// The industry picker's heading leads with fit, not Austin (2026-11-23).
+foreach ($home->get('field_sections')->referencedEntities() as $section) {
+  if ($section->bundle() === 'chip_links' && $section->get('field_heading')->value === 'Built for the way Austin does business') {
+    $section->get('field_heading')->value = 'Pick your industry, see the setup that fits';
+    $section->save();
+    $changed++;
+  }
 }
 
 if ($changed) {

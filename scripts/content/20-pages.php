@@ -56,7 +56,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
   ]],
   ['chip_links', [
     'eyebrow' => 'Industries',
-    'heading' => 'Built for the way Austin does business',
+    'heading' => 'Pick your industry, see the setup that fits',
     'items' => [
       $chip('Restaurants & Bars', 'Faster tables, cleaner tips, lower card costs', 'Pay at the table, split checks in seconds and adjust tips before close. A cash discount on Clover helps offset what you pay to process cards.', 'See restaurant solutions', '/industries/restaurants', [
         $setup('Clover Station Duo at the counter', NULL, 'From $135/mo or $2,739 to own'),

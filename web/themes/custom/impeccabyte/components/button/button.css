@@ -31,6 +31,9 @@
 .button--primary { box-shadow: var(--shadow-brand); }
 /* On clove the clay glow reads as a muddy halo; the fill carries the button. */
 :is(.cta-band__box, .card--tone-dark, .site-footer) .button--primary { box-shadow: none; }
+/* The shadows above would replace the white focus halo from a11y.css, and on
+   clove the clay outline alone is under 3:1. Put the halo back on focus. */
+.button:focus-visible, :is(.cta-band__box, .card--tone-dark, .site-footer) .button:focus-visible { box-shadow: 0 0 0 5px var(--white); }
 .button--secondary { --_bd: var(--ink-400); }
 .button--secondary:hover { --_bd: var(--ink-500); }
 .button--ghost { --_bg: transparent; --_fg: var(--clay-600); }
