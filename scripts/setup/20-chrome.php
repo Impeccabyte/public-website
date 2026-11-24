@@ -36,10 +36,22 @@ foreach ($defaults as $key => $value) {
 $settings->save();
 
 // Menus. The main menu ships with core; the footer has one menu per column.
-ib_menu('footer-solutions', 'Solutions', 'Footer column: solutions.');
-ib_menu('footer-hardware', 'Hardware', 'Footer column: hardware.');
-ib_menu('footer-industries', 'Industries', 'Footer column: industries.');
-ib_menu('footer-company', 'Company', 'Footer column: company.');
+// Column titles follow the main menu (2026-11-23): Payments, Hardware, Who We
+// Serve and Company. The machine names keep their first names.
+$footer_columns = [
+  'footer-solutions' => ['Payments', 'Footer column: payments.'],
+  'footer-hardware' => ['Hardware', 'Footer column: hardware.'],
+  'footer-industries' => ['Who We Serve', 'Footer column: who we serve.'],
+  'footer-company' => ['Company', 'Footer column: company.'],
+];
+foreach ($footer_columns as $id => [$label, $description]) {
+  ib_menu($id, $label, $description);
+  // ib_menu() leaves an existing menu alone, so renamed columns are set here.
+  $menu = \Drupal\system\Entity\Menu::load($id);
+  if ($menu->label() !== $label || $menu->getDescription() !== $description) {
+    $menu->set('label', $label)->set('description', $description)->save();
+  }
+}
 ib_menu('footer-legal', 'Legal links', 'The row of links under the footer disclosure.');
 
 // The standard profile's Home link is not part of this site's navigation.
@@ -122,6 +134,8 @@ $place('impeccabyte_content', 'system_main_block', 'content', 0, ['label' => 'Ma
 $place('impeccabyte_featured_card', 'block_content:b1f0a8e2-6a53-4c0e-9d7a-5e1c3a7f2d41', 'mega_featured', 0, ['label' => 'Mega menu featured card', 'status' => TRUE, 'info' => '', 'view_mode' => 'full']);
 
 // The theme draws its own logo, so the default logo file is not requested.
-\Drupal::configFactory()->getEditable('impeccabyte.settings')->set('logo.use_default', FALSE)->set('favicon.use_default', TRUE)->save();
+// The favicon is set by 80-polish.php; setting it here too would switch it
+// back to Drupal's default whenever this script is re-run on its own.
+\Drupal::configFactory()->getEditable('impeccabyte.settings')->set('logo.use_default', FALSE)->save();
 
 print "Global chrome is in place.\n";

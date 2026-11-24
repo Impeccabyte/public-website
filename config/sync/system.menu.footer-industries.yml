@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: footer-industries
-label: Industries
-description: 'Footer column: industries.'
+label: 'Who We Serve'
+description: 'Footer column: who we serve.'
 locked: false

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: footer-solutions
-label: Solutions
-description: 'Footer column: solutions.'
+label: Payments
+description: 'Footer column: payments.'
 locked: false

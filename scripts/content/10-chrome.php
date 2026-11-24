@@ -101,10 +101,11 @@ ib_menu_link('main', 'Get a Quote', 'internal:/get-a-quote', ['parent' => $compa
 
 // Footer columns.
 $footer = [
+  // Under the Payments column the links use the main menu's names.
   'footer-solutions' => [
-    'In-Person Payments' => 'internal:/solutions/in-person',
-    'Online Payments' => 'internal:/solutions/online',
-    'Mobile Payments' => 'internal:/solutions/on-the-go',
+    'In Person' => 'internal:/solutions/in-person',
+    'Online' => 'internal:/solutions/online',
+    'On the Go' => 'internal:/solutions/on-the-go',
     'Dual Pricing' => 'internal:/solutions/dual-pricing',
     'Chargeback Protection' => 'internal:/solutions/chargeback-protection',
   ],
@@ -114,6 +115,7 @@ $footer = [
     'Handheld Terminals' => $term_filter('/hardware', 'type', 'device_type', 'Handheld'),
     'POS Systems' => $term_filter('/hardware', 'type', 'device_type', 'POS System'),
     'Mobile Readers' => $term_filter('/hardware', 'type', 'device_type', 'Mobile Reader'),
+    'Self-Order Kiosks' => $term_filter('/hardware', 'type', 'device_type', 'Self-Order Kiosk'),
   ],
   'footer-industries' => [
     'Restaurants & Bars' => 'internal:/industries/restaurants',
@@ -126,8 +128,9 @@ $footer = [
     'About Us' => 'internal:/about',
     'Pricing' => 'internal:/pricing',
     'Resources' => 'internal:/resources',
-    'Contact' => 'internal:/get-a-quote',
-    'Merchant Log In' => 'https://app.impeccabyte.com',
+    // Opens the quote form, so it says so. The header's "Log in" covers the
+    // merchant app.
+    'Get a Quote' => 'internal:/get-a-quote',
   ],
   'footer-legal' => [
     'Privacy' => 'internal:/privacy',

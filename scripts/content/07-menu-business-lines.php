@@ -15,6 +15,8 @@
  * - Industries becomes Who We Serve.
  * - Company drops Merchant Log In (the header's "Log in" covers it), and
  *   Contact, which opens the quote form, is labelled Get a Quote.
+ * - The footer follows: Payments links use the main menu's names, and the
+ *   Company column makes the same two changes.
  *
  * Links are moved and renamed, not recreated, so their icons, descriptions
  * and any admin edits come along. This runs before 10-chrome.php, which
@@ -82,7 +84,25 @@ if ($company = $find('Company')) {
   }
 }
 
+// The footer columns follow (their titles are set in scripts/setup/20-chrome.php).
+$footer_renames = [
+  'footer-solutions' => ['In-Person Payments' => 'In Person', 'Online Payments' => 'Online', 'Mobile Payments' => 'On the Go'],
+  'footer-company' => ['Contact' => 'Get a Quote'],
+];
+foreach ($footer_renames as $menu => $renames) {
+  foreach ($renames as $old => $new) {
+    foreach ($storage->loadByProperties(['menu_name' => $menu, 'title' => $old]) as $link) {
+      $link->set('title', $new)->save();
+      $changed++;
+    }
+  }
+}
+foreach ($storage->loadByProperties(['menu_name' => 'footer-company', 'title' => 'Merchant Log In']) as $link) {
+  $link->delete();
+  $changed++;
+}
+
 if ($changed) {
-  \Drupal::service('cache_tags.invalidator')->invalidateTags(['config:system.menu.main', 'rendered']);
+  \Drupal::service('cache_tags.invalidator')->invalidateTags(['config:system.menu.main', 'config:system.menu.footer-solutions', 'config:system.menu.footer-company', 'rendered']);
 }
 print "Menu business lines: $changed link(s) moved or renamed.\n";
