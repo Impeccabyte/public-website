@@ -1,0 +1,31 @@
+{#
+  An example processing statement from another processor, with three charges
+  explained in plain English. The figures are invented for a fictional
+  business to show how a statement reads; they are not Impeccabyte's prices.
+  The statement itself is decorative; the explanations are real text.
+#}
+<figure{{ attributes.addClass('statement-art') }}>
+  <div class="statement-art__sheet" aria-hidden="true">
+    <div class="statement-art__head">
+      <div class="statement-art__title">{{ 'Monthly processing statement'|t }}</div>
+      {{ include('impeccabyte:badge', {label: 'Example'|t, size: 'sm'}, with_context = false) }}
+    </div>
+    <div class="statement-art__rule"></div>
+    <div class="statement-art__line"><span>{{ 'Card sales'|t }}</span><span>$18,420.00</span></div>
+    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">1</b>{{ 'Interchange and assessments'|t }}</span><span>$412.36</span></div>
+    <div class="statement-art__line"><span>{{ 'Discount rate 0.25%'|t }}</span><span>$46.05</span></div>
+    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">2</b>{{ 'Non-qualified surcharge'|t }}</span><span>$86.20</span></div>
+    <div class="statement-art__line"><span>{{ 'Statement fee'|t }}</span><span>$9.95</span></div>
+    <div class="statement-art__line statement-art__line--flag"><span><b class="statement-art__num">3</b>{{ 'PCI non-compliance'|t }}</span><span>$39.95</span></div>
+    <div class="statement-art__rule"></div>
+    <div class="statement-art__line statement-art__line--total"><span>{{ 'Total fees'|t }}</span><span>$594.51</span></div>
+  </div>
+  <figcaption class="statement-art__notes">
+    <p class="statement-art__eyebrow">{{ 'In plain English'|t }}</p>
+    <ol class="statement-art__list">
+      <li><span class="statement-art__num" aria-hidden="true">1</span><span><strong>{{ 'Interchange and assessments'|t }}</strong> {{ "The card networks' own charge on each sale. Every processor pays it."|t }}</span></li>
+      <li><span class="statement-art__num" aria-hidden="true">2</span><span><strong>{{ 'Non-qualified surcharge'|t }}</strong> {{ "An extra charge when a card didn't fit your quoted rate. Worth asking about."|t }}</span></li>
+      <li><span class="statement-art__num" aria-hidden="true">3</span><span><strong>{{ 'PCI non-compliance'|t }}</strong> {{ 'Charged until your yearly security form is filed.'|t }}</span></li>
+    </ol>
+  </figcaption>
+</figure>

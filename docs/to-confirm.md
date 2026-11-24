@@ -32,6 +32,14 @@ Site-wide items that were already open (phone, address, rates, contract terms, t
 - **Surcharging column.** States card network rules plainly: debit cards cannot be surcharged, networks cap the fee, some states limit surcharging. Confirm the wording is acceptable (a "not legal advice" line sits under the table).
 - **Online.** "Works in store and online", based on Maverick's FAQ. Confirm for Impeccabyte accounts.
 
+## Cash discount on Clover (Home, `/industries/food-trucks`)
+
+Added 2026-11-23. Clover supports a cash discount, not dual pricing, so the Clover setups now say cash discount (`scripts/content/98-clover-cash-discount.php`). Cash Price (dual pricing) stays only beside Dejavoo and Valor.
+
+- **Price.** The pricing playbook has no cash discount program, so the Home setup lines and the Food Trucks add-on show no price. Say what a Clover cash discount costs merchants, or whether it sits under one of the three programs.
+- **How it works.** "Your posted prices are your card prices, and customers who pay cash get a discount at checkout" (Food Trucks FAQ), from Maverick's "true cash discount" description. Confirm with Maverick, and have counsel check the wording and any signage it needs.
+- **Setup.** "We set it up with you." Confirm whether Maverick support enables it or the merchant turns on Clover's Cash Discount app.
+
 ## Interchange plus (`/solutions/interchange-plus`)
 
 - **Markup.** "Your markup is in your agreement in writing. If anything about your pricing ever changes, we tell you first."

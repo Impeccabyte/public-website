@@ -322,7 +322,7 @@ Clove background, on-dark text, Clove 100 links that turn white and underline on
 A rounded (36px) Clove panel inside the container, with a serif headline whose italic word is Lamplight Amber, an on-dark body line and a primary plus on-dark button pair. It is the closing note of most pages.
 
 ### Receipt and Statement Art (signature)
-Payments explained with the merchant's own objects: a white receipt on a 20px sheet with the object shadow, a Newsreader shop name, JetBrains Mono line items, dashed rules and the card line highlighted in Clay Blush; or a dashboard window beside a Clove terminal with a paper screen. Use these instead of abstract graphics when a page explains money.
+Payments explained with the merchant's own objects: a white receipt on a 20px sheet with the object shadow, a Newsreader shop name, JetBrains Mono line items, dashed rules and the card line highlighted in Clay Blush. The Home hero uses the statement version: an example processing statement whose confusing charges are highlighted in Clay Blush and numbered with Lamplight Amber dots, with a Clove "In plain English" card tucked under its lower left that explains each numbered line in real, readable text. The older dashboard window beside a Clove terminal remains available but is no longer used. Use these instead of abstract graphics when a page explains money.
 
 ## Do's and Don'ts
 

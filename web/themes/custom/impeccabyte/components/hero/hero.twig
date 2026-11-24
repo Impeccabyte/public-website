@@ -33,6 +33,8 @@
           <img class="hero__image" src="{{ media.url }}" alt="{{ media.alt }}"{% if media.width %} width="{{ media.width }}" height="{{ media.height }}"{% endif %}>
         {% elseif v == 'split' and hero_art == 'receipt' %}
           {{ include('impeccabyte:receipt-art', {}, with_context = false) }}
+        {% elseif v == 'split' and hero_art == 'statement' %}
+          {{ include('impeccabyte:statement-art', {}, with_context = false) }}
         {% elseif v == 'split' %}
           {{ include('impeccabyte:hero-art', {label: media_label}, with_context = false) }}
         {% else %}

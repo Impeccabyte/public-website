@@ -17,6 +17,9 @@ settings:
     -
       value: receipt
       label: 'Dual pricing receipt'
+    -
+      value: statement
+      label: 'Plain-English statement'
   allowed_values_function: ''
 module: options
 locked: false

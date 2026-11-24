@@ -26,12 +26,13 @@ $home = ib_page('landing_page', 'Home', '/home', [
   ['hero', [
     'hero_variant' => 'split',
     'eyebrow' => 'Austin merchant services',
-    'heading' => 'Getting paid should feel impeccably easy.',
-    'accent_word' => 'impeccably',
-    'intro' => "We're a local Austin team that sets up card processing, POS hardware and online payments for small businesses and first-time founders. Clear pricing, real people, and gear that just works.",
-    'link' => ib_link('/get-a-quote', 'Get a quote'),
-    'link_secondary' => ib_link('/pricing', 'See pricing'),
-    'checklist' => ['Free statement review', 'Every fee in writing', 'Support from Austin'],
+    'heading' => 'Know every fee before you sign.',
+    'accent_word' => 'every',
+    'intro' => "Send us your processing statement and we'll explain every charge in plain English, then set you up with the pricing and hardware that fit your business. Starting out? We'll walk you through your first payment.",
+    'link' => ib_link('/pricing#statement', 'Upload a statement'),
+    'link_secondary' => ib_link('/get-a-quote', 'Get a quote'),
+    'checklist' => ['Free statement review', 'Every fee in writing', 'A setup for your industry'],
+    'hero_art' => 'statement',
   ]],
   ['logo_strip', [
     // The Maverick line is kept for the footer disclosure. The logos are
@@ -49,7 +50,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
       ['_type' => 'feature_card', 'icon' => 'globe', 'title' => 'Sell online', 'body' => 'A payment gateway, hosted checkout and payment links that drop into your website or texts.', 'link' => ib_link('/solutions/online', 'Explore online')],
       ['_type' => 'feature_card', 'icon' => 'smartphone', 'title' => 'Get paid on the go', 'body' => 'Pocket-size readers and tap to pay on your phone for markets, pop-ups and field work.', 'link' => ib_link('/solutions/on-the-go', 'Explore mobile')],
       ['_type' => 'feature_card', 'icon' => 'repeat', 'title' => 'Bill customers on a schedule', 'body' => "Recurring billing and invoices that update expired cards for you, so payments don't quietly stop.", 'link' => ib_link('/solutions/recurring-billing', 'Explore recurring billing')],
-      ['_type' => 'feature_card', 'icon' => 'circle-percent', 'title' => 'Lower your processing costs', 'body' => "Dual pricing, interchange plus or a simple flat rate. We'll show you the math on your real statement.", 'link' => ib_link('/pricing', 'Compare pricing programs'), 'highlight' => 1],
+      ['_type' => 'feature_card', 'icon' => 'circle-percent', 'title' => 'Lower your processing costs', 'body' => "Dual pricing, interchange plus or a simple flat rate. We'll show you the math on your real statement.", 'link' => ib_link('/pricing#statement', 'Get a free statement review'), 'highlight' => 1],
       ['_type' => 'feature_card', 'icon' => 'zap', 'title' => 'Know when your money arrives', 'body' => 'We set up your deposits and show you how batching works. Funding cutoffs vary by processor.', 'link' => ib_link('/solutions/funding', 'See how funding works')],
     ],
   ]],
@@ -57,14 +58,14 @@ $home = ib_page('landing_page', 'Home', '/home', [
     'eyebrow' => 'Industries',
     'heading' => 'Built for the way Austin does business',
     'items' => [
-      $chip('Restaurants & Bars', 'Faster tables, cleaner tips, smaller fees', 'Pay at the table, split checks in seconds and adjust tips before close. Dual pricing keeps card costs off your margins.', 'See restaurant solutions', '/industries/restaurants', [
+      $chip('Restaurants & Bars', 'Faster tables, cleaner tips, lower card costs', 'Pay at the table, split checks in seconds and adjust tips before close. A cash discount on Clover helps offset what you pay to process cards.', 'See restaurant solutions', '/industries/restaurants', [
         $setup('Clover Station Duo at the counter', NULL, 'From $135/mo or $2,739 to own'),
         $setup('Clover Flex for tableside pay', NULL, 'From $50/mo per handheld'),
-        $setup('Cash Price', 'Card customers cover the processing cost'),
+        $setup('Cash discount', 'A lower price for customers who pay cash'),
       ]),
       $chip('Food Trucks', 'Take cards anywhere you park', 'A cellular terminal that keeps working when the Wi-Fi does not, with deposits set up before your first shift.', 'See food truck setups', '/industries/food-trucks', [
         $setup('Clover Flex with cellular data', 'Works off LTE', 'From $50/mo, works off LTE'),
-        $setup('Cash Price', 'Keep more of every taco'),
+        $setup('Cash discount', 'Keep more of every taco'),
         $setup('Funding', 'Cutoffs vary by processor'),
       ]),
       $chip('Retail', 'A counter that keeps up with Saturday', 'Barcode scanning, inventory and fast tap payments, with a setup that grows from one register to three.', 'See retail setups', '/industries/retail', [
@@ -89,7 +90,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
       ]),
       $chip('Auto Repair', 'Close out big tickets with confidence', 'Higher-ticket payments with fraud tools, plus text-to-pay so customers can approve and pay before pickup.', 'See auto setups', '/industries/auto-repair', [
         $setup('Valor VP550 terminal', NULL, 'From $30/mo or $599 to own'),
-        $setup('Cash Price', 'Offset fees on large repairs'),
+        $setup('Cash Price', 'Card customers cover processing on big tickets'),
         $setup('Chargeback protection', 'Alerts before disputes escalate'),
       ]),
       $chip('Professional Services', 'Invoices that pay themselves', 'Send invoices, take ACH or card, and keep retainers on autopay without chasing anybody.', 'See professional services', '/industries/professional-services', [
@@ -138,7 +139,7 @@ $home = ib_page('landing_page', 'Home', '/home', [
   ['faq', [
     'eyebrow' => 'Questions',
     'heading' => 'Good questions, straight answers',
-    'intro_html' => ib_html('<p>Don\'t see yours? <a href="/get-a-quote">Ask a local specialist</a> and we\'ll reply within one business day.</p>'),
+    'intro_html' => ib_html('<p>Don\'t see yours? <a href="/get-a-quote">Ask us with the quote form</a> and we\'ll reply within one business day.</p>'),
     'layout' => 'split',
     'items' => [
       $faq('Is Impeccabyte a payment processor?', 'We are an authorized sales agent of Maverick Payments. Maverick and its sponsor banks provide your merchant account and process your transactions; we set you up, choose the right gear and stay your local point of contact.'),

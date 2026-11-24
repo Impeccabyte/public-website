@@ -7,7 +7,8 @@
  * Built on the Restaurants and bars page's pattern: pain points, a sample
  * setup, an event-day section, devices, questions and reading. Device and
  * connectivity claims match the On the go page: Clover Flex runs on Wi-Fi or
- * cellular, Clover devices take payments offline for a period. No funding
+ * cellular, Clover devices take payments offline for a period. Clover offers
+ * a cash discount, not dual pricing (see 98-clover-cash-discount.php). No funding
  * times beyond "cutoffs vary by processor". Bundle prices come from the
  * devices, so they follow the Show prices setting.
  *
@@ -23,7 +24,6 @@ $path = '/industries/food-trucks';
 $faq = fn(string $question, string $answer) => ['_type' => 'faq_item', 'question' => $question, 'answer' => ib_html('<p>' . $answer . '</p>')];
 $card = fn(string $icon, string $title, string $body) => ['_type' => 'feature_card', 'icon' => $icon, 'title' => $title, 'body' => $body];
 $node_ref = fn(string $alias) => ($node = ib_node_by_alias($alias)) ? ['target_id' => $node->id()] : NULL;
-$dual = ib_node_by_alias('/solutions/dual-pricing');
 
 $sections = [
   ['hero', [
@@ -44,7 +44,7 @@ $sections = [
     'items' => [
       $card('wifi', '“The Wi-Fi drops at every event.”', 'A handheld with its own cellular connection keeps taking cards when the venue network is overloaded.'),
       $card('users', '“The line gets long at lunch.”', 'Take orders and payment down the line with a handheld, so the window stays free for pickup.'),
-      $card('circle-percent', '“Fees eat a small ticket.”', 'Dual pricing lets card customers cover processing, with a clear sign at the window.'),
+      $card('circle-percent', '“Fees eat a small ticket.”', 'A cash discount on your Clover gives customers who pay cash a lower price and helps offset what you pay to process cards.'),
       $card('clock', '“I never know when the money lands.”', 'We set up your deposits and show you how batching works. Funding cutoffs vary by processor.'),
     ],
   ]],
@@ -56,9 +56,8 @@ $sections = [
     'items' => array_values(array_filter([
       ($flex = $node_ref('/hardware/clover-flex')) ? ['_type' => 'bundle_item', 'label' => 'At the window', 'reference' => $flex, 'note' => 'Takes cards and prints receipts, on Wi-Fi or cellular', 'quantity' => 1] : NULL,
       ($go = $node_ref('/hardware/clover-go')) ? ['_type' => 'bundle_item', 'label' => 'Down the line', 'reference' => $go, 'note' => 'A pocket reader with your phone for orders in line', 'quantity' => 1] : NULL,
-      $dual ? ['_type' => 'bundle_item', 'label' => 'Pricing', 'reference' => ['target_id' => $dual->id()], 'note' => 'Card customers cover processing on each order', 'quantity' => 1] : NULL,
     ])),
-    'addons' => ['cellular data plan', 'online ordering'],
+    'addons' => ['cellular data plan', 'online ordering', 'cash discount'],
     'note' => 'Processing, Clover software and any cellular data plan are quoted separately.',
     'link' => ib_link('/get-a-quote', 'Quote this setup'),
   ]],
@@ -89,7 +88,7 @@ $sections = [
     'items' => [
       $faq('What happens if I lose signal?', 'Clover devices can keep taking payments offline for a period and send them once you reconnect. Offline payments carry some risk if a card is later declined, so we explain the limits when we set you up.'),
       $faq('Do I need a data plan?', "A handheld with its own cellular connection needs a data plan, which we can add. A reader that pairs with your phone uses your phone's connection instead."),
-      $faq('Does dual pricing work at a truck window?', 'Yes. A sign at the window explains the two prices, and the handheld shows both totals before the customer pays. Cash stays the lower price.'),
+      $faq('Can I offer a cash discount at the window?', "Yes. With Clover's cash discount, your posted prices are your card prices, and customers who pay cash get a discount at checkout. We set it up with you and explain how it works before your first shift."),
       $faq('Can I use the same setup at events and my regular spot?', 'Yes. Your devices, menu and account go wherever the truck goes, on Wi-Fi where there is good coverage and cellular where there is not.'),
       $faq('When do I get paid after an event?', 'Deposit timing depends on when you close your batch, your processor\'s cutoff, weekends and holidays. Cutoffs vary by processor, and we walk you through yours when we set you up.'),
     ],
@@ -117,7 +116,7 @@ $bundles = array_map(fn($section) => $section->bundle(), $existing);
 if ($bundles === ['hero', 'callout', 'cta_band'] && $existing[1]->get('field_title')->value === 'More detail is on the way') {
   $node->set('field_sections', array_map(fn(array $section) => ib_paragraph($section[0], $section[1]), $sections));
   if ($node->hasField('field_meta_description')) {
-    $node->set('field_meta_description', 'Card payments for Austin food trucks: cellular handhelds, offline mode, dual pricing and deposits set up before your first shift.');
+    $node->set('field_meta_description', 'Card payments for Austin food trucks: cellular handhelds, offline mode, a cash discount on Clover and deposits set up before your first shift.');
   }
   $node->save();
   foreach ($existing as $section) {
