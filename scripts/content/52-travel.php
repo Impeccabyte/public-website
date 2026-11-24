@@ -18,8 +18,8 @@
  * - Travel is only for businesses with an active Impeccabyte merchant
  *   account, booked through their account manager in the merchant app. There
  *   is no booking form; the main button is "Log in".
- * - The seller-of-travel disclosure closes every travel page, with the
- *   registration numbers as placeholders until Fora supplies them.
+ * - The seller-of-travel disclosure closes every travel page, with Fora's
+ *   registrations and licenses (supplied 2026-11-24).
  *
  * Menu links (Services > Travel) and the footer column are in 10-chrome.php.
  *
@@ -44,7 +44,7 @@ $eligibility = ['callout', [
 $disclosure = ['callout', [
   'callout_variant' => 'info',
   'title' => 'About our travel services',
-  'text' => ib_html('<p>Impeccabyte is an independent contractor of Fora Travel, Inc., a registered seller of travel. California CST [number]. Florida [number]. Washington [number]. Registration as a seller of travel does not constitute approval by the State of California.</p>'),
+  'text' => ib_html('<p>Impeccabyte is an independent contractor of Fora Travel, Inc., a registered seller of travel. Fora Travel, Inc. holds the following registrations and licenses:</p><ul><li>California: Seller of Travel Registration No. 2151995-50 (CST 2151995-50)</li><li>Florida: Seller of Travel Registration No. ST43973</li><li>Washington: Seller of Travel Unified Business ID (UBI) 605329242</li><li>British Columbia: CPBC License No. 88694</li><li>Ontario: TICO Registration No. 50027942</li><li>United Kingdom: ICO Registration No. ZC157277</li></ul><p>Registration as a seller of travel does not constitute approval by the State of California.</p>'),
 ]];
 
 // Overview.
