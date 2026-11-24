@@ -13,8 +13,11 @@
  * - Perks are examples that vary by hotel. Upgrades and early check-in or
  *   late check-out are only ever "when available". Never "guaranteed",
  *   "VIP" or "free breakfast everywhere".
- * - In most cases the rate is the same as booking direct. Any planning fee
- *   is a placeholder, agreed upfront. No "no fees" or "lowest price".
+ * - In most cases the rate is the same as booking direct. There is no
+ *   planning fee (Ry, 2026-11-24); never "no fees" or "lowest price", which
+ *   would cover costs we don't control.
+ * - Clients can use the loyalty points from their favorite hotel and travel
+ *   programs (Ry, 2026-11-24).
  * - Travel is only for businesses with an active Impeccabyte merchant
  *   account, booked through their account manager in the merchant app. There
  *   is no booking form; the main button is "Log in".
@@ -58,7 +61,7 @@ $overview = ib_page('landing_page', 'Travel', '/travel', [
     'intro' => "We're an independent travel advisor hosted by Fora Travel. Tell us where you'd like to go, and we'll plan it and book partner hotels with perks such as daily breakfast, a hotel credit and a welcome amenity, depending on the hotel. In most cases you pay the same rate as booking direct.",
     'link' => ib_link($login, 'Log in'),
     'link_secondary' => ib_link('/travel/hotel-perks', 'See hotel perks'),
-    'checklist' => ['Perks at partner hotels', 'Same rate as direct, in most cases', 'Any planning fee agreed upfront'],
+    'checklist' => ['Perks at partner hotels', 'Same rate as direct, in most cases', 'No planning fee'],
   ]],
   $eligibility,
   ['steps', [
@@ -66,7 +69,7 @@ $overview = ib_page('landing_page', 'Travel', '/travel', [
     'heading' => 'Three steps from idea to check-in',
     'items' => [
       $step('Tell your account manager', "Where, when, who's coming and roughly what you'd like to spend. They take it from there."),
-      $step('We suggest a plan', "Hotel options with each one's perks spelled out, and any planning fee agreed with you before we start."),
+      $step('We suggest a plan', "Hotel options with each one's perks spelled out, so you can choose before we book."),
       $step('We book it with you', 'You get each confirmation with its perks listed, and you have one person to ask about changes before you go.'),
     ],
   ]],
@@ -96,7 +99,7 @@ $overview = ib_page('landing_page', 'Travel', '/travel', [
     'intro' => "We tell you what you'll pay before we book anything.",
     'items' => [
       $card('bed', 'Hotel stays', 'In most cases you pay the same rate as booking direct, with any perks the hotel offers through Fora Travel on top.'),
-      $card('receipt', 'Planning', 'For bigger trips with flights, restaurants or several stops, our planning fee is [Planning fee], agreed with you upfront.'),
+      $card('receipt', 'Planning', 'For bigger trips with flights, restaurants or several stops, we plan it all with you, with no planning fee.'),
     ],
   ]],
   ['faq', [
@@ -106,9 +109,9 @@ $overview = ib_page('landing_page', 'Travel', '/travel', [
     'items' => [
       $faq('Who can use travel planning?', 'Businesses with an active Impeccabyte merchant account. Already a customer? Your account manager books your travel. Not a customer yet? <a href="/get-a-quote">Get a quote</a> for card processing first.'),
       $faq('How do you work with Fora Travel?', "We're an independent travel advisor hosted by Fora Travel. Fora is the registered travel agency we book through; we're the people who plan your trip and answer your questions."),
-      $faq('Will I pay more than booking myself?', 'In most cases the hotel rate is the same as booking direct. If your trip needs planning, such as flights or several stops, we agree any planning fee with you before we start.'),
+      $faq('Will I pay more than booking myself?', 'In most cases the hotel rate is the same as booking direct, and we don\'t charge a planning fee, even for trips with flights or several stops.'),
       $faq('Is an upgrade guaranteed?', "No. We ask for one on every booking, and the hotel decides when you arrive based on what's free. Early check-in and late check-out work the same way."),
-      $faq('Do I keep my hotel loyalty points?', '[Answer to confirm with Fora Travel.]'),
+      $faq('Can I use my loyalty points?', 'Yes. You can use the loyalty points from your favorite hotel and travel programs on the trips we plan with you.'),
     ],
   ]],
   ['cta_band', [
@@ -156,7 +159,7 @@ $perks = ib_page('landing_page', 'Hotel Perks', '/travel/hotel-perks', [
   ['callout', [
     'callout_variant' => 'info',
     'title' => 'Good to know',
-    'text' => ib_html("<ul><li>Perks come from the hotel and can change. We check your hotel's current perks when we book.</li><li>In most cases the rate is the same as booking direct. Any planning fee, [Planning fee], is agreed upfront.</li><li>Not every hotel is a partner. If yours isn't, we'll tell you before you book.</li><li>Loyalty points: [answer to confirm with Fora Travel].</li></ul>"),
+    'text' => ib_html("<ul><li>Perks come from the hotel and can change. We check your hotel's current perks when we book.</li><li>In most cases the rate is the same as booking direct, and there's no planning fee.</li><li>Not every hotel is a partner. If yours isn't, we'll tell you before you book.</li><li>You can use the loyalty points from your favorite hotel and travel programs.</li></ul>"),
   ]],
   ['cta_band', [
     'heading' => 'Have a hotel in mind?',
