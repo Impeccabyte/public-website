@@ -13,7 +13,13 @@
 .mega__grid--featured { grid-template-columns: repeat(var(--_cols, 3), minmax(0, 1fr)) 300px; }
 /* Two or more business lines: the lines down the left, their columns beside. */
 .mega__lines { max-width: var(--container-xl); margin-inline: auto; padding: var(--space-10) var(--gutter) var(--space-8); display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-6); }
-.mega__lines .mega__grid--panel { max-width: none; margin: 0; padding: 0; gap: var(--space-5); }
+.mega__lines .mega__grid--panel { max-width: none; margin: 0; padding: 0; gap: var(--space-3); }
+.mega__lines .mega__link { gap: var(--space-3); }
+/* Keep titles such as "Countertop Terminals" and "Chargeback Protection" on
+   one line where the four columns have room (each is about 238px at 1240px
+   wide). A title may run into its link's own padding, never past it. Below
+   1240px they wrap. */
+@media (min-width: 1240px) { .mega__lines .mega__title { white-space: nowrap; } }
 .mega__lines .mega__grid--panel[hidden] { display: none; }
 .mega__rail { display: flex; flex-direction: column; gap: var(--space-1); padding-right: var(--space-5); border-right: 1px solid var(--ink-100); }
 .mega__line { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-3) 0 var(--space-4); border: 0; border-radius: var(--radius-md); background: none; font: var(--fw-semibold) var(--text-base)/1.2 var(--font-sans); color: var(--ink-800); text-align: left; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
