@@ -20,37 +20,44 @@ $term_filter = function (string $base, string $facet, string $vid, string $name)
   return $tid ? "internal:$base?{$facet}[$tid]=$tid" : "internal:$base";
 };
 
-// Main menu. Solutions are grouped under the three solution categories.
-// Business banking is out of scope at launch, so it has no link.
-$solutions = ib_menu_link('main', 'Solutions', 'route:<nolink>', ['weight' => 0]);
-$accept = ib_menu_link('main', 'Accept Payments', 'route:<nolink>', ['parent' => $solutions, 'weight' => 0]);
+// Main menu, by business line (2026-11-23, see 07-menu-business-lines.php).
+// Services holds one child per business line. Payments is the only line so
+// far: the three solution categories plus Hardware. A second line, such as
+// travel, is another child of Services; the mega menu shows a list of lines
+// only once there are two. Business banking is out of scope, so it has no
+// link.
+$services = ib_menu_link('main', 'Services', 'route:<nolink>', ['weight' => 0]);
+$payments = ib_menu_link('main', 'Payments', 'route:<nolink>', ['parent' => $services, 'weight' => 0]);
+$accept = ib_menu_link('main', 'Accept Payments', 'route:<nolink>', ['parent' => $payments, 'weight' => 0]);
 ib_menu_link('main', 'In Person', 'internal:/solutions/in-person', ['parent' => $accept, 'weight' => 0, 'icon' => 'store', 'description' => 'Countertop terminals and full POS systems']);
 ib_menu_link('main', 'Online', 'internal:/solutions/online', ['parent' => $accept, 'weight' => 1, 'icon' => 'globe', 'description' => 'Gateways, hosted checkout and payment links']);
 ib_menu_link('main', 'On the Go', 'internal:/solutions/on-the-go', ['parent' => $accept, 'weight' => 2, 'icon' => 'smartphone', 'description' => 'Mobile readers and tap to pay on your phone']);
 ib_menu_link('main', 'Recurring Billing', 'internal:/solutions/recurring-billing', ['parent' => $accept, 'weight' => 3, 'icon' => 'repeat', 'description' => 'Subscriptions, invoices and card updater']);
-$lower = ib_menu_link('main', 'Lower Your Costs', 'route:<nolink>', ['parent' => $solutions, 'weight' => 1]);
+$lower = ib_menu_link('main', 'Lower Your Costs', 'route:<nolink>', ['parent' => $payments, 'weight' => 1]);
 ib_menu_link('main', 'Dual Pricing', 'internal:/solutions/dual-pricing', ['parent' => $lower, 'weight' => 0, 'icon' => 'circle-percent', 'description' => 'Show a cash and card price and keep more of each sale']);
 ib_menu_link('main', 'Interchange Plus', 'internal:/solutions/interchange-plus', ['parent' => $lower, 'weight' => 1, 'icon' => 'chart-line', 'description' => 'Pass-through pricing with one clear markup']);
 ib_menu_link('main', 'Chargeback Protection', 'internal:/solutions/chargeback-protection', ['parent' => $lower, 'weight' => 2, 'icon' => 'shield-check', 'description' => 'Alerts and dispute help before losses stack up']);
-$run = ib_menu_link('main', 'Run Your Business', 'route:<nolink>', ['parent' => $solutions, 'weight' => 2]);
+$run = ib_menu_link('main', 'Run Your Business', 'route:<nolink>', ['parent' => $payments, 'weight' => 2]);
 ib_menu_link('main', 'Integrations', 'internal:/solutions/integrations', ['parent' => $run, 'weight' => 0, 'icon' => 'plug', 'description' => 'Connect invoicing, accounting and your POS']);
 ib_menu_link('main', 'Funding', 'internal:/solutions/funding', ['parent' => $run, 'weight' => 1, 'icon' => 'zap', 'description' => 'How and when deposits reach your bank']);
 
-$hardware = ib_menu_link('main', 'Hardware', 'internal:/hardware', ['weight' => 1]);
-ib_menu_link('main', 'All Devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card', 'description' => 'Every terminal, reader and POS system we set up']);
+$hardware = ib_menu_link('main', 'Hardware', 'route:<nolink>', ['parent' => $payments, 'weight' => 3]);
+// Hardware is the fourth column under Payments, so its links are titles only
+// to keep the column as short as the others.
+ib_menu_link('main', 'All Devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card']);
 $device_types = [
-  'Countertop Terminals' => ['Countertop Terminal', 'store', 'Reliable terminals for the front counter'],
-  'Handheld Terminals' => ['Handheld', 'smartphone', 'Take payment at the table or curb'],
-  'POS Systems' => ['POS System', 'calculator', 'Run orders, inventory and payments together'],
-  'Mobile Readers' => ['Mobile Reader', 'nfc', 'Pocket readers that pair with your phone'],
-  'Self-Order Kiosks' => ['Self-Order Kiosk', 'users', 'Let customers order and pay on their own'],
+  'Countertop Terminals' => ['Countertop Terminal', 'store'],
+  'Handheld Terminals' => ['Handheld', 'smartphone'],
+  'POS Systems' => ['POS System', 'calculator'],
+  'Mobile Readers' => ['Mobile Reader', 'nfc'],
+  'Self-Order Kiosks' => ['Self-Order Kiosk', 'users'],
 ];
 $weight = 1;
-foreach ($device_types as $title => [$term, $icon, $description]) {
-  ib_menu_link('main', $title, $term_filter('/hardware', 'type', 'device_type', $term), ['parent' => $hardware, 'weight' => $weight++, 'icon' => $icon, 'description' => $description]);
+foreach ($device_types as $title => [$term, $icon]) {
+  ib_menu_link('main', $title, $term_filter('/hardware', 'type', 'device_type', $term), ['parent' => $hardware, 'weight' => $weight++, 'icon' => $icon]);
 }
 
-$industries = ib_menu_link('main', 'Industries', 'route:<nolink>', ['weight' => 2]);
+$industries = ib_menu_link('main', 'Who We Serve', 'route:<nolink>', ['weight' => 1]);
 $industry_links = [
   'Restaurants & Bars' => ['/industries/restaurants', 'utensils'],
   'Food Trucks' => ['/industries/food-trucks', 'truck'],
@@ -68,9 +75,9 @@ foreach ($industry_links as $title => [$path, $icon]) {
   ib_menu_link('main', $title, 'internal:' . $path, ['parent' => $industries, 'weight' => $weight++, 'icon' => $icon]);
 }
 
-ib_menu_link('main', 'Pricing', 'internal:/pricing', ['weight' => 3]);
+ib_menu_link('main', 'Pricing', 'internal:/pricing', ['weight' => 2]);
 
-$resources = ib_menu_link('main', 'Resources', 'internal:/resources', ['weight' => 4]);
+$resources = ib_menu_link('main', 'Resources', 'internal:/resources', ['weight' => 3]);
 ib_menu_link('main', 'All resources', 'internal:/resources', ['parent' => $resources, 'weight' => 0, 'icon' => 'book-open', 'description' => 'Guides and answers in plain English']);
 $resource_types = [
   'Guides' => ['book-open', 'Step-by-step help for common jobs'],
@@ -86,10 +93,11 @@ foreach ($resource_types as $title => [$icon, $description]) {
   ib_menu_link('main', $title, 'internal:/resources' . ($tid ? '?type=' . $tid : ''), ['parent' => $resources, 'weight' => $weight++, 'icon' => $icon, 'description' => $description]);
 }
 
-$company = ib_menu_link('main', 'Company', 'route:<nolink>', ['weight' => 5]);
+$company = ib_menu_link('main', 'Company', 'route:<nolink>', ['weight' => 4]);
 ib_menu_link('main', 'About Us', 'internal:/about', ['parent' => $company, 'weight' => 0, 'icon' => 'users', 'description' => 'A local Austin team']);
-ib_menu_link('main', 'Contact', 'internal:/get-a-quote', ['parent' => $company, 'weight' => 1, 'icon' => 'message-circle', 'description' => 'Talk to a local specialist']);
-ib_menu_link('main', 'Merchant Log In', 'https://app.impeccabyte.com', ['parent' => $company, 'weight' => 2, 'icon' => 'lock', 'description' => 'Open the merchant app']);
+// Opens the quote form, so it says so. The header's "Log in" link covers the
+// merchant app.
+ib_menu_link('main', 'Get a Quote', 'internal:/get-a-quote', ['parent' => $company, 'weight' => 1, 'icon' => 'message-circle', 'description' => 'Tell us about your business']);
 
 // Footer columns.
 $footer = [

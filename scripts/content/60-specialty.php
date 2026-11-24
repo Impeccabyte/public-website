@@ -220,7 +220,7 @@ ib_page('industry_page', 'Specialty Industries', '/industries/specialty', [
 ], ['field_industry' => $term('Specialty')]);
 
 // Reached from the Industries menu and the footer, not from Home.
-$industries = ib_menu_link('main', 'Industries', 'route:<nolink>', ['weight' => 2]);
+$industries = ib_menu_link('main', 'Who We Serve', 'route:<nolink>', ['weight' => 1]);
 ib_menu_link('main', 'Specialty Industries', 'internal:/industries/specialty', ['parent' => $industries, 'weight' => 20, 'icon' => 'shield-check', 'description' => 'Hemp, vape, firearms and other high-review businesses']);
 ib_menu_link('footer-industries', 'Specialty Industries', 'internal:/industries/specialty', ['weight' => 10]);
 

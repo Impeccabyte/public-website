@@ -89,6 +89,8 @@ $labels = [
   'Self-order kiosks' => 'Self-Order Kiosks',
   'About us' => 'About Us',
   'Merchant log in' => 'Merchant Log In',
+  'Who we serve' => 'Who We Serve',
+  'Get a quote' => 'Get a Quote',
 ];
 $label_vocabularies = [
   'device_type' => [

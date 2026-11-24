@@ -1,12 +1,13 @@
 name: Mega menu
-description: 'The panel under one main menu item: its child links in columns, the featured card and a help bar.'
+description: 'The panel under one main menu item: its links in columns, an optional featured card and a help bar. Business lines (Services) get a list of lines down the left once there are two.'
 # Props, all optional unless the template needs them. They are documented
 # here instead of in a schema because most take values of more than one type
 # (a string or nothing, a list or a rendered element).
-#   featured: Rendered featured card
+#   featured: Rendered featured card, shown only when it has content
 #   id: Panel id
 #   label: Name of the menu item this panel belongs to
-#   items: Child links. Items with children of their own become headed columns.
+#   items: Child links. Items with children become headed columns; items whose
+#     children have children are business lines, each with its own columns.
 #   quote_url: Quote form path
 #   phone: Phone number
 #   hours: Phone hours

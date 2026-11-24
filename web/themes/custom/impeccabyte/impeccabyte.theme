@@ -94,7 +94,8 @@ function impeccabyte_preprocess_page(array &$variables) {
     'disclosure' => $settings->get('disclosure'),
   ];
 
-  $variables['main_menu'] = _impeccabyte_menu('main');
+  // Four levels: Services, a business line, a group and its links.
+  $variables['main_menu'] = _impeccabyte_menu('main', 4);
   $variables['footer_menus'] = [];
   $cache_tags = ['config:impeccabyte_site.settings', 'config:system.menu.main'];
   $menus = \Drupal::entityTypeManager()->getStorage('menu');
@@ -465,14 +466,14 @@ function _impeccabyte_breadcrumb(): array {
   }
   switch ($node->bundle()) {
     case 'solution':
-      $trail[] = ['title' => t('Solutions'), 'url' => ''];
+      $trail[] = ['title' => t('Payments'), 'url' => ''];
       if ($node->hasField('field_category') && ($category = $node->get('field_category')->entity)) {
         $trail[] = ['title' => $category->label(), 'url' => ''];
       }
       break;
 
     case 'industry_page':
-      $trail[] = ['title' => t('Industries'), 'url' => ''];
+      $trail[] = ['title' => t('Who We Serve'), 'url' => ''];
       $industry = $node->hasField('field_industry') ? $node->get('field_industry')->entity : NULL;
       $parents = $industry ? \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($industry->id()) : [];
       // Pages under the specialty hub link back to it.

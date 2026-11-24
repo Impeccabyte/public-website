@@ -1,28 +1,65 @@
-{% set grouped = items|filter(i => i.children is not empty)|length > 0 %}
+{#
+  Three shapes, read from the menu itself:
+  - business lines (Services): items are lines, each with headed groups. One
+    line shows its groups as columns; two or more add a list of lines down
+    the left that switches the columns (a vertical tab list).
+  - grouped: items are headed groups shown as columns.
+  - flat: items are links in a three-column list.
+#}
+{% set is_lines = items|filter(i => i.children|filter(g => g.children is not empty)|length > 0)|length > 0 %}
+{% set has_featured = featured is not empty and featured|render|striptags|trim is not empty %}
 {% macro link(item) %}
   <a class="mega__link{{ item.active ? ' is-on' }}" href="{{ item.url }}"{{ item.current ? ' aria-current="page"' }}>
     {% if item.icon %}<span class="mega__icon">{{ include('impeccabyte:icon', {name: item.icon, size: 20}, with_context = false) }}</span>{% endif %}
     <span class="mega__text"><span class="mega__title">{{ item.title }}</span>{% if item.description %}<span class="mega__desc">{{ item.description }}</span>{% endif %}</span>
   </a>
 {% endmacro %}
+{% macro columns(groups, id) %}
+  {% for group in groups %}
+    <div class="mega__col">
+      <p class="eyebrow mega__heading" id="{{ id }}-g{{ loop.index }}">{{ group.title }}</p>
+      <ul class="mega__list" aria-labelledby="{{ id }}-g{{ loop.index }}">
+        {% for item in group.children %}<li>{{ _self.link(item) }}</li>{% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+{% endmacro %}
 <div{{ attributes.addClass('mega') }} id="{{ id }}" data-mega>
-  <div class="mega__grid{{ grouped ? '' : ' mega__grid--flat' }}">
-    {% if grouped %}
-      {% for group in items %}
-        <div class="mega__col">
-          <p class="eyebrow mega__heading" id="{{ id }}-g{{ loop.index }}">{{ group.title }}</p>
-          <ul class="mega__list" aria-labelledby="{{ id }}-g{{ loop.index }}">
-            {% for item in group.children %}<li>{{ _self.link(item) }}</li>{% endfor %}
-          </ul>
+  {% if is_lines and items|length > 1 %}
+    {% set selected = items|filter(i => i.active)|keys|first|default(0) %}
+    <div class="mega__lines">
+      <div class="mega__rail" role="tablist" aria-orientation="vertical" aria-label="{{ label }}" data-mega-rail>
+        {% for line in items %}
+          <button class="mega__line" type="button" role="tab" id="{{ id }}-t{{ loop.index }}" aria-controls="{{ id }}-p{{ loop.index }}" aria-selected="{{ loop.index0 == selected ? 'true' : 'false' }}" tabindex="{{ loop.index0 == selected ? '0' : '-1' }}">
+            <span>{{ line.title }}</span>{{ include('impeccabyte:icon', {name: 'chevron-right', size: 16}, with_context = false) }}
+          </button>
+        {% endfor %}
+      </div>
+      {% for line in items %}
+        <div class="mega__grid mega__grid--panel" role="tabpanel" id="{{ id }}-p{{ loop.index }}" aria-labelledby="{{ id }}-t{{ loop.index }}" style="--_cols: {{ line.children|length }}"{{ loop.index0 != selected ? ' hidden' }}>
+          {{ _self.columns(line.children, id ~ '-p' ~ loop.index) }}
         </div>
       {% endfor %}
-    {% else %}
+    </div>
+  {% elseif is_lines %}
+    {% set groups = (items|first).children %}
+    <div class="mega__grid{{ has_featured ? ' mega__grid--featured' }}" style="--_cols: {{ groups|length }}">
+      {{ _self.columns(groups, id) }}
+      {% if has_featured %}<div class="mega__featured">{{ featured }}</div>{% endif %}
+    </div>
+  {% elseif items|filter(i => i.children is not empty)|length > 0 %}
+    <div class="mega__grid{{ has_featured ? ' mega__grid--featured' }}" style="--_cols: {{ items|length }}">
+      {{ _self.columns(items, id) }}
+      {% if has_featured %}<div class="mega__featured">{{ featured }}</div>{% endif %}
+    </div>
+  {% else %}
+    <div class="mega__grid{{ has_featured ? ' mega__grid--featured' }}" style="--_cols: 1">
       <ul class="mega__list mega__list--flat" aria-label="{{ label }}">
         {% for item in items %}<li>{{ _self.link(item) }}</li>{% endfor %}
       </ul>
-    {% endif %}
-    <div class="mega__featured">{{ featured }}</div>
-  </div>
+      {% if has_featured %}<div class="mega__featured">{{ featured }}</div>{% endif %}
+    </div>
+  {% endif %}
   <div class="mega__help">
     <div class="mega__help-inner">
       <span>{{ 'Not sure where to start? A local specialist can help.'|t }}</span>

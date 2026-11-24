@@ -1,10 +1,31 @@
+{# Headed groups of links, used by business lines (Services). #}
+{% macro groups(groups) %}
+  {% for group in groups %}
+    <p class="eyebrow drawer__heading">{{ group.title }}</p>
+    <ul class="drawer__links">
+      {% for leaf in group.children %}<li><a href="{{ leaf.url }}"{{ leaf.current ? ' aria-current="page"' }}>{{ leaf.title }}</a></li>{% endfor %}
+    </ul>
+  {% endfor %}
+{% endmacro %}
 <div{{ attributes.addClass('drawer') }} id="{{ id }}" data-drawer>
   <div class="drawer__clip">
     <nav class="drawer__inner" aria-label="{{ 'Main, mobile'|t }}">
       {% for item in items %}
         {% if item.children %}
+          {% set is_lines = item.children|filter(c => c.children|filter(g => g.children is not empty)|length > 0)|length > 0 %}
           <details class="drawer__group"{{ item.active ? ' open' }}>
             <summary class="drawer__top">{{ item.title }} {{ include('impeccabyte:icon', {name: 'chevron-down', size: 18}, with_context = false) }}</summary>
+            {% if is_lines and item.children|length > 1 %}
+              {# Two or more business lines: each opens on its own. #}
+              {% for line in item.children %}
+                <details class="drawer__line"{{ line.active ? ' open' }}>
+                  <summary class="drawer__sub">{{ line.title }} {{ include('impeccabyte:icon', {name: 'chevron-down', size: 16}, with_context = false) }}</summary>
+                  <div class="drawer__line-body">{{ _self.groups(line.children) }}</div>
+                </details>
+              {% endfor %}
+            {% elseif is_lines %}
+              <div class="drawer__line-body">{{ _self.groups((item.children|first).children) }}</div>
+            {% else %}
             <ul class="drawer__links">
               {% if item.url %}<li><a href="{{ item.url }}">{{ 'All @section'|t({'@section': item.title|lower}) }}</a></li>{% endif %}
               {% for child in item.children %}
@@ -15,6 +36,7 @@
                 {% endif %}
               {% endfor %}
             </ul>
+            {% endif %}
           </details>
         {% else %}
           <a class="drawer__top drawer__top--link" href="{{ item.url }}"{{ item.current ? ' aria-current="page"' }}>{{ item.title }}</a>

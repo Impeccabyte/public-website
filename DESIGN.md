@@ -312,8 +312,9 @@ Friendly and sure-footed: rounded, generous and clearly labelled. Approachable, 
 ### Navigation
 - **Header:** sticky, 76px tall, on paper with a hairline bottom rule. Logo left, centred pill nav items (Hanken Grotesk 500, 16px, 44px tall), "Log in" and the primary "Get a quote" button right.
 - **States:** hover fills Ink Wash; open or current items turn Fired Clay on Clay Blush, and the chevron rotates 180°.
-- **Mega menu:** fades in and moves down 8px over 220ms, reversing on close; closes on Escape or when focus leaves.
-- **Mobile:** below 1180px a 44px pill hamburger opens a drawer that grows by height over 220ms. All motion stops under reduced motion.
+- **Top bar:** Services, Who We Serve, Pricing, Company. Services holds the business lines (Payments today; travel or others later).
+- **Mega menu:** a white panel of headed columns (one per group, with eyebrow headings and icon tiles) above an Ink Wash help bar. With one business line, Services shows its four groups (Accept Payments, Lower Your Costs, Run Your Business, Hardware) as columns. With two or more, a list of lines runs down the left (selected line: Clay Blush tint, Fired Clay text and an arrow) and switches the columns. It fades in and moves down 8px over 220ms, reversing on close; closes on Escape or when focus leaves. The featured card, when it has content, sits beside the Company links.
+- **Mobile:** below 1180px a 44px pill hamburger opens a drawer that grows by height over 220ms. Services shows its groups under eyebrow headings; with two or more lines, each line opens on its own. All motion stops under reduced motion.
 
 ### Footer
 Clove background, on-dark text, Clove 100 links that turn white and underline on hover. A pitch and the newsletter signup sit above four link columns, then the address and the required disclosure line.

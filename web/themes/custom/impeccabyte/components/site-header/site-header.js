@@ -38,6 +38,36 @@
         });
         burger?.addEventListener('click', () => setDrawer(burger.getAttribute('aria-expanded') !== 'true'));
 
+        // Business lines inside a mega menu (only rendered once there are
+        // two): a vertical tab list. Click, arrow keys, Home and End switch
+        // lines; hovering switches after a short pause, so a diagonal move
+        // toward the columns does not flip lines on the way.
+        header.querySelectorAll('[data-mega-rail]').forEach((rail) => {
+          const tabs = Array.from(rail.querySelectorAll('[role="tab"]'));
+          const select = (tab, focus = false) => {
+            tabs.forEach((t) => {
+              const on = t === tab;
+              t.setAttribute('aria-selected', on ? 'true' : 'false');
+              t.tabIndex = on ? 0 : -1;
+              const panel = header.querySelector(`#${t.getAttribute('aria-controls')}`);
+              if (panel) panel.hidden = !on;
+            });
+            if (focus) tab.focus();
+          };
+          let hover;
+          tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => select(tab));
+            tab.addEventListener('mouseenter', () => { hover = window.setTimeout(() => select(tab), 150); });
+            tab.addEventListener('mouseleave', () => window.clearTimeout(hover));
+            tab.addEventListener('keydown', (e) => {
+              const next = { ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+              if (next === undefined) return;
+              e.preventDefault();
+              select(tabs[(next + tabs.length) % tabs.length], true);
+            });
+          });
+        });
+
         header.addEventListener('keydown', (e) => {
           if (e.key !== 'Escape') return;
           const openToggle = toggles.find((t) => t.getAttribute('aria-expanded') === 'true');

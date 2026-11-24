@@ -25,9 +25,11 @@
       </button>
     </div>
   </div>
+  {# The featured card sits in the last panel (Company), next to a short list. #}
+  {% set last_panel = items|filter(i => i.children is not empty)|keys|last %}
   {% for item in items %}
     {% if item.children %}
-      {{ include('impeccabyte:mega-menu', {id: 'mega-' ~ loop.index, label: item.title, items: item.children, quote_url: quote_url, phone: phone, hours: hours, email: email, featured: featured_markup}, with_context = false) }}
+      {{ include('impeccabyte:mega-menu', {id: 'mega-' ~ loop.index, label: item.title, items: item.children, quote_url: quote_url, phone: phone, hours: hours, email: email, featured: loop.index0 == last_panel ? featured_markup : ''}, with_context = false) }}
     {% endif %}
   {% endfor %}
   {{ include('impeccabyte:mobile-drawer', {id: 'site-drawer', items: items, quote_url: quote_url, login_url: login_url, phone: phone, email: email}, with_context = false) }}

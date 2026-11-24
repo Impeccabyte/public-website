@@ -12,6 +12,15 @@ a.drawer__top:hover { color: var(--clay-700); }
 .drawer__links { list-style: none; margin: 0; padding: 4px 0 var(--space-4); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px var(--space-3); }
 .drawer__links a { display: flex; align-items: center; min-height: 44px; color: var(--ink-800); text-decoration: none; }
 .drawer__links a:hover, .drawer__links a[aria-current] { color: var(--clay-700); }
+/* Business lines: headed groups, and a nested opener per line once there are two. */
+.drawer__line-body { padding-bottom: var(--space-3); }
+.drawer__heading { margin: var(--space-3) 0 0; }
+.drawer__line-body .drawer__links { padding-bottom: 0; }
+.drawer__line { border-top: 1px solid var(--ink-100); }
+.drawer__sub { list-style: none; display: flex; justify-content: space-between; align-items: center; min-height: 48px; font-weight: var(--fw-semibold); color: var(--ink-800); cursor: pointer; }
+.drawer__sub::-webkit-details-marker { display: none; }
+.drawer__sub .icon { transition: transform var(--dur-base) var(--ease-out); }
+.drawer__line[open] > .drawer__sub .icon { transform: rotate(180deg); }
 .drawer__actions { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6); }
 .drawer__phone { margin-top: var(--space-5); font-size: var(--text-sm); color: var(--ink-600); text-align: center; }
 @media (min-width: 1181px) { .drawer { display: none; } }
