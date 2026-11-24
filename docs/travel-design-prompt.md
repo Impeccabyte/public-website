@@ -8,7 +8,7 @@ Design three pages, plus one menu panel, for a new travel line of business on th
 
 ## Who this is for
 
-Impeccabyte is a small Austin, Texas business best known for merchant services (card processing for small businesses). It is adding a second line: travel planning, as an independent advisor hosted by Fora Travel. Visitors are mostly small business owners and their families, planning a special trip or business travel. They want a better hotel stay than booking it themselves, at the same price, with a real person to plan it. Success is a visitor sending a trip request.
+Impeccabyte is a small Austin, Texas business best known for merchant services (card processing for small businesses). It is adding a second line: travel planning, as an independent advisor hosted by Fora Travel. Travel planning is only for businesses with an active Impeccabyte merchant account: it is a service for our payments customers. Visitors are mostly those business owners and their families, planning a special trip or business travel. They want a better hotel stay than booking it themselves, at the same price, with a real person to plan it. Success is a visitor sending a trip request.
 
 ## Pages
 
@@ -24,6 +24,7 @@ These rules matter more than anything visual.
 - **Perks are examples, not guarantees.** Write "perks such as daily breakfast, a hotel credit and a welcome amenity, depending on the hotel". Upgrades and early check-in or late check-out are always "when available". Never write "guaranteed upgrade", "VIP status", "free breakfast everywhere" or "red carpet".
 - **Price:** "In most cases you pay the same rate as booking direct." Any planning fee is shown as a placeholder, "[Planning fee]", and described as agreed upfront. Never write "no fees", "lowest price" or "best rate guaranteed".
 - **Partners:** only "partner hotels" and "participating properties". Do not name hotel brands, consortia or cruise lines, and do not use Fora's logo. Use "[Partner hotel]" in examples, and label any figures in an example "Example".
+- **Who can use it:** every travel page says plainly that travel planning is for businesses with an active Impeccabyte merchant account, with a "Get a quote" path for anyone who isn't a customer yet. The trip request form asks for the business name on the merchant account. Never imply anyone can book travel without one.
 - **Relationship:** say Impeccabyte is "an independent travel advisor hosted by Fora Travel". It is not Fora.
 - **Required disclosure on every travel page,** near the footer: "Impeccabyte is an independent contractor of Fora Travel, Inc., a registered seller of travel. California CST [number]. Florida [number]. Washington [number]. Registration as a seller of travel does not constitute approval by the State of California." Keep every number a placeholder in square brackets.
 - **No invented proof.** No testimonials, ratings, client counts, destination counts or years of experience. Where a quote would go, leave a clearly marked placeholder or leave the slot out.
