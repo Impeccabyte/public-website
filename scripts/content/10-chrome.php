@@ -50,7 +50,7 @@ $trip = ib_menu_link('main', 'Plan a Trip', 'route:<nolink>', ['parent' => $trav
 ib_menu_link('main', 'Trip Planning', 'internal:/travel', ['parent' => $trip, 'weight' => 0, 'icon' => 'map-pin', 'description' => 'How we plan and what it costs']);
 ib_menu_link('main', 'Hotel Perks', 'internal:/travel/hotel-perks', ['parent' => $trip, 'weight' => 1, 'icon' => 'bed', 'description' => 'What partner hotels usually include']);
 $book = ib_menu_link('main', 'Book a Trip', 'route:<nolink>', ['parent' => $travel, 'weight' => 1]);
-ib_menu_link('main', 'Log In', 'https://app.impeccabyte.com', ['parent' => $book, 'weight' => 0, 'icon' => 'lock', 'description' => 'Your account manager books your trip']);
+ib_menu_link('main', 'Log In', 'https://app.impeccabyte.com/portal/login', ['parent' => $book, 'weight' => 0, 'icon' => 'lock', 'description' => 'Your account manager books your trip']);
 // Hardware is the fourth column under Payments, so its links are titles only
 // to keep the column as short as the others.
 ib_menu_link('main', 'All Devices', 'internal:/hardware', ['parent' => $hardware, 'weight' => 0, 'icon' => 'credit-card']);

@@ -32,7 +32,7 @@ $not_found = ib_page('landing_page', 'Page not found', '/page-not-found', [
   ['cta_band', ['heading' => 'Looking for something specific?', 'accent_word' => 'specific', 'body' => 'Tell us what you need and a local specialist will reply within one business day.', 'link' => ib_link('/get-a-quote', 'Get a quote'), 'link_secondary' => ib_link('/resources', 'Read our guides')]],
 ]);
 $denied = ib_page('landing_page', 'Log in needed', '/log-in-needed', [
-  ['hero', ['hero_variant' => 'centered', 'eyebrow' => 'Log in needed', 'heading' => 'That page is for our team.', 'accent_word' => 'team', 'intro' => 'If you are a merchant looking for your account, the merchant app is the place to log in.', 'link' => ib_link('https://app.impeccabyte.com', 'Log in to the merchant app'), 'link_secondary' => ib_link('/', 'Go to the home page')]],
+  ['hero', ['hero_variant' => 'centered', 'eyebrow' => 'Log in needed', 'heading' => 'That page is for our team.', 'accent_word' => 'team', 'intro' => 'If you are a merchant looking for your account, the merchant app is the place to log in.', 'link' => ib_link('https://app.impeccabyte.com/portal/login', 'Log in to the merchant app'), 'link_secondary' => ib_link('/', 'Go to the home page')]],
 ]);
 // By address, not node ID: IDs differ between installs, and the exported
 // config must match every site it is imported into.
