@@ -4,14 +4,15 @@
  * @file
  * Sends merchants to the merchant portal sign-in (2026-11-26).
  *
- * The app at app.impeccabyte.com now has a merchant portal with its own
- * sign-in at /portal/login; the app's root is the staff sign-in. Every
- * merchant "Log in" on this site moves there: the Merchant app address
- * setting (header and phone menu), the Travel menu's Log In link, and link
- * buttons on pages (travel pages, the "Log in needed" page).
+ * The merchant portal is the root of app.impeccabyte.com and its sign-in is
+ * /login (the staff CRM lives under its own path). The portal first shipped
+ * at /portal/login, and before that this site linked to the bare app
+ * address. Every merchant "Log in" on this site uses /login: the Merchant
+ * app address setting (header and phone menu), the Travel menu's Log In
+ * link, and link buttons on pages (travel pages, the "Log in needed" page).
  *
- * Each value is only replaced while it still holds the old address, so
- * anything edited in the admin is kept. On a fresh install the setup and
+ * Each value is only replaced while it still holds one of the old
+ * addresses, so anything edited in the admin is kept. On a fresh install the setup and
  * content scripts already use the new address and this script changes
  * nothing.
  *
@@ -21,8 +22,12 @@
 
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
-$old = ['https://app.impeccabyte.com', 'https://app.impeccabyte.com/'];
-$new = 'https://app.impeccabyte.com/portal/login';
+$old = [
+  'https://app.impeccabyte.com',
+  'https://app.impeccabyte.com/',
+  'https://app.impeccabyte.com/portal/login',
+];
+$new = 'https://app.impeccabyte.com/login';
 $changed = [];
 
 // The Merchant app address setting.

@@ -33,7 +33,7 @@
 
 require_once dirname(__DIR__) . '/setup/_helpers.php';
 
-$login = 'https://app.impeccabyte.com/portal/login';
+$login = 'https://app.impeccabyte.com/login';
 $faq = fn(string $question, string $answer) => ['_type' => 'faq_item', 'question' => $question, 'answer' => ib_html('<p>' . $answer . '</p>')];
 $step = fn(string $title, string $body) => ['_type' => 'step', 'title' => $title, 'body' => $body];
 $card = fn(string $icon, string $title, string $body, string $note = '') => ['_type' => 'feature_card', 'icon' => $icon, 'title' => $title, 'body' => $body] + ($note ? ['note' => $note] : []);
